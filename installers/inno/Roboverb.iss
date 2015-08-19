@@ -1,4 +1,4 @@
-#define RoboVersion "1.0.3"
+#define RoboVersion "1.0.4"
 
 #define ReleaseType "Release"
 #define ReleaseName "Roboverb"
@@ -10,7 +10,7 @@
 ;#define ReleaseType "Demo"
 ;#define ReleaseName "Roboverb Demo"
 ;#define RoboPkgBase "RoboverbDemo-Windows"
-                                
+
 [Setup]
 AppName={#ReleaseName}
 AppVersion={#RoboVersion}
@@ -56,7 +56,7 @@ Source: "..\..\build\x86\{#ReleaseType}\Roboverb.exe";  Flags: ignoreversion; De
 var
   DataDirPage: TInputDirWizardPage;
   StandaloneDirPage: TInputDirWizardPage;
-   
+
 procedure InitializeWizard;
 begin
   { Create the pages }
@@ -64,7 +64,7 @@ begin
     'Select Plugin Directories', 'Where should the plugins be installed?',
     'Select the folder in which Setup should install plugin files, then click Next.',
     False, '');
-      
+
   if IsWin64 then begin
     DataDirPage.Add('64bit VST Destination Path');
     DataDirPage.Add('32bit VST Destination Path');
