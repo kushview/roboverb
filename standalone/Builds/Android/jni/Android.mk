@@ -18,7 +18,6 @@ LOCAL_SRC_FILES := \
   ../../../../roboverb/Source/PluginEditor.cpp\
   ../../../../roboverb/Source/PluginProcessor.cpp\
   ../../../../roboverb/Source/PluginView.cpp\
-  ../../../../roboverb/Source/RMS.cpp\
   ../../../../roboverb/Source/Roboverb.cpp\
   ../../../../element/modules/element_base/element_base.cpp\
   ../../../../element/modules/element_gui/element_gui.cpp\

@@ -20,7 +20,6 @@
 
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
-#include "RMS.h"
 
 
 RoboverbAudioProcessor::RoboverbAudioProcessor()
@@ -204,7 +203,6 @@ void RoboverbAudioProcessor::prepareToPlay (double sampleRate, int /*samplesPerB
 {
     verb.reset();
     verb.setSampleRate (sampleRate);
-    rms.reset();
 }
 
 void RoboverbAudioProcessor::releaseResources()
