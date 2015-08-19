@@ -1,0 +1,6 @@
+[submodule "element"]
+	path = element
+	url = https://github.com/kushview/element.git
+[submodule "libjuce"]
+	path = libjuce
+	url = https://github.com/mfisher31/libjuce.git
