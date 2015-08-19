@@ -31,7 +31,7 @@ cd "${here}/standalone/Builds/MacOSX"
 xcodebuild clean build -project Roboverb.xcodeproj -configuration 'Release'
 xcodebuild clean build -project Roboverb.xcodeproj -configuration 'Demo'
 
-cd "${here}/installers/packages/Roboverb"
+cd "${here}/installers/packages"
 rm -rf build/
 /usr/local/bin/packagesbuild -v Roboverb.pkgproj
 /usr/local/bin/packagesbuild -v RoboverbDemo.pkgproj
@@ -45,5 +45,7 @@ rm -rf Roboverb-OSX-${version}
 cp -r RoboverbDemo-OSX-${version}.pkg RoboverbDemo-OSX-${version}/
 zip -rT RoboverbDemo-OSX-${version}.zip RoboverbDemo-OSX-${version}
 rm -rf RoboverbDemo-OSX-${version}
+
+rm -f *.pkg *.mpkg
 
 cd "$here"

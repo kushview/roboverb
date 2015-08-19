@@ -21,8 +21,6 @@
             file="../roboverb/Source/PluginProcessor.h"/>
       <FILE id="hlpWih" name="PluginView.cpp" compile="1" resource="0" file="../roboverb/Source/PluginView.cpp"/>
       <FILE id="yfM1mx" name="PluginView.h" compile="0" resource="0" file="../roboverb/Source/PluginView.h"/>
-      <FILE id="jbKdev" name="RMS.cpp" compile="1" resource="0" file="../roboverb/Source/RMS.cpp"/>
-      <FILE id="nTDTx2" name="RMS.h" compile="0" resource="0" file="../roboverb/Source/RMS.h"/>
       <FILE id="SFyC4a" name="Roboverb.cpp" compile="1" resource="0" file="../roboverb/Source/Roboverb.cpp"/>
       <FILE id="JCrU2i" name="Roboverb.h" compile="0" resource="0" file="../roboverb/Source/Roboverb.h"/>
       <FILE id="oQXvcE" name="SphereScope.h" compile="0" resource="0" file="../roboverb/Source/SphereScope.h"/>

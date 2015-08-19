@@ -34,8 +34,6 @@
             file="Source/PluginProcessor.h"/>
       <FILE id="UzXF6Y" name="PluginView.cpp" compile="1" resource="0" file="Source/PluginView.cpp"/>
       <FILE id="IL9C3k" name="PluginView.h" compile="0" resource="0" file="Source/PluginView.h"/>
-      <FILE id="zTiiAK" name="RMS.cpp" compile="1" resource="0" file="Source/RMS.cpp"/>
-      <FILE id="Ct9OrZ" name="RMS.h" compile="0" resource="0" file="Source/RMS.h"/>
       <FILE id="ffi1au" name="Roboverb.cpp" compile="1" resource="0" file="Source/Roboverb.cpp"/>
       <FILE id="vpjx6G" name="Roboverb.h" compile="0" resource="0" file="Source/Roboverb.h"/>
       <FILE id="cTResK" name="SphereScope.h" compile="0" resource="0" file="Source/SphereScope.h"/>

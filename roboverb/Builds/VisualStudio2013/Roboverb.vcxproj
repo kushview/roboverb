@@ -378,18 +378,8 @@
     <ClCompile Include="..\..\Source\PluginEditor.cpp"/>
     <ClCompile Include="..\..\Source\PluginProcessor.cpp"/>
     <ClCompile Include="..\..\Source\PluginView.cpp"/>
-    <ClCompile Include="..\..\Source\RMS.cpp"/>
     <ClCompile Include="..\..\Source\Roboverb.cpp"/>
     <ClCompile Include="..\..\..\element\modules\element_base\core\Arc.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\element\modules\element_base\core\RingBuffer.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\element\modules\element_base\core\Semaphore.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\element\modules\element_base\core\WorkThread.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\..\element\modules\element_base\core\WorldBase.cpp">
@@ -410,10 +400,10 @@
     <ClCompile Include="..\..\..\element\modules\element_gui\base\DecibelScaleComponent.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\..\element\modules\element_gui\base\DigitalMeter.cpp">
+    <ClCompile Include="..\..\..\element\modules\element_gui\base\GraphEditorBase.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\..\element\modules\element_gui\base\GraphEditorBase.cpp">
+    <ClCompile Include="..\..\..\element\modules\element_gui\base\HighQualityMeter.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\..\element\modules\element_gui\base\Icons.cpp">
@@ -450,9 +440,6 @@
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\..\element\modules\element_models\models\BlockModel.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\element\modules\element_models\models\GraphModel.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\..\element\modules\element_models\models\Note.cpp">
@@ -1439,7 +1426,6 @@
     <ClInclude Include="..\..\Source\PluginEditor.h"/>
     <ClInclude Include="..\..\Source\PluginProcessor.h"/>
     <ClInclude Include="..\..\Source\PluginView.h"/>
-    <ClInclude Include="..\..\Source\RMS.h"/>
     <ClInclude Include="..\..\Source\Roboverb.h"/>
     <ClInclude Include="..\..\Source\SphereScope.h"/>
     <ClInclude Include="..\..\..\element\modules\element_base\core\Arc.h"/>
@@ -1449,16 +1435,11 @@
     <ClInclude Include="..\..\..\element\modules\element_base\core\LinkedList.h"/>
     <ClInclude Include="..\..\..\element\modules\element_base\core\Module.h"/>
     <ClInclude Include="..\..\..\element\modules\element_base\core\Monitor.h"/>
-    <ClInclude Include="..\..\..\element\modules\element_base\core\Parameter.h"/>
     <ClInclude Include="..\..\..\element\modules\element_base\core\Pointer.h"/>
-    <ClInclude Include="..\..\..\element\modules\element_base\core\PortType.h"/>
-    <ClInclude Include="..\..\..\element\modules\element_base\core\RingBuffer.h"/>
-    <ClInclude Include="..\..\..\element\modules\element_base\core\Semaphore.h"/>
     <ClInclude Include="..\..\..\element\modules\element_base\core\Signals.h"/>
     <ClInclude Include="..\..\..\element\modules\element_base\core\Slugs.h"/>
     <ClInclude Include="..\..\..\element\modules\element_base\core\Types.h"/>
     <ClInclude Include="..\..\..\element\modules\element_base\core\URIs.h"/>
-    <ClInclude Include="..\..\..\element\modules\element_base\core\WorkThread.h"/>
     <ClInclude Include="..\..\..\element\modules\element_base\core\WorldBase.h"/>
     <ClInclude Include="..\..\..\element\modules\element_base\osc\oscpack.h"/>
     <ClInclude Include="..\..\..\element\modules\element_base\time\DelayLockedLoop.h"/>
@@ -1476,8 +1457,8 @@
     <ClInclude Include="..\..\..\element\modules\element_base\element_base.h"/>
     <ClInclude Include="..\..\..\element\modules\element_gui\base\Colours.h"/>
     <ClInclude Include="..\..\..\element\modules\element_gui\base\DecibelScaleComponent.h"/>
-    <ClInclude Include="..\..\..\element\modules\element_gui\base\DigitalMeter.h"/>
     <ClInclude Include="..\..\..\element\modules\element_gui\base\GraphEditorBase.h"/>
+    <ClInclude Include="..\..\..\element\modules\element_gui\base\HighQualityMeter.h"/>
     <ClInclude Include="..\..\..\element\modules\element_gui\base\IconButton.h"/>
     <ClInclude Include="..\..\..\element\modules\element_gui\base\Icons.h"/>
     <ClInclude Include="..\..\..\element\modules\element_gui\base\LookAndFeel.h"/>

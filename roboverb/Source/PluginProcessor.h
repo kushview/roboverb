@@ -22,7 +22,6 @@
 #define PLUGINPROCESSOR_H_INCLUDED
 
 #include "Roboverb.h"
-#include "RMS.h"
 
 class RoboverbAudioProcessor  : public AudioProcessor,
                                 public ValueTree::Listener
@@ -78,7 +77,7 @@ private:
     ValueTree state;
     Roboverb::Parameters params;
     Roboverb verb;
-    RMS rms;
+
     Atomic<float> rmsValue;
 
     void updateState();
