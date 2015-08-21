@@ -416,7 +416,7 @@ public:
     void shutdown() override
     {
         mainWindow = nullptr; // (deletes our window)
-        LookAndFeel::setDefaultLookAndFeel (&style);
+        LookAndFeel::setDefaultLookAndFeel (nullptr);
     }
 
     void systemRequestedQuit() override
