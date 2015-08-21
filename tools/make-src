@@ -13,7 +13,7 @@ rsync -ar \
 
 cd ..
 rm -f "${here}/${pkg}.zip"
-zip -rvT "${here}/${pkg}.zip" "${pkg}"
+zip -rvT "${here}/${pkg}.zip" "${pkg}" -x "*.DS_Store*"
 rm -rf "${pkg}"
 
 cd "${here}"
