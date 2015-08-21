@@ -1,0 +1,19 @@
+#!/bin/bash
+here=`pwd`
+pkg="roboverb-src-1.0.4"
+rm -rf "../${pkg}"
+rsync -ar \
+  --exclude="*build" \
+  --exclude="tools" \
+  --exclude="installers" \
+  --exclude="/roboverb/Builds" \
+  --exclude="/standalone/Builds" \
+  --exclude="*git" --delete \
+  ./ ../${pkg}/
+
+cd ..
+rm -f "${here}/${pkg}.zip"
+zip -rvT "${here}/${pkg}.zip" "${pkg}"
+rm -rf "${pkg}"
+
+cd "${here}"
