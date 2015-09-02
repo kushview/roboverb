@@ -2531,6 +2531,13 @@
 				<key>PATH_TYPE</key>
 				<integer>1</integer>
 			</dict>
+			<key>CERTIFICATE</key>
+			<dict>
+				<key>NAME</key>
+				<string>Developer ID Installer: Kushview, LLC (K7JD899TJ4)</string>
+				<key>PATH</key>
+				<string>/Users/mfisher/Library/Keychains/login.keychain</string>
+			</dict>
 			<key>EXCLUDED_FILES</key>
 			<array>
 				<dict>
