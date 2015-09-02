@@ -71,7 +71,7 @@
       <Optimization>Disabled</Optimization>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <AdditionalIncludeDirectories>..\..\JuceLibraryCode;..\..\..\element\modules;..\..\..\libjuce\src\modules;C:\local\boost_1_58_0;..\..\..\dsplib;..\..\..\guilib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;DEBUG;_DEBUG;JUCER_VS2013_78A5020=1;JUCE_APP_VERSION=1.0.3;JUCE_APP_VERSION_HEX=0x10003;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;DEBUG;_DEBUG;JUCER_VS2013_78A5020=1;JUCE_APP_VERSION=1.0.4;JUCE_APP_VERSION_HEX=0x10004;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <PrecompiledHeader/>
@@ -112,7 +112,7 @@
     <ClCompile>
       <Optimization>Full</Optimization>
       <AdditionalIncludeDirectories>..\..\JuceLibraryCode;..\..\..\element\modules;..\..\..\libjuce\src\modules;C:\local\boost_1_58_0;..\..\..\dsplib;..\..\..\guilib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;JUCER_VS2013_78A5020=1;JUCE_APP_VERSION=1.0.3;JUCE_APP_VERSION_HEX=0x10003;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;JUCER_VS2013_78A5020=1;JUCE_APP_VERSION=1.0.4;JUCE_APP_VERSION_HEX=0x10004;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <PrecompiledHeader/>
@@ -154,7 +154,7 @@
     <ClCompile>
       <Optimization>Full</Optimization>
       <AdditionalIncludeDirectories>..\..\JuceLibraryCode;..\..\..\element\modules;..\..\..\libjuce\src\modules;C:\local\boost_1_58_0;..\..\..\dsplib;..\..\..\guilib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;KV_PLUGINS_DEMO=1;JUCER_VS2013_78A5020=1;JUCE_APP_VERSION=1.0.3;JUCE_APP_VERSION_HEX=0x10003;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;KV_PLUGINS_DEMO=1;JUCER_VS2013_78A5020=1;JUCE_APP_VERSION=1.0.4;JUCE_APP_VERSION_HEX=0x10004;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <PrecompiledHeader/>
@@ -197,6 +197,15 @@
     <ClCompile Include="..\..\..\element\modules\element_base\core\Arc.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\..\..\element\modules\element_base\core\RingBuffer.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\element\modules\element_base\core\Semaphore.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\element\modules\element_base\core\WorkThread.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\..\element\modules\element_base\core\WorldBase.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
@@ -215,10 +224,10 @@
     <ClCompile Include="..\..\..\element\modules\element_gui\base\DecibelScaleComponent.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\..\element\modules\element_gui\base\GraphEditorBase.cpp">
+    <ClCompile Include="..\..\..\element\modules\element_gui\base\DigitalMeter.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\..\element\modules\element_gui\base\HighQualityMeter.cpp">
+    <ClCompile Include="..\..\..\element\modules\element_gui\base\GraphEditorBase.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\..\element\modules\element_gui\base\Icons.cpp">
@@ -255,6 +264,9 @@
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\..\element\modules\element_models\models\BlockModel.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\element\modules\element_models\models\GraphModel.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\..\element\modules\element_models\models\Note.cpp">
@@ -1393,11 +1405,16 @@
     <ClInclude Include="..\..\..\element\modules\element_base\core\LinkedList.h"/>
     <ClInclude Include="..\..\..\element\modules\element_base\core\Module.h"/>
     <ClInclude Include="..\..\..\element\modules\element_base\core\Monitor.h"/>
+    <ClInclude Include="..\..\..\element\modules\element_base\core\Parameter.h"/>
     <ClInclude Include="..\..\..\element\modules\element_base\core\Pointer.h"/>
+    <ClInclude Include="..\..\..\element\modules\element_base\core\PortType.h"/>
+    <ClInclude Include="..\..\..\element\modules\element_base\core\RingBuffer.h"/>
+    <ClInclude Include="..\..\..\element\modules\element_base\core\Semaphore.h"/>
     <ClInclude Include="..\..\..\element\modules\element_base\core\Signals.h"/>
     <ClInclude Include="..\..\..\element\modules\element_base\core\Slugs.h"/>
     <ClInclude Include="..\..\..\element\modules\element_base\core\Types.h"/>
     <ClInclude Include="..\..\..\element\modules\element_base\core\URIs.h"/>
+    <ClInclude Include="..\..\..\element\modules\element_base\core\WorkThread.h"/>
     <ClInclude Include="..\..\..\element\modules\element_base\core\WorldBase.h"/>
     <ClInclude Include="..\..\..\element\modules\element_base\osc\oscpack.h"/>
     <ClInclude Include="..\..\..\element\modules\element_base\time\DelayLockedLoop.h"/>
@@ -1415,8 +1432,8 @@
     <ClInclude Include="..\..\..\element\modules\element_base\element_base.h"/>
     <ClInclude Include="..\..\..\element\modules\element_gui\base\Colours.h"/>
     <ClInclude Include="..\..\..\element\modules\element_gui\base\DecibelScaleComponent.h"/>
+    <ClInclude Include="..\..\..\element\modules\element_gui\base\DigitalMeter.h"/>
     <ClInclude Include="..\..\..\element\modules\element_gui\base\GraphEditorBase.h"/>
-    <ClInclude Include="..\..\..\element\modules\element_gui\base\HighQualityMeter.h"/>
     <ClInclude Include="..\..\..\element\modules\element_gui\base\IconButton.h"/>
     <ClInclude Include="..\..\..\element\modules\element_gui\base\Icons.h"/>
     <ClInclude Include="..\..\..\element\modules\element_gui\base\LookAndFeel.h"/>

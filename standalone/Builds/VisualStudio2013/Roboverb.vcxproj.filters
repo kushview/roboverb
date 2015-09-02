@@ -364,6 +364,15 @@
     <ClCompile Include="..\..\..\element\modules\element_base\core\Arc.cpp">
       <Filter>Juce Modules\element_base\core</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\element\modules\element_base\core\RingBuffer.cpp">
+      <Filter>Juce Modules\element_base\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\element\modules\element_base\core\Semaphore.cpp">
+      <Filter>Juce Modules\element_base\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\element\modules\element_base\core\WorkThread.cpp">
+      <Filter>Juce Modules\element_base\core</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\..\element\modules\element_base\core\WorldBase.cpp">
       <Filter>Juce Modules\element_base\core</Filter>
     </ClCompile>
@@ -382,10 +391,10 @@
     <ClCompile Include="..\..\..\element\modules\element_gui\base\DecibelScaleComponent.cpp">
       <Filter>Juce Modules\element_gui\base</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\element\modules\element_gui\base\GraphEditorBase.cpp">
+    <ClCompile Include="..\..\..\element\modules\element_gui\base\DigitalMeter.cpp">
       <Filter>Juce Modules\element_gui\base</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\element\modules\element_gui\base\HighQualityMeter.cpp">
+    <ClCompile Include="..\..\..\element\modules\element_gui\base\GraphEditorBase.cpp">
       <Filter>Juce Modules\element_gui\base</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\element\modules\element_gui\base\Icons.cpp">
@@ -422,6 +431,9 @@
       <Filter>Juce Modules\element_models\models</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\element\modules\element_models\models\BlockModel.cpp">
+      <Filter>Juce Modules\element_models\models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\element\modules\element_models\models\GraphModel.cpp">
       <Filter>Juce Modules\element_models\models</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\element\modules\element_models\models\Note.cpp">
@@ -1710,7 +1722,19 @@
     <ClInclude Include="..\..\..\element\modules\element_base\core\Monitor.h">
       <Filter>Juce Modules\element_base\core</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\element\modules\element_base\core\Parameter.h">
+      <Filter>Juce Modules\element_base\core</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\..\element\modules\element_base\core\Pointer.h">
+      <Filter>Juce Modules\element_base\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\element\modules\element_base\core\PortType.h">
+      <Filter>Juce Modules\element_base\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\element\modules\element_base\core\RingBuffer.h">
+      <Filter>Juce Modules\element_base\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\element\modules\element_base\core\Semaphore.h">
       <Filter>Juce Modules\element_base\core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\element\modules\element_base\core\Signals.h">
@@ -1723,6 +1747,9 @@
       <Filter>Juce Modules\element_base\core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\element\modules\element_base\core\URIs.h">
+      <Filter>Juce Modules\element_base\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\element\modules\element_base\core\WorkThread.h">
       <Filter>Juce Modules\element_base\core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\element\modules\element_base\core\WorldBase.h">
@@ -1776,10 +1803,10 @@
     <ClInclude Include="..\..\..\element\modules\element_gui\base\DecibelScaleComponent.h">
       <Filter>Juce Modules\element_gui\base</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\element\modules\element_gui\base\GraphEditorBase.h">
+    <ClInclude Include="..\..\..\element\modules\element_gui\base\DigitalMeter.h">
       <Filter>Juce Modules\element_gui\base</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\element\modules\element_gui\base\HighQualityMeter.h">
+    <ClInclude Include="..\..\..\element\modules\element_gui\base\GraphEditorBase.h">
       <Filter>Juce Modules\element_gui\base</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\element\modules\element_gui\base\IconButton.h">

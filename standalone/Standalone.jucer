@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="QReiMr" name="Roboverb" projectType="guiapp" version="1.0.3"
+<JUCERPROJECT id="QReiMr" name="Roboverb" projectType="guiapp" version="1.0.4"
               bundleIdentifier="net.kushview.Roboverb" includeBinaryInAppConfig="1"
               jucerVersion="3.1.1" companyName="Kushview" companyWebsite="https://kushview.net"
               companyEmail="info@kushview.net">
