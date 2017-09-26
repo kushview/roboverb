@@ -8,9 +8,12 @@
               pluginIsSynth="0" pluginWantsMidiIn="0" pluginProducesMidiOut="0"
               pluginSilenceInIsSilenceOut="0" pluginEditorRequiresKeys="0"
               pluginAUExportPrefix="RoboverbAU" pluginRTASCategory="" aaxIdentifier="net.kushview.roboverb"
-              pluginAAXCategory="AAX_ePlugInCategory_Dynamics" jucerVersion="3.1.1"
+              pluginAAXCategory="AAX_ePlugInCategory_Dynamics" jucerVersion="5.1.1"
               companyEmail="info@kushview.net" companyWebsite="https://kushview.net"
-              companyName="Kushview" pluginAUSDKLocation="~/SDKs/CoreAudio">
+              companyName="Kushview" pluginAUSDKLocation="~/SDKs/CoreAudio"
+              displaySplashScreen="0" reportAppUsage="0" splashScreenColour="Dark"
+              buildAUv3="0" buildStandalone="0" enableIAA="0" pluginIsMidiEffectPlugin="0"
+              cppLanguageStandard="11">
   <MAINGROUP id="OiCgUH" name="Roboverb">
     <GROUP id="{43AE9044-B2D6-CAC2-621A-23229C390100}" name="Content">
       <FILE id="i06fDR" name="roboverb_bg.jpg" compile="0" resource="1" file="../data/content/roboverb_bg.jpg"/>
@@ -56,19 +59,19 @@
                        cppLibType="libc++" defines="KV_PLUGINS_DEMO=1"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="juce_core" path="../libjuce/src/modules"/>
-        <MODULEPATH id="juce_events" path="../libjuce/src/modules"/>
-        <MODULEPATH id="juce_graphics" path="../libjuce/src/modules"/>
-        <MODULEPATH id="juce_data_structures" path="../libjuce/src/modules"/>
-        <MODULEPATH id="juce_gui_basics" path="../libjuce/src/modules"/>
-        <MODULEPATH id="juce_gui_extra" path="../libjuce/src/modules"/>
-        <MODULEPATH id="juce_audio_basics" path="../libjuce/src/modules"/>
-        <MODULEPATH id="juce_audio_processors" path="../libjuce/src/modules"/>
-        <MODULEPATH id="juce_audio_plugin_client" path="../libjuce/src/modules"/>
-        <MODULEPATH id="element_gui" path="../element/modules"/>
-        <MODULEPATH id="element_base" path="../element/modules"/>
-        <MODULEPATH id="juce_cryptography" path="../libjuce/src/modules"/>
-        <MODULEPATH id="element_models" path="../element/modules"/>
+        <MODULEPATH id="juce_core" path="/opt/kushview/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="/opt/kushview/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="/opt/kushview/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="/opt/kushview/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="/opt/kushview/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="/opt/kushview/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="/opt/kushview/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="/opt/kushview/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="/opt/kushview/JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="/opt/kushview/JUCE/modules"/>
+        <MODULEPATH id="kv_core" path="../../kv-modules/modules"/>
+        <MODULEPATH id="kv_models" path="../../kv-modules/modules"/>
+        <MODULEPATH id="kv_gui" path="../../kv-modules/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
     <VS2013 targetFolder="Builds/VisualStudio2013" vstFolder="c:\SDKs\vstsdk2.4"
@@ -98,26 +101,23 @@
                        useRuntimeLibDLL="0" defines="KV_PLUGINS_DEMO=1"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="juce_core" path="../libjuce/src/modules"/>
-        <MODULEPATH id="juce_events" path="../libjuce/src/modules"/>
-        <MODULEPATH id="juce_graphics" path="../libjuce/src/modules"/>
-        <MODULEPATH id="juce_data_structures" path="../libjuce/src/modules"/>
-        <MODULEPATH id="juce_gui_basics" path="../libjuce/src/modules"/>
-        <MODULEPATH id="juce_gui_extra" path="../libjuce/src/modules"/>
-        <MODULEPATH id="juce_audio_basics" path="../libjuce/src/modules"/>
-        <MODULEPATH id="juce_audio_processors" path="../libjuce/src/modules"/>
-        <MODULEPATH id="juce_audio_plugin_client" path="../libjuce/src/modules"/>
-        <MODULEPATH id="element_gui" path="../element/modules"/>
-        <MODULEPATH id="element_base" path="../element/modules"/>
-        <MODULEPATH id="juce_cryptography" path="../libjuce/src/modules"/>
-        <MODULEPATH id="element_models" path="../element/modules"/>
+        <MODULEPATH id="juce_core" path="C:\SDKs\JUCE\modules"/>
+        <MODULEPATH id="juce_events" path="C:\SDKs\JUCE\modules"/>
+        <MODULEPATH id="juce_graphics" path="C:\SDKs\JUCE\modules"/>
+        <MODULEPATH id="juce_data_structures" path="C:\SDKs\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_basics" path="C:\SDKs\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_extra" path="C:\SDKs\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_basics" path="C:\SDKs\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_processors" path="C:\SDKs\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="C:\SDKs\JUCE\modules"/>
+        <MODULEPATH id="juce_cryptography" path="C:\SDKs\JUCE\modules"/>
+        <MODULEPATH id="kv_core" path="../../kv-modules/modules"/>
+        <MODULEPATH id="kv_models" path="../../kv-modules/modules"/>
+        <MODULEPATH id="kv_gui" path="../../kv-modules/modules"/>
       </MODULEPATHS>
     </VS2013>
   </EXPORTFORMATS>
   <MODULES>
-    <MODULES id="element_base" showAllCode="1" useLocalCopy="0"/>
-    <MODULES id="element_gui" showAllCode="1" useLocalCopy="0"/>
-    <MODULES id="element_models" showAllCode="1" useLocalCopy="0"/>
     <MODULES id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
     <MODULES id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"/>
     <MODULES id="juce_audio_processors" showAllCode="1" useLocalCopy="0"/>
@@ -127,7 +127,10 @@
     <MODULES id="juce_events" showAllCode="1" useLocalCopy="0"/>
     <MODULES id="juce_graphics" showAllCode="1" useLocalCopy="0"/>
     <MODULES id="juce_gui_basics" showAllCode="1" useLocalCopy="0"/>
-    <MODULES id="juce_gui_extra" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="kv_core" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="kv_gui" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="kv_models" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
   </MODULES>
   <JUCEOPTIONS JUCE_QUICKTIME="disabled" JUCE_ASIO="disabled" JUCE_WASAPI="disabled"
                JUCE_WASAPI_EXCLUSIVE="disabled" JUCE_DIRECTSOUND="enabled" JUCE_ALSA="disabled"
@@ -137,5 +140,6 @@
                JUCE_USE_WINDOWS_MEDIA_FORMAT="disabled" JUCE_PLUGINHOST_VST="disabled"
                JUCE_PLUGINHOST_VST3="disabled" JUCE_PLUGINHOST_AU="disabled"
                JUCE_WEB_BROWSER="disabled" JUCE_ENABLE_LIVE_CONSTANT_EDITOR="disabled"
-               JUCE_DIRECTSHOW="disabled" JUCE_MEDIAFOUNDATION="disabled" JUCE_USE_CAMERA="disabled"/>
+               JUCE_DIRECTSHOW="disabled" JUCE_MEDIAFOUNDATION="disabled" JUCE_USE_CAMERA="disabled"
+               KV_DOCKING_WINDOWS="disabled"/>
 </JUCERPROJECT>

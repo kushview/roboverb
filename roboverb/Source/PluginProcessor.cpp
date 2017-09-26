@@ -1,21 +1,7 @@
 /*
   PluginProcessor.h - This file is part of Roboverb
-
   Roboverb: robotic voice and ambience audio effect
   Copyright (C) 2015  Kushview, LLC.  All rights reserved.
-
-  This program is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
-
-  This program is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include "PluginProcessor.h"
@@ -219,7 +205,7 @@ void RoboverbAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuffer
     // I've added this to avoid people getting screaming feedback
     // when they first compile the plugin, but obviously you don't need to
     // this code if your algorithm already fills all the output channels.
-    for (int i = getNumInputChannels(); i < getNumOutputChannels(); ++i)
+    for (int i = getTotalNumInputChannels(); i < getTotalNumOutputChannels(); ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
 
     if (buffer.getNumChannels() >= 2)
@@ -232,9 +218,9 @@ void RoboverbAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuffer
     }
     else if (buffer.getNumChannels() == 1)
     {
-        verb.processMono (buffer.getWritePointer(0),
+        verb.processMono (buffer.getWritePointer (0),
                           buffer.getNumSamples());
-        rmsValue.set (buffer.getRMSLevel(0, 0, buffer.getNumSamples()));
+        rmsValue.set (buffer.getRMSLevel (0, 0, buffer.getNumSamples()));
     }
 }
 

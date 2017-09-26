@@ -83,16 +83,16 @@ private:
     void updateState();
 
     virtual void valueTreePropertyChanged (ValueTree& treeWhosePropertyHasChanged,
-                                           const Identifier& property);
+                                           const Identifier& property) override;
     virtual void valueTreeChildAdded (ValueTree& parentTree,
-                                      ValueTree& childWhichHasBeenAdded) {}
+                                      ValueTree& childWhichHasBeenAdded) override {}
     virtual void valueTreeChildRemoved (ValueTree& parentTree,
                                         ValueTree& childWhichHasBeenRemoved,
-                                        int indexFromWhichChildWasRemoved) {}
+                                        int indexFromWhichChildWasRemoved) override {}
     virtual void valueTreeChildOrderChanged (ValueTree& parentTreeWhoseChildrenHaveMoved,
-                                             int oldIndex, int newIndex) {}
-    virtual void valueTreeParentChanged (ValueTree& treeWhoseParentHasChanged) {}
-    virtual void valueTreeRedirected (ValueTree& treeWhichHasBeenChanged){ }
+                                             int oldIndex, int newIndex) override {}
+    virtual void valueTreeParentChanged (ValueTree& treeWhoseParentHasChanged) override {}
+    virtual void valueTreeRedirected (ValueTree& treeWhichHasBeenChanged) override { }
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (RoboverbAudioProcessor)
 };
 

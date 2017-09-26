@@ -4,15 +4,14 @@
     project - if you alter its contents, your changes may be overwritten!
 
     There's a section below where you can add your own custom code safely, and the
-    Introjucer will preserve the contents of that block, but the best way to change
-    any of these definitions is by using the Introjucer's project settings.
+    Projucer will preserve the contents of that block, but the best way to change
+    any of these definitions is by using the Projucer's project settings.
 
     Any commented-out settings will assume their default values.
 
 */
 
-#ifndef __JUCE_APPCONFIG_LOWIDG__
-#define __JUCE_APPCONFIG_LOWIDG__
+#pragma once
 
 //==============================================================================
 // [BEGIN_USER_CODE_SECTION]
@@ -21,14 +20,38 @@
  #define KV_PLUGINS_DEMO 0
 #endif
 
-#define JucePlugin_Build_Standalone 1
+// #define JucePlugin_Build_Standalone 1
 
 // [END_USER_CODE_SECTION]
 
+/*
+  ==============================================================================
+
+   In accordance with the terms of the JUCE 5 End-Use License Agreement, the
+   JUCE Code in SECTION A cannot be removed, changed or otherwise rendered
+   ineffective unless you have a JUCE Indie or Pro license, or are using JUCE
+   under the GPL v3 license.
+
+   End User License Agreement: www.juce.com/juce-5-licence
+  ==============================================================================
+*/
+
+// BEGIN SECTION A
+
+#ifndef JUCE_DISPLAY_SPLASH_SCREEN
+ #define JUCE_DISPLAY_SPLASH_SCREEN 0
+#endif
+
+#ifndef JUCE_REPORT_APP_USAGE
+ #define JUCE_REPORT_APP_USAGE 0
+#endif
+
+
+// END SECTION A
+
+#define JUCE_USE_DARK_SPLASH_SCREEN 1
+
 //==============================================================================
-#define JUCE_MODULE_AVAILABLE_element_base                  1
-#define JUCE_MODULE_AVAILABLE_element_gui                   1
-#define JUCE_MODULE_AVAILABLE_element_models                1
 #define JUCE_MODULE_AVAILABLE_juce_audio_basics             1
 #define JUCE_MODULE_AVAILABLE_juce_audio_plugin_client      1
 #define JUCE_MODULE_AVAILABLE_juce_audio_processors         1
@@ -39,17 +62,21 @@
 #define JUCE_MODULE_AVAILABLE_juce_graphics                 1
 #define JUCE_MODULE_AVAILABLE_juce_gui_basics               1
 #define JUCE_MODULE_AVAILABLE_juce_gui_extra                1
+#define JUCE_MODULE_AVAILABLE_kv_core                       1
+#define JUCE_MODULE_AVAILABLE_kv_gui                        1
+#define JUCE_MODULE_AVAILABLE_kv_models                     1
+
+#define JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED 1
 
 //==============================================================================
-#ifndef    JUCE_STANDALONE_APPLICATION
- #define   JUCE_STANDALONE_APPLICATION 0
+// juce_audio_plugin_client flags:
+
+#ifndef    JUCE_FORCE_USE_LEGACY_PARAM_IDS
+ //#define JUCE_FORCE_USE_LEGACY_PARAM_IDS 1
 #endif
 
-//==============================================================================
-// element_base flags:
-
-#ifndef    ELEMENT_OSC
- //#define ELEMENT_OSC
+#ifndef    JUCE_USE_STUDIO_ONE_COMPATIBLE_PARAMETERS
+ //#define JUCE_USE_STUDIO_ONE_COMPATIBLE_PARAMETERS 1
 #endif
 
 //==============================================================================
@@ -71,57 +98,72 @@
 // juce_core flags:
 
 #ifndef    JUCE_FORCE_DEBUG
- //#define JUCE_FORCE_DEBUG
+ //#define JUCE_FORCE_DEBUG 1
 #endif
 
 #ifndef    JUCE_LOG_ASSERTIONS
- //#define JUCE_LOG_ASSERTIONS
+ //#define JUCE_LOG_ASSERTIONS 1
 #endif
 
 #ifndef    JUCE_CHECK_MEMORY_LEAKS
- //#define JUCE_CHECK_MEMORY_LEAKS
+ //#define JUCE_CHECK_MEMORY_LEAKS 1
 #endif
 
 #ifndef    JUCE_DONT_AUTOLINK_TO_WIN32_LIBRARIES
- //#define JUCE_DONT_AUTOLINK_TO_WIN32_LIBRARIES
+ //#define JUCE_DONT_AUTOLINK_TO_WIN32_LIBRARIES 1
 #endif
 
 #ifndef    JUCE_INCLUDE_ZLIB_CODE
- //#define JUCE_INCLUDE_ZLIB_CODE
+ //#define JUCE_INCLUDE_ZLIB_CODE 1
 #endif
 
 #ifndef    JUCE_USE_CURL
- //#define JUCE_USE_CURL
+ //#define JUCE_USE_CURL 1
+#endif
+
+#ifndef    JUCE_CATCH_UNHANDLED_EXCEPTIONS
+ //#define JUCE_CATCH_UNHANDLED_EXCEPTIONS 1
+#endif
+
+#ifndef    JUCE_ALLOW_STATIC_NULL_VARIABLES
+ //#define JUCE_ALLOW_STATIC_NULL_VARIABLES 1
+#endif
+
+//==============================================================================
+// juce_events flags:
+
+#ifndef    JUCE_EXECUTE_APP_SUSPEND_ON_IOS_BACKGROUND_TASK
+ //#define JUCE_EXECUTE_APP_SUSPEND_ON_IOS_BACKGROUND_TASK 1
 #endif
 
 //==============================================================================
 // juce_graphics flags:
 
 #ifndef    JUCE_USE_COREIMAGE_LOADER
- //#define JUCE_USE_COREIMAGE_LOADER
+ //#define JUCE_USE_COREIMAGE_LOADER 1
 #endif
 
 #ifndef    JUCE_USE_DIRECTWRITE
- //#define JUCE_USE_DIRECTWRITE
+ //#define JUCE_USE_DIRECTWRITE 1
 #endif
 
 //==============================================================================
 // juce_gui_basics flags:
 
 #ifndef    JUCE_ENABLE_REPAINT_DEBUGGING
- //#define JUCE_ENABLE_REPAINT_DEBUGGING
+ //#define JUCE_ENABLE_REPAINT_DEBUGGING 1
 #endif
 
 #ifndef    JUCE_USE_XSHM
- //#define JUCE_USE_XSHM
+ //#define JUCE_USE_XSHM 1
 #endif
 
 #ifndef    JUCE_USE_XRENDER
- //#define JUCE_USE_XRENDER
+ //#define JUCE_USE_XRENDER 1
 #endif
 
 #ifndef    JUCE_USE_XCURSOR
- //#define JUCE_USE_XCURSOR
+ //#define JUCE_USE_XCURSOR 1
 #endif
 
 //==============================================================================
@@ -135,6 +177,20 @@
  #define   JUCE_ENABLE_LIVE_CONSTANT_EDITOR 0
 #endif
 
+//==============================================================================
+// kv_gui flags:
+
+#ifndef    KV_DOCKING_WINDOWS
+ #define   KV_DOCKING_WINDOWS 0
+#endif
+//==============================================================================
+#ifndef    JUCE_STANDALONE_APPLICATION
+ #if defined(JucePlugin_Name) && defined(JucePlugin_Build_Standalone)
+  #define  JUCE_STANDALONE_APPLICATION JucePlugin_Build_Standalone
+ #else
+  #define  JUCE_STANDALONE_APPLICATION 0
+ #endif
+#endif
 
 //==============================================================================
 // Audio plugin settings..
@@ -148,11 +204,20 @@
 #ifndef  JucePlugin_Build_AU
  #define JucePlugin_Build_AU               1
 #endif
+#ifndef  JucePlugin_Build_AUv3
+ #define JucePlugin_Build_AUv3             0
+#endif
 #ifndef  JucePlugin_Build_RTAS
  #define JucePlugin_Build_RTAS             0
 #endif
 #ifndef  JucePlugin_Build_AAX
  #define JucePlugin_Build_AAX              0
+#endif
+#ifndef  JucePlugin_Build_Standalone
+ #define JucePlugin_Build_Standalone       0
+#endif
+#ifndef  JucePlugin_Enable_IAA
+ #define JucePlugin_Enable_IAA             0
 #endif
 #ifndef  JucePlugin_Name
  #define JucePlugin_Name                   "Roboverb"
@@ -170,19 +235,10 @@
  #define JucePlugin_ManufacturerEmail      "info@kushview.net"
 #endif
 #ifndef  JucePlugin_ManufacturerCode
- #define JucePlugin_ManufacturerCode       'KshV'
+ #define JucePlugin_ManufacturerCode       0x4b736856 // 'KshV'
 #endif
 #ifndef  JucePlugin_PluginCode
- #define JucePlugin_PluginCode             'RobV'
-#endif
-#ifndef  JucePlugin_MaxNumInputChannels
- #define JucePlugin_MaxNumInputChannels    2
-#endif
-#ifndef  JucePlugin_MaxNumOutputChannels
- #define JucePlugin_MaxNumOutputChannels   2
-#endif
-#ifndef  JucePlugin_PreferredChannelConfigurations
- #define JucePlugin_PreferredChannelConfigurations  {1, 1}, {2, 2}
+ #define JucePlugin_PluginCode             0x526f6256 // 'RobV'
 #endif
 #ifndef  JucePlugin_IsSynth
  #define JucePlugin_IsSynth                0
@@ -193,8 +249,8 @@
 #ifndef  JucePlugin_ProducesMidiOutput
  #define JucePlugin_ProducesMidiOutput     0
 #endif
-#ifndef  JucePlugin_SilenceInProducesSilenceOut
- #define JucePlugin_SilenceInProducesSilenceOut  0
+#ifndef  JucePlugin_IsMidiEffect
+ #define JucePlugin_IsMidiEffect           0
 #endif
 #ifndef  JucePlugin_EditorRequiresKeyboardFocus
  #define JucePlugin_EditorRequiresKeyboardFocus  0
@@ -265,5 +321,21 @@
 #ifndef  JucePlugin_AAXDisableMultiMono
  #define JucePlugin_AAXDisableMultiMono    0
 #endif
-
-#endif  // __JUCE_APPCONFIG_LOWIDG__
+#ifndef  JucePlugin_IAAType
+ #define JucePlugin_IAAType                0x61757278 // 'aurx'
+#endif
+#ifndef  JucePlugin_IAASubType
+ #define JucePlugin_IAASubType             JucePlugin_PluginCode
+#endif
+#ifndef  JucePlugin_IAAName
+ #define JucePlugin_IAAName                "Kushview: Roboverb"
+#endif
+#ifndef  JucePlugin_MaxNumInputChannels
+ #define JucePlugin_MaxNumInputChannels    2
+#endif
+#ifndef  JucePlugin_MaxNumOutputChannels
+ #define JucePlugin_MaxNumOutputChannels   2
+#endif
+#ifndef  JucePlugin_PreferredChannelConfigurations
+ #define JucePlugin_PreferredChannelConfigurations  {1, 1}, {2, 2}
+#endif
