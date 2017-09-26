@@ -210,8 +210,7 @@ void RoboverbAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuffer
 
     if (buffer.getNumChannels() >= 2)
     {
-        verb.processStereo (buffer.getWritePointer(0),
-                            buffer.getWritePointer(1),
+        verb.processStereo (buffer.getWritePointer(0), buffer.getWritePointer(1),
                             buffer.getNumSamples());
         rmsValue.set ((buffer.getRMSLevel(0, 0, buffer.getNumSamples()) +
                        buffer.getRMSLevel(1, 0, buffer.getNumSamples())) * 0.5f);
