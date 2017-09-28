@@ -9,6 +9,7 @@
 		48234B7EA6DD18262CA06FF1 = {isa = PBXBuildFile; fileRef = 4652A75D281821E516D08FDB; };
 		94A79DAB3FD6150348C1C256 = {isa = PBXBuildFile; fileRef = CBE0A1EFEE69C5947C584178; };
 		72A991B31EA5650A8A622602 = {isa = PBXBuildFile; fileRef = BB8DEA65B3D95F83E4DBF7B2; };
+		DCE5F74636A5B7A4E9B04983 = {isa = PBXBuildFile; fileRef = 1294CD3C469727950948B070; };
 		8A5D189B63C3484067530D35 = {isa = PBXBuildFile; fileRef = 33B5D4783E989A063ED0D45E; };
 		6B7991B14922BC7E635F7F4D = {isa = PBXBuildFile; fileRef = 5890881118D55759E102DAB3; };
 		10D0B71411A7AFAEDD853CAF = {isa = PBXBuildFile; fileRef = E81269E1A4242C6643169DEB; };
@@ -18,6 +19,7 @@
 		258C2E5420FAFBA346B18A01 = {isa = PBXBuildFile; fileRef = 8CB71FEEF9A0B01A63A7C868; };
 		4ABC6C3627838344DF6FF93A = {isa = PBXBuildFile; fileRef = 255A48688469DD5758209721; };
 		C1C78E1DE9284635C8AA952B = {isa = PBXBuildFile; fileRef = BE90CA7556A46D42FF0EB551; };
+		29124A6D63FF3D7A0E985CB1 = {isa = PBXBuildFile; fileRef = F083809A286E7D0E29129CD6; };
 		30A0E85BB3737BC13D9A07F8 = {isa = PBXBuildFile; fileRef = 2F99C16C0EE73DD34383DEF3; };
 		C010E8F2F485C0C80E808223 = {isa = PBXBuildFile; fileRef = 9A2042EF6BE328F1D1AB3A4A; };
 		93806ED0D01278DE2E55A4FC = {isa = PBXBuildFile; fileRef = B6457F9A2FE293543A12304E; };
@@ -30,14 +32,18 @@
 		1E17CF3F2E371D2ED7D1B56A = {isa = PBXBuildFile; fileRef = 8A0B81314F23B5CCE5CCFBC2; };
 		FB779A782F83FB76F2F764F5 = {isa = PBXBuildFile; fileRef = 64039B2F1B86A0B58D70AD36; };
 		273B3F49A7E425D4A9D049BE = {isa = PBXBuildFile; fileRef = A47E1B19A57D7200C400C4C4; };
+		7865F56F5D8A940B271E5FE5 = {isa = PBXBuildFile; fileRef = AC3C39F2D5178A64F72B2210; };
+		F0754EC566CAD97FA597E6E0 = {isa = PBXBuildFile; fileRef = 7121BB7A515E9797CBF8B547; };
 		E2C24F73561947FE07780D29 = {isa = PBXBuildFile; fileRef = 0CFF6D2F5E6DDA8B4CDD05AE; };
 		1753C2DE1C35A2C1491C638C = {isa = PBXBuildFile; fileRef = E07E955585BF575FB2D12648; };
 		E8CF0A194D80DF23B4D8FE86 = {isa = PBXBuildFile; fileRef = 09533AF1201D5CEE3F6417C0; };
+		EFDE57AD47E3A1F3C779CC37 = {isa = PBXBuildFile; fileRef = 8967A15C3AA193F5CEDBFA6F; };
 		F67E8A8A44BAC258BAE48F5B = {isa = PBXBuildFile; fileRef = 79C23A6CAEC34EACA9E0D4D6; };
 		2DA81E182BB65D0E56471EC7 = {isa = PBXBuildFile; fileRef = 6721A2A629804248D895C215; };
 		838291C87C97993C82B0C20E = {isa = PBXBuildFile; fileRef = BCA8D55B1CF3AD5EEF0BFE26; };
 		B2D47DCB33E554EE006BDACC = {isa = PBXBuildFile; fileRef = 561A9A5772997936044848C8; };
 		8FFC1C8BEBB66661B6DD70E4 = {isa = PBXBuildFile; fileRef = 3B28C9B9F717A2670BC7F2DF; };
+		D316D1313BAC6D3C58C3DED1 = {isa = PBXBuildFile; fileRef = 279239ADD682D7E9A4E510C4; };
 		D5D5929ECE95D315244588A1 = {isa = PBXBuildFile; fileRef = 4B28D15DC173D9CC7C433410; };
 		9ADEB36491F183062C8B1655 = {isa = PBXBuildFile; fileRef = FFE2F4AEA5E42278392BBAD0; };
 		121D2EE321DE5D8F7B8BA863 = {isa = PBXBuildFile; fileRef = 267023BEE48F4AF4F4E0603B; };
@@ -57,11 +63,14 @@
 		243C20DD3E2CC11A777C5D11 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AboutBox.h; path = ../../Source/AboutBox.h; sourceTree = "SOURCE_ROOT"; };
 		255A48688469DD5758209721 = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
 		267023BEE48F4AF4F4E0603B = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_data_structures.mm"; path = "../../JuceLibraryCode/include_juce_data_structures.mm"; sourceTree = "SOURCE_ROOT"; };
+		279239ADD682D7E9A4E510C4 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_audio_utils.mm"; path = "../../JuceLibraryCode/include_juce_audio_utils.mm"; sourceTree = "SOURCE_ROOT"; };
 		2A66FEC7379B8686BF172F8C = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JuceHeader.h; path = ../../JuceLibraryCode/JuceHeader.h; sourceTree = "SOURCE_ROOT"; };
 		2DCD7C8CF0B1CA5C93EA34DE = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		2F99C16C0EE73DD34383DEF3 = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		30DC048A12AFEF1632D867B0 = {isa = PBXFileReference; lastKnownFileType = file; name = "juce_audio_devices"; path = "/opt/kushview/JUCE/modules/juce_audio_devices"; sourceTree = "<absolute>"; };
 		3B28C9B9F717A2670BC7F2DF = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_audio_processors.mm"; path = "../../JuceLibraryCode/include_juce_audio_processors.mm"; sourceTree = "SOURCE_ROOT"; };
 		3DA1E1FFC1614195B2E1B178 = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		40203C5EE11D262BE9CE4713 = {isa = PBXFileReference; lastKnownFileType = file; name = "juce_audio_utils"; path = "/opt/kushview/JUCE/modules/juce_audio_utils"; sourceTree = "<absolute>"; };
 		41F91E7E4058B6AD55D270A5 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginEditor.h; path = ../../Source/PluginEditor.h; sourceTree = "SOURCE_ROOT"; };
 		4652A75D281821E516D08FDB = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Roboverb.vst; sourceTree = "BUILT_PRODUCTS_DIR"; };
 		467CAC1A680B4FFFCE4BDD70 = {isa = PBXFileReference; lastKnownFileType = file; name = "kv_core"; path = "../../../../kv-modules/modules/kv_core"; sourceTree = "SOURCE_ROOT"; };
@@ -80,10 +89,12 @@
 		6721A2A629804248D895C215 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_audio_plugin_client_VST_utils.mm"; path = "../../JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm"; sourceTree = "SOURCE_ROOT"; };
 		6B473C0D71C245F3896E73AE = {isa = PBXFileReference; lastKnownFileType = file; name = "juce_data_structures"; path = "/opt/kushview/JUCE/modules/juce_data_structures"; sourceTree = "<absolute>"; };
 		6EF9B4135EB132FC44275491 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_kv_core.mm"; path = "../../JuceLibraryCode/include_kv_core.mm"; sourceTree = "SOURCE_ROOT"; };
+		7121BB7A515E9797CBF8B547 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_audio_formats.mm"; path = "../../JuceLibraryCode/include_juce_audio_formats.mm"; sourceTree = "SOURCE_ROOT"; };
 		77AA3512AE1830991E25C44A = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginProcessor.h; path = ../../Source/PluginProcessor.h; sourceTree = "SOURCE_ROOT"; };
 		79C23A6CAEC34EACA9E0D4D6 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "include_juce_audio_plugin_client_utils.cpp"; path = "../../JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp"; sourceTree = "SOURCE_ROOT"; };
 		7D3C08F71FBCFA1989E56B3D = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_kv_gui.mm"; path = "../../JuceLibraryCode/include_kv_gui.mm"; sourceTree = "SOURCE_ROOT"; };
 		83165880ED708AA7D19DC717 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CombFilter.h; path = ../../Source/CombFilter.h; sourceTree = "SOURCE_ROOT"; };
+		8967A15C3AA193F5CEDBFA6F = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "include_juce_audio_plugin_client_Standalone.cpp"; path = "../../JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp"; sourceTree = "SOURCE_ROOT"; };
 		8A0B81314F23B5CCE5CCFBC2 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Roboverb.cpp; path = ../../Source/Roboverb.cpp; sourceTree = "SOURCE_ROOT"; };
 		8A45C1D92C4C6D2493760724 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Roboverb.h; path = ../../Source/Roboverb.h; sourceTree = "SOURCE_ROOT"; };
 		8B1CC1CDEE6CBD2218EA36D4 = {isa = PBXFileReference; lastKnownFileType = file; name = "juce_audio_basics"; path = "/opt/kushview/JUCE/modules/juce_audio_basics"; sourceTree = "<absolute>"; };
@@ -95,30 +106,35 @@
 		9CD302C167B827686A405915 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginView.h; path = ../../Source/PluginView.h; sourceTree = "SOURCE_ROOT"; };
 		9F87AB9567C861F7B4E869BE = {isa = PBXFileReference; lastKnownFileType = file; name = "juce_cryptography"; path = "/opt/kushview/JUCE/modules/juce_cryptography"; sourceTree = "<absolute>"; };
 		A0F6B6E8419DD2DD1E9AAC0D = {isa = PBXFileReference; lastKnownFileType = file; name = "juce_gui_basics"; path = "/opt/kushview/JUCE/modules/juce_gui_basics"; sourceTree = "<absolute>"; };
-		A150A2F43B3D592CD916AF06 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_events.mm"; path = "../../JuceLibraryCode/include_juce_events.mm"; sourceTree = "SOURCE_ROOT"; };
 		A444AB42FDE356E8B0CFAEFC = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginProcessor.cpp; path = ../../Source/PluginProcessor.cpp; sourceTree = "SOURCE_ROOT"; };
 		A47E1B19A57D7200C400C4C4 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_audio_basics.mm"; path = "../../JuceLibraryCode/include_juce_audio_basics.mm"; sourceTree = "SOURCE_ROOT"; };
 		A812E73D7B8592CF68E8CE53 = {isa = PBXFileReference; lastKnownFileType = file.nib; name = RecentFilesMenuTemplate.nib; path = RecentFilesMenuTemplate.nib; sourceTree = "SOURCE_ROOT"; };
+		AC3C39F2D5178A64F72B2210 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_audio_devices.mm"; path = "../../JuceLibraryCode/include_juce_audio_devices.mm"; sourceTree = "SOURCE_ROOT"; };
+		B1AEA1D872399DD0BA50DE51 = {isa = PBXFileReference; lastKnownFileType = file; name = "juce_audio_formats"; path = "/opt/kushview/JUCE/modules/juce_audio_formats"; sourceTree = "<absolute>"; };
+		CBE0A1EFEE69C5947C584178 = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Roboverb.vst3; sourceTree = "BUILT_PRODUCTS_DIR"; };
+		BB8DEA65B3D95F83E4DBF7B2 = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Roboverb.component; sourceTree = "BUILT_PRODUCTS_DIR"; };
+		1294CD3C469727950948B070 = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roboverb.app; sourceTree = "BUILT_PRODUCTS_DIR"; };
+		33B5D4783E989A063ED0D45E = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRoboverb.a; sourceTree = "BUILT_PRODUCTS_DIR"; };
+		A150A2F43B3D592CD916AF06 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_events.mm"; path = "../../JuceLibraryCode/include_juce_events.mm"; sourceTree = "SOURCE_ROOT"; };
 		B6457F9A2FE293543A12304E = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B80E11D42085BCAC87C8B086 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-AU.plist"; path = "Info-AU.plist"; sourceTree = "SOURCE_ROOT"; };
 		BABABEEC8E66A33B9FE0AF73 = {isa = PBXFileReference; lastKnownFileType = file; name = "juce_gui_extra"; path = "/opt/kushview/JUCE/modules/juce_gui_extra"; sourceTree = "<absolute>"; };
+		BCA8D55B1CF3AD5EEF0BFE26 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "include_juce_audio_plugin_client_VST2.cpp"; path = "../../JuceLibraryCode/include_juce_audio_plugin_client_VST2.cpp"; sourceTree = "SOURCE_ROOT"; };
 		BE0B1F2A421BC60564E578EB = {isa = PBXFileReference; lastKnownFileType = file; name = "kv_gui"; path = "../../../../kv-modules/modules/kv_gui"; sourceTree = "SOURCE_ROOT"; };
+		BE90CA7556A46D42FF0EB551 = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
+		BEB524840F52432719F6577A = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_kv_models.mm"; path = "../../JuceLibraryCode/include_kv_models.mm"; sourceTree = "SOURCE_ROOT"; };
+		C0BD4774A7B8AA61C0AF3F88 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-Standalone_Plugin.plist"; path = "Info-Standalone_Plugin.plist"; sourceTree = "SOURCE_ROOT"; };
 		C21E567D21CA3A9F462EF5BD = {isa = PBXFileReference; lastKnownFileType = file; name = "juce_audio_plugin_client"; path = "/opt/kushview/JUCE/modules/juce_audio_plugin_client"; sourceTree = "<absolute>"; };
 		C2BD0447267011BA17D1F7C2 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SphereScope.h; path = ../../Source/SphereScope.h; sourceTree = "SOURCE_ROOT"; };
 		C603D0C147092742890C411E = {isa = PBXFileReference; lastKnownFileType = image.png; name = "toggle_switch.png"; path = "../../../data/content/toggle_switch.png"; sourceTree = "SOURCE_ROOT"; };
-		C98EFACD9BB68F3901AF19C3 = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "roboverb_bg.jpg"; path = "../../../data/content/roboverb_bg.jpg"; sourceTree = "SOURCE_ROOT"; };
-		CBE0A1EFEE69C5947C584178 = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Roboverb.vst3; sourceTree = "BUILT_PRODUCTS_DIR"; };
-		BB8DEA65B3D95F83E4DBF7B2 = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Roboverb.component; sourceTree = "BUILT_PRODUCTS_DIR"; };
-		33B5D4783E989A063ED0D45E = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRoboverb.a; sourceTree = "BUILT_PRODUCTS_DIR"; };
-		BCA8D55B1CF3AD5EEF0BFE26 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "include_juce_audio_plugin_client_VST2.cpp"; path = "../../JuceLibraryCode/include_juce_audio_plugin_client_VST2.cpp"; sourceTree = "SOURCE_ROOT"; };
-		BE90CA7556A46D42FF0EB551 = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
-		BEB524840F52432719F6577A = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_kv_models.mm"; path = "../../JuceLibraryCode/include_kv_models.mm"; sourceTree = "SOURCE_ROOT"; };
 		C8F6EC02CC0DD715740B6E4C = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_graphics.mm"; path = "../../JuceLibraryCode/include_juce_graphics.mm"; sourceTree = "SOURCE_ROOT"; };
+		C98EFACD9BB68F3901AF19C3 = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "roboverb_bg.jpg"; path = "../../../data/content/roboverb_bg.jpg"; sourceTree = "SOURCE_ROOT"; };
 		D1CC26247235FB93D976684F = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AboutBox.cpp; path = ../../Source/AboutBox.cpp; sourceTree = "SOURCE_ROOT"; };
 		D2C53ADEB412C8F6F771DCD5 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginView.cpp; path = ../../Source/PluginView.cpp; sourceTree = "SOURCE_ROOT"; };
 		D689F9DF40384DBB8DA25231 = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sphere_scope.png"; path = "../../../data/content/sphere_scope.png"; sourceTree = "SOURCE_ROOT"; };
 		E07E955585BF575FB2D12648 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_audio_plugin_client_AU_1.mm"; path = "../../JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm"; sourceTree = "SOURCE_ROOT"; };
 		E81269E1A4242C6643169DEB = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F083809A286E7D0E29129CD6 = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiscRecording.framework; path = System/Library/Frameworks/DiscRecording.framework; sourceTree = SDKROOT; };
 		F7D45D297792A5D77ECB33BC = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_gui_extra.mm"; path = "../../JuceLibraryCode/include_juce_gui_extra.mm"; sourceTree = "SOURCE_ROOT"; };
 		FFE2F4AEA5E42278392BBAD0 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "include_juce_cryptography.mm"; path = "../../JuceLibraryCode/include_juce_cryptography.mm"; sourceTree = "SOURCE_ROOT"; };
 		E15D8E740E774072B6CEEA49 = {isa = PBXGroup; children = (
@@ -145,8 +161,11 @@
 					DA52590D348DB87F00E0BB77, ); name = Roboverb; sourceTree = "<group>"; };
 		D639570F29AAA24E53DD6FEF = {isa = PBXGroup; children = (
 					8B1CC1CDEE6CBD2218EA36D4,
+					30DC048A12AFEF1632D867B0,
+					B1AEA1D872399DD0BA50DE51,
 					C21E567D21CA3A9F462EF5BD,
 					4C125F2C36F7FA277116147F,
+					40203C5EE11D262BE9CE4713,
 					07B174C03BE92813CB609A1E,
 					9F87AB9567C861F7B4E869BE,
 					6B473C0D71C245F3896E73AE,
@@ -162,14 +181,18 @@
 					64039B2F1B86A0B58D70AD36,
 					477743A1C5884EA766894946,
 					A47E1B19A57D7200C400C4C4,
+					AC3C39F2D5178A64F72B2210,
+					7121BB7A515E9797CBF8B547,
 					0CFF6D2F5E6DDA8B4CDD05AE,
 					E07E955585BF575FB2D12648,
 					09533AF1201D5CEE3F6417C0,
+					8967A15C3AA193F5CEDBFA6F,
 					79C23A6CAEC34EACA9E0D4D6,
 					6721A2A629804248D895C215,
 					BCA8D55B1CF3AD5EEF0BFE26,
 					561A9A5772997936044848C8,
 					3B28C9B9F717A2670BC7F2DF,
+					279239ADD682D7E9A4E510C4,
 					4B28D15DC173D9CC7C433410,
 					FFE2F4AEA5E42278392BBAD0,
 					267023BEE48F4AF4F4E0603B,
@@ -185,6 +208,7 @@
 					51DDA54C45D783E3E47B42DA,
 					92FA37A0E7465CE1EB9ACEA5,
 					B80E11D42085BCAC87C8B086,
+					C0BD4774A7B8AA61C0AF3F88,
 					A812E73D7B8592CF68E8CE53, ); name = Resources; sourceTree = "<group>"; };
 		BBA77CBC7C14D26A839B65F8 = {isa = PBXGroup; children = (
 					5890881118D55759E102DAB3,
@@ -195,6 +219,7 @@
 					8CB71FEEF9A0B01A63A7C868,
 					255A48688469DD5758209721,
 					BE90CA7556A46D42FF0EB551,
+					F083809A286E7D0E29129CD6,
 					2F99C16C0EE73DD34383DEF3,
 					9A2042EF6BE328F1D1AB3A4A,
 					B6457F9A2FE293543A12304E, ); name = Frameworks; sourceTree = "<group>"; };
@@ -202,6 +227,7 @@
 					4652A75D281821E516D08FDB,
 					CBE0A1EFEE69C5947C584178,
 					BB8DEA65B3D95F83E4DBF7B2,
+					1294CD3C469727950948B070,
 					33B5D4783E989A063ED0D45E, ); name = Products; sourceTree = "<group>"; };
 		83F56ED03708D67B427BAF66 = {isa = PBXGroup; children = (
 					531D0088396EF83DBC9BDBA8,
@@ -211,9 +237,12 @@
 					8348F880C59133FCED929C5A,
 					BBA77CBC7C14D26A839B65F8,
 					66684F9230B7E914DBF29F4C, ); name = Source; sourceTree = "<group>"; };
-		5011BF8D18B51FEA9BE31701 = {isa = XCBuildConfiguration; buildSettings = {  }; name = Debug; };
-		14D8439FC06E54B35B2A85CC = {isa = XCBuildConfiguration; buildSettings = {  }; name = Release; };
-		2057F3B8AA6BC34F59C2750C = {isa = XCBuildConfiguration; buildSettings = {  }; name = Demo; };
+		5011BF8D18B51FEA9BE31701 = {isa = XCBuildConfiguration; buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.7; }; name = Debug; };
+		14D8439FC06E54B35B2A85CC = {isa = XCBuildConfiguration; buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.7; }; name = Release; };
+		2057F3B8AA6BC34F59C2750C = {isa = XCBuildConfiguration; buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.7; }; name = Demo; };
 		F54F4D9CBCB0898ED74E571B = {isa = XCBuildConfiguration; buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
@@ -230,8 +259,8 @@
 					"_DEBUG=1",
 					"DEBUG=1",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.4",
-					"JUCE_APP_VERSION_HEX=0x10004",
+					"JUCE_APP_VERSION=1.0.5",
+					"JUCE_APP_VERSION_HEX=0x10005",
 					"JucePlugin_Build_VST=1",
 					"JucePlugin_Build_VST3=0",
 					"JucePlugin_Build_AU=0",
@@ -241,7 +270,7 @@
 					"JucePlugin_Build_Standalone=0", );
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GENERATE_PKGINFO_FILE = YES;
-				HEADER_SEARCH_PATHS = ("~/SDKs/vstsdk", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
+				HEADER_SEARCH_PATHS = ("~/SDKs/VST_SDK/VST3_SDK", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
 				INFOPLIST_FILE = Info-VST.plist;
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/VST/";
@@ -269,8 +298,8 @@
 					"_NDEBUG=1",
 					"NDEBUG=1",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.4",
-					"JUCE_APP_VERSION_HEX=0x10004",
+					"JUCE_APP_VERSION=1.0.5",
+					"JUCE_APP_VERSION_HEX=0x10005",
 					"JucePlugin_Build_VST=1",
 					"JucePlugin_Build_VST3=0",
 					"JucePlugin_Build_AU=0",
@@ -281,7 +310,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GENERATE_PKGINFO_FILE = YES;
-				HEADER_SEARCH_PATHS = ("~/SDKs/vstsdk", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
+				HEADER_SEARCH_PATHS = ("~/SDKs/VST_SDK/VST3_SDK", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
 				INFOPLIST_FILE = Info-VST.plist;
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/VST/";
@@ -310,8 +339,8 @@
 					"NDEBUG=1",
 					"KV_PLUGINS_DEMO=1",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.4",
-					"JUCE_APP_VERSION_HEX=0x10004",
+					"JUCE_APP_VERSION=1.0.5",
+					"JUCE_APP_VERSION_HEX=0x10005",
 					"JucePlugin_Build_VST=1",
 					"JucePlugin_Build_VST3=0",
 					"JucePlugin_Build_AU=0",
@@ -322,7 +351,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GENERATE_PKGINFO_FILE = YES;
-				HEADER_SEARCH_PATHS = ("~/SDKs/vstsdk", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
+				HEADER_SEARCH_PATHS = ("~/SDKs/VST_SDK/VST3_SDK", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
 				INFOPLIST_FILE = Info-VST.plist;
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/VST/";
@@ -350,8 +379,8 @@
 					"_DEBUG=1",
 					"DEBUG=1",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.4",
-					"JUCE_APP_VERSION_HEX=0x10004",
+					"JUCE_APP_VERSION=1.0.5",
+					"JUCE_APP_VERSION_HEX=0x10005",
 					"JucePlugin_Build_VST=0",
 					"JucePlugin_Build_VST3=1",
 					"JucePlugin_Build_AU=0",
@@ -361,7 +390,7 @@
 					"JucePlugin_Build_Standalone=0", );
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GENERATE_PKGINFO_FILE = YES;
-				HEADER_SEARCH_PATHS = ("~/SDKs/vstsdk", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
+				HEADER_SEARCH_PATHS = ("~/SDKs/VST_SDK/VST3_SDK", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
 				INFOPLIST_FILE = Info-VST3.plist;
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/VST3/";
@@ -389,8 +418,8 @@
 					"_NDEBUG=1",
 					"NDEBUG=1",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.4",
-					"JUCE_APP_VERSION_HEX=0x10004",
+					"JUCE_APP_VERSION=1.0.5",
+					"JUCE_APP_VERSION_HEX=0x10005",
 					"JucePlugin_Build_VST=0",
 					"JucePlugin_Build_VST3=1",
 					"JucePlugin_Build_AU=0",
@@ -401,7 +430,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GENERATE_PKGINFO_FILE = YES;
-				HEADER_SEARCH_PATHS = ("~/SDKs/vstsdk", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
+				HEADER_SEARCH_PATHS = ("~/SDKs/VST_SDK/VST3_SDK", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
 				INFOPLIST_FILE = Info-VST3.plist;
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/VST3/";
@@ -430,8 +459,8 @@
 					"NDEBUG=1",
 					"KV_PLUGINS_DEMO=1",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.4",
-					"JUCE_APP_VERSION_HEX=0x10004",
+					"JUCE_APP_VERSION=1.0.5",
+					"JUCE_APP_VERSION_HEX=0x10005",
 					"JucePlugin_Build_VST=0",
 					"JucePlugin_Build_VST3=1",
 					"JucePlugin_Build_AU=0",
@@ -442,7 +471,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GENERATE_PKGINFO_FILE = YES;
-				HEADER_SEARCH_PATHS = ("~/SDKs/vstsdk", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
+				HEADER_SEARCH_PATHS = ("~/SDKs/VST_SDK/VST3_SDK", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
 				INFOPLIST_FILE = Info-VST3.plist;
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/VST3/";
@@ -470,8 +499,8 @@
 					"_DEBUG=1",
 					"DEBUG=1",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.4",
-					"JUCE_APP_VERSION_HEX=0x10004",
+					"JUCE_APP_VERSION=1.0.5",
+					"JUCE_APP_VERSION_HEX=0x10005",
 					"JucePlugin_Build_VST=0",
 					"JucePlugin_Build_VST3=0",
 					"JucePlugin_Build_AU=1",
@@ -481,7 +510,7 @@
 					"JucePlugin_Build_Standalone=0", );
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GENERATE_PKGINFO_FILE = YES;
-				HEADER_SEARCH_PATHS = ("~/SDKs/vstsdk", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
+				HEADER_SEARCH_PATHS = ("~/SDKs/VST_SDK/VST3_SDK", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
 				INFOPLIST_FILE = Info-AU.plist;
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/Components/";
@@ -510,8 +539,8 @@
 					"_NDEBUG=1",
 					"NDEBUG=1",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.4",
-					"JUCE_APP_VERSION_HEX=0x10004",
+					"JUCE_APP_VERSION=1.0.5",
+					"JUCE_APP_VERSION_HEX=0x10005",
 					"JucePlugin_Build_VST=0",
 					"JucePlugin_Build_VST3=0",
 					"JucePlugin_Build_AU=1",
@@ -522,7 +551,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GENERATE_PKGINFO_FILE = YES;
-				HEADER_SEARCH_PATHS = ("~/SDKs/vstsdk", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
+				HEADER_SEARCH_PATHS = ("~/SDKs/VST_SDK/VST3_SDK", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
 				INFOPLIST_FILE = Info-AU.plist;
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/Components/";
@@ -552,8 +581,8 @@
 					"NDEBUG=1",
 					"KV_PLUGINS_DEMO=1",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.4",
-					"JUCE_APP_VERSION_HEX=0x10004",
+					"JUCE_APP_VERSION=1.0.5",
+					"JUCE_APP_VERSION_HEX=0x10005",
 					"JucePlugin_Build_VST=0",
 					"JucePlugin_Build_VST3=0",
 					"JucePlugin_Build_AU=1",
@@ -564,7 +593,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GENERATE_PKGINFO_FILE = YES;
-				HEADER_SEARCH_PATHS = ("~/SDKs/vstsdk", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
+				HEADER_SEARCH_PATHS = ("~/SDKs/VST_SDK/VST3_SDK", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
 				INFOPLIST_FILE = Info-AU.plist;
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/Components/";
@@ -577,6 +606,108 @@
 				SDKROOT_ppc = macosx10.5;
 				USE_HEADERMAP = NO;
 				WRAPPER_EXTENSION = component; }; name = Demo; };
+		4DEA57341BDEF0CA4EBC7FFF = {isa = XCBuildConfiguration; buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_LINK_OBJC_RUNTIME = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = ../../../build/plugin;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_DEBUG=1",
+					"DEBUG=1",
+					"JUCER_XCODE_MAC_F6D2F4CF=1",
+					"JUCE_APP_VERSION=1.0.5",
+					"JUCE_APP_VERSION_HEX=0x10005",
+					"JucePlugin_Build_VST=0",
+					"JucePlugin_Build_VST3=0",
+					"JucePlugin_Build_AU=0",
+					"JucePlugin_Build_AUv3=0",
+					"JucePlugin_Build_RTAS=0",
+					"JucePlugin_Build_AAX=0",
+					"JucePlugin_Build_Standalone=1", );
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = ("~/SDKs/VST_SDK/VST3_SDK", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
+				INFOPLIST_FILE = Info-Standalone_Plugin.plist;
+				INFOPLIST_PREPROCESS = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
+				OTHER_LDFLAGS = "-lRoboverb";
+				PRODUCT_BUNDLE_IDENTIFIER = net.kushview.Roboverb;
+				SDKROOT_ppc = macosx10.5;
+				USE_HEADERMAP = NO; }; name = Debug; };
+		F53CF0196A378E4320744A83 = {isa = XCBuildConfiguration; buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_LINK_OBJC_RUNTIME = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = ../../../build/plugin;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_NDEBUG=1",
+					"NDEBUG=1",
+					"JUCER_XCODE_MAC_F6D2F4CF=1",
+					"JUCE_APP_VERSION=1.0.5",
+					"JUCE_APP_VERSION_HEX=0x10005",
+					"JucePlugin_Build_VST=0",
+					"JucePlugin_Build_VST3=0",
+					"JucePlugin_Build_AU=0",
+					"JucePlugin_Build_AUv3=0",
+					"JucePlugin_Build_RTAS=0",
+					"JucePlugin_Build_AAX=0",
+					"JucePlugin_Build_Standalone=1", );
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = ("~/SDKs/VST_SDK/VST3_SDK", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
+				INFOPLIST_FILE = Info-Standalone_Plugin.plist;
+				INFOPLIST_PREPROCESS = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
+				OTHER_LDFLAGS = "-lRoboverb";
+				PRODUCT_BUNDLE_IDENTIFIER = net.kushview.Roboverb;
+				SDKROOT_ppc = macosx10.5;
+				USE_HEADERMAP = NO; }; name = Release; };
+		542B832DDED78E68936625D9 = {isa = XCBuildConfiguration; buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_LINK_OBJC_RUNTIME = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = ../../../build/plugin;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_NDEBUG=1",
+					"NDEBUG=1",
+					"KV_PLUGINS_DEMO=1",
+					"JUCER_XCODE_MAC_F6D2F4CF=1",
+					"JUCE_APP_VERSION=1.0.5",
+					"JUCE_APP_VERSION_HEX=0x10005",
+					"JucePlugin_Build_VST=0",
+					"JucePlugin_Build_VST3=0",
+					"JucePlugin_Build_AU=0",
+					"JucePlugin_Build_AUv3=0",
+					"JucePlugin_Build_RTAS=0",
+					"JucePlugin_Build_AAX=0",
+					"JucePlugin_Build_Standalone=1", );
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = ("~/SDKs/VST_SDK/VST3_SDK", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
+				INFOPLIST_FILE = Info-Standalone_Plugin.plist;
+				INFOPLIST_PREPROCESS = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
+				OTHER_LDFLAGS = "-lRoboverb";
+				PRODUCT_BUNDLE_IDENTIFIER = net.kushview.Roboverb;
+				SDKROOT_ppc = macosx10.5;
+				USE_HEADERMAP = NO; }; name = Demo; };
 		90B69E881C4948622FE8E2B0 = {isa = XCBuildConfiguration; buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
@@ -591,18 +722,18 @@
 					"_DEBUG=1",
 					"DEBUG=1",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.4",
-					"JUCE_APP_VERSION_HEX=0x10004",
+					"JUCE_APP_VERSION=1.0.5",
+					"JUCE_APP_VERSION_HEX=0x10005",
 					"JucePlugin_Build_VST=1",
 					"JucePlugin_Build_VST3=1",
 					"JucePlugin_Build_AU=1",
 					"JucePlugin_Build_AUv3=0",
 					"JucePlugin_Build_RTAS=0",
 					"JucePlugin_Build_AAX=0",
-					"JucePlugin_Build_Standalone=0",
+					"JucePlugin_Build_Standalone=1",
 					"JUCE_SHARED_CODE=1", );
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = ("~/SDKs/vstsdk", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
+				HEADER_SEARCH_PATHS = ("~/SDKs/VST_SDK/VST3_SDK", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
@@ -623,19 +754,19 @@
 					"_NDEBUG=1",
 					"NDEBUG=1",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.4",
-					"JUCE_APP_VERSION_HEX=0x10004",
+					"JUCE_APP_VERSION=1.0.5",
+					"JUCE_APP_VERSION_HEX=0x10005",
 					"JucePlugin_Build_VST=1",
 					"JucePlugin_Build_VST3=1",
 					"JucePlugin_Build_AU=1",
 					"JucePlugin_Build_AUv3=0",
 					"JucePlugin_Build_RTAS=0",
 					"JucePlugin_Build_AAX=0",
-					"JucePlugin_Build_Standalone=0",
+					"JucePlugin_Build_Standalone=1",
 					"JUCE_SHARED_CODE=1", );
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = ("~/SDKs/vstsdk", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
+				HEADER_SEARCH_PATHS = ("~/SDKs/VST_SDK/VST3_SDK", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
@@ -657,19 +788,19 @@
 					"NDEBUG=1",
 					"KV_PLUGINS_DEMO=1",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.4",
-					"JUCE_APP_VERSION_HEX=0x10004",
+					"JUCE_APP_VERSION=1.0.5",
+					"JUCE_APP_VERSION_HEX=0x10005",
 					"JucePlugin_Build_VST=1",
 					"JucePlugin_Build_VST3=1",
 					"JucePlugin_Build_AU=1",
 					"JucePlugin_Build_AUv3=0",
 					"JucePlugin_Build_RTAS=0",
 					"JucePlugin_Build_AAX=0",
-					"JucePlugin_Build_Standalone=0",
+					"JucePlugin_Build_Standalone=1",
 					"JUCE_SHARED_CODE=1", );
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = ("~/SDKs/vstsdk", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
+				HEADER_SEARCH_PATHS = ("~/SDKs/VST_SDK/VST3_SDK", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/utrack/include", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
@@ -788,6 +919,7 @@
 		D5F29A57561C8BF49C1C1D50 = {isa = PBXTargetDependency; target = 08E069336A53FD1F75A19292; };
 		EFBB684A37C9AAA0C63F9A77 = {isa = PBXTargetDependency; target = 3304B3FC4CAEFD7CFA078A37; };
 		BE8E2FB6C272D2550A03E52B = {isa = PBXTargetDependency; target = 190B015F710AC71FBA4B8C24; };
+		AAF10FAE8F1AF5DE438D9EDE = {isa = PBXTargetDependency; target = 82D72036D7932AD51DB5824D; };
 		373EE88B4021D687E8FE359F = {isa = PBXTargetDependency; target = E1C060F336EE9281F35E19F9; };
 		D74648B68F684998076D74AF = {isa = XCConfigurationList; buildConfigurations = (
 					78FCC386F5FD385D5CF3037E,
@@ -797,12 +929,11 @@
 					5011BF8D18B51FEA9BE31701,
 					14D8439FC06E54B35B2A85CC,
 					2057F3B8AA6BC34F59C2750C, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
-		D4C927577286237D198F3D37 = {isa = PBXShellScriptBuildPhase; buildActionMask = 2147483647; files = (  ); runOnlyForDeploymentPostprocessing = 0; name = "Post-build script"; shellPath = /bin/sh; shellScript = "\n# This script takes the build product and copies it to the AU, VST, VST3, RTAS and AAX folders, depending on \n# which plugin types you've built\n\noriginal=$CONFIGURATION_BUILD_DIR/$FULL_PRODUCT_NAME\n\n# this looks inside the binary to detect which platforms are needed.. \ncopyAU=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'AudioUnit' | wc -l`\ncopyVST=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'VSTPlugin' | wc -l`\ncopyVST3=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'GetPluginFactory' | wc -l`\ncopyRTAS=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'CProcess' | wc -l`\ncopyAAX=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'ACFStartup' | wc -l`\n\nmkdir -p \"$CONFIGURATION_BUILD_DIR/dist\"\n\nif [ $copyAU -gt 0 ]; then\n  echo \"Copying to AudioUnit folder...\"\n  AU=~/Library/Audio/Plug-Ins/Components/$PRODUCT_NAME.component\n  if [ -d \"$AU\" ]; then \n    rm -r \"$AU\"\n  fi\n\n  cp -r \"$original\" \"$AU\"\n  sed -i \"\" -e 's/TDMwPTul/BNDLPTul/g' \"$AU/Contents/PkgInfo\"\n  sed -i \"\" -e 's/TDMw/BNDL/g' \"$AU/Contents/$INFOPLIST_FILE\"\n\n  # Fix info.plist for AUs built with Xcode 3\n  if [ -f \"$DEVELOPER_DIR/Library/Developer/CoreAudio/AudioUnits/AUPublic/AUBase/AUPlugInDispatch.cpp\" ]; then\n    echo\n  else\n    echo \"Removing AudioComponents entry from Info.plist because this is not a new-format AU\"\n    /usr/libexec/PlistBuddy -c \"Delete AudioComponents\" \"$AU/Contents/Info.plist\"\n  fi\n\n  rsync -ar --delete \"$AU/\" \"$CONFIGURATION_BUILD_DIR/dist/$PRODUCT_NAME.component/\"\nfi\n\nif [ $copyVST -gt 0 ]; then\n  echo \"Copying to VST folder...\"\n  VST=~/Library/Audio/Plug-Ins/VST/$PRODUCT_NAME.vst\n  if [ -d \"$VST\" ]; then \n    rm -r \"$VST\"\n  fi\n\n  cp -r \"$original\" \"$VST\"\n  sed -i \"\" -e 's/TDMwPTul/BNDLPTul/g' \"$VST/Contents/PkgInfo\"\n  sed -i \"\" -e 's/TDMw/BNDL/g' \"$VST/Contents/$INFOPLIST_FILE\"\n\n  rsync -ar --delete \"$VST/\" \"$CONFIGURATION_BUILD_DIR/dist/$PRODUCT_NAME.vst/\"\nfi\n\nif [ $copyVST3 -gt 0 ]; then\n  echo \"Copying to VST3 folder...\"\n  VST3=~/Library/Audio/Plug-Ins/VST3/$PRODUCT_NAME.vst3\n  if [ -d \"$VST3\" ]; then \n    rm -r \"$VST3\"\n  fi\n\n  cp -r \"$original\" \"$VST3\"\n  sed -i \"\" -e 's/TDMwPTul/BNDLPTul/g' \"$VST3/Contents/PkgInfo\"\n  sed -i \"\" -e 's/TDMw/BNDL/g' \"$VST3/Contents/$INFOPLIST_FILE\"\n\n  rsync -ar --delete \"$VST3/\" \"$CONFIGURATION_BUILD_DIR/dist/$PRODUCT_NAME.vst3/\"\nfi\n\nif [ $copyRTAS -gt 0 ]; then\n  echo \"Copying to RTAS folder...\"\n  RTAS=/Library/Application\\ Support/Digidesign/Plug-Ins/$PRODUCT_NAME.dpm\n  if [ -d \"$RTAS\" ]; then\n    rm -r \"$RTAS\"\n  fi\n\n  cp -r \"$original\" \"$RTAS\"\nfi\n\nif [ $copyAAX -gt 0 ]; then\n  echo \"Copying to AAX folder...\"\n\n  if [ -d \"/Applications/ProTools_3PDev/Plug-Ins\" ]; then\n    AAX1=\"/Applications/ProTools_3PDev/Plug-Ins/$PRODUCT_NAME.aaxplugin\"\n\n    if [ -d \"$AAX1\" ]; then\n      rm -r \"$AAX1\"\n    fi\n\n    cp -R -H \"$original\" \"$AAX1\"\n  fi\n\n  if [ -d \"/Library/Application Support/Avid/Audio/Plug-Ins\" ]; then\n    AAX2=\"/Library/Application Support/Avid/Audio/Plug-Ins/$PRODUCT_NAME.aaxplugin\"\n\n    if [ -d \"$AAX2\" ]; then\n      rm -r \"$AAX2\"\n    fi\n\n    cp -R -H \"$original\" \"$AAX2\"\n  fi\nfi\n"; };
-		69DE4B8E7953F7BB7A84C2E3 = {isa = PBXAggregateTarget; buildConfigurationList = 6B242A04B4C3E50B82728EEA; buildPhases = (
-					D4C927577286237D198F3D37, ); buildRules = ( ); dependencies = (
+		69DE4B8E7953F7BB7A84C2E3 = {isa = PBXAggregateTarget; buildConfigurationList = 6B242A04B4C3E50B82728EEA; buildPhases = (  ); buildRules = ( ); dependencies = (
 					D5F29A57561C8BF49C1C1D50,
 					EFBB684A37C9AAA0C63F9A77,
 					BE8E2FB6C272D2550A03E52B,
+					AAF10FAE8F1AF5DE438D9EDE,
 					373EE88B4021D687E8FE359F, ); name = "Roboverb - All"; productName = Roboverb; };
 		B4675B91C0336BA26DD88300 = {isa = XCConfigurationList; buildConfigurations = (
 					F54F4D9CBCB0898ED74E571B,
@@ -819,15 +950,14 @@
 					209E1CF8FED7132245C0371D,
 					258C2E5420FAFBA346B18A01,
 					C1C78E1DE9284635C8AA952B,
+					29124A6D63FF3D7A0E985CB1,
 					30A0E85BB3737BC13D9A07F8,
 					C010E8F2F485C0C80E808223,
 					93806ED0D01278DE2E55A4FC, ); runOnlyForDeploymentPostprocessing = 0; };
-		8D2AD4CAD1F4C12A6A271827 = {isa = PBXShellScriptBuildPhase; buildActionMask = 2147483647; files = (  ); runOnlyForDeploymentPostprocessing = 0; name = "Post-build script"; shellPath = /bin/sh; shellScript = "\n# This script takes the build product and copies it to the AU, VST, VST3, RTAS and AAX folders, depending on \n# which plugin types you've built\n\noriginal=$CONFIGURATION_BUILD_DIR/$FULL_PRODUCT_NAME\n\n# this looks inside the binary to detect which platforms are needed.. \ncopyAU=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'AudioUnit' | wc -l`\ncopyVST=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'VSTPlugin' | wc -l`\ncopyVST3=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'GetPluginFactory' | wc -l`\ncopyRTAS=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'CProcess' | wc -l`\ncopyAAX=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'ACFStartup' | wc -l`\n\nmkdir -p \"$CONFIGURATION_BUILD_DIR/dist\"\n\nif [ $copyAU -gt 0 ]; then\n  echo \"Copying to AudioUnit folder...\"\n  AU=~/Library/Audio/Plug-Ins/Components/$PRODUCT_NAME.component\n  if [ -d \"$AU\" ]; then \n    rm -r \"$AU\"\n  fi\n\n  cp -r \"$original\" \"$AU\"\n  sed -i \"\" -e 's/TDMwPTul/BNDLPTul/g' \"$AU/Contents/PkgInfo\"\n  sed -i \"\" -e 's/TDMw/BNDL/g' \"$AU/Contents/$INFOPLIST_FILE\"\n\n  # Fix info.plist for AUs built with Xcode 3\n  if [ -f \"$DEVELOPER_DIR/Library/Developer/CoreAudio/AudioUnits/AUPublic/AUBase/AUPlugInDispatch.cpp\" ]; then\n    echo\n  else\n    echo \"Removing AudioComponents entry from Info.plist because this is not a new-format AU\"\n    /usr/libexec/PlistBuddy -c \"Delete AudioComponents\" \"$AU/Contents/Info.plist\"\n  fi\n\n  rsync -ar --delete \"$AU/\" \"$CONFIGURATION_BUILD_DIR/dist/$PRODUCT_NAME.component/\"\nfi\n\nif [ $copyVST -gt 0 ]; then\n  echo \"Copying to VST folder...\"\n  VST=~/Library/Audio/Plug-Ins/VST/$PRODUCT_NAME.vst\n  if [ -d \"$VST\" ]; then \n    rm -r \"$VST\"\n  fi\n\n  cp -r \"$original\" \"$VST\"\n  sed -i \"\" -e 's/TDMwPTul/BNDLPTul/g' \"$VST/Contents/PkgInfo\"\n  sed -i \"\" -e 's/TDMw/BNDL/g' \"$VST/Contents/$INFOPLIST_FILE\"\n\n  rsync -ar --delete \"$VST/\" \"$CONFIGURATION_BUILD_DIR/dist/$PRODUCT_NAME.vst/\"\nfi\n\nif [ $copyVST3 -gt 0 ]; then\n  echo \"Copying to VST3 folder...\"\n  VST3=~/Library/Audio/Plug-Ins/VST3/$PRODUCT_NAME.vst3\n  if [ -d \"$VST3\" ]; then \n    rm -r \"$VST3\"\n  fi\n\n  cp -r \"$original\" \"$VST3\"\n  sed -i \"\" -e 's/TDMwPTul/BNDLPTul/g' \"$VST3/Contents/PkgInfo\"\n  sed -i \"\" -e 's/TDMw/BNDL/g' \"$VST3/Contents/$INFOPLIST_FILE\"\n\n  rsync -ar --delete \"$VST3/\" \"$CONFIGURATION_BUILD_DIR/dist/$PRODUCT_NAME.vst3/\"\nfi\n\nif [ $copyRTAS -gt 0 ]; then\n  echo \"Copying to RTAS folder...\"\n  RTAS=/Library/Application\\ Support/Digidesign/Plug-Ins/$PRODUCT_NAME.dpm\n  if [ -d \"$RTAS\" ]; then\n    rm -r \"$RTAS\"\n  fi\n\n  cp -r \"$original\" \"$RTAS\"\nfi\n\nif [ $copyAAX -gt 0 ]; then\n  echo \"Copying to AAX folder...\"\n\n  if [ -d \"/Applications/ProTools_3PDev/Plug-Ins\" ]; then\n    AAX1=\"/Applications/ProTools_3PDev/Plug-Ins/$PRODUCT_NAME.aaxplugin\"\n\n    if [ -d \"$AAX1\" ]; then\n      rm -r \"$AAX1\"\n    fi\n\n    cp -R -H \"$original\" \"$AAX1\"\n  fi\n\n  if [ -d \"/Library/Application Support/Avid/Audio/Plug-Ins\" ]; then\n    AAX2=\"/Library/Application Support/Avid/Audio/Plug-Ins/$PRODUCT_NAME.aaxplugin\"\n\n    if [ -d \"$AAX2\" ]; then\n      rm -r \"$AAX2\"\n    fi\n\n    cp -R -H \"$original\" \"$AAX2\"\n  fi\nfi\n"; };
 		08E069336A53FD1F75A19292 = {isa = PBXNativeTarget; buildConfigurationList = B4675B91C0336BA26DD88300; buildPhases = (
 					E443BF9112F4B4820FD278B7,
 					E2F99BFF8E9E6785AEC05E7E,
-					6A734DF745F4EABED591BFD8,
-					8D2AD4CAD1F4C12A6A271827, ); buildRules = ( ); dependencies = (
+					6A734DF745F4EABED591BFD8, ); buildRules = ( ); dependencies = (
 					373EE88B4021D687E8FE359F, ); name = "Roboverb - VST"; productName = Roboverb; productReference = 4652A75D281821E516D08FDB; productType = "com.apple.product-type.bundle"; };
 		BCD2F023C54E745FFDF3A299 = {isa = XCConfigurationList; buildConfigurations = (
 					539627E5FDC8BAAF908CB75C,
@@ -844,15 +974,14 @@
 					209E1CF8FED7132245C0371D,
 					258C2E5420FAFBA346B18A01,
 					C1C78E1DE9284635C8AA952B,
+					29124A6D63FF3D7A0E985CB1,
 					30A0E85BB3737BC13D9A07F8,
 					C010E8F2F485C0C80E808223,
 					93806ED0D01278DE2E55A4FC, ); runOnlyForDeploymentPostprocessing = 0; };
-		22068B3F63BA5E05E23810BA = {isa = PBXShellScriptBuildPhase; buildActionMask = 2147483647; files = (  ); runOnlyForDeploymentPostprocessing = 0; name = "Post-build script"; shellPath = /bin/sh; shellScript = "\n# This script takes the build product and copies it to the AU, VST, VST3, RTAS and AAX folders, depending on \n# which plugin types you've built\n\noriginal=$CONFIGURATION_BUILD_DIR/$FULL_PRODUCT_NAME\n\n# this looks inside the binary to detect which platforms are needed.. \ncopyAU=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'AudioUnit' | wc -l`\ncopyVST=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'VSTPlugin' | wc -l`\ncopyVST3=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'GetPluginFactory' | wc -l`\ncopyRTAS=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'CProcess' | wc -l`\ncopyAAX=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'ACFStartup' | wc -l`\n\nmkdir -p \"$CONFIGURATION_BUILD_DIR/dist\"\n\nif [ $copyAU -gt 0 ]; then\n  echo \"Copying to AudioUnit folder...\"\n  AU=~/Library/Audio/Plug-Ins/Components/$PRODUCT_NAME.component\n  if [ -d \"$AU\" ]; then \n    rm -r \"$AU\"\n  fi\n\n  cp -r \"$original\" \"$AU\"\n  sed -i \"\" -e 's/TDMwPTul/BNDLPTul/g' \"$AU/Contents/PkgInfo\"\n  sed -i \"\" -e 's/TDMw/BNDL/g' \"$AU/Contents/$INFOPLIST_FILE\"\n\n  # Fix info.plist for AUs built with Xcode 3\n  if [ -f \"$DEVELOPER_DIR/Library/Developer/CoreAudio/AudioUnits/AUPublic/AUBase/AUPlugInDispatch.cpp\" ]; then\n    echo\n  else\n    echo \"Removing AudioComponents entry from Info.plist because this is not a new-format AU\"\n    /usr/libexec/PlistBuddy -c \"Delete AudioComponents\" \"$AU/Contents/Info.plist\"\n  fi\n\n  rsync -ar --delete \"$AU/\" \"$CONFIGURATION_BUILD_DIR/dist/$PRODUCT_NAME.component/\"\nfi\n\nif [ $copyVST -gt 0 ]; then\n  echo \"Copying to VST folder...\"\n  VST=~/Library/Audio/Plug-Ins/VST/$PRODUCT_NAME.vst\n  if [ -d \"$VST\" ]; then \n    rm -r \"$VST\"\n  fi\n\n  cp -r \"$original\" \"$VST\"\n  sed -i \"\" -e 's/TDMwPTul/BNDLPTul/g' \"$VST/Contents/PkgInfo\"\n  sed -i \"\" -e 's/TDMw/BNDL/g' \"$VST/Contents/$INFOPLIST_FILE\"\n\n  rsync -ar --delete \"$VST/\" \"$CONFIGURATION_BUILD_DIR/dist/$PRODUCT_NAME.vst/\"\nfi\n\nif [ $copyVST3 -gt 0 ]; then\n  echo \"Copying to VST3 folder...\"\n  VST3=~/Library/Audio/Plug-Ins/VST3/$PRODUCT_NAME.vst3\n  if [ -d \"$VST3\" ]; then \n    rm -r \"$VST3\"\n  fi\n\n  cp -r \"$original\" \"$VST3\"\n  sed -i \"\" -e 's/TDMwPTul/BNDLPTul/g' \"$VST3/Contents/PkgInfo\"\n  sed -i \"\" -e 's/TDMw/BNDL/g' \"$VST3/Contents/$INFOPLIST_FILE\"\n\n  rsync -ar --delete \"$VST3/\" \"$CONFIGURATION_BUILD_DIR/dist/$PRODUCT_NAME.vst3/\"\nfi\n\nif [ $copyRTAS -gt 0 ]; then\n  echo \"Copying to RTAS folder...\"\n  RTAS=/Library/Application\\ Support/Digidesign/Plug-Ins/$PRODUCT_NAME.dpm\n  if [ -d \"$RTAS\" ]; then\n    rm -r \"$RTAS\"\n  fi\n\n  cp -r \"$original\" \"$RTAS\"\nfi\n\nif [ $copyAAX -gt 0 ]; then\n  echo \"Copying to AAX folder...\"\n\n  if [ -d \"/Applications/ProTools_3PDev/Plug-Ins\" ]; then\n    AAX1=\"/Applications/ProTools_3PDev/Plug-Ins/$PRODUCT_NAME.aaxplugin\"\n\n    if [ -d \"$AAX1\" ]; then\n      rm -r \"$AAX1\"\n    fi\n\n    cp -R -H \"$original\" \"$AAX1\"\n  fi\n\n  if [ -d \"/Library/Application Support/Avid/Audio/Plug-Ins\" ]; then\n    AAX2=\"/Library/Application Support/Avid/Audio/Plug-Ins/$PRODUCT_NAME.aaxplugin\"\n\n    if [ -d \"$AAX2\" ]; then\n      rm -r \"$AAX2\"\n    fi\n\n    cp -R -H \"$original\" \"$AAX2\"\n  fi\nfi\n"; };
 		3304B3FC4CAEFD7CFA078A37 = {isa = PBXNativeTarget; buildConfigurationList = BCD2F023C54E745FFDF3A299; buildPhases = (
 					7F20FCAAC707178370CB7131,
 					D63C8A2FDC4144DE1CFA9535,
-					53D42BE29C84D973B1BE64F7,
-					22068B3F63BA5E05E23810BA, ); buildRules = ( ); dependencies = (
+					53D42BE29C84D973B1BE64F7, ); buildRules = ( ); dependencies = (
 					373EE88B4021D687E8FE359F, ); name = "Roboverb - VST3"; productName = Roboverb; productReference = CBE0A1EFEE69C5947C584178; productType = "com.apple.product-type.bundle"; };
 		0BD9AB6B6EB77EE4A9D1E834 = {isa = XCConfigurationList; buildConfigurations = (
 					D8A8F6F04BE532190D3A3786,
@@ -874,17 +1003,40 @@
 					258C2E5420FAFBA346B18A01,
 					4ABC6C3627838344DF6FF93A,
 					C1C78E1DE9284635C8AA952B,
+					29124A6D63FF3D7A0E985CB1,
 					30A0E85BB3737BC13D9A07F8,
 					C010E8F2F485C0C80E808223,
 					93806ED0D01278DE2E55A4FC, ); runOnlyForDeploymentPostprocessing = 0; };
-		8E7B5B1527B76BAE7F8DC7D8 = {isa = PBXShellScriptBuildPhase; buildActionMask = 2147483647; files = (  ); runOnlyForDeploymentPostprocessing = 0; name = "Post-build script"; shellPath = /bin/sh; shellScript = "\n# This script takes the build product and copies it to the AU, VST, VST3, RTAS and AAX folders, depending on \n# which plugin types you've built\n\noriginal=$CONFIGURATION_BUILD_DIR/$FULL_PRODUCT_NAME\n\n# this looks inside the binary to detect which platforms are needed.. \ncopyAU=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'AudioUnit' | wc -l`\ncopyVST=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'VSTPlugin' | wc -l`\ncopyVST3=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'GetPluginFactory' | wc -l`\ncopyRTAS=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'CProcess' | wc -l`\ncopyAAX=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'ACFStartup' | wc -l`\n\nmkdir -p \"$CONFIGURATION_BUILD_DIR/dist\"\n\nif [ $copyAU -gt 0 ]; then\n  echo \"Copying to AudioUnit folder...\"\n  AU=~/Library/Audio/Plug-Ins/Components/$PRODUCT_NAME.component\n  if [ -d \"$AU\" ]; then \n    rm -r \"$AU\"\n  fi\n\n  cp -r \"$original\" \"$AU\"\n  sed -i \"\" -e 's/TDMwPTul/BNDLPTul/g' \"$AU/Contents/PkgInfo\"\n  sed -i \"\" -e 's/TDMw/BNDL/g' \"$AU/Contents/$INFOPLIST_FILE\"\n\n  # Fix info.plist for AUs built with Xcode 3\n  if [ -f \"$DEVELOPER_DIR/Library/Developer/CoreAudio/AudioUnits/AUPublic/AUBase/AUPlugInDispatch.cpp\" ]; then\n    echo\n  else\n    echo \"Removing AudioComponents entry from Info.plist because this is not a new-format AU\"\n    /usr/libexec/PlistBuddy -c \"Delete AudioComponents\" \"$AU/Contents/Info.plist\"\n  fi\n\n  rsync -ar --delete \"$AU/\" \"$CONFIGURATION_BUILD_DIR/dist/$PRODUCT_NAME.component/\"\nfi\n\nif [ $copyVST -gt 0 ]; then\n  echo \"Copying to VST folder...\"\n  VST=~/Library/Audio/Plug-Ins/VST/$PRODUCT_NAME.vst\n  if [ -d \"$VST\" ]; then \n    rm -r \"$VST\"\n  fi\n\n  cp -r \"$original\" \"$VST\"\n  sed -i \"\" -e 's/TDMwPTul/BNDLPTul/g' \"$VST/Contents/PkgInfo\"\n  sed -i \"\" -e 's/TDMw/BNDL/g' \"$VST/Contents/$INFOPLIST_FILE\"\n\n  rsync -ar --delete \"$VST/\" \"$CONFIGURATION_BUILD_DIR/dist/$PRODUCT_NAME.vst/\"\nfi\n\nif [ $copyVST3 -gt 0 ]; then\n  echo \"Copying to VST3 folder...\"\n  VST3=~/Library/Audio/Plug-Ins/VST3/$PRODUCT_NAME.vst3\n  if [ -d \"$VST3\" ]; then \n    rm -r \"$VST3\"\n  fi\n\n  cp -r \"$original\" \"$VST3\"\n  sed -i \"\" -e 's/TDMwPTul/BNDLPTul/g' \"$VST3/Contents/PkgInfo\"\n  sed -i \"\" -e 's/TDMw/BNDL/g' \"$VST3/Contents/$INFOPLIST_FILE\"\n\n  rsync -ar --delete \"$VST3/\" \"$CONFIGURATION_BUILD_DIR/dist/$PRODUCT_NAME.vst3/\"\nfi\n\nif [ $copyRTAS -gt 0 ]; then\n  echo \"Copying to RTAS folder...\"\n  RTAS=/Library/Application\\ Support/Digidesign/Plug-Ins/$PRODUCT_NAME.dpm\n  if [ -d \"$RTAS\" ]; then\n    rm -r \"$RTAS\"\n  fi\n\n  cp -r \"$original\" \"$RTAS\"\nfi\n\nif [ $copyAAX -gt 0 ]; then\n  echo \"Copying to AAX folder...\"\n\n  if [ -d \"/Applications/ProTools_3PDev/Plug-Ins\" ]; then\n    AAX1=\"/Applications/ProTools_3PDev/Plug-Ins/$PRODUCT_NAME.aaxplugin\"\n\n    if [ -d \"$AAX1\" ]; then\n      rm -r \"$AAX1\"\n    fi\n\n    cp -R -H \"$original\" \"$AAX1\"\n  fi\n\n  if [ -d \"/Library/Application Support/Avid/Audio/Plug-Ins\" ]; then\n    AAX2=\"/Library/Application Support/Avid/Audio/Plug-Ins/$PRODUCT_NAME.aaxplugin\"\n\n    if [ -d \"$AAX2\" ]; then\n      rm -r \"$AAX2\"\n    fi\n\n    cp -R -H \"$original\" \"$AAX2\"\n  fi\nfi\n"; };
 		190B015F710AC71FBA4B8C24 = {isa = PBXNativeTarget; buildConfigurationList = 0BD9AB6B6EB77EE4A9D1E834; buildPhases = (
 					0CDF4A9CA88D6CAA733AF472,
 					0BD8A2202D7C364414869166,
 					476C13E1B19380E750A277C1,
-					EA418355C52FE99B39460906,
-					8E7B5B1527B76BAE7F8DC7D8, ); buildRules = ( ); dependencies = (
+					EA418355C52FE99B39460906, ); buildRules = ( ); dependencies = (
 					373EE88B4021D687E8FE359F, ); name = "Roboverb - AU"; productName = Roboverb; productReference = BB8DEA65B3D95F83E4DBF7B2; productType = "com.apple.product-type.bundle"; };
+		02D69A31915578D5FA948EEB = {isa = XCConfigurationList; buildConfigurations = (
+					4DEA57341BDEF0CA4EBC7FFF,
+					F53CF0196A378E4320744A83,
+					542B832DDED78E68936625D9, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+		D4AD27A15E4979585DFBC8B5 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (
+					04576E24B00ECB09D38B6A23, ); runOnlyForDeploymentPostprocessing = 0; };
+		91A97DBD8ACBC59AD20AAAC5 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
+					EFDE57AD47E3A1F3C779CC37, ); runOnlyForDeploymentPostprocessing = 0; };
+		F08CFC299326F13364AE6B97 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (
+					6B7991B14922BC7E635F7F4D,
+					10D0B71411A7AFAEDD853CAF,
+					5079B26FF979DC9998CC4282,
+					209E1CF8FED7132245C0371D,
+					258C2E5420FAFBA346B18A01,
+					C1C78E1DE9284635C8AA952B,
+					29124A6D63FF3D7A0E985CB1,
+					30A0E85BB3737BC13D9A07F8,
+					C010E8F2F485C0C80E808223,
+					93806ED0D01278DE2E55A4FC, ); runOnlyForDeploymentPostprocessing = 0; };
+		82D72036D7932AD51DB5824D = {isa = PBXNativeTarget; buildConfigurationList = 02D69A31915578D5FA948EEB; buildPhases = (
+					D4AD27A15E4979585DFBC8B5,
+					91A97DBD8ACBC59AD20AAAC5,
+					F08CFC299326F13364AE6B97, ); buildRules = ( ); dependencies = (
+					373EE88B4021D687E8FE359F, ); name = "Roboverb - Standalone Plugin"; productName = Roboverb; productReference = 1294CD3C469727950948B070; productType = "com.apple.product-type.application"; };
 		1AC8EF02EC2D3A7A068ABF36 = {isa = XCConfigurationList; buildConfigurations = (
 					90B69E881C4948622FE8E2B0,
 					0D1C6DB966818C2B97D34798,
@@ -898,9 +1050,12 @@
 					1E17CF3F2E371D2ED7D1B56A,
 					FB779A782F83FB76F2F764F5,
 					273B3F49A7E425D4A9D049BE,
+					7865F56F5D8A940B271E5FE5,
+					F0754EC566CAD97FA597E6E0,
 					F67E8A8A44BAC258BAE48F5B,
 					2DA81E182BB65D0E56471EC7,
 					8FFC1C8BEBB66661B6DD70E4,
+					D316D1313BAC6D3C58C3DED1,
 					D5D5929ECE95D315244588A1,
 					9ADEB36491F183062C8B1655,
 					121D2EE321DE5D8F7B8BA863,
@@ -911,11 +1066,9 @@
 					26630033124BD3075B42CEE6,
 					4D5F94FF8A98C1E4229242F7,
 					7DFBBCC899C320815AF0EFFD, ); runOnlyForDeploymentPostprocessing = 0; };
-		725C0FC0679302B3A993D879 = {isa = PBXShellScriptBuildPhase; buildActionMask = 2147483647; files = (  ); runOnlyForDeploymentPostprocessing = 0; name = "Post-build script"; shellPath = /bin/sh; shellScript = "\n# This script takes the build product and copies it to the AU, VST, VST3, RTAS and AAX folders, depending on \n# which plugin types you've built\n\noriginal=$CONFIGURATION_BUILD_DIR/$FULL_PRODUCT_NAME\n\n# this looks inside the binary to detect which platforms are needed.. \ncopyAU=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'AudioUnit' | wc -l`\ncopyVST=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'VSTPlugin' | wc -l`\ncopyVST3=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'GetPluginFactory' | wc -l`\ncopyRTAS=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'CProcess' | wc -l`\ncopyAAX=`nm -g \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH\" | grep -i 'ACFStartup' | wc -l`\n\nmkdir -p \"$CONFIGURATION_BUILD_DIR/dist\"\n\nif [ $copyAU -gt 0 ]; then\n  echo \"Copying to AudioUnit folder...\"\n  AU=~/Library/Audio/Plug-Ins/Components/$PRODUCT_NAME.component\n  if [ -d \"$AU\" ]; then \n    rm -r \"$AU\"\n  fi\n\n  cp -r \"$original\" \"$AU\"\n  sed -i \"\" -e 's/TDMwPTul/BNDLPTul/g' \"$AU/Contents/PkgInfo\"\n  sed -i \"\" -e 's/TDMw/BNDL/g' \"$AU/Contents/$INFOPLIST_FILE\"\n\n  # Fix info.plist for AUs built with Xcode 3\n  if [ -f \"$DEVELOPER_DIR/Library/Developer/CoreAudio/AudioUnits/AUPublic/AUBase/AUPlugInDispatch.cpp\" ]; then\n    echo\n  else\n    echo \"Removing AudioComponents entry from Info.plist because this is not a new-format AU\"\n    /usr/libexec/PlistBuddy -c \"Delete AudioComponents\" \"$AU/Contents/Info.plist\"\n  fi\n\n  rsync -ar --delete \"$AU/\" \"$CONFIGURATION_BUILD_DIR/dist/$PRODUCT_NAME.component/\"\nfi\n\nif [ $copyVST -gt 0 ]; then\n  echo \"Copying to VST folder...\"\n  VST=~/Library/Audio/Plug-Ins/VST/$PRODUCT_NAME.vst\n  if [ -d \"$VST\" ]; then \n    rm -r \"$VST\"\n  fi\n\n  cp -r \"$original\" \"$VST\"\n  sed -i \"\" -e 's/TDMwPTul/BNDLPTul/g' \"$VST/Contents/PkgInfo\"\n  sed -i \"\" -e 's/TDMw/BNDL/g' \"$VST/Contents/$INFOPLIST_FILE\"\n\n  rsync -ar --delete \"$VST/\" \"$CONFIGURATION_BUILD_DIR/dist/$PRODUCT_NAME.vst/\"\nfi\n\nif [ $copyVST3 -gt 0 ]; then\n  echo \"Copying to VST3 folder...\"\n  VST3=~/Library/Audio/Plug-Ins/VST3/$PRODUCT_NAME.vst3\n  if [ -d \"$VST3\" ]; then \n    rm -r \"$VST3\"\n  fi\n\n  cp -r \"$original\" \"$VST3\"\n  sed -i \"\" -e 's/TDMwPTul/BNDLPTul/g' \"$VST3/Contents/PkgInfo\"\n  sed -i \"\" -e 's/TDMw/BNDL/g' \"$VST3/Contents/$INFOPLIST_FILE\"\n\n  rsync -ar --delete \"$VST3/\" \"$CONFIGURATION_BUILD_DIR/dist/$PRODUCT_NAME.vst3/\"\nfi\n\nif [ $copyRTAS -gt 0 ]; then\n  echo \"Copying to RTAS folder...\"\n  RTAS=/Library/Application\\ Support/Digidesign/Plug-Ins/$PRODUCT_NAME.dpm\n  if [ -d \"$RTAS\" ]; then\n    rm -r \"$RTAS\"\n  fi\n\n  cp -r \"$original\" \"$RTAS\"\nfi\n\nif [ $copyAAX -gt 0 ]; then\n  echo \"Copying to AAX folder...\"\n\n  if [ -d \"/Applications/ProTools_3PDev/Plug-Ins\" ]; then\n    AAX1=\"/Applications/ProTools_3PDev/Plug-Ins/$PRODUCT_NAME.aaxplugin\"\n\n    if [ -d \"$AAX1\" ]; then\n      rm -r \"$AAX1\"\n    fi\n\n    cp -R -H \"$original\" \"$AAX1\"\n  fi\n\n  if [ -d \"/Library/Application Support/Avid/Audio/Plug-Ins\" ]; then\n    AAX2=\"/Library/Application Support/Avid/Audio/Plug-Ins/$PRODUCT_NAME.aaxplugin\"\n\n    if [ -d \"$AAX2\" ]; then\n      rm -r \"$AAX2\"\n    fi\n\n    cp -R -H \"$original\" \"$AAX2\"\n  fi\nfi\n"; };
 		E1C060F336EE9281F35E19F9 = {isa = PBXNativeTarget; buildConfigurationList = 1AC8EF02EC2D3A7A068ABF36; buildPhases = (
-					2ECEA0A4899723C7964F6D91,
-					725C0FC0679302B3A993D879, ); buildRules = ( ); dependencies = (  ); name = "Roboverb - Shared Code"; productName = Roboverb; productReference = 33B5D4783E989A063ED0D45E; productType = "com.apple.product-type.library.static"; };
-		DA2DD29E0316604937EE2773 = {isa = PBXProject; buildConfigurationList = D74648B68F684998076D74AF; attributes = { LastUpgradeCheck = 0830; TargetAttributes = { 69DE4B8E7953F7BB7A84C2E3 = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; }; };08E069336A53FD1F75A19292 = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; }; };3304B3FC4CAEFD7CFA078A37 = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; }; };190B015F710AC71FBA4B8C24 = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; }; };E1C060F336EE9281F35E19F9 = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; }; }; }; }; compatibilityVersion = "Xcode 3.2"; hasScannedForEncodings = 0; mainGroup = 83F56ED03708D67B427BAF66; projectDirPath = ""; projectRoot = ""; targets = (69DE4B8E7953F7BB7A84C2E3, 08E069336A53FD1F75A19292, 3304B3FC4CAEFD7CFA078A37, 190B015F710AC71FBA4B8C24, E1C060F336EE9281F35E19F9); };
+					2ECEA0A4899723C7964F6D91, ); buildRules = ( ); dependencies = (  ); name = "Roboverb - Shared Code"; productName = Roboverb; productReference = 33B5D4783E989A063ED0D45E; productType = "com.apple.product-type.library.static"; };
+		DA2DD29E0316604937EE2773 = {isa = PBXProject; buildConfigurationList = D74648B68F684998076D74AF; attributes = { LastUpgradeCheck = 0830; TargetAttributes = { 69DE4B8E7953F7BB7A84C2E3 = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; }; };08E069336A53FD1F75A19292 = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; }; };3304B3FC4CAEFD7CFA078A37 = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; }; };190B015F710AC71FBA4B8C24 = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; }; };82D72036D7932AD51DB5824D = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; }; };E1C060F336EE9281F35E19F9 = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; }; }; }; }; compatibilityVersion = "Xcode 3.2"; hasScannedForEncodings = 0; mainGroup = 83F56ED03708D67B427BAF66; projectDirPath = ""; projectRoot = ""; targets = (69DE4B8E7953F7BB7A84C2E3, 08E069336A53FD1F75A19292, 3304B3FC4CAEFD7CFA078A37, 190B015F710AC71FBA4B8C24, 82D72036D7932AD51DB5824D, E1C060F336EE9281F35E19F9); };
 	};
 	rootObject = DA2DD29E0316604937EE2773;
 }

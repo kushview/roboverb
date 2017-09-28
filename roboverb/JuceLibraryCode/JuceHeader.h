@@ -15,8 +15,11 @@
 #include "AppConfig.h"
 
 #include <juce_audio_basics/juce_audio_basics.h>
+#include <juce_audio_devices/juce_audio_devices.h>
+#include <juce_audio_formats/juce_audio_formats.h>
 #include <juce_audio_plugin_client/juce_audio_plugin_client.h>
 #include <juce_audio_processors/juce_audio_processors.h>
+#include <juce_audio_utils/juce_audio_utils.h>
 #include <juce_core/juce_core.h>
 #include <juce_cryptography/juce_cryptography.h>
 #include <juce_data_structures/juce_data_structures.h>
@@ -40,7 +43,7 @@
 namespace ProjectInfo
 {
     const char* const  projectName    = "Roboverb";
-    const char* const  versionString  = "1.0.4";
-    const int          versionNumber  = 0x10004;
+    const char* const  versionString  = "1.0.5";
+    const int          versionNumber  = 0x10005;
 }
 #endif
