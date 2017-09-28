@@ -49,12 +49,12 @@ float RoboverbAudioProcessor::getParameter (int index)
         const Roboverb::Parameters& p (verb.getParameters());
         switch (index)
         {
-            case Roboverb::RoomSize: return p.roomSize; break;
-            case Roboverb::Damping: return p.damping; break;
-            case Roboverb::WetLevel: return p.wetLevel; break;
-            case Roboverb::DryLevel: return p.dryLevel; break;
-            case Roboverb::Width:  return p.width; break;
-            case Roboverb::FreezeMode: return p.freezeMode; break;
+            case Roboverb::RoomSize:    return p.roomSize; break;
+            case Roboverb::Damping:     return p.damping; break;
+            case Roboverb::WetLevel:    return p.wetLevel; break;
+            case Roboverb::DryLevel:    return p.dryLevel; break;
+            case Roboverb::Width:       return p.width; break;
+            case Roboverb::FreezeMode:  return p.freezeMode; break;
         }
     }
 

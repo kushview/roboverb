@@ -14,7 +14,7 @@
     <key>CFBundleDisplayName</key>
     <string>Roboverb</string>
     <key>CFBundlePackageType</key>
-    <string>BNDL</string>
+    <string>APPL</string>
     <key>CFBundleSignature</key>
     <string>????</string>
     <key>CFBundleShortVersionString</key>
@@ -25,24 +25,5 @@
     <string>Kushview</string>
     <key>NSHighResolutionCapable</key>
     <true/>
-    <key>AudioComponents</key>
-    <array>
-      <dict>
-        <key>name</key>
-        <string>Kushview: Roboverb</string>
-        <key>description</key>
-        <string>Robotic Reverb</string>
-        <key>factoryFunction</key>
-        <string>RoboverbAUFactory</string>
-        <key>manufacturer</key>
-        <string>KshV</string>
-        <key>type</key>
-        <string>aufx</string>
-        <key>subtype</key>
-        <string>RobV</string>
-        <key>version</key>
-        <integer>65541</integer>
-      </dict>
-    </array>
   </dict>
 </plist>

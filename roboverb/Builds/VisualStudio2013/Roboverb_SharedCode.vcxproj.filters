@@ -38,6 +38,72 @@
     <Filter Include="Juce Modules\juce_audio_basics">
       <UniqueIdentifier>{3247ED97-A75A-F50B-8CCC-46155E895806}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Juce Modules\juce_audio_devices\audio_io">
+      <UniqueIdentifier>{9D270B31-2425-8FDB-84A4-6A2288FF5B2F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_devices\midi_io">
+      <UniqueIdentifier>{0F766DD4-A277-CB86-5647-42498C8B41E1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_devices\native">
+      <UniqueIdentifier>{01603E05-423B-5FC3-1BEE-E15ED33B5688}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_devices\sources">
+      <UniqueIdentifier>{D64942B4-6984-3623-3347-45D472AE1C61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_devices">
+      <UniqueIdentifier>{CACD7B50-4DB3-76AF-A6E8-90DF94F8F594}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_formats\codecs\flac\libFLAC\include\private">
+      <UniqueIdentifier>{C9640E58-4493-7EEC-6F58-603AD184956E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_formats\codecs\flac\libFLAC\include\protected">
+      <UniqueIdentifier>{D8EE4AD1-61E3-21C2-6640-6684F4CF77DC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_formats\codecs\flac\libFLAC\include">
+      <UniqueIdentifier>{FEF33480-117C-23A6-D12C-7C299F26C9DB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_formats\codecs\flac\libFLAC">
+      <UniqueIdentifier>{9DFA63C1-4EE6-1FAB-D563-41FCF84988F2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_formats\codecs\flac">
+      <UniqueIdentifier>{AB8611DF-8161-A9DF-DBAD-77A87DE37331}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\books\coupled">
+      <UniqueIdentifier>{25C8FB00-334A-6E0F-F203-E988758B708A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\books\floor">
+      <UniqueIdentifier>{94027CB9-8162-7431-2E01-B710C7CAE620}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\books\uncoupled">
+      <UniqueIdentifier>{450B8177-6F41-B902-761B-BF68D55102DA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\books">
+      <UniqueIdentifier>{B8087E92-19F7-552F-9E85-16153D7191B0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes">
+      <UniqueIdentifier>{B7221885-1731-611D-FDD9-EA968FA8D858}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib">
+      <UniqueIdentifier>{DC58E9B7-2710-F45C-B718-75EACDF53F47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2">
+      <UniqueIdentifier>{9971A63C-5B75-039F-95C2-7474D7DB16B0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_formats\codecs\oggvorbis">
+      <UniqueIdentifier>{76391436-F92A-7602-4073-E446B5FAA859}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_formats\codecs">
+      <UniqueIdentifier>{0CD9E281-DDD0-91EC-6F77-EA9D9D5E0E1A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_formats\format">
+      <UniqueIdentifier>{2FE25F4C-E9DF-04A5-CAED-6E4B7CF28C59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_formats\sampler">
+      <UniqueIdentifier>{40C5CA7C-AEBB-05B1-11CE-AE41D87B5CCB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_formats">
+      <UniqueIdentifier>{65CB28F8-0422-A8F3-9A17-959E12A1F8E2}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Juce Modules\juce_audio_plugin_client\AU\CoreAudioUtilityClasses">
       <UniqueIdentifier>{2FB30532-4EF3-EFA3-E57C-F7DDE9DB1297}</UniqueIdentifier>
     </Filter>
@@ -73,6 +139,21 @@
     </Filter>
     <Filter Include="Juce Modules\juce_audio_processors">
       <UniqueIdentifier>{0B0E7392-324B-088C-FBEB-5FE999D61782}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_utils\audio_cd">
+      <UniqueIdentifier>{C396369E-8C55-88E9-5D19-5D3772B773D3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_utils\gui">
+      <UniqueIdentifier>{8167E753-09C7-5D1C-EF2B-32D297557443}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_utils\native">
+      <UniqueIdentifier>{B48C883A-8483-AF6D-808C-1D9A749048D8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_utils\players">
+      <UniqueIdentifier>{AEDCB7F7-7A36-5392-8E9A-715F5BDE35CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Juce Modules\juce_audio_utils">
+      <UniqueIdentifier>{B63F69FD-8A40-8E1E-E7ED-419B8DC1C12B}</UniqueIdentifier>
     </Filter>
     <Filter Include="Juce Modules\juce_core\containers">
       <UniqueIdentifier>{0608ADE9-66EF-1A19-6D57-12D07F76EB53}</UniqueIdentifier>
@@ -436,6 +517,243 @@
     <ClCompile Include="C:\SDKs\JUCE\modules\juce_audio_basics\juce_audio_basics.mm">
       <Filter>Juce Modules\juce_audio_basics</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\audio_io\juce_AudioDeviceManager.cpp">
+      <Filter>Juce Modules\juce_audio_devices\audio_io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\audio_io\juce_AudioIODevice.cpp">
+      <Filter>Juce Modules\juce_audio_devices\audio_io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\audio_io\juce_AudioIODeviceType.cpp">
+      <Filter>Juce Modules\juce_audio_devices\audio_io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\midi_io\juce_MidiMessageCollector.cpp">
+      <Filter>Juce Modules\juce_audio_devices\midi_io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\midi_io\juce_MidiOutput.cpp">
+      <Filter>Juce Modules\juce_audio_devices\midi_io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\native\juce_android_Audio.cpp">
+      <Filter>Juce Modules\juce_audio_devices\native</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\native\juce_android_Midi.cpp">
+      <Filter>Juce Modules\juce_audio_devices\native</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\native\juce_android_OpenSL.cpp">
+      <Filter>Juce Modules\juce_audio_devices\native</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\native\juce_ios_Audio.cpp">
+      <Filter>Juce Modules\juce_audio_devices\native</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\native\juce_linux_ALSA.cpp">
+      <Filter>Juce Modules\juce_audio_devices\native</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\native\juce_linux_JackAudio.cpp">
+      <Filter>Juce Modules\juce_audio_devices\native</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\native\juce_linux_Midi.cpp">
+      <Filter>Juce Modules\juce_audio_devices\native</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\native\juce_mac_CoreAudio.cpp">
+      <Filter>Juce Modules\juce_audio_devices\native</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\native\juce_mac_CoreMidi.cpp">
+      <Filter>Juce Modules\juce_audio_devices\native</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\native\juce_win32_ASIO.cpp">
+      <Filter>Juce Modules\juce_audio_devices\native</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\native\juce_win32_DirectSound.cpp">
+      <Filter>Juce Modules\juce_audio_devices\native</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\native\juce_win32_Midi.cpp">
+      <Filter>Juce Modules\juce_audio_devices\native</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\native\juce_win32_WASAPI.cpp">
+      <Filter>Juce Modules\juce_audio_devices\native</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\sources\juce_AudioSourcePlayer.cpp">
+      <Filter>Juce Modules\juce_audio_devices\sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\sources\juce_AudioTransportSource.cpp">
+      <Filter>Juce Modules\juce_audio_devices\sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\juce_audio_devices.cpp">
+      <Filter>Juce Modules\juce_audio_devices</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\juce_audio_devices.mm">
+      <Filter>Juce Modules\juce_audio_devices</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\bitmath.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\bitreader.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\bitwriter.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\cpu.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\crc.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\fixed.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\float.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\format.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\lpc_flac.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\md5.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\memory.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\stream_decoder.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\stream_encoder.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\stream_encoder_framing.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\window_flac.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\analysis.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\bitrate.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\block.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\codebook.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\envelope.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\floor0.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\floor1.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\info.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\lookup.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\lpc.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\lsp.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\mapping0.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\mdct.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\psy.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\registry.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\res0.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\sharedbook.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\smallft.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\synthesis.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\vorbisenc.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\vorbisfile.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\window.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\bitwise.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\framing.c">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\juce_AiffAudioFormat.cpp">
+      <Filter>Juce Modules\juce_audio_formats\codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\juce_CoreAudioFormat.cpp">
+      <Filter>Juce Modules\juce_audio_formats\codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\juce_FlacAudioFormat.cpp">
+      <Filter>Juce Modules\juce_audio_formats\codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\juce_LAMEEncoderAudioFormat.cpp">
+      <Filter>Juce Modules\juce_audio_formats\codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\juce_MP3AudioFormat.cpp">
+      <Filter>Juce Modules\juce_audio_formats\codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\juce_OggVorbisAudioFormat.cpp">
+      <Filter>Juce Modules\juce_audio_formats\codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\juce_WavAudioFormat.cpp">
+      <Filter>Juce Modules\juce_audio_formats\codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\juce_WindowsMediaAudioFormat.cpp">
+      <Filter>Juce Modules\juce_audio_formats\codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\format\juce_AudioFormat.cpp">
+      <Filter>Juce Modules\juce_audio_formats\format</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\format\juce_AudioFormatManager.cpp">
+      <Filter>Juce Modules\juce_audio_formats\format</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\format\juce_AudioFormatReader.cpp">
+      <Filter>Juce Modules\juce_audio_formats\format</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\format\juce_AudioFormatReaderSource.cpp">
+      <Filter>Juce Modules\juce_audio_formats\format</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\format\juce_AudioFormatWriter.cpp">
+      <Filter>Juce Modules\juce_audio_formats\format</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\format\juce_AudioSubsectionReader.cpp">
+      <Filter>Juce Modules\juce_audio_formats\format</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\format\juce_BufferingAudioFormatReader.cpp">
+      <Filter>Juce Modules\juce_audio_formats\format</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\sampler\juce_Sampler.cpp">
+      <Filter>Juce Modules\juce_audio_formats\sampler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\juce_audio_formats.cpp">
+      <Filter>Juce Modules\juce_audio_formats</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\juce_audio_formats.mm">
+      <Filter>Juce Modules\juce_audio_formats</Filter>
+    </ClCompile>
     <ClCompile Include="C:\SDKs\JUCE\modules\juce_audio_plugin_client\AU\CoreAudioUtilityClasses\AUBase.cpp">
       <Filter>Juce Modules\juce_audio_plugin_client\AU\CoreAudioUtilityClasses</Filter>
     </ClCompile>
@@ -567,6 +885,69 @@
     </ClCompile>
     <ClCompile Include="C:\SDKs\JUCE\modules\juce_audio_processors\juce_audio_processors.mm">
       <Filter>Juce Modules\juce_audio_processors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\audio_cd\juce_AudioCDReader.cpp">
+      <Filter>Juce Modules\juce_audio_utils\audio_cd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\gui\juce_AudioAppComponent.cpp">
+      <Filter>Juce Modules\juce_audio_utils\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\gui\juce_AudioDeviceSelectorComponent.cpp">
+      <Filter>Juce Modules\juce_audio_utils\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\gui\juce_AudioThumbnail.cpp">
+      <Filter>Juce Modules\juce_audio_utils\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\gui\juce_AudioThumbnailCache.cpp">
+      <Filter>Juce Modules\juce_audio_utils\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\gui\juce_AudioVisualiserComponent.cpp">
+      <Filter>Juce Modules\juce_audio_utils\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\gui\juce_MidiKeyboardComponent.cpp">
+      <Filter>Juce Modules\juce_audio_utils\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\native\juce_android_BluetoothMidiDevicePairingDialogue.cpp">
+      <Filter>Juce Modules\juce_audio_utils\native</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\native\juce_ios_BluetoothMidiDevicePairingDialogue.mm">
+      <Filter>Juce Modules\juce_audio_utils\native</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\native\juce_linux_AudioCDReader.cpp">
+      <Filter>Juce Modules\juce_audio_utils\native</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\native\juce_linux_BluetoothMidiDevicePairingDialogue.cpp">
+      <Filter>Juce Modules\juce_audio_utils\native</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\native\juce_mac_AudioCDBurner.mm">
+      <Filter>Juce Modules\juce_audio_utils\native</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\native\juce_mac_AudioCDReader.mm">
+      <Filter>Juce Modules\juce_audio_utils\native</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\native\juce_mac_BluetoothMidiDevicePairingDialogue.mm">
+      <Filter>Juce Modules\juce_audio_utils\native</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\native\juce_win_BluetoothMidiDevicePairingDialogue.cpp">
+      <Filter>Juce Modules\juce_audio_utils\native</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\native\juce_win32_AudioCDBurner.cpp">
+      <Filter>Juce Modules\juce_audio_utils\native</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\native\juce_win32_AudioCDReader.cpp">
+      <Filter>Juce Modules\juce_audio_utils\native</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\players\juce_AudioProcessorPlayer.cpp">
+      <Filter>Juce Modules\juce_audio_utils\players</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\players\juce_SoundPlayer.cpp">
+      <Filter>Juce Modules\juce_audio_utils\players</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\juce_audio_utils.cpp">
+      <Filter>Juce Modules\juce_audio_utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\juce_audio_utils.mm">
+      <Filter>Juce Modules\juce_audio_utils</Filter>
     </ClCompile>
     <ClCompile Include="C:\SDKs\JUCE\modules\juce_core\containers\juce_AbstractFifo.cpp">
       <Filter>Juce Modules\juce_core\containers</Filter>
@@ -1438,6 +1819,15 @@
     <ClCompile Include="C:\SDKs\JUCE\modules\juce_gui_basics\layout\juce_FlexBox.cpp">
       <Filter>Juce Modules\juce_gui_basics\layout</Filter>
     </ClCompile>
+    <ClCompile Include="C:\SDKs\JUCE\modules\juce_gui_basics\layout\juce_Grid.cpp">
+      <Filter>Juce Modules\juce_gui_basics\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SDKs\JUCE\modules\juce_gui_basics\layout\juce_GridItem.cpp">
+      <Filter>Juce Modules\juce_gui_basics\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SDKs\JUCE\modules\juce_gui_basics\layout\juce_GridUnitTests.cpp">
+      <Filter>Juce Modules\juce_gui_basics\layout</Filter>
+    </ClCompile>
     <ClCompile Include="C:\SDKs\JUCE\modules\juce_gui_basics\layout\juce_GroupComponent.cpp">
       <Filter>Juce Modules\juce_gui_basics\layout</Filter>
     </ClCompile>
@@ -1870,10 +2260,19 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_basics.cpp">
       <Filter>Juce Library Code</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_devices.cpp">
+      <Filter>Juce Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_formats.cpp">
+      <Filter>Juce Library Code</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_plugin_client_utils.cpp">
       <Filter>Juce Library Code</Filter>
     </ClCompile>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_processors.cpp">
+      <Filter>Juce Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_utils.cpp">
       <Filter>Juce Library Code</Filter>
     </ClCompile>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_core.cpp">
@@ -2045,6 +2444,336 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE\modules\juce_audio_basics\juce_audio_basics.h">
       <Filter>Juce Modules\juce_audio_basics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\audio_io\juce_AudioDeviceManager.h">
+      <Filter>Juce Modules\juce_audio_devices\audio_io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\audio_io\juce_AudioIODevice.h">
+      <Filter>Juce Modules\juce_audio_devices\audio_io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\audio_io\juce_AudioIODeviceType.h">
+      <Filter>Juce Modules\juce_audio_devices\audio_io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\audio_io\juce_SystemAudioVolume.h">
+      <Filter>Juce Modules\juce_audio_devices\audio_io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\midi_io\juce_MidiInput.h">
+      <Filter>Juce Modules\juce_audio_devices\midi_io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\midi_io\juce_MidiMessageCollector.h">
+      <Filter>Juce Modules\juce_audio_devices\midi_io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\midi_io\juce_MidiOutput.h">
+      <Filter>Juce Modules\juce_audio_devices\midi_io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\native\juce_ios_Audio.h">
+      <Filter>Juce Modules\juce_audio_devices\native</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\native\juce_MidiDataConcatenator.h">
+      <Filter>Juce Modules\juce_audio_devices\native</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\sources\juce_AudioSourcePlayer.h">
+      <Filter>Juce Modules\juce_audio_devices\sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_devices\sources\juce_AudioTransportSource.h">
+      <Filter>Juce Modules\juce_audio_devices\sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE\modules\juce_audio_devices\juce_audio_devices.h">
+      <Filter>Juce Modules\juce_audio_devices</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\include\private\all.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC\include\private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\include\private\bitmath.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC\include\private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\include\private\bitreader.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC\include\private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\include\private\bitwriter.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC\include\private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\include\private\cpu.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC\include\private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\include\private\crc.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC\include\private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\include\private\fixed.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC\include\private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\include\private\float.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC\include\private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\include\private\format.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC\include\private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\include\private\lpc.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC\include\private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\include\private\md5.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC\include\private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\include\private\memory.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC\include\private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\include\private\metadata.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC\include\private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\include\private\stream_encoder.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC\include\private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\include\private\stream_encoder_framing.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC\include\private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\include\private\window.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC\include\private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\include\protected\all.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC\include\protected</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\include\protected\stream_decoder.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC\include\protected</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\libFLAC\include\protected\stream_encoder.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac\libFLAC\include\protected</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\all.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\alloc.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\assert.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\callback.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\compat.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\endswap.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\export.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\format.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\metadata.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\ordinals.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\stream_decoder.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\stream_encoder.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\win_utf8_io.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\books\coupled\res_books_51.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\books\coupled</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\books\coupled\res_books_stereo.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\books\coupled</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\books\floor\floor_books.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\books\floor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\books\uncoupled\res_books_uncoupled.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\books\uncoupled</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\floor_all.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\psych_8.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\psych_11.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\psych_16.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\psych_44.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\residue_8.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\residue_16.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\residue_44.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\residue_44p51.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\residue_44u.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\setup_8.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\setup_11.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\setup_16.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\setup_22.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\setup_32.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\setup_44.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\setup_44p51.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\setup_44u.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes\setup_X.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\backends.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\bitrate.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\codebook.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\codec_internal.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\envelope.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\highlevel.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\lookup.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\lookup_data.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\lpc.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\lsp.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\masking.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\mdct.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\misc.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\os.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\psy.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\registry.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\scales.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\smallft.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib\window.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis\libvorbis-1.3.2\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\codec.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\config_types.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\ogg.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\os_types.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\vorbisenc.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\vorbisfile.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\juce_AiffAudioFormat.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\juce_CoreAudioFormat.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\juce_FlacAudioFormat.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\juce_LAMEEncoderAudioFormat.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\juce_MP3AudioFormat.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\juce_OggVorbisAudioFormat.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\juce_WavAudioFormat.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\juce_WindowsMediaAudioFormat.h">
+      <Filter>Juce Modules\juce_audio_formats\codecs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\format\juce_AudioFormat.h">
+      <Filter>Juce Modules\juce_audio_formats\format</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\format\juce_AudioFormatManager.h">
+      <Filter>Juce Modules\juce_audio_formats\format</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\format\juce_AudioFormatReader.h">
+      <Filter>Juce Modules\juce_audio_formats\format</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\format\juce_AudioFormatReaderSource.h">
+      <Filter>Juce Modules\juce_audio_formats\format</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\format\juce_AudioFormatWriter.h">
+      <Filter>Juce Modules\juce_audio_formats\format</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\format\juce_AudioSubsectionReader.h">
+      <Filter>Juce Modules\juce_audio_formats\format</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\format\juce_BufferingAudioFormatReader.h">
+      <Filter>Juce Modules\juce_audio_formats\format</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\format\juce_MemoryMappedAudioFormatReader.h">
+      <Filter>Juce Modules\juce_audio_formats\format</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\sampler\juce_Sampler.h">
+      <Filter>Juce Modules\juce_audio_formats\sampler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE\modules\juce_audio_formats\juce_audio_formats.h">
+      <Filter>Juce Modules\juce_audio_formats</Filter>
     </ClInclude>
     <ClInclude Include="C:\SDKs\JUCE\modules\juce_audio_plugin_client\AU\CoreAudioUtilityClasses\AUBase.h">
       <Filter>Juce Modules\juce_audio_plugin_client\AU\CoreAudioUtilityClasses</Filter>
@@ -2270,6 +2999,45 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE\modules\juce_audio_processors\juce_audio_processors.h">
       <Filter>Juce Modules\juce_audio_processors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\audio_cd\juce_AudioCDBurner.h">
+      <Filter>Juce Modules\juce_audio_utils\audio_cd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\audio_cd\juce_AudioCDReader.h">
+      <Filter>Juce Modules\juce_audio_utils\audio_cd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\gui\juce_AudioAppComponent.h">
+      <Filter>Juce Modules\juce_audio_utils\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\gui\juce_AudioDeviceSelectorComponent.h">
+      <Filter>Juce Modules\juce_audio_utils\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\gui\juce_AudioThumbnail.h">
+      <Filter>Juce Modules\juce_audio_utils\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\gui\juce_AudioThumbnailBase.h">
+      <Filter>Juce Modules\juce_audio_utils\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\gui\juce_AudioThumbnailCache.h">
+      <Filter>Juce Modules\juce_audio_utils\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\gui\juce_AudioVisualiserComponent.h">
+      <Filter>Juce Modules\juce_audio_utils\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\gui\juce_BluetoothMidiDevicePairingDialogue.h">
+      <Filter>Juce Modules\juce_audio_utils\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\gui\juce_MidiKeyboardComponent.h">
+      <Filter>Juce Modules\juce_audio_utils\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\players\juce_AudioProcessorPlayer.h">
+      <Filter>Juce Modules\juce_audio_utils\players</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_utils\players\juce_SoundPlayer.h">
+      <Filter>Juce Modules\juce_audio_utils\players</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE\modules\juce_audio_utils\juce_audio_utils.h">
+      <Filter>Juce Modules\juce_audio_utils</Filter>
     </ClInclude>
     <ClInclude Include="C:\SDKs\JUCE\modules\juce_core\containers\juce_AbstractFifo.h">
       <Filter>Juce Modules\juce_core\containers</Filter>
@@ -3123,6 +3891,12 @@
     <ClInclude Include="C:\SDKs\JUCE\modules\juce_gui_basics\layout\juce_FlexItem.h">
       <Filter>Juce Modules\juce_gui_basics\layout</Filter>
     </ClInclude>
+    <ClInclude Include="C:\SDKs\JUCE\modules\juce_gui_basics\layout\juce_Grid.h">
+      <Filter>Juce Modules\juce_gui_basics\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\SDKs\JUCE\modules\juce_gui_basics\layout\juce_GridItem.h">
+      <Filter>Juce Modules\juce_gui_basics\layout</Filter>
+    </ClInclude>
     <ClInclude Include="C:\SDKs\JUCE\modules\juce_gui_basics\layout\juce_GroupComponent.h">
       <Filter>Juce Modules\juce_gui_basics\layout</Filter>
     </ClInclude>
@@ -3580,6 +4354,12 @@
     </None>
     <None Include="..\..\..\data\content\red_knob.png">
       <Filter>Roboverb\Content</Filter>
+    </None>
+    <None Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\flac\Flac Licence.txt">
+      <Filter>Juce Modules\juce_audio_formats\codecs\flac</Filter>
+    </None>
+    <None Include="..\..\..\..\..\..\..\..\opt\kushview\JUCE5\modules\juce_audio_formats\codecs\oggvorbis\Ogg Vorbis Licence.txt">
+      <Filter>Juce Modules\juce_audio_formats\codecs\oggvorbis</Filter>
     </None>
     <None Include="C:\SDKs\JUCE\modules\juce_graphics\image_formats\jpglib\changes to libjpeg for JUCE.txt">
       <Filter>Juce Modules\juce_graphics\image_formats\jpglib</Filter>
