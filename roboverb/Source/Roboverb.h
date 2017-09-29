@@ -253,11 +253,21 @@ public:
             const float damp    = damping.getNextValue();
             const float feedbck = feedback.getNextValue();
 
-            for (int j = 0; j < numCombs; ++j)  // accumulate the comb filters in parallel
+            for (int j = 0; j < numCombs; ++j)
+            {
+                // accumulate the comb filters in parallel
+                if (! enabledCombs [j])
+                    continue;
                 output += comb[0][j].process (input, damp, feedbck);
+            }
 
-            for (int j = 0; j < numAllPasses; ++j)  // run the allpass filters in series
+            for (int j = 0; j < numAllPasses; ++j)
+            {
+                // run the allpass filters in series
+                if ( ! enabledAllPasses [j])
+                    continue;
                 output = allPass[0][j].process (output);
+            }
 
             const float dry  = dryGain.getNextValue();
             const float wet1 = wetGain1.getNextValue();
