@@ -299,7 +299,7 @@
  #define JucePlugin_Name                   "Roboverb"
 #endif
 #ifndef  JucePlugin_Desc
- #define JucePlugin_Desc                   "Robotic Reverb"
+ #define JucePlugin_Desc                   "Interstellar Reverb"
 #endif
 #ifndef  JucePlugin_Manufacturer
  #define JucePlugin_Manufacturer           "Kushview"
@@ -308,7 +308,7 @@
  #define JucePlugin_ManufacturerWebsite    "https://kushview.net"
 #endif
 #ifndef  JucePlugin_ManufacturerEmail
- #define JucePlugin_ManufacturerEmail      "info@kushview.net"
+ #define JucePlugin_ManufacturerEmail      "support@kushview.net"
 #endif
 #ifndef  JucePlugin_ManufacturerCode
  #define JucePlugin_ManufacturerCode       0x4b736856 // 'KshV'

@@ -31,7 +31,7 @@
         <key>name</key>
         <string>Kushview: Roboverb</string>
         <key>description</key>
-        <string>Robotic Reverb</string>
+        <string>Interstellar Reverb</string>
         <key>factoryFunction</key>
         <string>RoboverbAUFactory</string>
         <key>manufacturer</key>
