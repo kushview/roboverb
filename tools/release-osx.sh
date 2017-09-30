@@ -1,14 +1,16 @@
 #!/bin/bash
 
 # This file is part of Roboverb
-# Copyright (C) 2015  Kushview, LLC.  All rights reserved.
+# Copyright (C) 2015-2017  Kushview, LLC.  All rights reserved.
 
-here=`pwd`
+# Plugin Version
 version="1.0.5"
 # code sign id
-cid="9511F5241B78B0D38961CD756873066A5F0ED225"
+codesign_identity="9511F5241B78B0D38961CD756873066A5F0ED225"
 # installer sign id
 installer_identity="5F3E07CD73FE49A2977993251492068772DDD9FC"
+
+here=`pwd`
 
 set -e
 
