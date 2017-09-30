@@ -1,6 +1,7 @@
 *.zip
 /installers/packages/build
 /build
+
 ._*
 *.mode1v3
 *.pbxuser

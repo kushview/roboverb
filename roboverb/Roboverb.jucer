@@ -3,13 +3,13 @@
 <JUCERPROJECT id="LOWIDg" name="Roboverb" projectType="audioplug" version="1.0.5"
               bundleIdentifier="net.kushview.Roboverb" includeBinaryInAppConfig="1"
               buildVST="1" buildVST3="1" buildAU="1" buildRTAS="0" buildAAX="0"
-              pluginName="Roboverb" pluginDesc="Robotic Reverb" pluginManufacturer="Kushview"
+              pluginName="Roboverb" pluginDesc="Interstellar Reverb" pluginManufacturer="Kushview"
               pluginManufacturerCode="KshV" pluginCode="RobV" pluginChannelConfigs="{1, 1}, {2, 2}"
               pluginIsSynth="0" pluginWantsMidiIn="0" pluginProducesMidiOut="0"
               pluginSilenceInIsSilenceOut="0" pluginEditorRequiresKeys="0"
               pluginAUExportPrefix="RoboverbAU" pluginRTASCategory="" aaxIdentifier="net.kushview.roboverb"
               pluginAAXCategory="AAX_ePlugInCategory_Dynamics" jucerVersion="5.1.2"
-              companyEmail="info@kushview.net" companyWebsite="https://kushview.net"
+              companyEmail="support@kushview.net" companyWebsite="https://kushview.net"
               companyName="Kushview" pluginAUSDKLocation="~/SDKs/CoreAudio"
               displaySplashScreen="0" reportAppUsage="0" splashScreenColour="Dark"
               buildAUv3="0" buildStandalone="1" enableIAA="0" pluginIsMidiEffectPlugin="0"
@@ -121,6 +121,32 @@
         <MODULEPATH id="juce_audio_formats" path="../../../../../../opt/kushview/JUCE5/modules"/>
       </MODULEPATHS>
     </VS2013>
+    <VS2017 targetFolder="Builds/VisualStudio2017" vst3Folder="" toolset="v141_xp">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="Win32"
+                       isDebug="1" optimisation="1" targetName="Roboverb" binaryPath="../build/x86/Debug"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="Win32"
+                       isDebug="0" optimisation="3" targetName="Roboverb" binaryPath="../build/x86/Release"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="kv_models" path="../../kv-modules/modules"/>
+        <MODULEPATH id="kv_gui" path="../../kv-modules/modules"/>
+        <MODULEPATH id="kv_core" path="../../kv-modules/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="C:\SDKs\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_basics" path="C:\SDKs\JUCE\modules"/>
+        <MODULEPATH id="juce_graphics" path="C:\SDKs\JUCE\modules"/>
+        <MODULEPATH id="juce_events" path="C:\SDKs\JUCE\modules"/>
+        <MODULEPATH id="juce_data_structures" path="C:\SDKs\JUCE\modules"/>
+        <MODULEPATH id="juce_cryptography" path="C:\SDKs\JUCE\modules"/>
+        <MODULEPATH id="juce_core" path="C:\SDKs\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../../../../../opt/kushview/JUCE5/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="C:\SDKs\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="C:\SDKs\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../../../../../opt/kushview/JUCE5/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../../../../../opt/kushview/JUCE5/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="C:\SDKs\JUCE\modules"/>
+      </MODULEPATHS>
+    </VS2017>
   </EXPORTFORMATS>
   <MODULES>
     <MODULES id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
