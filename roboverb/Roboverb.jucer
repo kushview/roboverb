@@ -48,15 +48,14 @@
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" osxSDK="default" osxCompatibility="10.7 SDK" osxArchitecture="64BitUniversal"
                        isDebug="1" optimisation="1" targetName="Roboverb" cppLanguageStandard="c++11"
-                       cppLibType="libc++" headerPath="/opt/utrack/include&#10;" binaryPath="../build/plugin"/>
-        <CONFIGURATION name="Release" osxSDK="default" osxCompatibility="10.7 SDK" osxArchitecture="64BitUniversal"
+                       cppLibType="libc++" headerPath="" binaryPath="../build/plugin"/>
+        <CONFIGURATION name="Release" osxSDK="default" osxCompatibility="10.9 SDK" osxArchitecture="64BitUniversal"
                        isDebug="0" optimisation="3" targetName="Roboverb" binaryPath="../build/plugin"
-                       headerPath="/opt/utrack/include&#10;" cppLanguageStandard="c++11"
-                       cppLibType="libc++"/>
-        <CONFIGURATION name="Demo" osxSDK="default" osxCompatibility="10.7 SDK" osxArchitecture="64BitUniversal"
-                       isDebug="0" optimisation="3" targetName="Roboverb" binaryPath="../build/plugin"
-                       headerPath="/opt/utrack/include&#10;" cppLanguageStandard="c++11"
-                       cppLibType="libc++" defines="KV_PLUGINS_DEMO=1"/>
+                       headerPath="" cppLanguageStandard="c++11" cppLibType="libc++"/>
+        <CONFIGURATION name="Release_Demo" osxSDK="default" osxCompatibility="10.7 SDK"
+                       osxArchitecture="64BitUniversal" isDebug="0" optimisation="3"
+                       targetName="Roboverb" binaryPath="../build/plugin" headerPath=""
+                       cppLanguageStandard="c++11" cppLibType="libc++" defines="KV_PLUGINS_DEMO=1"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_core" path="/opt/kushview/JUCE/modules"/>
