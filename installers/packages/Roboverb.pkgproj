@@ -22,7 +22,7 @@
 									<key>GID</key>
 									<integer>80</integer>
 									<key>PATH</key>
-									<string>../../build/standalone/Release/Roboverb.app</string>
+									<string>../../build/plugin/Roboverb.app</string>
 									<key>PATH_TYPE</key>
 									<integer>1</integer>
 									<key>PERMISSIONS</key>
@@ -505,7 +505,7 @@
 				<key>RELOCATABLE</key>
 				<false/>
 				<key>VERSION</key>
-				<string>1.0.4</string>
+				<string>1.0.5</string>
 			</dict>
 			<key>UUID</key>
 			<string>47A10B52-5527-4552-A07F-1F4F42E95983</string>
@@ -586,9 +586,9 @@
 															<key>GID</key>
 															<integer>0</integer>
 															<key>PATH</key>
-															<string>../../build/plugin/Release/dist/Roboverb.vst</string>
+															<string>/Users/mfisher/Library/Audio/Plug-Ins/VST/Roboverb.vst</string>
 															<key>PATH_TYPE</key>
-															<integer>1</integer>
+															<integer>0</integer>
 															<key>PERMISSIONS</key>
 															<integer>493</integer>
 															<key>TYPE</key>
@@ -1057,7 +1057,7 @@
 				<key>OVERWRITE_PERMISSIONS</key>
 				<false/>
 				<key>VERSION</key>
-				<string>1.0.4</string>
+				<string>1.0.5</string>
 			</dict>
 			<key>TYPE</key>
 			<integer>0</integer>
@@ -1140,9 +1140,9 @@
 															<key>GID</key>
 															<integer>0</integer>
 															<key>PATH</key>
-															<string>../../build/plugin/Release/dist/Roboverb.vst3</string>
+															<string>/Users/mfisher/Library/Audio/Plug-Ins/VST3/Roboverb.vst3</string>
 															<key>PATH_TYPE</key>
-															<integer>1</integer>
+															<integer>0</integer>
 															<key>PERMISSIONS</key>
 															<integer>493</integer>
 															<key>TYPE</key>
@@ -1611,7 +1611,7 @@
 				<key>OVERWRITE_PERMISSIONS</key>
 				<false/>
 				<key>VERSION</key>
-				<string>1.0.4</string>
+				<string>1.0.5</string>
 			</dict>
 			<key>TYPE</key>
 			<integer>0</integer>
@@ -1694,9 +1694,9 @@
 															<key>GID</key>
 															<integer>0</integer>
 															<key>PATH</key>
-															<string>../../build/plugin/Release/dist/Roboverb.component</string>
+															<string>/Users/mfisher/Library/Audio/Plug-Ins/Components/Roboverb.component</string>
 															<key>PATH_TYPE</key>
-															<integer>1</integer>
+															<integer>0</integer>
 															<key>PERMISSIONS</key>
 															<integer>493</integer>
 															<key>TYPE</key>
@@ -2165,7 +2165,7 @@
 				<key>OVERWRITE_PERMISSIONS</key>
 				<false/>
 				<key>VERSION</key>
-				<string>1.0.4</string>
+				<string>1.0.5</string>
 			</dict>
 			<key>TYPE</key>
 			<integer>0</integer>
@@ -2187,7 +2187,7 @@
 			ZW50LVN0eWxlLVR5cGUiIGNvbnRlbnQ9InRleHQvY3NzIj4KPHRp
 			dGxlPjwvdGl0bGU+CjxtZXRhIG5hbWU9IkdlbmVyYXRvciIgY29u
 			dGVudD0iQ29jb2EgSFRNTCBXcml0ZXIiPgo8bWV0YSBuYW1lPSJD
-			b2NvYVZlcnNpb24iIGNvbnRlbnQ9IjEzNDguMTciPgo8c3R5bGUg
+			b2NvYVZlcnNpb24iIGNvbnRlbnQ9IjE1MDQuODMiPgo8c3R5bGUg
 			dHlwZT0idGV4dC9jc3MiPgo8L3N0eWxlPgo8L2hlYWQ+Cjxib2R5
 			Pgo8L2JvZHk+CjwvaHRtbD4K
 			</data>
@@ -2443,13 +2443,6 @@
 				<key>PATH_TYPE</key>
 				<integer>1</integer>
 			</dict>
-			<key>CERTIFICATE</key>
-			<dict>
-				<key>NAME</key>
-				<string>Developer ID Installer: Kushview, LLC (K7JD899TJ4)</string>
-				<key>PATH</key>
-				<string>/Users/mfisher/Library/Keychains/login.keychain</string>
-			</dict>
 			<key>EXCLUDED_FILES</key>
 			<array>
 				<dict>
@@ -2619,7 +2612,7 @@
 				</dict>
 			</array>
 			<key>NAME</key>
-			<string>Roboverb-OSX-1.0.4</string>
+			<string>Roboverb-OSX-1.0.5_unsigned</string>
 			<key>PAYLOAD_ONLY</key>
 			<false/>
 		</dict>
