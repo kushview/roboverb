@@ -46,11 +46,15 @@ FunctionEnd
 ;--------------------------------
 ;Interface Settings
   !define MUI_ABORTWARNING
+  !define MUI_ICON "..\inno\KushviewIcon.ico"
+  ;!define MUI_HEADERIMAGE
+  ;!define MUI_HEADERIMAGE_BITMAP "path\to\InstallerLogo.bmp"
+  ;!define MUI_HEADERIMAGE_RIGHT
 
 ;--------------------------------
 ;Pages
   !insertmacro MUI_PAGE_WELCOME
-#   !insertmacro MUI_PAGE_LICENSE "${NSISDIR}\Docs\Modern UI\License.txt"
+  !insertmacro MUI_PAGE_LICENSE "../../license.txt"
   !insertmacro MUI_PAGE_COMPONENTS
   !insertmacro MUI_PAGE_DIRECTORY
   !insertmacro MUI_PAGE_INSTFILES
