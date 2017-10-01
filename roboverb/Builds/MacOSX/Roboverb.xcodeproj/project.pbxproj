@@ -238,18 +238,16 @@
 					BBA77CBC7C14D26A839B65F8,
 					66684F9230B7E914DBF29F4C, ); name = Source; sourceTree = "<group>"; };
 		5011BF8D18B51FEA9BE31701 = {isa = XCBuildConfiguration; buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.7; }; name = Debug; };
+				MACOSX_DEPLOYMENT_TARGET = 10.9; }; name = Debug; };
 		14D8439FC06E54B35B2A85CC = {isa = XCBuildConfiguration; buildSettings = {
 				MACOSX_DEPLOYMENT_TARGET = 10.9; }; name = Release; };
-		0650A919D0E6927789DB4182 = {isa = XCBuildConfiguration; buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.7; }; name = "Release_Demo"; };
 		F54F4D9CBCB0898ED74E571B = {isa = XCBuildConfiguration; buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = ../../../build/plugin;
+				CONFIGURATION_BUILD_DIR = ../../../build/Debug;
 				COPY_PHASE_STRIP = NO;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = /;
@@ -275,7 +273,7 @@
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/VST/";
 				LIBRARY_STYLE = Bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
 				OTHER_LDFLAGS = "-bundle -lRoboverb";
 				PRODUCT_BUNDLE_IDENTIFIER = net.kushview.Roboverb;
@@ -287,8 +285,9 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
+				CODE_SIGN_IDENTITY = "9511F5241B78B0D38961CD756873066A5F0ED225";
 				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = ../../../build/plugin;
+				CONFIGURATION_BUILD_DIR = ../../../build/Release;
 				DEAD_CODE_STRIPPING = YES;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = /;
@@ -322,54 +321,13 @@
 				SDKROOT_ppc = macosx10.5;
 				USE_HEADERMAP = NO;
 				WRAPPER_EXTENSION = vst; }; name = Release; };
-		AA3AA6F446B587639518EBC8 = {isa = XCBuildConfiguration; buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_LINK_OBJC_RUNTIME = NO;
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = ../../../build/plugin;
-				DEAD_CODE_STRIPPING = YES;
-				DEPLOYMENT_LOCATION = YES;
-				DSTROOT = /;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"_NDEBUG=1",
-					"NDEBUG=1",
-					"KV_PLUGINS_DEMO=1",
-					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.5",
-					"JUCE_APP_VERSION_HEX=0x10005",
-					"JucePlugin_Build_VST=1",
-					"JucePlugin_Build_VST3=0",
-					"JucePlugin_Build_AU=0",
-					"JucePlugin_Build_AUv3=0",
-					"JucePlugin_Build_RTAS=0",
-					"JucePlugin_Build_AAX=0",
-					"JucePlugin_Build_Standalone=0", );
-				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GENERATE_PKGINFO_FILE = YES;
-				HEADER_SEARCH_PATHS = ("~/SDKs/VST_SDK/VST3_SDK", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
-				INFOPLIST_FILE = Info-VST.plist;
-				INFOPLIST_PREPROCESS = NO;
-				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/VST/";
-				LIBRARY_STYLE = Bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
-				OTHER_LDFLAGS = "-bundle -lRoboverb";
-				PRODUCT_BUNDLE_IDENTIFIER = net.kushview.Roboverb;
-				SDKROOT_ppc = macosx10.5;
-				USE_HEADERMAP = NO;
-				WRAPPER_EXTENSION = vst; }; name = "Release_Demo"; };
 		539627E5FDC8BAAF908CB75C = {isa = XCBuildConfiguration; buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = ../../../build/plugin;
+				CONFIGURATION_BUILD_DIR = ../../../build/Debug;
 				COPY_PHASE_STRIP = NO;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = /;
@@ -395,7 +353,7 @@
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/VST3/";
 				LIBRARY_STYLE = Bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
 				OTHER_LDFLAGS = "-bundle -lRoboverb";
 				PRODUCT_BUNDLE_IDENTIFIER = net.kushview.Roboverb;
@@ -407,8 +365,9 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
+				CODE_SIGN_IDENTITY = "9511F5241B78B0D38961CD756873066A5F0ED225";
 				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = ../../../build/plugin;
+				CONFIGURATION_BUILD_DIR = ../../../build/Release;
 				DEAD_CODE_STRIPPING = YES;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = /;
@@ -442,54 +401,13 @@
 				SDKROOT_ppc = macosx10.5;
 				USE_HEADERMAP = NO;
 				WRAPPER_EXTENSION = vst3; }; name = Release; };
-		B9312FA1D204D356B298D59D = {isa = XCBuildConfiguration; buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_LINK_OBJC_RUNTIME = NO;
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = ../../../build/plugin;
-				DEAD_CODE_STRIPPING = YES;
-				DEPLOYMENT_LOCATION = YES;
-				DSTROOT = /;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"_NDEBUG=1",
-					"NDEBUG=1",
-					"KV_PLUGINS_DEMO=1",
-					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.5",
-					"JUCE_APP_VERSION_HEX=0x10005",
-					"JucePlugin_Build_VST=0",
-					"JucePlugin_Build_VST3=1",
-					"JucePlugin_Build_AU=0",
-					"JucePlugin_Build_AUv3=0",
-					"JucePlugin_Build_RTAS=0",
-					"JucePlugin_Build_AAX=0",
-					"JucePlugin_Build_Standalone=0", );
-				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GENERATE_PKGINFO_FILE = YES;
-				HEADER_SEARCH_PATHS = ("~/SDKs/VST_SDK/VST3_SDK", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
-				INFOPLIST_FILE = Info-VST3.plist;
-				INFOPLIST_PREPROCESS = NO;
-				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/VST3/";
-				LIBRARY_STYLE = Bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
-				OTHER_LDFLAGS = "-bundle -lRoboverb";
-				PRODUCT_BUNDLE_IDENTIFIER = net.kushview.Roboverb;
-				SDKROOT_ppc = macosx10.5;
-				USE_HEADERMAP = NO;
-				WRAPPER_EXTENSION = vst3; }; name = "Release_Demo"; };
 		D8A8F6F04BE532190D3A3786 = {isa = XCBuildConfiguration; buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = ../../../build/plugin;
+				CONFIGURATION_BUILD_DIR = ../../../build/Debug;
 				COPY_PHASE_STRIP = NO;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = /;
@@ -515,7 +433,7 @@
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/Components/";
 				LIBRARY_STYLE = Bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
 				OTHER_LDFLAGS = "-bundle -lRoboverb";
 				OTHER_REZFLAGS = "-d ppc_$ppc -d i386_$i386 -d ppc64_$ppc64 -d x86_64_$x86_64 -I /System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers -I \"$(DEVELOPER_DIR)/Extras/CoreAudio/AudioUnits/AUPublic/AUBase\"";
@@ -528,8 +446,9 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
+				CODE_SIGN_IDENTITY = "9511F5241B78B0D38961CD756873066A5F0ED225";
 				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = ../../../build/plugin;
+				CONFIGURATION_BUILD_DIR = ../../../build/Release;
 				DEAD_CODE_STRIPPING = YES;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = /;
@@ -564,55 +483,13 @@
 				SDKROOT_ppc = macosx10.5;
 				USE_HEADERMAP = NO;
 				WRAPPER_EXTENSION = component; }; name = Release; };
-		4BB6CDCEB0CAAEE0B339C521 = {isa = XCBuildConfiguration; buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_LINK_OBJC_RUNTIME = NO;
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = ../../../build/plugin;
-				DEAD_CODE_STRIPPING = YES;
-				DEPLOYMENT_LOCATION = YES;
-				DSTROOT = /;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"_NDEBUG=1",
-					"NDEBUG=1",
-					"KV_PLUGINS_DEMO=1",
-					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.5",
-					"JUCE_APP_VERSION_HEX=0x10005",
-					"JucePlugin_Build_VST=0",
-					"JucePlugin_Build_VST3=0",
-					"JucePlugin_Build_AU=1",
-					"JucePlugin_Build_AUv3=0",
-					"JucePlugin_Build_RTAS=0",
-					"JucePlugin_Build_AAX=0",
-					"JucePlugin_Build_Standalone=0", );
-				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GENERATE_PKGINFO_FILE = YES;
-				HEADER_SEARCH_PATHS = ("~/SDKs/VST_SDK/VST3_SDK", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
-				INFOPLIST_FILE = Info-AU.plist;
-				INFOPLIST_PREPROCESS = NO;
-				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/Components/";
-				LIBRARY_STYLE = Bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
-				OTHER_LDFLAGS = "-bundle -lRoboverb";
-				OTHER_REZFLAGS = "-d ppc_$ppc -d i386_$i386 -d ppc64_$ppc64 -d x86_64_$x86_64 -I /System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers -I \"$(DEVELOPER_DIR)/Extras/CoreAudio/AudioUnits/AUPublic/AUBase\"";
-				PRODUCT_BUNDLE_IDENTIFIER = net.kushview.Roboverb;
-				SDKROOT_ppc = macosx10.5;
-				USE_HEADERMAP = NO;
-				WRAPPER_EXTENSION = component; }; name = "Release_Demo"; };
 		4DEA57341BDEF0CA4EBC7FFF = {isa = XCBuildConfiguration; buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = ../../../build/plugin;
+				CONFIGURATION_BUILD_DIR = ../../../build/Debug;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -633,7 +510,7 @@
 				HEADER_SEARCH_PATHS = ("~/SDKs/VST_SDK/VST3_SDK", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
 				INFOPLIST_FILE = Info-Standalone_Plugin.plist;
 				INFOPLIST_PREPROCESS = NO;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
 				OTHER_LDFLAGS = "-lRoboverb";
 				PRODUCT_BUNDLE_IDENTIFIER = net.kushview.Roboverb;
@@ -644,8 +521,9 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
+				CODE_SIGN_IDENTITY = "9511F5241B78B0D38961CD756873066A5F0ED225";
 				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = ../../../build/plugin;
+				CONFIGURATION_BUILD_DIR = ../../../build/Release;
 				DEAD_CODE_STRIPPING = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_OPTIMIZATION_LEVEL = 3;
@@ -673,48 +551,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.kushview.Roboverb;
 				SDKROOT_ppc = macosx10.5;
 				USE_HEADERMAP = NO; }; name = Release; };
-		32BB5B6CAA2C5869C8A21D8D = {isa = XCBuildConfiguration; buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_LINK_OBJC_RUNTIME = NO;
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = ../../../build/plugin;
-				DEAD_CODE_STRIPPING = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"_NDEBUG=1",
-					"NDEBUG=1",
-					"KV_PLUGINS_DEMO=1",
-					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.5",
-					"JUCE_APP_VERSION_HEX=0x10005",
-					"JucePlugin_Build_VST=0",
-					"JucePlugin_Build_VST3=0",
-					"JucePlugin_Build_AU=0",
-					"JucePlugin_Build_AUv3=0",
-					"JucePlugin_Build_RTAS=0",
-					"JucePlugin_Build_AAX=0",
-					"JucePlugin_Build_Standalone=1", );
-				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = ("~/SDKs/VST_SDK/VST3_SDK", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
-				INFOPLIST_FILE = Info-Standalone_Plugin.plist;
-				INFOPLIST_PREPROCESS = NO;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
-				OTHER_LDFLAGS = "-lRoboverb";
-				PRODUCT_BUNDLE_IDENTIFIER = net.kushview.Roboverb;
-				SDKROOT_ppc = macosx10.5;
-				USE_HEADERMAP = NO; }; name = "Release_Demo"; };
 		90B69E881C4948622FE8E2B0 = {isa = XCBuildConfiguration; buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = ../../../build/plugin;
+				CONFIGURATION_BUILD_DIR = ../../../build/Debug;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -735,7 +578,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = ("~/SDKs/VST_SDK/VST3_SDK", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
 				INSTALL_PATH = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
 				PRODUCT_BUNDLE_IDENTIFIER = net.kushview.Roboverb;
 				SDKROOT_ppc = macosx10.5;
@@ -745,8 +588,9 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
+				CODE_SIGN_IDENTITY = "9511F5241B78B0D38961CD756873066A5F0ED225";
 				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = ../../../build/plugin;
+				CONFIGURATION_BUILD_DIR = ../../../build/Release;
 				DEAD_CODE_STRIPPING = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_OPTIMIZATION_LEVEL = 3;
@@ -773,40 +617,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.kushview.Roboverb;
 				SDKROOT_ppc = macosx10.5;
 				USE_HEADERMAP = NO; }; name = Release; };
-		34384A17D0254E1E917786DC = {isa = XCBuildConfiguration; buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_LINK_OBJC_RUNTIME = NO;
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = ../../../build/plugin;
-				DEAD_CODE_STRIPPING = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"_NDEBUG=1",
-					"NDEBUG=1",
-					"KV_PLUGINS_DEMO=1",
-					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.5",
-					"JUCE_APP_VERSION_HEX=0x10005",
-					"JucePlugin_Build_VST=1",
-					"JucePlugin_Build_VST3=1",
-					"JucePlugin_Build_AU=1",
-					"JucePlugin_Build_AUv3=0",
-					"JucePlugin_Build_RTAS=0",
-					"JucePlugin_Build_AAX=0",
-					"JucePlugin_Build_Standalone=1",
-					"JUCE_SHARED_CODE=1", );
-				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = ("~/SDKs/VST_SDK/VST3_SDK", "../../JuceLibraryCode", "/opt/kushview/JUCE/modules", "../../../../kv-modules/modules", "/opt/kushview/JUCE/modules/juce_audio_plugin_client", "$(inherited)");
-				INSTALL_PATH = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
-				PRODUCT_BUNDLE_IDENTIFIER = net.kushview.Roboverb;
-				SDKROOT_ppc = macosx10.5;
-				USE_HEADERMAP = NO; }; name = "Release_Demo"; };
 		78FCC386F5FD385D5CF3037E = {isa = XCBuildConfiguration; buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
@@ -845,6 +655,7 @@
 				WARNING_CFLAGS = -Wreorder;
 				ZERO_LINK = NO; }; name = Debug; };
 		4A5883B1237943E5D39E4860 = {isa = XCBuildConfiguration; buildSettings = {
+				"CODE_SIGN_IDENTITY" = "9511F5241B78B0D38961CD756873066A5F0ED225";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -880,42 +691,6 @@
 				PRODUCT_NAME = "Roboverb";
 				WARNING_CFLAGS = -Wreorder;
 				ZERO_LINK = NO; }; name = Release; };
-		6940460C5A0FD669A4AE8FE9 = {isa = XCBuildConfiguration; buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = c11;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
-				GCC_WARN_MISSING_PARENTHESES = YES;
-				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
-				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				PRODUCT_NAME = "Roboverb";
-				WARNING_CFLAGS = -Wreorder;
-				ZERO_LINK = NO; }; name = "Release_Demo"; };
 		D5F29A57561C8BF49C1C1D50 = {isa = PBXTargetDependency; target = 08E069336A53FD1F75A19292; };
 		EFBB684A37C9AAA0C63F9A77 = {isa = PBXTargetDependency; target = 3304B3FC4CAEFD7CFA078A37; };
 		BE8E2FB6C272D2550A03E52B = {isa = PBXTargetDependency; target = 190B015F710AC71FBA4B8C24; };
@@ -923,12 +698,10 @@
 		373EE88B4021D687E8FE359F = {isa = PBXTargetDependency; target = E1C060F336EE9281F35E19F9; };
 		D74648B68F684998076D74AF = {isa = XCConfigurationList; buildConfigurations = (
 					78FCC386F5FD385D5CF3037E,
-					4A5883B1237943E5D39E4860,
-					6940460C5A0FD669A4AE8FE9, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+					4A5883B1237943E5D39E4860, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
 		6B242A04B4C3E50B82728EEA = {isa = XCConfigurationList; buildConfigurations = (
 					5011BF8D18B51FEA9BE31701,
-					14D8439FC06E54B35B2A85CC,
-					0650A919D0E6927789DB4182, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+					14D8439FC06E54B35B2A85CC, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
 		69DE4B8E7953F7BB7A84C2E3 = {isa = PBXAggregateTarget; buildConfigurationList = 6B242A04B4C3E50B82728EEA; buildPhases = (  ); buildRules = ( ); dependencies = (
 					D5F29A57561C8BF49C1C1D50,
 					EFBB684A37C9AAA0C63F9A77,
@@ -937,8 +710,7 @@
 					373EE88B4021D687E8FE359F, ); name = "Roboverb - All"; productName = Roboverb; };
 		B4675B91C0336BA26DD88300 = {isa = XCConfigurationList; buildConfigurations = (
 					F54F4D9CBCB0898ED74E571B,
-					FC6F5AA2C6B1E517ED0A80CB,
-					AA3AA6F446B587639518EBC8, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+					FC6F5AA2C6B1E517ED0A80CB, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
 		E443BF9112F4B4820FD278B7 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (
 					04576E24B00ECB09D38B6A23, ); runOnlyForDeploymentPostprocessing = 0; };
 		E2F99BFF8E9E6785AEC05E7E = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
@@ -961,8 +733,7 @@
 					373EE88B4021D687E8FE359F, ); name = "Roboverb - VST"; productName = Roboverb; productReference = 4652A75D281821E516D08FDB; productType = "com.apple.product-type.bundle"; };
 		BCD2F023C54E745FFDF3A299 = {isa = XCConfigurationList; buildConfigurations = (
 					539627E5FDC8BAAF908CB75C,
-					2F4703DB9EB00588F9367C3E,
-					B9312FA1D204D356B298D59D, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+					2F4703DB9EB00588F9367C3E, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
 		7F20FCAAC707178370CB7131 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (
 					04576E24B00ECB09D38B6A23, ); runOnlyForDeploymentPostprocessing = 0; };
 		D63C8A2FDC4144DE1CFA9535 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
@@ -985,8 +756,7 @@
 					373EE88B4021D687E8FE359F, ); name = "Roboverb - VST3"; productName = Roboverb; productReference = CBE0A1EFEE69C5947C584178; productType = "com.apple.product-type.bundle"; };
 		0BD9AB6B6EB77EE4A9D1E834 = {isa = XCConfigurationList; buildConfigurations = (
 					D8A8F6F04BE532190D3A3786,
-					73FE1C6D09DDEB12E4335AB7,
-					4BB6CDCEB0CAAEE0B339C521, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+					73FE1C6D09DDEB12E4335AB7, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
 		0CDF4A9CA88D6CAA733AF472 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (
 					04576E24B00ECB09D38B6A23, ); runOnlyForDeploymentPostprocessing = 0; };
 		0BD8A2202D7C364414869166 = {isa = PBXRezBuildPhase; buildActionMask = 2147483647; files = (
@@ -1015,8 +785,7 @@
 					373EE88B4021D687E8FE359F, ); name = "Roboverb - AU"; productName = Roboverb; productReference = BB8DEA65B3D95F83E4DBF7B2; productType = "com.apple.product-type.bundle"; };
 		02D69A31915578D5FA948EEB = {isa = XCConfigurationList; buildConfigurations = (
 					4DEA57341BDEF0CA4EBC7FFF,
-					F53CF0196A378E4320744A83,
-					32BB5B6CAA2C5869C8A21D8D, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+					F53CF0196A378E4320744A83, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
 		D4AD27A15E4979585DFBC8B5 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (
 					04576E24B00ECB09D38B6A23, ); runOnlyForDeploymentPostprocessing = 0; };
 		91A97DBD8ACBC59AD20AAAC5 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
@@ -1039,8 +808,7 @@
 					373EE88B4021D687E8FE359F, ); name = "Roboverb - Standalone Plugin"; productName = Roboverb; productReference = 1294CD3C469727950948B070; productType = "com.apple.product-type.application"; };
 		1AC8EF02EC2D3A7A068ABF36 = {isa = XCConfigurationList; buildConfigurations = (
 					90B69E881C4948622FE8E2B0,
-					0D1C6DB966818C2B97D34798,
-					34384A17D0254E1E917786DC, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+					0D1C6DB966818C2B97D34798, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
 		2ECEA0A4899723C7964F6D91 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
 					6684F1D26C60099BEC8669E9,
 					C22826881566BAF1C2BC7AF8,

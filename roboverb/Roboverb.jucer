@@ -46,16 +46,13 @@
     <XCODE_MAC targetFolder="Builds/MacOSX" vstFolder="~/SDKs/vstsdk" postbuildCommand=""
                vst3Folder="~/SDKs/VST_SDK/VST3_SDK">
       <CONFIGURATIONS>
-        <CONFIGURATION name="Debug" osxSDK="default" osxCompatibility="10.7 SDK" osxArchitecture="64BitUniversal"
+        <CONFIGURATION name="Debug" osxSDK="default" osxCompatibility="10.9 SDK" osxArchitecture="64BitUniversal"
                        isDebug="1" optimisation="1" targetName="Roboverb" cppLanguageStandard="c++11"
-                       cppLibType="libc++" headerPath="" binaryPath="../build/plugin"/>
+                       cppLibType="libc++" headerPath="" binaryPath="../build/Debug"/>
         <CONFIGURATION name="Release" osxSDK="default" osxCompatibility="10.9 SDK" osxArchitecture="64BitUniversal"
-                       isDebug="0" optimisation="3" targetName="Roboverb" binaryPath="../build/plugin"
-                       headerPath="" cppLanguageStandard="c++11" cppLibType="libc++"/>
-        <CONFIGURATION name="Release_Demo" osxSDK="default" osxCompatibility="10.7 SDK"
-                       osxArchitecture="64BitUniversal" isDebug="0" optimisation="3"
-                       targetName="Roboverb" binaryPath="../build/plugin" headerPath=""
-                       cppLanguageStandard="c++11" cppLibType="libc++" defines="KV_PLUGINS_DEMO=1"/>
+                       isDebug="0" optimisation="3" targetName="Roboverb" binaryPath="../build/Release"
+                       headerPath="" cppLanguageStandard="c++11" cppLibType="libc++"
+                       codeSigningIdentity="9511F5241B78B0D38961CD756873066A5F0ED225"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_core" path="/opt/kushview/JUCE/modules"/>
@@ -76,51 +73,6 @@
         <MODULEPATH id="juce_audio_formats" path="/opt/kushview/JUCE/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
-    <VS2013 targetFolder="Builds/VisualStudio2013" vstFolder="c:\SDKs\vstsdk2.4"
-            vst3Folder="c:\SDKs\vstsdk2.4" toolset="v120_xp">
-      <CONFIGURATIONS>
-        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
-                       isDebug="1" optimisation="1" targetName="Roboverb" binaryPath="../build/x86/Debug"
-                       headerPath="C:\local\boost_1_58_0&#10;..\..\..\dsplib&#10;..\..\..\guilib"/>
-        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
-                       isDebug="0" optimisation="3" targetName="Roboverb" binaryPath="../build/x86/Release"
-                       headerPath="C:\local\boost_1_58_0&#10;..\..\..\dsplib&#10;..\..\..\guilib"
-                       useRuntimeLibDLL="0"/>
-        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
-                       isDebug="1" optimisation="1" targetName="Roboverb" binaryPath="../build/x64/Debug"
-                       headerPath="C:\local\boost_1_58_0&#10;..\..\..\dsplib&#10;..\..\..\guilib"/>
-        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
-                       isDebug="0" optimisation="3" targetName="Roboverb" binaryPath="../build/x64/Release"
-                       headerPath="C:\local\boost_1_58_0&#10;..\..\..\dsplib&#10;..\..\..\guilib"
-                       useRuntimeLibDLL="0"/>
-        <CONFIGURATION name="Demo" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
-                       isDebug="0" optimisation="3" targetName="Roboverb" binaryPath="../build/x86/Demo"
-                       headerPath="C:\local\boost_1_58_0&#10;..\..\..\dsplib&#10;..\..\..\guilib"
-                       useRuntimeLibDLL="0" defines="KV_PLUGINS_DEMO=1"/>
-        <CONFIGURATION name="Demo" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
-                       isDebug="0" optimisation="3" targetName="Roboverb" binaryPath="../build/x64/Demo"
-                       headerPath="C:\local\boost_1_58_0&#10;..\..\..\dsplib&#10;..\..\..\guilib"
-                       useRuntimeLibDLL="0" defines="KV_PLUGINS_DEMO=1"/>
-      </CONFIGURATIONS>
-      <MODULEPATHS>
-        <MODULEPATH id="juce_core" path="C:\SDKs\JUCE\modules"/>
-        <MODULEPATH id="juce_events" path="C:\SDKs\JUCE\modules"/>
-        <MODULEPATH id="juce_graphics" path="C:\SDKs\JUCE\modules"/>
-        <MODULEPATH id="juce_data_structures" path="C:\SDKs\JUCE\modules"/>
-        <MODULEPATH id="juce_gui_basics" path="C:\SDKs\JUCE\modules"/>
-        <MODULEPATH id="juce_gui_extra" path="C:\SDKs\JUCE\modules"/>
-        <MODULEPATH id="juce_audio_basics" path="C:\SDKs\JUCE\modules"/>
-        <MODULEPATH id="juce_audio_processors" path="C:\SDKs\JUCE\modules"/>
-        <MODULEPATH id="juce_audio_plugin_client" path="C:\SDKs\JUCE\modules"/>
-        <MODULEPATH id="juce_cryptography" path="C:\SDKs\JUCE\modules"/>
-        <MODULEPATH id="kv_core" path="../../kv-modules/modules"/>
-        <MODULEPATH id="kv_models" path="../../kv-modules/modules"/>
-        <MODULEPATH id="kv_gui" path="../../kv-modules/modules"/>
-        <MODULEPATH id="juce_audio_devices" path="c:\SDKs\JUCE\modules"/>
-        <MODULEPATH id="juce_audio_utils" path="c:\SDKs\JUCE\modules"/>
-        <MODULEPATH id="juce_audio_formats" path="c:\SDKs\JUCE\modules"/>
-      </MODULEPATHS>
-    </VS2013>
     <VS2017 targetFolder="Builds/VisualStudio2017" vst3Folder="" toolset="v140_xp">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="Win32"
