@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="LOWIDg" name="Roboverb" projectType="audioplug" version="1.0.5"
+<JUCERPROJECT id="LOWIDg" name="Roboverb" projectType="audioplug" version="1.0.6"
               bundleIdentifier="net.kushview.Roboverb" includeBinaryInAppConfig="1"
               buildVST="1" buildVST3="1" buildAU="1" buildRTAS="0" buildAAX="0"
               pluginName="Roboverb" pluginDesc="Interstellar Reverb" pluginManufacturer="Kushview"

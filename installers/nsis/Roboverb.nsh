@@ -23,7 +23,7 @@ FunctionEnd
 ; Branding
   !define MUI_PRODUCT "Roboverb"
   !define MUI_FILE "savefile"
-  !define MUI_VERSION "1.0.5"
+  !define MUI_VERSION "1.0.6"
   !define MUI_BRANDINGTEXT "${MUI_PRODUCT} v${MUI_VERSION}"
   CRCCheck On
   BrandingText "${MUI_BRANDINGTEXT}"
