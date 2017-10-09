@@ -362,6 +362,9 @@
     <Filter Include="Juce Modules\kv_core\core">
       <UniqueIdentifier>{0CFBB97E-DD1A-B76D-151F-967266A40685}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Juce Modules\kv_core\math">
+      <UniqueIdentifier>{22DDC0DC-E558-9719-8EAE-1D334D44CC65}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Juce Modules\kv_core\time">
       <UniqueIdentifier>{AA4F84BF-C9E3-7707-7925-08FC79117FD9}</UniqueIdentifier>
     </Filter>
@@ -4245,6 +4248,9 @@
     <ClInclude Include="..\..\..\..\kv-modules\modules\kv_core\core\WorkThread.h">
       <Filter>Juce Modules\kv_core\core</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\kv-modules\modules\kv_core\math\Rational.h">
+      <Filter>Juce Modules\kv_core\math</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\..\..\kv-modules\modules\kv_core\time\DelayLockedLoop.h">
       <Filter>Juce Modules\kv_core\time</Filter>
     </ClInclude>
@@ -4258,9 +4264,6 @@
       <Filter>Juce Modules\kv_core\time</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\kv-modules\modules\kv_core\util\FileHelpers.h">
-      <Filter>Juce Modules\kv_core\util</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\kv-modules\modules\kv_core\util\Fraction.h">
       <Filter>Juce Modules\kv_core\util</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\kv-modules\modules\kv_core\util\Midi.h">

@@ -2646,12 +2646,12 @@
     <ClInclude Include="..\..\..\..\kv-modules\modules\kv_core\core\Slugs.h"/>
     <ClInclude Include="..\..\..\..\kv-modules\modules\kv_core\core\Types.h"/>
     <ClInclude Include="..\..\..\..\kv-modules\modules\kv_core\core\WorkThread.h"/>
+    <ClInclude Include="..\..\..\..\kv-modules\modules\kv_core\math\Rational.h"/>
     <ClInclude Include="..\..\..\..\kv-modules\modules\kv_core\time\DelayLockedLoop.h"/>
     <ClInclude Include="..\..\..\..\kv-modules\modules\kv_core\time\Tempo.h"/>
     <ClInclude Include="..\..\..\..\kv-modules\modules\kv_core\time\TimeScale.h"/>
     <ClInclude Include="..\..\..\..\kv-modules\modules\kv_core\time\TimeStamp.h"/>
     <ClInclude Include="..\..\..\..\kv-modules\modules\kv_core\util\FileHelpers.h"/>
-    <ClInclude Include="..\..\..\..\kv-modules\modules\kv_core\util\Fraction.h"/>
     <ClInclude Include="..\..\..\..\kv-modules\modules\kv_core\util\Midi.h"/>
     <ClInclude Include="..\..\..\..\kv-modules\modules\kv_core\util\RangeTypes.h"/>
     <ClInclude Include="..\..\..\..\kv-modules\modules\kv_core\util\RelativePath.h"/>

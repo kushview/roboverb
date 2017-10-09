@@ -4,7 +4,7 @@
               bundleIdentifier="net.kushview.Roboverb" includeBinaryInAppConfig="1"
               buildVST="1" buildVST3="1" buildAU="1" buildRTAS="0" buildAAX="0"
               pluginName="Roboverb" pluginDesc="Interstellar Reverb" pluginManufacturer="Kushview"
-              pluginManufacturerCode="KshV" pluginCode="RobV" pluginChannelConfigs="{1, 1}, {2, 2}"
+              pluginManufacturerCode="KshV" pluginCode="RobV" pluginChannelConfigs="{2, 2}, {1, 1}"
               pluginIsSynth="0" pluginWantsMidiIn="0" pluginProducesMidiOut="0"
               pluginSilenceInIsSilenceOut="0" pluginEditorRequiresKeys="0"
               pluginAUExportPrefix="RoboverbAU" pluginRTASCategory="" aaxIdentifier="net.kushview.roboverb"
