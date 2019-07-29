@@ -14,6 +14,7 @@ BEGIN
     BLOCK "040904E4"
     BEGIN
       VALUE "CompanyName",  "Kushview\0"
+      VALUE "LegalCopyright",  "Copyright 2015-2019  Kushview, LLC\0"
       VALUE "FileDescription",  "Roboverb\0"
       VALUE "FileVersion",  "1.0.6\0"
       VALUE "ProductName",  "Roboverb\0"
