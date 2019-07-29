@@ -7,12 +7,12 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.1.1
+  Created with Projucer version: 5.4.3
 
   ------------------------------------------------------------------------------
 
-  The Projucer is part of the JUCE library - "Jules' Utility Class Extensions"
-  Copyright (c) 2015 - ROLI Ltd.
+  The Projucer is part of the JUCE library.
+  Copyright (c) 2017 - ROLI Ltd.
 
   ==============================================================================
 */
@@ -38,8 +38,8 @@ class ToggleSwitch;
 */
 class PluginView  : public Component,
                     private ValueTree::Listener,
-                    public ButtonListener,
-                    public SliderListener
+                    public Button::Listener,
+                    public Slider::Listener
 {
 public:
     //==============================================================================
@@ -77,34 +77,34 @@ private:
     //[/UserVariables]
 
     //==============================================================================
-    ScopedPointer<SphereScope> sphere;
-    ScopedPointer<ToggleSwitch> comb4;
-    ScopedPointer<ToggleButton> frozen;
-    ScopedPointer<Label> roomSizeLabel;
-    ScopedPointer<Label> dampingLabel;
-    ScopedPointer<Label> wetLabel;
-    ScopedPointer<Label> dryLabel;
-    ScopedPointer<Label> widthLabel;
-    ScopedPointer<ToggleSwitch> comb1;
-    ScopedPointer<ToggleSwitch> comb2;
-    ScopedPointer<ToggleSwitch> comb5;
-    ScopedPointer<ToggleSwitch> comb6;
-    ScopedPointer<ToggleSwitch> comb3;
-    ScopedPointer<ToggleSwitch> comb7;
-    ScopedPointer<ToggleSwitch> comb8;
-    ScopedPointer<ToggleSwitch> allpass1;
-    ScopedPointer<ToggleSwitch> allpass2;
-    ScopedPointer<ToggleSwitch> allpass3;
-    ScopedPointer<ToggleSwitch> allpass4;
-    ScopedPointer<kv::SkinDial> width;
-    ScopedPointer<kv::SkinDial> damping;
-    ScopedPointer<kv::SkinDial> roomSize;
-    ScopedPointer<kv::SkinDial> wetLevel;
-    ScopedPointer<kv::SkinDial> dryLevel;
-    ScopedPointer<Label> label;
-    ScopedPointer<Label> label3;
-    ScopedPointer<TextButton> helpButton;
-    ScopedPointer<Drawable> drawable1;
+    std::unique_ptr<SphereScope> sphere;
+    std::unique_ptr<ToggleSwitch> comb4;
+    std::unique_ptr<ToggleButton> frozen;
+    std::unique_ptr<Label> roomSizeLabel;
+    std::unique_ptr<Label> dampingLabel;
+    std::unique_ptr<Label> wetLabel;
+    std::unique_ptr<Label> dryLabel;
+    std::unique_ptr<Label> widthLabel;
+    std::unique_ptr<ToggleSwitch> comb1;
+    std::unique_ptr<ToggleSwitch> comb2;
+    std::unique_ptr<ToggleSwitch> comb5;
+    std::unique_ptr<ToggleSwitch> comb6;
+    std::unique_ptr<ToggleSwitch> comb3;
+    std::unique_ptr<ToggleSwitch> comb7;
+    std::unique_ptr<ToggleSwitch> comb8;
+    std::unique_ptr<ToggleSwitch> allpass1;
+    std::unique_ptr<ToggleSwitch> allpass2;
+    std::unique_ptr<ToggleSwitch> allpass3;
+    std::unique_ptr<ToggleSwitch> allpass4;
+    std::unique_ptr<kv::SkinDial> width;
+    std::unique_ptr<kv::SkinDial> damping;
+    std::unique_ptr<kv::SkinDial> roomSize;
+    std::unique_ptr<kv::SkinDial> wetLevel;
+    std::unique_ptr<kv::SkinDial> dryLevel;
+    std::unique_ptr<Label> label;
+    std::unique_ptr<Label> label3;
+    std::unique_ptr<TextButton> helpButton;
+    std::unique_ptr<Drawable> drawable1;
 
 
     //==============================================================================
@@ -113,3 +113,4 @@ private:
 
 //[EndFile] You can add extra defines here...
 //[/EndFile]
+

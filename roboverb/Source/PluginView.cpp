@@ -7,12 +7,12 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.1.1
+  Created with Projucer version: 5.4.3
 
   ------------------------------------------------------------------------------
 
-  The Projucer is part of the JUCE library - "Jules' Utility Class Extensions"
-  Copyright (c) 2015 - ROLI Ltd.
+  The Projucer is part of the JUCE library.
+  Copyright (c) 2017 - ROLI Ltd.
 
   ==============================================================================
 */
@@ -29,7 +29,7 @@
 class ToggleSwitch : public Button
 {
 public:
-    ToggleSwitch (const String& name = String::empty)
+    ToggleSwitch (const String& name = String())
         : Button (name)
     {
         img = ImageCache::getFromMemory (BinaryData::toggle_switch_png, BinaryData::toggle_switch_pngSize);
@@ -60,20 +60,30 @@ PluginView::PluginView ()
     allpasses.setRange (0, 4, false);
     //[/Constructor_pre]
 
-    addAndMakeVisible (sphere = new SphereScope());
+    sphere.reset (new SphereScope());
+    addAndMakeVisible (sphere.get());
     sphere->setName ("sphere");
 
-    addAndMakeVisible (comb4 = new ToggleSwitch ("comb4"));
+    sphere->setBounds (130, 18, 96, 94);
+
+    comb4.reset (new ToggleSwitch ("comb4"));
+    addAndMakeVisible (comb4.get());
     comb4->setButtonText (String());
     comb4->addListener (this);
 
-    addAndMakeVisible (frozen = new ToggleButton ("frozen"));
+    comb4->setBounds (318, 50, 40, 40);
+
+    frozen.reset (new ToggleButton ("frozen"));
+    addAndMakeVisible (frozen.get());
     frozen->setButtonText (TRANS("Frozen"));
     frozen->addListener (this);
     frozen->setColour (ToggleButton::textColourId, Colour (0xffe4e4e4));
 
-    addAndMakeVisible (roomSizeLabel = new Label ("roomSizeLabel",
-                                                  TRANS("Room Size")));
+    frozen->setBounds (176, 176, 104, 24);
+
+    roomSizeLabel.reset (new Label ("roomSizeLabel",
+                                    TRANS("Room Size")));
+    addAndMakeVisible (roomSizeLabel.get());
     roomSizeLabel->setFont (Font (12.00f, Font::plain).withTypefaceStyle ("Regular"));
     roomSizeLabel->setJustificationType (Justification::centred);
     roomSizeLabel->setEditable (false, false, false);
@@ -81,8 +91,11 @@ PluginView::PluginView ()
     roomSizeLabel->setColour (TextEditor::textColourId, Colours::black);
     roomSizeLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (dampingLabel = new Label ("dampingLabel",
-                                                 TRANS("Damping")));
+    roomSizeLabel->setBounds (13, 159, 56, 24);
+
+    dampingLabel.reset (new Label ("dampingLabel",
+                                   TRANS("Damping")));
+    addAndMakeVisible (dampingLabel.get());
     dampingLabel->setFont (Font (12.00f, Font::plain).withTypefaceStyle ("Regular"));
     dampingLabel->setJustificationType (Justification::centred);
     dampingLabel->setEditable (false, false, false);
@@ -90,8 +103,11 @@ PluginView::PluginView ()
     dampingLabel->setColour (TextEditor::textColourId, Colours::black);
     dampingLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (wetLabel = new Label ("wetLabel",
-                                             TRANS("Wet")));
+    dampingLabel->setBounds (72, 159, 56, 24);
+
+    wetLabel.reset (new Label ("wetLabel",
+                               TRANS("Wet")));
+    addAndMakeVisible (wetLabel.get());
     wetLabel->setFont (Font (12.00f, Font::plain).withTypefaceStyle ("Regular"));
     wetLabel->setJustificationType (Justification::centred);
     wetLabel->setEditable (false, false, false);
@@ -99,8 +115,11 @@ PluginView::PluginView ()
     wetLabel->setColour (TextEditor::textColourId, Colours::black);
     wetLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (dryLabel = new Label ("dryLabel",
-                                             TRANS("Dry")));
+    wetLabel->setBounds (14, 94, 56, 24);
+
+    dryLabel.reset (new Label ("dryLabel",
+                               TRANS("Dry")));
+    addAndMakeVisible (dryLabel.get());
     dryLabel->setFont (Font (12.00f, Font::plain).withTypefaceStyle ("Regular"));
     dryLabel->setJustificationType (Justification::centred);
     dryLabel->setEditable (false, false, false);
@@ -108,8 +127,11 @@ PluginView::PluginView ()
     dryLabel->setColour (TextEditor::textColourId, Colours::black);
     dryLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (widthLabel = new Label ("widthLabel",
-                                               TRANS("Width")));
+    dryLabel->setBounds (64, 94, 72, 24);
+
+    widthLabel.reset (new Label ("widthLabel",
+                                 TRANS("Width")));
+    addAndMakeVisible (widthLabel.get());
     widthLabel->setTooltip (TRANS("Width"));
     widthLabel->setFont (Font (12.00f, Font::plain).withTypefaceStyle ("Regular"));
     widthLabel->setJustificationType (Justification::centred);
@@ -118,82 +140,133 @@ PluginView::PluginView ()
     widthLabel->setColour (TextEditor::textColourId, Colours::black);
     widthLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (comb1 = new ToggleSwitch ("comb1"));
+    widthLabel->setBounds (131, 159, 56, 24);
+
+    comb1.reset (new ToggleSwitch ("comb1"));
+    addAndMakeVisible (comb1.get());
     comb1->setButtonText (String());
     comb1->addListener (this);
 
-    addAndMakeVisible (comb2 = new ToggleSwitch ("comb2"));
+    comb1->setBounds (219, 50, 40, 40);
+
+    comb2.reset (new ToggleSwitch ("comb2"));
+    addAndMakeVisible (comb2.get());
     comb2->setButtonText (String());
     comb2->addListener (this);
 
-    addAndMakeVisible (comb5 = new ToggleSwitch ("comb5"));
+    comb2->setBounds (252, 50, 40, 40);
+
+    comb5.reset (new ToggleSwitch ("comb5"));
+    addAndMakeVisible (comb5.get());
     comb5->setButtonText (String());
     comb5->addListener (this);
 
-    addAndMakeVisible (comb6 = new ToggleSwitch ("comb6"));
+    comb5->setBounds (219, 87, 40, 40);
+
+    comb6.reset (new ToggleSwitch ("comb6"));
+    addAndMakeVisible (comb6.get());
     comb6->setButtonText (String());
     comb6->addListener (this);
 
-    addAndMakeVisible (comb3 = new ToggleSwitch ("comb3"));
+    comb6->setBounds (252, 87, 40, 40);
+
+    comb3.reset (new ToggleSwitch ("comb3"));
+    addAndMakeVisible (comb3.get());
     comb3->setButtonText (String());
     comb3->addListener (this);
 
-    addAndMakeVisible (comb7 = new ToggleSwitch ("comb7"));
+    comb3->setBounds (285, 50, 40, 40);
+
+    comb7.reset (new ToggleSwitch ("comb7"));
+    addAndMakeVisible (comb7.get());
     comb7->setButtonText (String());
     comb7->addListener (this);
 
-    addAndMakeVisible (comb8 = new ToggleSwitch ("comb8"));
+    comb7->setBounds (285, 87, 40, 40);
+
+    comb8.reset (new ToggleSwitch ("comb8"));
+    addAndMakeVisible (comb8.get());
     comb8->setButtonText (String());
     comb8->addListener (this);
 
-    addAndMakeVisible (allpass1 = new ToggleSwitch ("allpass1"));
+    comb8->setBounds (318, 87, 40, 40);
+
+    allpass1.reset (new ToggleSwitch ("allpass1"));
+    addAndMakeVisible (allpass1.get());
     allpass1->setButtonText (String());
     allpass1->addListener (this);
 
-    addAndMakeVisible (allpass2 = new ToggleSwitch ("allpass2"));
+    allpass1->setBounds (219, 124, 40, 40);
+
+    allpass2.reset (new ToggleSwitch ("allpass2"));
+    addAndMakeVisible (allpass2.get());
     allpass2->setButtonText (String());
     allpass2->addListener (this);
 
-    addAndMakeVisible (allpass3 = new ToggleSwitch ("allpass3"));
+    allpass2->setBounds (252, 124, 40, 40);
+
+    allpass3.reset (new ToggleSwitch ("allpass3"));
+    addAndMakeVisible (allpass3.get());
     allpass3->setButtonText (String());
     allpass3->addListener (this);
 
-    addAndMakeVisible (allpass4 = new ToggleSwitch ("allpass4"));
+    allpass3->setBounds (285, 124, 40, 40);
+
+    allpass4.reset (new ToggleSwitch ("allpass4"));
+    addAndMakeVisible (allpass4.get());
     allpass4->setButtonText (String());
     allpass4->addListener (this);
 
-    addAndMakeVisible (width = new kv::SkinDial ("width"));
+    allpass4->setBounds (318, 124, 40, 40);
+
+    width.reset (new kv::SkinDial ("width"));
+    addAndMakeVisible (width.get());
     width->setRange (0, 1, 0);
     width->setSliderStyle (Slider::RotaryVerticalDrag);
     width->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     width->addListener (this);
 
-    addAndMakeVisible (damping = new kv::SkinDial ("damping"));
+    width->setBounds (131, 111, 56, 56);
+
+    damping.reset (new kv::SkinDial ("damping"));
+    addAndMakeVisible (damping.get());
     damping->setRange (0, 1, 0);
     damping->setSliderStyle (Slider::RotaryVerticalDrag);
     damping->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     damping->addListener (this);
 
-    addAndMakeVisible (roomSize = new kv::SkinDial ("roomSize"));
+    damping->setBounds (72, 111, 56, 56);
+
+    roomSize.reset (new kv::SkinDial ("roomSize"));
+    addAndMakeVisible (roomSize.get());
     roomSize->setRange (0, 1, 0);
     roomSize->setSliderStyle (Slider::RotaryVerticalDrag);
     roomSize->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     roomSize->addListener (this);
 
-    addAndMakeVisible (wetLevel = new kv::SkinDial ("wetLevel"));
+    roomSize->setBounds (13, 111, 56, 56);
+
+    wetLevel.reset (new kv::SkinDial ("wetLevel"));
+    addAndMakeVisible (wetLevel.get());
     wetLevel->setRange (0, 1, 0);
     wetLevel->setSliderStyle (Slider::RotaryVerticalDrag);
     wetLevel->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     wetLevel->addListener (this);
 
-    addAndMakeVisible (dryLevel = new kv::SkinDial ("dryLevel"));
+    wetLevel->setBounds (14, 46, 56, 56);
+
+    dryLevel.reset (new kv::SkinDial ("dryLevel"));
+    addAndMakeVisible (dryLevel.get());
     dryLevel->setRange (0, 1, 0);
     dryLevel->setSliderStyle (Slider::RotaryVerticalDrag);
     dryLevel->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     dryLevel->addListener (this);
 
-    addAndMakeVisible (label = new Label ("new label",
-                                          TRANS("Chambers\n")));
+    dryLevel->setBounds (73, 46, 56, 56);
+
+    label.reset (new Label ("new label",
+                            TRANS("Chambers\n")));
+    addAndMakeVisible (label.get());
     label->setFont (Font (12.00f, Font::plain).withTypefaceStyle ("Regular"));
     label->setJustificationType (Justification::centred);
     label->setEditable (false, false, false);
@@ -201,8 +274,11 @@ PluginView::PluginView ()
     label->setColour (TextEditor::textColourId, Colours::black);
     label->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (label3 = new Label ("new label",
-                                           TRANS("ROBOVERB")));
+    label->setBounds (221, 159, 136, 24);
+
+    label3.reset (new Label ("new label",
+                             TRANS("ROBOVERB")));
+    addAndMakeVisible (label3.get());
     label3->setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
     label3->setJustificationType (Justification::centredRight);
     label3->setEditable (false, false, false);
@@ -210,7 +286,10 @@ PluginView::PluginView ()
     label3->setColour (TextEditor::textColourId, Colours::black);
     label3->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (helpButton = new TextButton ("helpButton"));
+    label3->setBounds (270, 20, 78, 24);
+
+    helpButton.reset (new TextButton ("helpButton"));
+    addAndMakeVisible (helpButton.get());
     helpButton->setButtonText (TRANS("?"));
     helpButton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight | Button::ConnectedOnTop | Button::ConnectedOnBottom);
     helpButton->addListener (this);
@@ -219,7 +298,9 @@ PluginView::PluginView ()
     helpButton->setColour (TextButton::textColourOffId, Colour (0xe7e5e5e5));
     helpButton->setColour (TextButton::textColourOnId, Colour (0xdee5e5e5));
 
-    drawable1 = Drawable::createFromImageData (BinaryData::roboverb_bg_jpg, BinaryData::roboverb_bg_jpgSize);
+    helpButton->setBounds (9, 23, 18, 18);
+
+    drawable1.reset (Drawable::createFromImageData (BinaryData::roboverb_bg_jpg, BinaryData::roboverb_bg_jpgSize));
 
     //[UserPreSize]
     combButtons.add (comb1.get());
@@ -348,33 +429,6 @@ void PluginView::resized()
     //[UserPreResize] Add your own custom resize code here..
     //[/UserPreResize]
 
-    sphere->setBounds (130, 18, 96, 94);
-    comb4->setBounds (318, 50, 40, 40);
-    frozen->setBounds (176, 176, 104, 24);
-    roomSizeLabel->setBounds (13, 159, 56, 24);
-    dampingLabel->setBounds (72, 159, 56, 24);
-    wetLabel->setBounds (14, 94, 56, 24);
-    dryLabel->setBounds (64, 94, 72, 24);
-    widthLabel->setBounds (131, 159, 56, 24);
-    comb1->setBounds (219, 50, 40, 40);
-    comb2->setBounds (252, 50, 40, 40);
-    comb5->setBounds (219, 87, 40, 40);
-    comb6->setBounds (252, 87, 40, 40);
-    comb3->setBounds (285, 50, 40, 40);
-    comb7->setBounds (285, 87, 40, 40);
-    comb8->setBounds (318, 87, 40, 40);
-    allpass1->setBounds (219, 124, 40, 40);
-    allpass2->setBounds (252, 124, 40, 40);
-    allpass3->setBounds (285, 124, 40, 40);
-    allpass4->setBounds (318, 124, 40, 40);
-    width->setBounds (131, 111, 56, 56);
-    damping->setBounds (72, 111, 56, 56);
-    roomSize->setBounds (13, 111, 56, 56);
-    wetLevel->setBounds (14, 46, 56, 56);
-    dryLevel->setBounds (73, 46, 56, 56);
-    label->setBounds (221, 159, 136, 24);
-    label3->setBounds (270, 20, 78, 24);
-    helpButton->setBounds (9, 23, 18, 18);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -398,72 +452,72 @@ void PluginView::buttonClicked (Button* buttonThatWasClicked)
     }
     //[/UserbuttonClicked_Pre]
 
-    if (buttonThatWasClicked == comb4)
+    if (buttonThatWasClicked == comb4.get())
     {
         //[UserButtonCode_comb4] -- add your button handler code here..
         //[/UserButtonCode_comb4]
     }
-    else if (buttonThatWasClicked == frozen)
+    else if (buttonThatWasClicked == frozen.get())
     {
         //[UserButtonCode_frozen] -- add your button handler code here..
         //[/UserButtonCode_frozen]
     }
-    else if (buttonThatWasClicked == comb1)
+    else if (buttonThatWasClicked == comb1.get())
     {
         //[UserButtonCode_comb1] -- add your button handler code here..
         //[/UserButtonCode_comb1]
     }
-    else if (buttonThatWasClicked == comb2)
+    else if (buttonThatWasClicked == comb2.get())
     {
         //[UserButtonCode_comb2] -- add your button handler code here..
         //[/UserButtonCode_comb2]
     }
-    else if (buttonThatWasClicked == comb5)
+    else if (buttonThatWasClicked == comb5.get())
     {
         //[UserButtonCode_comb5] -- add your button handler code here..
         //[/UserButtonCode_comb5]
     }
-    else if (buttonThatWasClicked == comb6)
+    else if (buttonThatWasClicked == comb6.get())
     {
         //[UserButtonCode_comb6] -- add your button handler code here..
         //[/UserButtonCode_comb6]
     }
-    else if (buttonThatWasClicked == comb3)
+    else if (buttonThatWasClicked == comb3.get())
     {
         //[UserButtonCode_comb3] -- add your button handler code here..
         //[/UserButtonCode_comb3]
     }
-    else if (buttonThatWasClicked == comb7)
+    else if (buttonThatWasClicked == comb7.get())
     {
         //[UserButtonCode_comb7] -- add your button handler code here..
         //[/UserButtonCode_comb7]
     }
-    else if (buttonThatWasClicked == comb8)
+    else if (buttonThatWasClicked == comb8.get())
     {
         //[UserButtonCode_comb8] -- add your button handler code here..
         //[/UserButtonCode_comb8]
     }
-    else if (buttonThatWasClicked == allpass1)
+    else if (buttonThatWasClicked == allpass1.get())
     {
         //[UserButtonCode_allpass1] -- add your button handler code here..
         //[/UserButtonCode_allpass1]
     }
-    else if (buttonThatWasClicked == allpass2)
+    else if (buttonThatWasClicked == allpass2.get())
     {
         //[UserButtonCode_allpass2] -- add your button handler code here..
         //[/UserButtonCode_allpass2]
     }
-    else if (buttonThatWasClicked == allpass3)
+    else if (buttonThatWasClicked == allpass3.get())
     {
         //[UserButtonCode_allpass3] -- add your button handler code here..
         //[/UserButtonCode_allpass3]
     }
-    else if (buttonThatWasClicked == allpass4)
+    else if (buttonThatWasClicked == allpass4.get())
     {
         //[UserButtonCode_allpass4] -- add your button handler code here..
         //[/UserButtonCode_allpass4]
     }
-    else if (buttonThatWasClicked == helpButton)
+    else if (buttonThatWasClicked == helpButton.get())
     {
         //[UserButtonCode_helpButton] -- add your button handler code here..
         if (! about.isVisible()) {
@@ -486,27 +540,27 @@ void PluginView::sliderValueChanged (Slider* sliderThatWasMoved)
     //[UsersliderValueChanged_Pre]
     //[/UsersliderValueChanged_Pre]
 
-    if (sliderThatWasMoved == width)
+    if (sliderThatWasMoved == width.get())
     {
         //[UserSliderCode_width] -- add your slider handling code here..
         //[/UserSliderCode_width]
     }
-    else if (sliderThatWasMoved == damping)
+    else if (sliderThatWasMoved == damping.get())
     {
         //[UserSliderCode_damping] -- add your slider handling code here..
         //[/UserSliderCode_damping]
     }
-    else if (sliderThatWasMoved == roomSize)
+    else if (sliderThatWasMoved == roomSize.get())
     {
         //[UserSliderCode_roomSize] -- add your slider handling code here..
         //[/UserSliderCode_roomSize]
     }
-    else if (sliderThatWasMoved == wetLevel)
+    else if (sliderThatWasMoved == wetLevel.get())
     {
         //[UserSliderCode_wetLevel] -- add your slider handling code here..
         //[/UserSliderCode_wetLevel]
     }
-    else if (sliderThatWasMoved == dryLevel)
+    else if (sliderThatWasMoved == dryLevel.get())
     {
         //[UserSliderCode_dryLevel] -- add your slider handling code here..
         //[/UserSliderCode_dryLevel]
@@ -623,28 +677,28 @@ BEGIN_JUCER_METADATA
          virtualName="" explicitFocusOrder="0" pos="13 159 56 24" textCol="e4dfddaf"
          edTextCol="ff000000" edBkgCol="0" labelText="Room Size" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="12" kerning="0" bold="0" italic="0" justification="36"/>
+         fontsize="1.2e1" kerning="0" bold="0" italic="0" justification="36"/>
   <LABEL name="dampingLabel" id="102f11db8649f0a8" memberName="dampingLabel"
          virtualName="" explicitFocusOrder="0" pos="72 159 56 24" textCol="e4dfddaf"
          edTextCol="ff000000" edBkgCol="0" labelText="Damping" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="12" kerning="0" bold="0" italic="0" justification="36"/>
+         fontsize="1.2e1" kerning="0" bold="0" italic="0" justification="36"/>
   <LABEL name="wetLabel" id="193cc8bfd3ef648e" memberName="wetLabel" virtualName=""
          explicitFocusOrder="0" pos="14 94 56 24" textCol="e4dfddaf" edTextCol="ff000000"
          edBkgCol="0" labelText="Wet" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="12"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="1.2e1"
          kerning="0" bold="0" italic="0" justification="36"/>
   <LABEL name="dryLabel" id="8f9c5d2033dcb149" memberName="dryLabel" virtualName=""
          explicitFocusOrder="0" pos="64 94 72 24" textCol="e4dfddaf" edTextCol="ff000000"
          edBkgCol="0" labelText="Dry" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="12"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="1.2e1"
          kerning="0" bold="0" italic="0" justification="36"/>
   <LABEL name="widthLabel" id="b5e5129090968ba2" memberName="widthLabel"
          virtualName="" explicitFocusOrder="0" pos="131 159 56 24" tooltip="Width"
          textCol="e4dfddaf" edTextCol="ff000000" edBkgCol="0" labelText="Width"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
-         fontname="Default font" fontsize="12" kerning="0" bold="0" italic="0"
-         justification="36"/>
+         fontname="Default font" fontsize="1.2e1" kerning="0" bold="0"
+         italic="0" justification="36"/>
   <TOGGLEBUTTON name="comb1" id="10f369ee64dc606a" memberName="comb1" virtualName="ToggleSwitch"
                 explicitFocusOrder="0" pos="219 50 40 40" buttonText="" connectedEdges="0"
                 needsCallback="1" radioGroupId="0" state="0"/>
@@ -702,12 +756,12 @@ BEGIN_JUCER_METADATA
          explicitFocusOrder="0" pos="221 159 136 24" textCol="e4dfddaf"
          edTextCol="ff000000" edBkgCol="0" labelText="Chambers&#10;" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="12" kerning="0" bold="0" italic="0" justification="36"/>
+         fontsize="1.2e1" kerning="0" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="3d2124da91d9b2f0" memberName="label3" virtualName=""
          explicitFocusOrder="0" pos="270 20 78 24" textCol="d9dfddaf"
          edTextCol="ff000000" edBkgCol="0" labelText="ROBOVERB" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="16" kerning="0" bold="0" italic="0" justification="34"/>
+         fontsize="1.6e1" kerning="0" bold="0" italic="0" justification="34"/>
   <TEXTBUTTON name="helpButton" id="545fc9f3f2bf952a" memberName="helpButton"
               virtualName="" explicitFocusOrder="0" pos="9 23 18 18" bgColOff="e1111111"
               bgColOn="ff111111" textCol="e7e5e5e5" textColOn="dee5e5e5" buttonText="?"
@@ -721,3 +775,4 @@ END_JUCER_METADATA
 
 //[EndFile] You can add extra defines here...
 //[/EndFile]
+

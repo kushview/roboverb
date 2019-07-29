@@ -7,12 +7,12 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.1.2
+  Created with Projucer version: 5.4.3
 
   ------------------------------------------------------------------------------
 
-  The Projucer is part of the JUCE library - "Jules' Utility Class Extensions"
-  Copyright (c) 2015 - ROLI Ltd.
+  The Projucer is part of the JUCE library.
+  Copyright (c) 2017 - ROLI Ltd.
 
   ==============================================================================
 */
@@ -32,8 +32,9 @@ AboutBox::AboutBox ()
     //[Constructor_pre] You can add your own custom stuff here..
     //[/Constructor_pre]
 
-    addAndMakeVisible (pluginLabel = new Label ("pluginLabel",
-                                                TRANS("Roboverb")));
+    pluginLabel.reset (new Label ("pluginLabel",
+                                  TRANS("Roboverb")));
+    addAndMakeVisible (pluginLabel.get());
     pluginLabel->setFont (Font (24.00f, Font::plain).withTypefaceStyle ("Regular"));
     pluginLabel->setJustificationType (Justification::centred);
     pluginLabel->setEditable (false, false, false);
@@ -41,8 +42,9 @@ AboutBox::AboutBox ()
     pluginLabel->setColour (TextEditor::textColourId, Colours::black);
     pluginLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (versionLabel = new Label ("versionLabel",
-                                                 TRANS("v1.0.2")));
+    versionLabel.reset (new Label ("versionLabel",
+                                   TRANS("v1.0.2")));
+    addAndMakeVisible (versionLabel.get());
     versionLabel->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
     versionLabel->setJustificationType (Justification::centred);
     versionLabel->setEditable (false, false, false);
@@ -50,8 +52,9 @@ AboutBox::AboutBox ()
     versionLabel->setColour (TextEditor::textColourId, Colours::black);
     versionLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (linkButton = new HyperlinkButton (TRANS("kushview.net"),
-                                                         URL ("http://kushview.net")));
+    linkButton.reset (new HyperlinkButton (TRANS("kushview.net"),
+                                           URL ("http://kushview.net")));
+    addAndMakeVisible (linkButton.get());
     linkButton->setTooltip (TRANS("http://kushview.net"));
     linkButton->setButtonText (TRANS("kushview.net"));
     linkButton->setColour (HyperlinkButton::textColourId, Colour (0xcc3677ba));
@@ -126,8 +129,8 @@ void AboutBox::setPluginVersion (const String& versionString) {
 
 void AboutBox::setPluginUrl (const String& text, const String& url)
 {
-    linkButton = new HyperlinkButton (text, URL(url));
-    addAndMakeVisible (linkButton);
+    linkButton.reset (new HyperlinkButton (text, URL(url)));
+    addAndMakeVisible (linkButton.get());
     linkButton->setColour (HyperlinkButton::textColourId, Colour (0xcc3677ba));
     resized();
 }
@@ -152,14 +155,14 @@ BEGIN_JUCER_METADATA
          virtualName="" explicitFocusOrder="0" pos="-155C -49C 312 32"
          textCol="ffe5e5e5" edTextCol="ff000000" edBkgCol="0" labelText="Roboverb"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
-         fontname="Default font" fontsize="24" kerning="0" bold="0" italic="0"
-         justification="36"/>
+         fontname="Default font" fontsize="2.4e1" kerning="0" bold="0"
+         italic="0" justification="36"/>
   <LABEL name="versionLabel" id="68d7814acd2571b3" memberName="versionLabel"
          virtualName="" explicitFocusOrder="0" pos="-101C -15C 192 24"
          textCol="ffe4e4e4" edTextCol="ff000000" edBkgCol="0" labelText="v1.0.2"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
-         fontname="Default font" fontsize="15" kerning="0" bold="0" italic="0"
-         justification="36"/>
+         fontname="Default font" fontsize="1.5e1" kerning="0" bold="0"
+         italic="0" justification="36"/>
   <HYPERLINKBUTTON name="linkButton" id="1f700d0405340eb4" memberName="linkButton"
                    virtualName="" explicitFocusOrder="0" pos="-76C 9C 150 26" tooltip="http://kushview.net"
                    textCol="cc3677ba" buttonText="kushview.net" connectedEdges="0"
@@ -173,3 +176,4 @@ END_JUCER_METADATA
 
 //[EndFile] You can add extra defines here...
 //[/EndFile]
+
