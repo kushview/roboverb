@@ -36,7 +36,7 @@ RoboverbAudioProcessor::~RoboverbAudioProcessor()
 }
 
 
-const String RoboverbAudioProcessor::getName() const { return JucePlugin_Name; }
+const String RoboverbAudioProcessor::getName() const { return "Roboverb"; }
 int RoboverbAudioProcessor::getNumParameters()
 {
     // This version of roberb doesn't use FreezeMode. Thankfully

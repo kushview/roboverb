@@ -63,3 +63,7 @@ profile
 **/Builds/Android/lib/.externalNativeBuild
 **/doxygen/doc
 **/doxygen/build
+
+.waf-*
+.lock-waf*
+*.pyc
