@@ -26,30 +26,7 @@
 
 
 //[MiscUserDefs] You can add your own user definitions and misc code here...
-class ToggleSwitch : public Button
-{
-public:
-    ToggleSwitch (const String& name = String())
-        : Button (name)
-    {
-        img = ImageCache::getFromMemory (BinaryData::toggle_switch_png, BinaryData::toggle_switch_pngSize);
-    }
 
-    void clicked() override
-    {
-        setToggleState(! getToggleState(), dontSendNotification);
-    }
-
-    void paintButton (Graphics& g, bool isMouseOverButton, bool isButtonDown) override
-    {
-        const int srcY = getToggleState() ? 0 : img.getHeight() / 2;
-        g.drawImage (img, 0, 0, getWidth(), getHeight(),
-                     0, srcY, img.getWidth(), img.getHeight() / 2);
-    }
-
-private:
-    Image img;
-};
 //[/MiscUserDefs]
 
 //==============================================================================

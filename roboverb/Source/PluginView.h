@@ -23,7 +23,32 @@
 #include "JuceHeader.h"
 #include "AboutBox.h"
 class SphereScope;
-class ToggleSwitch;
+
+class ToggleSwitch : public Button
+{
+public:
+    ToggleSwitch (const String& name = String())
+        : Button (name)
+    {
+        img = ImageCache::getFromMemory (BinaryData::toggle_switch_png, BinaryData::toggle_switch_pngSize);
+    }
+
+    void clicked() override
+    {
+        setToggleState(! getToggleState(), dontSendNotification);
+    }
+
+    void paintButton (Graphics& g, bool isMouseOverButton, bool isButtonDown) override
+    {
+        const int srcY = getToggleState() ? 0 : img.getHeight() / 2;
+        g.drawImage (img, 0, 0, getWidth(), getHeight(),
+                     0, srcY, img.getWidth(), img.getHeight() / 2);
+    }
+
+private:
+    Image img;
+};
+
 //[/Headers]
 
 
@@ -67,6 +92,7 @@ private:
     BigInteger combs, allpasses;
     Array<Button*> combButtons, allPassButtons;
 
+    friend class ModuleUI;
     friend class ValueTree::Listener;
     virtual void valueTreePropertyChanged (ValueTree& treeWhosePropertyHasChanged, const Identifier& property) override;
     virtual void valueTreeChildAdded (ValueTree& parentTree, ValueTree& childWhichHasBeenAdded) override {}
