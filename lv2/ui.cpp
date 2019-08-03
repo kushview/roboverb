@@ -21,8 +21,43 @@ public:
           bundlePath (String::fromUTF8 (_bundlePath)),
           write (_write),
           controller (_controller)
-    { }
+    {
+        // value tree is used by normal JUCE plugin, but not LV2 version
+        // this avoids warnings about invalid data
+        view.stabilizeComponents (ValueTree ("dummy"));
+
+        bindSlider (*view.wetLevel, RoboverbPorts::Wet);
+        bindSlider (*view.dryLevel, RoboverbPorts::Dry);
+        bindSlider (*view.roomSize, RoboverbPorts::RoomSize);
+        bindSlider (*view.damping,  RoboverbPorts::Damping);
+        bindSlider (*view.width,    RoboverbPorts::Width);
+
+        ToggleSwitch* toggles[] = { view.comb1.get(), view.comb2.get(),
+                                    view.comb3.get(), view.comb4.get(),
+                                    view.comb5.get(), view.comb6.get(),
+                                    view.comb7.get(), view.comb8.get(),
+                                    view.allpass1.get(), view.allpass2.get(),
+                                    view.allpass3.get(), view.allpass4.get() };
+        
+        for (int i = RoboverbPorts::Comb_1; i <= RoboverbPorts::AllPass_4; ++i)
+            bindToggle (*toggles[i - RoboverbPorts::Comb_1], (uint32_t) i);
+    }
     
+    void bindSlider (Slider& slider, uint32_t port)
+    {
+        slider.onValueChange = [this, &slider, port]() {
+            writeToPort (port, (float) slider.getValue()) ;
+        };
+    }
+
+    void bindToggle (ToggleSwitch& toggle, uint32_t port)
+    {
+        toggle.onClick = [this, &toggle, port]() {
+            toggle.setToggleState (! toggle.getToggleState(), dontSendNotification);
+            writeToPort (port, toggle.getToggleState() ? 1.0 : 0.0);
+        };
+    }
+
     void show() {}
     void hide() {}
 
