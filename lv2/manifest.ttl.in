@@ -9,6 +9,6 @@
 	rdfs:seeAlso <roboverb.ttl> .
 
 <https://kushview.net/plugins/roboverb/juceui>
-	a kv:JuceUI ;
+	a kv:JUCEUI ;
 	ui:binary <roboverb@LIB_EXT@> ;
 	rdfs:seeAlso <roboverb.ttl> .

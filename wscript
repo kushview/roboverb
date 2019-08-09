@@ -34,6 +34,7 @@ def configure (conf):
     conf.check_cxx_version ('c++14', True)
     conf.check_cfg (package = 'kv_debug-0' if conf.options.debug else 'kv-0', 
                     uselib_store='KV', args=['--libs', '--cflags'], mandatory=True)
+    conf.check_cfg (package = 'lvtk-2', uselib_store='LVTK', args=['--cflags'], mandatory=True)
 
     if len (conf.options.lv2_path) > 0:
         conf.env.BUNDLEDIR = os.path.join (conf.options.lv2_path, 'roboverb.lv2')
@@ -65,7 +66,7 @@ def build (bld):
         source          = bld.path.ant_glob ('roboverb/Source/*.cpp') + 
                           'lv2/plugin.cpp lv2/ui.cpp roboverb/JuceLibraryCode/BinaryData.cpp'.split(),
         includes        = [ 'roboverb/Source', 'lv2' ],
-        use             = [ 'KV' ],
+        use             = [ 'KV', 'LVTK' ],
         cxxflags        = [ '-Wno-deprecated-declarations' ],
         name            = 'roboverb',
         target          = 'roboverb.lv2/roboverb',

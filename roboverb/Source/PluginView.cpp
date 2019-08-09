@@ -196,51 +196,6 @@ PluginView::PluginView ()
 
     allpass4->setBounds (318, 124, 40, 40);
 
-    width.reset (new kv::SkinDial ("width"));
-    addAndMakeVisible (width.get());
-    width->setRange (0, 1, 0);
-    width->setSliderStyle (Slider::RotaryVerticalDrag);
-    width->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
-    width->addListener (this);
-
-    width->setBounds (131, 111, 56, 56);
-
-    damping.reset (new kv::SkinDial ("damping"));
-    addAndMakeVisible (damping.get());
-    damping->setRange (0, 1, 0);
-    damping->setSliderStyle (Slider::RotaryVerticalDrag);
-    damping->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
-    damping->addListener (this);
-
-    damping->setBounds (72, 111, 56, 56);
-
-    roomSize.reset (new kv::SkinDial ("roomSize"));
-    addAndMakeVisible (roomSize.get());
-    roomSize->setRange (0, 1, 0);
-    roomSize->setSliderStyle (Slider::RotaryVerticalDrag);
-    roomSize->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
-    roomSize->addListener (this);
-
-    roomSize->setBounds (13, 111, 56, 56);
-
-    wetLevel.reset (new kv::SkinDial ("wetLevel"));
-    addAndMakeVisible (wetLevel.get());
-    wetLevel->setRange (0, 1, 0);
-    wetLevel->setSliderStyle (Slider::RotaryVerticalDrag);
-    wetLevel->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
-    wetLevel->addListener (this);
-
-    wetLevel->setBounds (14, 46, 56, 56);
-
-    dryLevel.reset (new kv::SkinDial ("dryLevel"));
-    addAndMakeVisible (dryLevel.get());
-    dryLevel->setRange (0, 1, 0);
-    dryLevel->setSliderStyle (Slider::RotaryVerticalDrag);
-    dryLevel->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
-    dryLevel->addListener (this);
-
-    dryLevel->setBounds (73, 46, 56, 56);
-
     label.reset (new Label ("new label",
                             TRANS("Chambers\n")));
     addAndMakeVisible (label.get());
@@ -277,6 +232,51 @@ PluginView::PluginView ()
 
     helpButton->setBounds (9, 23, 18, 18);
 
+    wetLevel.reset (new kv::SkinDial ("wetLevel"));
+    addAndMakeVisible (wetLevel.get());
+    wetLevel->setRange (0, 1, 0);
+    wetLevel->setSliderStyle (Slider::RotaryVerticalDrag);
+    wetLevel->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
+    wetLevel->addListener (this);
+
+    wetLevel->setBounds (14, 46, 56, 56);
+
+    dryLevel.reset (new kv::SkinDial ("dryLevel"));
+    addAndMakeVisible (dryLevel.get());
+    dryLevel->setRange (0, 1, 0);
+    dryLevel->setSliderStyle (Slider::RotaryVerticalDrag);
+    dryLevel->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
+    dryLevel->addListener (this);
+
+    dryLevel->setBounds (73, 46, 56, 56);
+
+    roomSize.reset (new kv::SkinDial ("roomSize"));
+    addAndMakeVisible (roomSize.get());
+    roomSize->setRange (0, 1, 0);
+    roomSize->setSliderStyle (Slider::RotaryVerticalDrag);
+    roomSize->setTextBoxStyle (Slider::NoTextBox, true, 80, 20);
+    roomSize->addListener (this);
+
+    roomSize->setBounds (13, 111, 56, 56);
+
+    damping.reset (new kv::SkinDial ("damping"));
+    addAndMakeVisible (damping.get());
+    damping->setRange (0, 1, 0);
+    damping->setSliderStyle (Slider::RotaryVerticalDrag);
+    damping->setTextBoxStyle (Slider::NoTextBox, true, 80, 20);
+    damping->addListener (this);
+
+    damping->setBounds (72, 111, 56, 56);
+
+    width.reset (new kv::SkinDial ("width"));
+    addAndMakeVisible (width.get());
+    width->setRange (0, 1, 0);
+    width->setSliderStyle (Slider::RotaryVerticalDrag);
+    width->setTextBoxStyle (Slider::NoTextBox, true, 80, 20);
+    width->addListener (this);
+
+    width->setBounds (131, 111, 56, 56);
+
     drawable1.reset (Drawable::createFromImageData (BinaryData::roboverb_bg_jpg, BinaryData::roboverb_bg_jpgSize));
 
     //[UserPreSize]
@@ -301,7 +301,7 @@ PluginView::PluginView ()
             getChildComponent(i)))
         {
             sd->setScale (2);
-            sd->setImage (ImageCache::getFromMemory(BinaryData::red_knob_png, BinaryData::red_knob_pngSize));
+            sd->setImage (ImageCache::getFromMemory(BinaryData::red_knob_png, BinaryData::red_knob_pngSize), false);
         }
     }
     //[/UserPreSize]
@@ -312,11 +312,7 @@ PluginView::PluginView ()
     //[Constructor] You can add your own custom stuff here..
     about.setPluginName (JucePlugin_Name);
     about.setPluginVersion (JucePlugin_VersionString);
-#if KV_PLUGINS_DEMO
-    about.setPluginUrl ("Upgrade", "https://kushview.net/products/roboverb");
-#else
-    about.setPluginUrl ("Kushview, LLC", "https://kushview.net");
-#endif
+    about.setPluginUrl ("Kushview, LLC", "https://kushview.net/products/roboverb");
     pluginState.addListener (this);
     //[/Constructor]
 }
@@ -348,14 +344,14 @@ PluginView::~PluginView()
     allpass2 = nullptr;
     allpass3 = nullptr;
     allpass4 = nullptr;
-    width = nullptr;
-    damping = nullptr;
-    roomSize = nullptr;
-    wetLevel = nullptr;
-    dryLevel = nullptr;
     label = nullptr;
     label3 = nullptr;
     helpButton = nullptr;
+    wetLevel = nullptr;
+    dryLevel = nullptr;
+    roomSize = nullptr;
+    damping = nullptr;
+    width = nullptr;
     drawable1 = nullptr;
 
 
@@ -517,22 +513,7 @@ void PluginView::sliderValueChanged (Slider* sliderThatWasMoved)
     //[UsersliderValueChanged_Pre]
     //[/UsersliderValueChanged_Pre]
 
-    if (sliderThatWasMoved == width.get())
-    {
-        //[UserSliderCode_width] -- add your slider handling code here..
-        //[/UserSliderCode_width]
-    }
-    else if (sliderThatWasMoved == damping.get())
-    {
-        //[UserSliderCode_damping] -- add your slider handling code here..
-        //[/UserSliderCode_damping]
-    }
-    else if (sliderThatWasMoved == roomSize.get())
-    {
-        //[UserSliderCode_roomSize] -- add your slider handling code here..
-        //[/UserSliderCode_roomSize]
-    }
-    else if (sliderThatWasMoved == wetLevel.get())
+    if (sliderThatWasMoved == wetLevel.get())
     {
         //[UserSliderCode_wetLevel] -- add your slider handling code here..
         //[/UserSliderCode_wetLevel]
@@ -541,6 +522,21 @@ void PluginView::sliderValueChanged (Slider* sliderThatWasMoved)
     {
         //[UserSliderCode_dryLevel] -- add your slider handling code here..
         //[/UserSliderCode_dryLevel]
+    }
+    else if (sliderThatWasMoved == roomSize.get())
+    {
+        //[UserSliderCode_roomSize] -- add your slider handling code here..
+        //[/UserSliderCode_roomSize]
+    }
+    else if (sliderThatWasMoved == damping.get())
+    {
+        //[UserSliderCode_damping] -- add your slider handling code here..
+        //[/UserSliderCode_damping]
+    }
+    else if (sliderThatWasMoved == width.get())
+    {
+        //[UserSliderCode_width] -- add your slider handling code here..
+        //[/UserSliderCode_width]
     }
 
     //[UsersliderValueChanged_Post]
@@ -709,26 +705,6 @@ BEGIN_JUCER_METADATA
   <TOGGLEBUTTON name="allpass4" id="6573319772fb73a6" memberName="allpass4" virtualName="ToggleSwitch"
                 explicitFocusOrder="0" pos="318 124 40 40" buttonText="" connectedEdges="0"
                 needsCallback="1" radioGroupId="0" state="0"/>
-  <SLIDER name="width" id="eb11bcc99f28a586" memberName="width" virtualName="kv::SkinDial"
-          explicitFocusOrder="0" pos="131 111 56 56" min="0" max="1" int="0"
-          style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
-          textBoxWidth="80" textBoxHeight="20" skewFactor="1" needsCallback="1"/>
-  <SLIDER name="damping" id="36e7b175ad3e7b34" memberName="damping" virtualName="kv::SkinDial"
-          explicitFocusOrder="0" pos="72 111 56 56" min="0" max="1" int="0"
-          style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
-          textBoxWidth="80" textBoxHeight="20" skewFactor="1" needsCallback="1"/>
-  <SLIDER name="roomSize" id="4818250426324d72" memberName="roomSize" virtualName="kv::SkinDial"
-          explicitFocusOrder="0" pos="13 111 56 56" min="0" max="1" int="0"
-          style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
-          textBoxWidth="80" textBoxHeight="20" skewFactor="1" needsCallback="1"/>
-  <SLIDER name="wetLevel" id="60f92ab9097a3a68" memberName="wetLevel" virtualName="kv::SkinDial"
-          explicitFocusOrder="0" pos="14 46 56 56" min="0" max="1" int="0"
-          style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
-          textBoxWidth="80" textBoxHeight="20" skewFactor="1" needsCallback="1"/>
-  <SLIDER name="dryLevel" id="71c4babfc54096a3" memberName="dryLevel" virtualName="kv::SkinDial"
-          explicitFocusOrder="0" pos="73 46 56 56" min="0" max="1" int="0"
-          style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
-          textBoxWidth="80" textBoxHeight="20" skewFactor="1" needsCallback="1"/>
   <LABEL name="new label" id="eb1801d07e80ba9d" memberName="label" virtualName=""
          explicitFocusOrder="0" pos="221 159 136 24" textCol="e4dfddaf"
          edTextCol="ff000000" edBkgCol="0" labelText="Chambers&#10;" editableSingleClick="0"
@@ -743,6 +719,26 @@ BEGIN_JUCER_METADATA
               virtualName="" explicitFocusOrder="0" pos="9 23 18 18" bgColOff="e1111111"
               bgColOn="ff111111" textCol="e7e5e5e5" textColOn="dee5e5e5" buttonText="?"
               connectedEdges="15" needsCallback="1" radioGroupId="0"/>
+  <SLIDER name="wetLevel" id="60f92ab9097a3a68" memberName="wetLevel" virtualName="kv::SkinDial"
+          explicitFocusOrder="0" pos="14 46 56 56" min="0" max="1" int="0"
+          style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1" needsCallback="1"/>
+  <SLIDER name="dryLevel" id="71c4babfc54096a3" memberName="dryLevel" virtualName="kv::SkinDial"
+          explicitFocusOrder="0" pos="73 46 56 56" min="0" max="1" int="0"
+          style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1" needsCallback="1"/>
+  <SLIDER name="roomSize" id="4818250426324d72" memberName="roomSize" virtualName="kv::SkinDial"
+          explicitFocusOrder="0" pos="13 111 56 56" min="0" max="1" int="0"
+          style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="0"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1" needsCallback="1"/>
+  <SLIDER name="damping" id="36e7b175ad3e7b34" memberName="damping" virtualName="kv::SkinDial"
+          explicitFocusOrder="0" pos="72 111 56 56" min="0" max="1" int="0"
+          style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="0"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1" needsCallback="1"/>
+  <SLIDER name="width" id="eb11bcc99f28a586" memberName="width" virtualName="kv::SkinDial"
+          explicitFocusOrder="0" pos="131 111 56 56" min="0" max="1" int="0"
+          style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="0"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1" needsCallback="1"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

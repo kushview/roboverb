@@ -6,12 +6,16 @@
 #include <lv2/ui/ui.h>
 #include <juce/juce.h>
 
+#include <lvtk/ui.hpp>
+
 #include "./ports.h"
+#include "../roboverb/Source/Roboverb.h"
 #include "../roboverb/Source/PluginView.h"
 
 #define ROBOVERB_JUCEUI_URI "https://kushview.net/plugins/roboverb/juceui"
 
 class ModuleUI final {
+    ValueTree state;
 public:
     ModuleUI (const char* _pluginURI, 
               const char* _bundlePath,
@@ -22,9 +26,8 @@ public:
           write (_write),
           controller (_controller)
     {
-        // value tree is used by normal JUCE plugin, but not LV2 version
-        // this avoids warnings about invalid data
-        view.stabilizeComponents (ValueTree ("dummy"));
+        state = Roboverb().createState();
+        view.stabilizeComponents (state);
 
         bindSlider (*view.wetLevel, RoboverbPorts::Wet);
         bindSlider (*view.dryLevel, RoboverbPorts::Dry);
@@ -53,7 +56,6 @@ public:
     void bindToggle (ToggleSwitch& toggle, uint32_t port)
     {
         toggle.onClick = [this, &toggle, port]() {
-            toggle.setToggleState (! toggle.getToggleState(), dontSendNotification);
             writeToPort (port, toggle.getToggleState() ? 1.0 : 0.0);
         };
     }
@@ -131,7 +133,6 @@ static LV2UI_Handle instantiate_component (const struct _LV2UI_Descriptor* descr
 {
     auto module = std::unique_ptr<ModuleUI> (new ModuleUI (plugin_uri, bundle_path, write_function, controller));
     *widget = module->getComponentAsWidget();
-    
     return static_cast<LV2UI_Handle> (module.release());
 }
 

@@ -120,7 +120,7 @@ public:
         enabledAllPasses.swapWith (e);
     }
 
-    void getEnablement (BigInteger& c, BigInteger& a)
+    void getEnablement (BigInteger& c, BigInteger& a) const
     {
         for (int i = 0; i < numCombs; ++i)
             c.setBit (i, enabledCombs[i]);
@@ -273,6 +273,27 @@ public:
 
             samples[i] = output * wet1 + samples[i] * dry;
         }
+    }
+
+    ValueTree createState() const
+    {
+        ValueTree state ("roboverb");
+        const auto& params = getParameters();
+        BigInteger combs, allpasses;
+        combs.setRange (0, 8, false);
+        allpasses.setRange(0, 4, false);
+        getEnablement (combs, allpasses);
+
+        state.setProperty (Tags::roomSize, params.roomSize, nullptr);
+        state.setProperty (Tags::damping, params.damping, nullptr);
+        state.setProperty (Tags::wetLevel, params.wetLevel, nullptr);
+        state.setProperty (Tags::dryLevel, params.dryLevel, nullptr);
+        state.setProperty (Tags::width, params.width, nullptr);
+        state.setProperty (Tags::freezeMode, params.freezeMode, nullptr);
+        state.setProperty (Tags::enabledAllPasses, allpasses.toString(2), nullptr);
+        state.setProperty (Tags::enabledCombs, combs.toString(2), nullptr);
+
+        return state;
     }
 
 private:

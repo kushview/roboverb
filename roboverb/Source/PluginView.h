@@ -122,14 +122,14 @@ private:
     std::unique_ptr<ToggleSwitch> allpass2;
     std::unique_ptr<ToggleSwitch> allpass3;
     std::unique_ptr<ToggleSwitch> allpass4;
-    std::unique_ptr<kv::SkinDial> width;
-    std::unique_ptr<kv::SkinDial> damping;
-    std::unique_ptr<kv::SkinDial> roomSize;
-    std::unique_ptr<kv::SkinDial> wetLevel;
-    std::unique_ptr<kv::SkinDial> dryLevel;
     std::unique_ptr<Label> label;
     std::unique_ptr<Label> label3;
     std::unique_ptr<TextButton> helpButton;
+    std::unique_ptr<kv::SkinDial> wetLevel;
+    std::unique_ptr<kv::SkinDial> dryLevel;
+    std::unique_ptr<kv::SkinDial> roomSize;
+    std::unique_ptr<kv::SkinDial> damping;
+    std::unique_ptr<kv::SkinDial> width;
     std::unique_ptr<Drawable> drawable1;
 
 

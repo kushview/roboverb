@@ -1,28 +1,31 @@
 
 #include <cstdlib>
-#include <lv2/core/lv2.h>
-#include <lv2/ui/ui.h>
+#include <lvtk/plugin.hpp>
+#include <juce/audio_basics.h>
 
 #include "./ports.h"
-#include "../roboverb/Source/PluginProcessor.h"
+#include "../roboverb/Source/Roboverb.h"
 
 #define ROBOVERB_URI  "https://kushview.net/plugins/roboverb"
 
-class Module final
+class Module final : public lvtk::Instance<Module, lvtk::State>
 {
 public:
-	Module (double rate, const char* path, const bool _stereo = true)
-		: stereo (_stereo),
-		  sampleRate (rate),
-		  bundlePath (String::fromUTF8 (path))
+	Module (double rate, const lvtk::String& bundle, const lvtk::FeatureList& f)
+		: Instance (rate, bundle, f),
+		  stereo (true), 
+		  sampleRate (rate), 
+		  bundlePath (String::fromUTF8 (bundle.c_str()))
 	{
 		audio.setSize (2, 2048);
+		stateKey 	= map ("https://kushview.net/plugins/roboverb#state");
+		atomString 	= map (LV2_ATOM__String);
 	}
 
 	~Module() {}
 
-	void connectPort (uint32 port, void* data)
-	{ 
+	void connect_port (uint32 port, void* data)
+	{
 		switch (port)
 		{
 			case RoboverbPorts::AudioIn_1:
@@ -32,10 +35,10 @@ public:
 				input [1] = (float*) data;
 				break;
 			case RoboverbPorts::AudioOut_1:
-				output[0] = (float*) data;
+				output [0] = (float*) data;
 				break;
 			case RoboverbPorts::AudioOut_2:
-				output[1] = (float*) data;
+				output [1] = (float*) data;
 				break;
 		}
 
@@ -86,11 +89,12 @@ public:
 	void activate()
 	{
 		audio.clear();
+		verb.reset();
 		verb.setSampleRate (sampleRate);
 	}
 
 	void deactivate()
-	{ 
+	{
 		// noop
 	}
 
@@ -104,8 +108,9 @@ public:
 		
 		// verb processes in-place so copy the data.
 		audio.setSize (nchans, nframes, false, false, true);
+
 		for (int i = 0; i < nchans; ++i)
-			audio.copyFrom (0, 0, input [i], nframes);
+			audio.copyFrom (i, 0, input [i], nframes);
 
 		verb.processStereo (audio.getWritePointer (0),
 							audio.getWritePointer (1),
@@ -116,6 +121,38 @@ public:
 					sizeof (float) * (size_t) nframes);
 	}
 
+	lvtk::StateStatus save (lvtk::StateStore &store, 
+							uint32_t flags, 
+							const lvtk::FeatureList&)
+    {
+#if 1
+	ValueTree tree = getState();
+
+	if (auto* xml = tree.createXml())
+	{
+		MemoryOutputStream mos;
+		xml->writeToStream (mos, String(), true, false);
+		const auto state = mos.getMemoryBlock().toBase64Encoding();
+		store (stateKey, state.toRawUTF8(), (size_t) state.length() + 1, 
+			   atomString, LV2_STATE_IS_POD | LV2_STATE_IS_PORTABLE);
+		delete xml;
+		return lvtk::STATE_SUCCESS;
+	}
+#endif
+		return lvtk::STATE_SUCCESS;
+    }
+
+    lvtk::StateStatus restore (lvtk::StateRetrieve &retrieve, 
+							   uint32_t flags, const 
+							   lvtk::FeatureList &features) 
+    {
+        return lvtk::STATE_SUCCESS;
+    }
+
+	LV2_URID stateKey = 0;
+	LV2_URID atomString = 0;
+
+	ValueTree getState() const { return verb.createState(); }
 private:
 	Roboverb verb;
 	Roboverb::Parameters params;
@@ -123,68 +160,9 @@ private:
 	double sampleRate;
 	String bundlePath;
 	int blockSize = 1024;
-	AudioSampleBuffer audio;
+	AudioBuffer<float> audio;
 	float* input [2];
 	float* output [2];
 };
 
-static LV2_Handle instantiate (const LV2_Descriptor* descriptor,
-                               double rate, const char* bundle_path,
-                               const LV2_Feature* const* features)
-{
-	ignoreUnused (features);
-	auto module = std::unique_ptr<Module> (new Module (rate, bundle_path));
-	return static_cast<LV2_Handle> (module.release());
-}
-
-static void connect_port (LV2_Handle instance, uint32_t port, void* data)
-{
-	(static_cast<Module*>(instance))->connectPort (port, data);
-}
-
-static void activate (LV2_Handle instance)
-{
-	(static_cast<Module*>(instance))->activate();
-}
-
-static void run (LV2_Handle instance, uint32_t nframes)
-{
-	(static_cast<Module*>(instance))->run (nframes);
-}
-
-static void deactivate (LV2_Handle instance)
-{
-	(static_cast<Module*>(instance))->deactivate();
-}
-
-static void cleanup (LV2_Handle instance)
-{
-	delete static_cast<Module*> (instance);
-}
-
-static const void* extension_data (const char* uri) {
-	return nullptr;
-}
-
-extern "C" {
-
-static const LV2_Descriptor descriptor = {
-	ROBOVERB_URI,
-	instantiate,
-	connect_port,
-	activate,
-	run,
-	deactivate,
-	cleanup,
-	extension_data
-};
-
-LV2_SYMBOL_EXPORT const LV2_Descriptor* lv2_descriptor (uint32_t index)
-{
-    switch (index) {
-    case 0:  return &descriptor;
-    default: return nullptr;
-    }
-}
-
-}
+static const lvtk::Plugin<Module> roboverb (ROBOVERB_URI);
