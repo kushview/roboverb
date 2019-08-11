@@ -122,7 +122,6 @@ private:
    {
       return isImageVertical() ? img.getWidth() : img.getHeight();
    }
-
 };
 
 

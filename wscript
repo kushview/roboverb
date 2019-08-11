@@ -70,7 +70,7 @@ def build (bld):
     
     bld.shlib (
         source          = bld.path.ant_glob ('roboverb.lv2/*.cpp'),
-        includes        = [ 'roboverb.lv2' ],
+        includes        = [ 'roboverb.lv2', 'roboverb.lv2/compat' ],
         use             = [ 'JUCE_AUDIO_BASICS', 'LVTK' ],
         cxxflags        = [ '-Wno-deprecated-declarations' ],
         name            = 'roboverb',
@@ -83,7 +83,7 @@ def build (bld):
     env.cxxshlib_PATTERN = env.plugin_PATTERN
     bld.shlib (
         source          = bld.path.ant_glob ('roboverb.lv2/ui/*.cpp') + [ 'roboverb.lv2/Roboverb.cpp' ],
-        includes        = [ 'roboverb.lv2' ],
+        includes        = [ 'roboverb.lv2', 'roboverb.lv2/compat' ],
         use             = [ 'JUCE_GUI_BASICS', 'LVTK' ],
         cxxflags        = [ '-Wno-deprecated-declarations', '-DROBOVERB_UI' ],
         name            = 'roboverb_ui',
