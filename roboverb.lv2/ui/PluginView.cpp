@@ -300,7 +300,7 @@ PluginView::PluginView ()
         if (SkinDial* sd = dynamic_cast<SkinDial*> (getChildComponent (i)))
         {
             sd->setScale (2);
-            sd->setImage (ImageCache::getFromMemory 
+            sd->setImage (ImageCache::getFromMemory
                 (BinaryData::red_knob_png, BinaryData::red_knob_pngSize));
         }
     }
@@ -632,7 +632,7 @@ BEGIN_JUCER_METADATA
                  snapShown="1" overlayOpacity="0.330" fixedSize="1" initialWidth="360"
                  initialHeight="210">
   <BACKGROUND backgroundColour="ff2d2b24">
-    <IMAGE pos="0 0 100% 100%" resource="BinaryData::roboverb_bg_jpg" opacity="1"
+    <IMAGE pos="0 0 100% 100%" resource="BinaryData::roboverb_bg_jpg" opacity="1.0"
            mode="0"/>
     <RECT pos="0 0 100% 100%" fill=" radial: 56 -56, 424 224, 0=a35c0000, 1=aa401818"
           hasStroke="0"/>
@@ -650,27 +650,27 @@ BEGIN_JUCER_METADATA
          virtualName="" explicitFocusOrder="0" pos="13 159 56 24" textCol="e4dfddaf"
          edTextCol="ff000000" edBkgCol="0" labelText="Room Size" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="1.2e1" kerning="0" bold="0" italic="0" justification="36"/>
+         fontsize="12.0" kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="dampingLabel" id="102f11db8649f0a8" memberName="dampingLabel"
          virtualName="" explicitFocusOrder="0" pos="72 159 56 24" textCol="e4dfddaf"
          edTextCol="ff000000" edBkgCol="0" labelText="Damping" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="1.2e1" kerning="0" bold="0" italic="0" justification="36"/>
+         fontsize="12.0" kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="wetLabel" id="193cc8bfd3ef648e" memberName="wetLabel" virtualName=""
          explicitFocusOrder="0" pos="14 94 56 24" textCol="e4dfddaf" edTextCol="ff000000"
          edBkgCol="0" labelText="Wet" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="1.2e1"
-         kerning="0" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="12.0"
+         kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="dryLabel" id="8f9c5d2033dcb149" memberName="dryLabel" virtualName=""
          explicitFocusOrder="0" pos="64 94 72 24" textCol="e4dfddaf" edTextCol="ff000000"
          edBkgCol="0" labelText="Dry" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="1.2e1"
-         kerning="0" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="12.0"
+         kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="widthLabel" id="b5e5129090968ba2" memberName="widthLabel"
          virtualName="" explicitFocusOrder="0" pos="131 159 56 24" tooltip="Width"
          textCol="e4dfddaf" edTextCol="ff000000" edBkgCol="0" labelText="Width"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
-         fontname="Default font" fontsize="1.2e1" kerning="0" bold="0"
+         fontname="Default font" fontsize="12.0" kerning="0.0" bold="0"
          italic="0" justification="36"/>
   <TOGGLEBUTTON name="comb1" id="10f369ee64dc606a" memberName="comb1" virtualName="ToggleSwitch"
                 explicitFocusOrder="0" pos="219 50 40 40" buttonText="" connectedEdges="0"
@@ -709,36 +709,36 @@ BEGIN_JUCER_METADATA
          explicitFocusOrder="0" pos="221 159 136 24" textCol="e4dfddaf"
          edTextCol="ff000000" edBkgCol="0" labelText="Chambers&#10;" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="1.2e1" kerning="0" bold="0" italic="0" justification="36"/>
+         fontsize="12.0" kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="3d2124da91d9b2f0" memberName="label3" virtualName=""
          explicitFocusOrder="0" pos="270 20 78 24" textCol="d9dfddaf"
          edTextCol="ff000000" edBkgCol="0" labelText="ROBOVERB" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="1.6e1" kerning="0" bold="0" italic="0" justification="34"/>
+         fontsize="16.0" kerning="0.0" bold="0" italic="0" justification="34"/>
   <TEXTBUTTON name="helpButton" id="545fc9f3f2bf952a" memberName="helpButton"
               virtualName="" explicitFocusOrder="0" pos="9 23 18 18" bgColOff="e1111111"
               bgColOn="ff111111" textCol="e7e5e5e5" textColOn="dee5e5e5" buttonText="?"
               connectedEdges="15" needsCallback="1" radioGroupId="0"/>
   <SLIDER name="wetLevel" id="60f92ab9097a3a68" memberName="wetLevel" virtualName="SkinDial"
-          explicitFocusOrder="0" pos="14 46 56 56" min="0" max="1" int="0"
-          style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
-          textBoxWidth="80" textBoxHeight="20" skewFactor="1" needsCallback="1"/>
+          explicitFocusOrder="0" pos="14 46 56 56" min="0.0" max="1.0"
+          int="0.0" style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1.0" needsCallback="1"/>
   <SLIDER name="dryLevel" id="71c4babfc54096a3" memberName="dryLevel" virtualName="SkinDial"
-          explicitFocusOrder="0" pos="73 46 56 56" min="0" max="1" int="0"
-          style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
-          textBoxWidth="80" textBoxHeight="20" skewFactor="1" needsCallback="1"/>
+          explicitFocusOrder="0" pos="73 46 56 56" min="0.0" max="1.0"
+          int="0.0" style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1.0" needsCallback="1"/>
   <SLIDER name="roomSize" id="4818250426324d72" memberName="roomSize" virtualName="SkinDial"
-          explicitFocusOrder="0" pos="13 111 56 56" min="0" max="1" int="0"
-          style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="0"
-          textBoxWidth="80" textBoxHeight="20" skewFactor="1" needsCallback="1"/>
+          explicitFocusOrder="0" pos="13 111 56 56" min="0.0" max="1.0"
+          int="0.0" style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="0"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1.0" needsCallback="1"/>
   <SLIDER name="damping" id="36e7b175ad3e7b34" memberName="damping" virtualName="SkinDial"
-          explicitFocusOrder="0" pos="72 111 56 56" min="0" max="1" int="0"
-          style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="0"
-          textBoxWidth="80" textBoxHeight="20" skewFactor="1" needsCallback="1"/>
+          explicitFocusOrder="0" pos="72 111 56 56" min="0.0" max="1.0"
+          int="0.0" style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="0"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1.0" needsCallback="1"/>
   <SLIDER name="width" id="eb11bcc99f28a586" memberName="width" virtualName="SkinDial"
-          explicitFocusOrder="0" pos="131 111 56 56" min="0" max="1" int="0"
-          style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="0"
-          textBoxWidth="80" textBoxHeight="20" skewFactor="1" needsCallback="1"/>
+          explicitFocusOrder="0" pos="131 111 56 56" min="0.0" max="1.0"
+          int="0.0" style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="0"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1.0" needsCallback="1"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
