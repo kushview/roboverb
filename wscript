@@ -18,7 +18,7 @@ sys.path.insert (0, "tools/waf")
 import juce
 
 APPNAME = 'roboverb'
-VERSION = '1.4.0'
+VERSION = '1.0.6'
 top = '.'
 out = 'build'
 
