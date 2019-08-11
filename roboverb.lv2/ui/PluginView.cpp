@@ -232,7 +232,7 @@ PluginView::PluginView ()
 
     helpButton->setBounds (9, 23, 18, 18);
 
-    wetLevel.reset (new kv::SkinDial ("wetLevel"));
+    wetLevel.reset (new SkinDial ("wetLevel"));
     addAndMakeVisible (wetLevel.get());
     wetLevel->setRange (0, 1, 0);
     wetLevel->setSliderStyle (Slider::RotaryVerticalDrag);
@@ -241,7 +241,7 @@ PluginView::PluginView ()
 
     wetLevel->setBounds (14, 46, 56, 56);
 
-    dryLevel.reset (new kv::SkinDial ("dryLevel"));
+    dryLevel.reset (new SkinDial ("dryLevel"));
     addAndMakeVisible (dryLevel.get());
     dryLevel->setRange (0, 1, 0);
     dryLevel->setSliderStyle (Slider::RotaryVerticalDrag);
@@ -250,7 +250,7 @@ PluginView::PluginView ()
 
     dryLevel->setBounds (73, 46, 56, 56);
 
-    roomSize.reset (new kv::SkinDial ("roomSize"));
+    roomSize.reset (new SkinDial ("roomSize"));
     addAndMakeVisible (roomSize.get());
     roomSize->setRange (0, 1, 0);
     roomSize->setSliderStyle (Slider::RotaryVerticalDrag);
@@ -259,7 +259,7 @@ PluginView::PluginView ()
 
     roomSize->setBounds (13, 111, 56, 56);
 
-    damping.reset (new kv::SkinDial ("damping"));
+    damping.reset (new SkinDial ("damping"));
     addAndMakeVisible (damping.get());
     damping->setRange (0, 1, 0);
     damping->setSliderStyle (Slider::RotaryVerticalDrag);
@@ -268,7 +268,7 @@ PluginView::PluginView ()
 
     damping->setBounds (72, 111, 56, 56);
 
-    width.reset (new kv::SkinDial ("width"));
+    width.reset (new SkinDial ("width"));
     addAndMakeVisible (width.get());
     width->setRange (0, 1, 0);
     width->setSliderStyle (Slider::RotaryVerticalDrag);
@@ -297,11 +297,11 @@ PluginView::PluginView ()
 
     for (int i = 0; i < getNumChildComponents(); ++i)
     {
-        if (kv::SkinDial* sd = dynamic_cast<kv::SkinDial*> (
-            getChildComponent(i)))
+        if (SkinDial* sd = dynamic_cast<SkinDial*> (getChildComponent (i)))
         {
             sd->setScale (2);
-            sd->setImage (ImageCache::getFromMemory(BinaryData::red_knob_png, BinaryData::red_knob_pngSize), false);
+            sd->setImage (ImageCache::getFromMemory 
+                (BinaryData::red_knob_png, BinaryData::red_knob_pngSize));
         }
     }
     //[/UserPreSize]
@@ -719,23 +719,23 @@ BEGIN_JUCER_METADATA
               virtualName="" explicitFocusOrder="0" pos="9 23 18 18" bgColOff="e1111111"
               bgColOn="ff111111" textCol="e7e5e5e5" textColOn="dee5e5e5" buttonText="?"
               connectedEdges="15" needsCallback="1" radioGroupId="0"/>
-  <SLIDER name="wetLevel" id="60f92ab9097a3a68" memberName="wetLevel" virtualName="kv::SkinDial"
+  <SLIDER name="wetLevel" id="60f92ab9097a3a68" memberName="wetLevel" virtualName="SkinDial"
           explicitFocusOrder="0" pos="14 46 56 56" min="0" max="1" int="0"
           style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
           textBoxWidth="80" textBoxHeight="20" skewFactor="1" needsCallback="1"/>
-  <SLIDER name="dryLevel" id="71c4babfc54096a3" memberName="dryLevel" virtualName="kv::SkinDial"
+  <SLIDER name="dryLevel" id="71c4babfc54096a3" memberName="dryLevel" virtualName="SkinDial"
           explicitFocusOrder="0" pos="73 46 56 56" min="0" max="1" int="0"
           style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
           textBoxWidth="80" textBoxHeight="20" skewFactor="1" needsCallback="1"/>
-  <SLIDER name="roomSize" id="4818250426324d72" memberName="roomSize" virtualName="kv::SkinDial"
+  <SLIDER name="roomSize" id="4818250426324d72" memberName="roomSize" virtualName="SkinDial"
           explicitFocusOrder="0" pos="13 111 56 56" min="0" max="1" int="0"
           style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="0"
           textBoxWidth="80" textBoxHeight="20" skewFactor="1" needsCallback="1"/>
-  <SLIDER name="damping" id="36e7b175ad3e7b34" memberName="damping" virtualName="kv::SkinDial"
+  <SLIDER name="damping" id="36e7b175ad3e7b34" memberName="damping" virtualName="SkinDial"
           explicitFocusOrder="0" pos="72 111 56 56" min="0" max="1" int="0"
           style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="0"
           textBoxWidth="80" textBoxHeight="20" skewFactor="1" needsCallback="1"/>
-  <SLIDER name="width" id="eb11bcc99f28a586" memberName="width" virtualName="kv::SkinDial"
+  <SLIDER name="width" id="eb11bcc99f28a586" memberName="width" virtualName="SkinDial"
           explicitFocusOrder="0" pos="131 111 56 56" min="0" max="1" int="0"
           style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="0"
           textBoxWidth="80" textBoxHeight="20" skewFactor="1" needsCallback="1"/>

@@ -37,8 +37,9 @@ def configure (conf):
 
     conf.check_cfg (package = 'juce_audio_basics-5' if not conf.options.debug else 'juce_audio_basics_debug-5', 
                     uselib_store='JUCE_AUDIO_BASICS', args=['--libs', '--cflags'], mandatory=True)
-    conf.check_cfg (package = 'kv-0' if not conf.options.debug else 'kv_debug-0', 
-                    uselib_store='KV', args=['--libs', '--cflags'], mandatory=True)
+    conf.check_cfg (package = 'juce_gui_basics-5' if not conf.options.debug else 'juce_gui_basics_debug-5', 
+                    uselib_store='JUCE_GUI_BASICS', args=['--libs', '--cflags'], mandatory=True)
+    
     conf.check_cfg (package = 'lvtk-2', uselib_store='LVTK', args=['--cflags'], mandatory=True)
 
     if len (conf.options.lv2_path) > 0:
@@ -83,8 +84,8 @@ def build (bld):
     bld.shlib (
         source          = bld.path.ant_glob ('roboverb.lv2/ui/*.cpp') + [ 'roboverb.lv2/Roboverb.cpp' ],
         includes        = [ 'roboverb.lv2' ],
-        use             = [ 'KV', 'LVTK' ],
-        cxxflags        = [ '-Wno-deprecated-declarations', '-DWANTS_KV' ],
+        use             = [ 'JUCE_GUI_BASICS', 'LVTK' ],
+        cxxflags        = [ '-Wno-deprecated-declarations', '-DROBOVERB_UI' ],
         name            = 'roboverb_ui',
         target          = 'roboverb.lv2/roboverb_ui',
         env             = env,

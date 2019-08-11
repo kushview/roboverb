@@ -1,9 +1,12 @@
 #pragma once
 // compatability header
-#include <juce/juce.h>
+#include <juce/core.h>
+#include <juce/audio_basics.h>
 
-#ifdef WANTS_KV
- #include <kv/kv.h>
+using namespace juce;
+
+#ifdef ROBOVERB_UI
+ #include <juce/gui_basics.h>
 #endif
 
 #include "../data/jucer/JuceLibraryCode/BinaryData.h"
