@@ -82,8 +82,8 @@ public:
     {
         if (img.isNull())
         {
-        Slider::paint (g);
-        return;
+            Slider::paint (g);
+            return;
         }
 
         // should probably do this somewhere else
