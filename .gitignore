@@ -67,3 +67,7 @@ profile
 .waf-*
 .lock-waf*
 *.pyc
+
+data/jucer/Builds/
+data/jucer/JuceLibraryCode/include_*
+data/jucer/JuceLibraryCode/ReadMe.txt

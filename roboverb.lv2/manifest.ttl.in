@@ -1,0 +1,14 @@
+@prefix lv2:  <http://lv2plug.in/ns/lv2core#> .
+@prefix lvtk: <http://lvtoolkit.org/ns/lvtk#> .
+@prefix ui:   <http://lv2plug.in/ns/extensions/ui#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://kushview.net/plugins/roboverb>
+	a lv2:Plugin ;
+	lv2:binary <roboverb@LIB_EXT@>  ;
+	rdfs:seeAlso <roboverb.ttl> .
+
+<https://kushview.net/plugins/roboverb/juceui>
+	a lvtk:JUCEUI ;
+	ui:binary <roboverb_ui@LIB_EXT@> ;
+	rdfs:seeAlso <roboverb.ttl> .

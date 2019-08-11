@@ -32,7 +32,12 @@ def options (opt):
 def configure (conf):
     conf.load ('compiler_c compiler_cxx juce')
     conf.check_cxx_version ('c++14', True)
-    conf.check_cfg (package = 'kv_debug-0' if conf.options.debug else 'kv-0', 
+    
+    print conf.options.debug
+
+    conf.check_cfg (package = 'juce_audio_basics-5' if not conf.options.debug else 'juce_audio_basics_debug-5', 
+                    uselib_store='JUCE_AUDIO_BASICS', args=['--libs', '--cflags'], mandatory=True)
+    conf.check_cfg (package = 'kv-0' if not conf.options.debug else 'kv_debug-0', 
                     uselib_store='KV', args=['--libs', '--cflags'], mandatory=True)
     conf.check_cfg (package = 'lvtk-2', uselib_store='LVTK', args=['--cflags'], mandatory=True)
 
@@ -63,10 +68,9 @@ def build (bld):
     env.cxxshlib_PATTERN = env.plugin_PATTERN
     
     bld.shlib (
-        source          = bld.path.ant_glob ('roboverb/Source/*.cpp') + 
-                          'lv2/plugin.cpp lv2/ui.cpp roboverb/JuceLibraryCode/BinaryData.cpp'.split(),
-        includes        = [ 'roboverb/Source', 'lv2' ],
-        use             = [ 'KV', 'LVTK' ],
+        source          = bld.path.ant_glob ('roboverb.lv2/*.cpp'),
+        includes        = [ 'roboverb.lv2' ],
+        use             = [ 'JUCE_AUDIO_BASICS', 'LVTK' ],
         cxxflags        = [ '-Wno-deprecated-declarations' ],
         name            = 'roboverb',
         target          = 'roboverb.lv2/roboverb',
@@ -74,18 +78,30 @@ def build (bld):
         install_path    = bld.env.BUNDLEDIR
     )
 
-    bld (
-        features    = 'subst',
-        source      = 'lv2/manifest.ttl.in',
-        target      = 'roboverb.lv2/manifest.ttl',
-        LIB_EXT     = env.plugin_EXT,
+    env = bld.env.derive()
+    env.cxxshlib_PATTERN = env.plugin_PATTERN
+    bld.shlib (
+        source          = bld.path.ant_glob ('roboverb.lv2/ui/*.cpp') + [ 'roboverb.lv2/Roboverb.cpp' ],
+        includes        = [ 'roboverb.lv2' ],
+        use             = [ 'KV', 'LVTK' ],
+        cxxflags        = [ '-Wno-deprecated-declarations', '-DWANTS_KV' ],
+        name            = 'roboverb_ui',
+        target          = 'roboverb.lv2/roboverb_ui',
+        env             = env,
         install_path    = bld.env.BUNDLEDIR
-
     )
 
     bld (
         features    = 'subst',
-        source      = 'lv2/roboverb.ttl',
+        source      = 'roboverb.lv2/manifest.ttl.in',
+        target      = 'roboverb.lv2/manifest.ttl',
+        LIB_EXT     = env.plugin_EXT,
+        install_path    = bld.env.BUNDLEDIR
+    )
+
+    bld (
+        features    = 'subst',
+        source      = 'roboverb.lv2/roboverb.ttl',
         target      = 'roboverb.lv2/roboverb.ttl',
         install_path = bld.env.BUNDLEDIR
     )
