@@ -16,18 +16,31 @@
               pluginFormats="buildVST,buildVST3,buildAU,buildStandalone" companyCopyright="Copyright 2015-2019  Kushview, LLC">
   <MAINGROUP id="OiCgUH" name="Roboverb">
     <GROUP id="{43AE9044-B2D6-CAC2-621A-23229C390100}" name="Content">
-      <FILE id="i06fDR" name="roboverb_bg.jpg" compile="0" resource="1" file="../data/content/roboverb_bg.jpg"/>
-      <FILE id="brtNt4" name="sphere_scope.png" compile="0" resource="1"
-            file="../data/content/sphere_scope.png"/>
-      <FILE id="mnbaWN" name="toggle_switch.png" compile="0" resource="1"
-            file="../data/content/toggle_switch.png"/>
-      <FILE id="iNlZil" name="red_knob.png" compile="0" resource="1" file="../data/content/red_knob.png"/>
+      <FILE id="zAA2nf" name="red_knob.png" compile="0" resource="1" file="../content/red_knob.png"/>
+      <FILE id="g1iKnX" name="roboverb_bg.jpg" compile="0" resource="1" file="../content/roboverb_bg.jpg"/>
+      <FILE id="ajhh1d" name="sphere_scope.png" compile="0" resource="1"
+            file="../content/sphere_scope.png"/>
+      <FILE id="wYhZcu" name="toggle_switch.png" compile="0" resource="1"
+            file="../content/toggle_switch.png"/>
     </GROUP>
     <GROUP id="{CB18DE73-CEB5-284E-7007-C03070D45C1C}" name="Source">
-      <FILE id="uGcy7d" name="AboutBox.cpp" compile="1" resource="0" file="Source/AboutBox.cpp"/>
-      <FILE id="cnDcPU" name="AboutBox.h" compile="0" resource="0" file="Source/AboutBox.h"/>
-      <FILE id="EuHJ5O" name="CombFilter.cpp" compile="1" resource="0" file="Source/CombFilter.cpp"/>
-      <FILE id="dq87Gs" name="CombFilter.h" compile="0" resource="0" file="Source/CombFilter.h"/>
+      <GROUP id="{E8978BE4-4EF3-4A44-D3AC-B09C0644325F}" name="ui">
+        <FILE id="E8nCb3" name="AboutBox.cpp" compile="1" resource="0" file="../../roboverb.lv2/ui/AboutBox.cpp"/>
+        <FILE id="xTHtcm" name="AboutBox.h" compile="0" resource="0" file="../../roboverb.lv2/ui/AboutBox.h"/>
+        <FILE id="SOJz3f" name="PluginView.cpp" compile="1" resource="0" file="../../roboverb.lv2/ui/PluginView.cpp"/>
+        <FILE id="N6Dj2Y" name="PluginView.h" compile="0" resource="0" file="../../roboverb.lv2/ui/PluginView.h"/>
+        <FILE id="oXOj9z" name="SphereScope.h" compile="0" resource="0" file="../../roboverb.lv2/ui/SphereScope.h"/>
+        <FILE id="ZN6iJv" name="UI.cpp" compile="1" resource="0" file="../../roboverb.lv2/ui/UI.cpp"/>
+      </GROUP>
+      <FILE id="JCoGJG" name="CombFilter.cpp" compile="1" resource="0" file="../../roboverb.lv2/CombFilter.cpp"/>
+      <FILE id="LOQPwn" name="CombFilter.h" compile="0" resource="0" file="../../roboverb.lv2/CombFilter.h"/>
+      <FILE id="Dg9q4p" name="JuceHeader.h" compile="0" resource="0" file="../../roboverb.lv2/JuceHeader.h"/>
+      <FILE id="HFE0hI" name="manifest.ttl.in" compile="0" resource="1" file="../../roboverb.lv2/manifest.ttl.in"/>
+      <FILE id="QUQ4oc" name="Plugin.cpp" compile="1" resource="0" file="../../roboverb.lv2/Plugin.cpp"/>
+      <FILE id="zdg7rQ" name="Ports.h" compile="0" resource="0" file="../../roboverb.lv2/Ports.h"/>
+      <FILE id="BOFmEH" name="Roboverb.cpp" compile="1" resource="0" file="../../roboverb.lv2/Roboverb.cpp"/>
+      <FILE id="NUAOB8" name="Roboverb.h" compile="0" resource="0" file="../../roboverb.lv2/Roboverb.h"/>
+      <FILE id="oFIbTR" name="roboverb.ttl" compile="0" resource="1" file="../../roboverb.lv2/roboverb.ttl"/>
       <FILE id="st65AK" name="PluginEditor.cpp" compile="1" resource="0"
             file="Source/PluginEditor.cpp"/>
       <FILE id="OqlegS" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
@@ -35,11 +48,6 @@
             file="Source/PluginProcessor.cpp"/>
       <FILE id="YlPXfY" name="PluginProcessor.h" compile="0" resource="0"
             file="Source/PluginProcessor.h"/>
-      <FILE id="UzXF6Y" name="PluginView.cpp" compile="1" resource="0" file="Source/PluginView.cpp"/>
-      <FILE id="IL9C3k" name="PluginView.h" compile="0" resource="0" file="Source/PluginView.h"/>
-      <FILE id="ffi1au" name="Roboverb.cpp" compile="1" resource="0" file="Source/Roboverb.cpp"/>
-      <FILE id="vpjx6G" name="Roboverb.h" compile="0" resource="0" file="Source/Roboverb.h"/>
-      <FILE id="cTResK" name="SphereScope.h" compile="0" resource="0" file="Source/SphereScope.h"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>

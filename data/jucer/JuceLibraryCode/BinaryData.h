@@ -8,6 +8,9 @@
 
 namespace BinaryData
 {
+    extern const char*   red_knob_png;
+    const int            red_knob_pngSize = 546683;
+
     extern const char*   roboverb_bg_jpg;
     const int            roboverb_bg_jpgSize = 243888;
 
@@ -17,11 +20,14 @@ namespace BinaryData
     extern const char*   toggle_switch_png;
     const int            toggle_switch_pngSize = 20873;
 
-    extern const char*   red_knob_png;
-    const int            red_knob_pngSize = 546683;
+    extern const char*   manifest_ttl_in;
+    const int            manifest_ttl_inSize = 461;
+
+    extern const char*   roboverb_ttl;
+    const int            roboverb_ttlSize = 4290;
 
     // Number of elements in the namedResourceList and originalFileNames arrays.
-    const int namedResourceListSize = 4;
+    const int namedResourceListSize = 6;
 
     // Points to the start of a list of resource names.
     extern const char* namedResourceList[];
