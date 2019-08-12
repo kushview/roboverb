@@ -32,8 +32,6 @@ def options (opt):
 def configure (conf):
     conf.load ('compiler_c compiler_cxx juce')
     conf.check_cxx_version ('c++14', True)
-    
-    print conf.options.debug
 
     conf.check_cfg (package = 'juce_audio_basics-5' if not conf.options.debug else 'juce_audio_basics_debug-5', 
                     uselib_store='JUCE_AUDIO_BASICS', args=['--libs', '--cflags'], mandatory=True)
