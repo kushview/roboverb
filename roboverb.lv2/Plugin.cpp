@@ -27,7 +27,7 @@
 class Module final : public lvtk::Instance<Module, lvtk::State>
 {
 public:
-	Module (double rate, const lvtk::String& bundle, const lvtk::FeatureList& f)
+	Module (double rate, const std::string& bundle, const lvtk::FeatureList& f)
 		: Instance (rate, bundle, f),
 		  stereo (true), 
 		  sampleRate (rate), 
