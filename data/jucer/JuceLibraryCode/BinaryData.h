@@ -21,10 +21,10 @@ namespace BinaryData
     const int            toggle_switch_pngSize = 20873;
 
     extern const char*   manifest_ttl_in;
-    const int            manifest_ttl_inSize = 461;
+    const int            manifest_ttl_inSize = 475;
 
     extern const char*   roboverb_ttl;
-    const int            roboverb_ttlSize = 4290;
+    const int            roboverb_ttlSize = 4491;
 
     // Number of elements in the namedResourceList and originalFileNames arrays.
     const int namedResourceListSize = 6;

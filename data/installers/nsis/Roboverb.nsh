@@ -7,8 +7,8 @@
 ;--------------------------------
 ; Plugin Files
   !define STANDALONE_FILE "..\..\build\${ARCH}\Release\Standalone Plugin\Roboverb.exe"
-  !define VST2_FILE "..\..\build\${ARCH}\Release\VST\Roboverb.dll"
-  !define VST3_FILE "..\..\build\${ARCH}\Release\VST3\Roboverb.vst3"
+  !define VST2_FILE "..\..\..\build\${ARCH}\Release\VST\Roboverb.dll"
+  !define VST3_FILE "..\..\..\build\${ARCH}\Release\VST3\Roboverb.vst3"
 
 ; Init
 Function .onInit
@@ -32,7 +32,7 @@ FunctionEnd
 ;General
   ;Name and file
   Name "Roboverb"
-  OutFile "..\..\build\${MUI_PRODUCT}-${MUI_VERSION}-${ARCH_HUMAN}.exe"
+  OutFile "..\..\..\build\${MUI_PRODUCT}-${MUI_VERSION}-${ARCH_HUMAN}.exe"
 
   ;Default installation folder
   # InstallDir "$PROGRAMFILES\Kushview\Roboverb"
@@ -54,7 +54,7 @@ FunctionEnd
 ;--------------------------------
 ;Pages
   !insertmacro MUI_PAGE_WELCOME
-  !insertmacro MUI_PAGE_LICENSE "../../license.txt"
+  !insertmacro MUI_PAGE_LICENSE "../../../LICENSE.txt"
   !insertmacro MUI_PAGE_COMPONENTS
   !insertmacro MUI_PAGE_DIRECTORY
   !insertmacro MUI_PAGE_INSTFILES
@@ -73,7 +73,7 @@ FunctionEnd
 ;Installer Sections
 Section "Roboverb" SecDummy
   SetOutPath "$INSTDIR"
-  File "${STANDALONE_FILE}"
+  ; File "${STANDALONE_FILE}"
 
   var /GLOBAL BasePath
   ${If} ${RunningX64}
@@ -100,7 +100,7 @@ SectionEnd
 ;Uninstaller
 Section "Uninstall"
   SetShellVarContext current
-  Delete "$INSTDIR\Roboverb.exe"
+  ; Delete "$INSTDIR\Roboverb.exe"
   Delete "$INSTDIR\Uninstall.exe"
   RMDir  "$INSTDIR"
 

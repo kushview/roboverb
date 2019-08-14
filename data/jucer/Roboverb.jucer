@@ -76,7 +76,8 @@
         <MODULEPATH id="juce_gui_extra" path="../../../../../../../opt/kushview/JUCE/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
-    <VS2017 targetFolder="Builds/VisualStudio2017" toolset="v140_xp">
+    <VS2017 targetFolder="Builds/VisualStudio2017" toolset="v140_xp" vstLegacyFolder="c:\SDKs\vstsdk2.4"
+            vst3Folder="c:\SDKs\VST_SDK\VST3_SDK">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="Win32"
                        isDebug="1" optimisation="1" targetName="Roboverb" binaryPath="../../build/x86/Debug"/>
@@ -127,5 +128,6 @@
                KV_DOCKING_WINDOWS="0"/>
   <LIVE_SETTINGS>
     <OSX/>
+    <WINDOWS/>
   </LIVE_SETTINGS>
 </JUCERPROJECT>
