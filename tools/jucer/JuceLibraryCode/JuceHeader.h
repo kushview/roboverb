@@ -39,7 +39,7 @@ namespace ProjectInfo
 {
     const char* const  projectName    = "Roboverb";
     const char* const  companyName    = "Kushview";
-    const char* const  versionString  = "1.0.6";
-    const int          versionNumber  = 0x10006;
+    const char* const  versionString  = "1.1.0";
+    const int          versionNumber  = 0x10100;
 }
 #endif

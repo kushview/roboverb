@@ -20,14 +20,8 @@ namespace BinaryData
     extern const char*   toggle_switch_png;
     const int            toggle_switch_pngSize = 20873;
 
-    extern const char*   manifest_ttl_in;
-    const int            manifest_ttl_inSize = 475;
-
-    extern const char*   roboverb_ttl;
-    const int            roboverb_ttlSize = 4491;
-
     // Number of elements in the namedResourceList and originalFileNames arrays.
-    const int namedResourceListSize = 6;
+    const int namedResourceListSize = 4;
 
     // Points to the start of a list of resource names.
     extern const char* namedResourceList[];

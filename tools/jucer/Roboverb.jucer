@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="LOWIDg" name="Roboverb" projectType="audioplug" version="1.0.6"
+<JUCERPROJECT id="LOWIDg" name="Roboverb" projectType="audioplug" version="1.1.0"
               bundleIdentifier="net.kushview.Roboverb" includeBinaryInAppConfig="1"
               buildVST="1" buildVST3="1" buildAU="1" buildRTAS="0" buildAAX="0"
               pluginName="Roboverb" pluginDesc="Interstellar Reverb" pluginManufacturer="Kushview"
@@ -35,12 +35,12 @@
       </GROUP>
       <FILE id="JCoGJG" name="CombFilter.cpp" compile="1" resource="0" file="../../roboverb.lv2/CombFilter.cpp"/>
       <FILE id="LOQPwn" name="CombFilter.h" compile="0" resource="0" file="../../roboverb.lv2/CombFilter.h"/>
-      <FILE id="HFE0hI" name="manifest.ttl.in" compile="0" resource="1" file="../../roboverb.lv2/manifest.ttl.in"/>
+      <FILE id="HFE0hI" name="manifest.ttl.in" compile="0" resource="0" file="../../roboverb.lv2/manifest.ttl.in"/>
       <FILE id="QUQ4oc" name="Plugin.cpp" compile="0" resource="0" file="../../roboverb.lv2/Plugin.cpp"/>
       <FILE id="zdg7rQ" name="Ports.h" compile="0" resource="0" file="../../roboverb.lv2/Ports.h"/>
       <FILE id="BOFmEH" name="Roboverb.cpp" compile="1" resource="0" file="../../roboverb.lv2/Roboverb.cpp"/>
       <FILE id="NUAOB8" name="Roboverb.h" compile="0" resource="0" file="../../roboverb.lv2/Roboverb.h"/>
-      <FILE id="oFIbTR" name="roboverb.ttl" compile="0" resource="1" file="../../roboverb.lv2/roboverb.ttl"/>
+      <FILE id="oFIbTR" name="roboverb.ttl" compile="0" resource="0" file="../../roboverb.lv2/roboverb.ttl"/>
       <FILE id="st65AK" name="PluginEditor.cpp" compile="1" resource="0"
             file="Source/PluginEditor.cpp"/>
       <FILE id="OqlegS" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
