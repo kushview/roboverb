@@ -71,3 +71,5 @@ profile
 data/jucer/Builds/
 data/jucer/JuceLibraryCode/include_*
 data/jucer/JuceLibraryCode/ReadMe.txt
+
+/.vscode/settings.json
