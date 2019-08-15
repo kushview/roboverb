@@ -9,7 +9,7 @@ using namespace juce;
  #include <juce/gui_basics.h>
 #endif
 
-#include "../data/jucer/JuceLibraryCode/BinaryData.h"
+#include "../tools/jucer/JuceLibraryCode/BinaryData.h"
 
 // copied from jucer project
 #define KV_PLUGINS_DEMO                    0

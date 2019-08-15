@@ -22,7 +22,7 @@
 #include "Ports.h"
 #include "Roboverb.h"
 #include "PluginView.h"
-#include "../data/jucer/JuceLibraryCode/BinaryData.cpp"
+#include "../tools/jucer/JuceLibraryCode/BinaryData.cpp"
 
 #define ROBOVERB_JUCEUI_URI "https://kushview.net/plugins/roboverb/juceui"
 

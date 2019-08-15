@@ -89,7 +89,7 @@ public:
 			case RoboverbPorts::Comb_7:
 			case RoboverbPorts::Comb_8: {
 				const auto value = *((float*) data);
-				verb.setCombToggle (port - RoboverbPorts::Comb_1, value >= 0.5f);
+				verb.setCombToggle (port - RoboverbPorts::Comb_1, value > 0.f);
 			} break;
 
 			case RoboverbPorts::AllPass_1:
@@ -97,7 +97,7 @@ public:
 			case RoboverbPorts::AllPass_3:
 			case RoboverbPorts::AllPass_4: {
 				const auto value = *((float*) data);
-				verb.setAllPassToggle (port - RoboverbPorts::AllPass_1, value >= 0.5f);
+				verb.setAllPassToggle (port - RoboverbPorts::AllPass_1, value > 0.f);
 			} break;
 		}
 	}
