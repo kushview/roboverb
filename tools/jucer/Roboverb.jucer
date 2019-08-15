@@ -51,8 +51,7 @@
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
-    <XCODE_MAC targetFolder="Builds/MacOSX" vstFolder="~/SDKs/vstsdk" postbuildCommand=""
-               vst3Folder="~/SDKs/VST_SDK/VST3_SDK">
+    <XCODE_MAC targetFolder="Builds/MacOSX" vstFolder="~/SDKs/vstsdk" postbuildCommand="">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" osxCompatibility="10.8 SDK" osxArchitecture="64BitIntel"
                        isDebug="1" optimisation="1" targetName="Roboverb" cppLanguageStandard="c++11"
@@ -63,17 +62,17 @@
                        codeSigningIdentity="9511F5241B78B0D38961CD756873066A5F0ED225"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="juce_core" path="/opt/kushview/JUCE/modules"/>
-        <MODULEPATH id="juce_events" path="/opt/kushview/JUCE/modules"/>
-        <MODULEPATH id="juce_graphics" path="/opt/kushview/JUCE/modules"/>
-        <MODULEPATH id="juce_data_structures" path="/opt/kushview/JUCE/modules"/>
-        <MODULEPATH id="juce_gui_basics" path="/opt/kushview/JUCE/modules"/>
-        <MODULEPATH id="juce_audio_basics" path="/opt/kushview/JUCE/modules"/>
-        <MODULEPATH id="juce_audio_processors" path="/opt/kushview/JUCE/modules"/>
-        <MODULEPATH id="juce_audio_plugin_client" path="/opt/kushview/JUCE/modules"/>
-        <MODULEPATH id="juce_cryptography" path="/opt/kushview/JUCE/modules"/>
-        <MODULEPATH id="juce_audio_formats" path="/opt/kushview/JUCE/modules"/>
-        <MODULEPATH id="juce_gui_extra" path="../../../../../../../opt/kushview/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="~/SDKs/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="~/SDKs/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="~/SDKs/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="~/SDKs/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="~/SDKs/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="~/SDKs/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="~/SDKs/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="~/SDKs/JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="~/SDKs/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="~/SDKs/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="~/SDKs/JUCE/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
     <VS2017 targetFolder="Builds/VisualStudio2017" toolset="v140_xp" vstLegacyFolder="c:\SDKs\vstsdk2.4"
@@ -101,7 +100,7 @@
         <MODULEPATH id="juce_audio_plugin_client" path="C:\SDKs\JUCE\modules"/>
         <MODULEPATH id="juce_audio_formats" path="c:\SDKs\JUCE\modules"/>
         <MODULEPATH id="juce_audio_basics" path="C:\SDKs\JUCE\modules"/>
-        <MODULEPATH id="juce_gui_extra" path="../../../../../../../opt/kushview/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="C:\SDKs\JUCE\modules"/>
       </MODULEPATHS>
     </VS2017>
   </EXPORTFORMATS>
