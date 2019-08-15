@@ -32,7 +32,7 @@ FunctionEnd
 ;General
   ;Name and file
   Name "Roboverb"
-  OutFile "..\..\..\build\${MUI_PRODUCT}-${MUI_VERSION}-${ARCH_HUMAN}.exe"
+  OutFile "..\..\..\build\roboverb-${ARCH_HUMAN}-${MUI_VERSION}.exe"
 
   ;Default installation folder
   # InstallDir "$PROGRAMFILES\Kushview\Roboverb"
@@ -56,7 +56,7 @@ FunctionEnd
   !insertmacro MUI_PAGE_WELCOME
   !insertmacro MUI_PAGE_LICENSE "../../../LICENSE.txt"
   !insertmacro MUI_PAGE_COMPONENTS
-  !insertmacro MUI_PAGE_DIRECTORY
+  ; !insertmacro MUI_PAGE_DIRECTORY
   !insertmacro MUI_PAGE_INSTFILES
   !insertmacro MUI_PAGE_FINISH
 

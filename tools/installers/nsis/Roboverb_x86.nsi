@@ -1,3 +1,3 @@
 !define ARCH "x86"
-!define ARCH_HUMAN "32bit"
+!define ARCH_HUMAN "win32"
 !include "Roboverb.nsh"
