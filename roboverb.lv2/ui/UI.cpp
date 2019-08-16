@@ -97,7 +97,7 @@ public:
             return;
         
         const float value = *((float*) buffer);
-        const bool boolValue = value >= 0.5f;
+        const bool boolValue = value > 0.f;
 
         if (port >= RoboverbPorts::Comb_1 && port <= RoboverbPorts::Comb_8)
         {
