@@ -409,6 +409,7 @@ void PluginView::resized()
 void PluginView::buttonClicked (Button* buttonThatWasClicked)
 {
     //[UserbuttonClicked_Pre]
+   #ifndef ROBOVERB_LV2
     if (combButtons.contains(buttonThatWasClicked))
     {
         combs.setBit(combButtons.indexOf(buttonThatWasClicked),
@@ -423,6 +424,7 @@ void PluginView::buttonClicked (Button* buttonThatWasClicked)
         pluginState.setProperty("enabledAllPasses", allpasses.toString(2), nullptr);
         return;
     }
+   #endif
     //[/UserbuttonClicked_Pre]
 
     if (buttonThatWasClicked == comb4.get())
@@ -550,7 +552,7 @@ void PluginView::sliderValueChanged (Slider* sliderThatWasMoved)
 void PluginView::stabilizeComponents (ValueTree newPluginState)
 {
     pluginState = newPluginState;
-
+   #ifndef ROBOVERB_LV2
     roomSize->setValue(pluginState.getProperty("roomSize"), dontSendNotification);
     roomSize->getValueObject().referTo(
         pluginState.getPropertyAsValue ("roomSize", nullptr));
@@ -579,14 +581,14 @@ void PluginView::stabilizeComponents (ValueTree newPluginState)
         combButtons.getUnchecked(i)->setToggleState(combs[i], dontSendNotification);
     for (int i = 0; i < allPassButtons.size(); ++i)
         allPassButtons.getUnchecked(i)->setToggleState(allpasses[i], dontSendNotification);
-
+   #endif
 }
 
 void PluginView::valueTreePropertyChanged (ValueTree& tree, const Identifier& property)
 {
     if (tree != pluginState)
         return;
-
+   #ifndef ROBOVERB_LV2
     const var& value (tree.getProperty (property));
     if (property == Tags::enabledCombs)
     {
@@ -600,6 +602,7 @@ void PluginView::valueTreePropertyChanged (ValueTree& tree, const Identifier& pr
         for (int i = 0; i < allPassButtons.size(); ++i)
             allPassButtons.getUnchecked(i)->setToggleState(allpasses[i], dontSendNotification);
     }
+   #endif
 }
 
 void PluginView::setSphereValue (const float val)

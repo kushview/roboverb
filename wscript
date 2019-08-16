@@ -83,7 +83,7 @@ def build (bld):
         source          = bld.path.ant_glob ('roboverb.lv2/ui/*.cpp') + [ 'roboverb.lv2/Roboverb.cpp' ],
         includes        = [ 'roboverb.lv2', 'roboverb.lv2/compat' ],
         use             = [ 'JUCE_GUI_BASICS', 'LVTK' ],
-        cxxflags        = [ '-Wno-deprecated-declarations', '-DROBOVERB_UI' ],
+        cxxflags        = [ '-Wno-deprecated-declarations', '-DROBOVERB_UI', '-DROBOVERB_LV2' ],
         name            = 'roboverb_ui',
         target          = 'roboverb.lv2/roboverb_ui',
         env             = env,
