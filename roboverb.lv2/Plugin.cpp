@@ -18,20 +18,22 @@
 */
 
 #include <lvtk/plugin.hpp>
+#include <lvtk/ext/state.hpp>
+#include <lvtk/ext/urid.hpp>
 
 #include "Ports.h"
 #include "Roboverb.h"
 
 #define ROBOVERB_URI  "https://kushview.net/plugins/roboverb"
 
-class Module final : public lvtk::Instance<Module, lvtk::State>
+class Module final : public lvtk::Instance<Module, lvtk::State, lvtk::URID>
 {
 public:
-	Module (double rate, const std::string& bundle, const lvtk::FeatureList& f)
-		: Instance (rate, bundle, f),
+	Module (const lvtk::Args& args)
+		: Instance (args),
 		  stereo (true), 
-		  sampleRate (rate), 
-		  bundlePath (String::fromUTF8 (bundle.c_str()))
+		  sampleRate (args.sample_rate), 
+		  bundlePath (args.bundle)
 	{
 		audio.setSize (2, 2048);
 		stateKey 	= map ("https://kushview.net/plugins/roboverb#state");

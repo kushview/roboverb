@@ -26,11 +26,10 @@
 
 #define ROBOVERB_JUCEUI_URI "https://kushview.net/plugins/roboverb/juceui"
 
-class ModuleUI final : public lvtk::ui::Instance<ModuleUI> {
-    ValueTree state;
+class ModuleUI final : public lvtk::UIInstance<ModuleUI> {
 public:
-    ModuleUI (const lvtk::ui::InstanceArgs& args)
-        : Instance (args),
+    ModuleUI (const lvtk::UIArgs& args)
+        : UIInstance (args),
           pluginURI (args.plugin),
           bundlePath (args.bundle)
     {
@@ -145,9 +144,10 @@ public:
     void hide() {}
 
 private:
+    ValueTree state;
     const String pluginURI;
     const String bundlePath;
     PluginView view;
 };
 
-lvtk::ui::UI<ModuleUI> sRoboverbUI (ROBOVERB_JUCEUI_URI);
+lvtk::UI<ModuleUI> sRoboverbUI (ROBOVERB_JUCEUI_URI);
