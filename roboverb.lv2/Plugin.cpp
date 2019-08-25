@@ -18,26 +18,22 @@
 */
 
 #include <lvtk/plugin.hpp>
-#include <lvtk/ext/state.hpp>
-#include <lvtk/ext/urid.hpp>
 
 #include "Ports.h"
 #include "Roboverb.h"
 
 #define ROBOVERB_URI  "https://kushview.net/plugins/roboverb"
 
-class Module final : public lvtk::Instance<Module, lvtk::State, lvtk::URID>
+class Module final : public lvtk::Plugin<Module>
 {
 public:
 	Module (const lvtk::Args& args)
-		: Instance (args),
+		: Plugin (args),
 		  stereo (true), 
 		  sampleRate (args.sample_rate), 
 		  bundlePath (args.bundle)
 	{
 		audio.setSize (2, 2048);
-		stateKey 	= map ("https://kushview.net/plugins/roboverb#state");
-		atomString 	= map (LV2_ATOM__String);
 	}
 
 	~Module() {}
@@ -139,21 +135,6 @@ public:
 					sizeof (float) * (size_t) nframes);
 	}
 
-	lvtk::StateStatus save (lvtk::StateStore &store, uint32_t flags, const lvtk::FeatureList&)
-    {
-		return lvtk::STATE_SUCCESS;
-    }
-
-    lvtk::StateStatus restore (lvtk::StateRetrieve &retrieve, 
-							   uint32_t flags, const 
-							   lvtk::FeatureList &features) 
-    {
-        return lvtk::STATE_SUCCESS;
-    }
-
-	LV2_URID stateKey = 0;
-	LV2_URID atomString = 0;
-
 private:
 	Roboverb verb;
 	Roboverb::Parameters params;
@@ -166,4 +147,4 @@ private:
 	float* output [2];
 };
 
-static const lvtk::Plugin<Module> roboverb (ROBOVERB_URI);
+static const lvtk::Descriptor<Module> roboverb (ROBOVERB_URI);
