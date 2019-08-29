@@ -32,13 +32,11 @@ public:
 		  stereo (true), 
 		  sampleRate (args.sample_rate), 
 		  bundlePath (args.bundle)
-	{
-		audio.setSize (2, 2048);
-	}
+	{ }
 
 	~Module() {}
 
-	void connect_port (uint32 port, void* data)
+	void connect_port (uint32_t port, void* data)
 	{
 		switch (port)
 		{
@@ -102,7 +100,6 @@ public:
 	
 	void activate()
 	{
-		audio.clear();
 		verb.reset();
 		verb.setSampleRate (sampleRate);
 	}
@@ -112,27 +109,15 @@ public:
 		// noop
 	}
 
-	void run (uint32 _nframes)
+	void run (uint32_t _nframes)
 	{
 		const int nchans = 2;
 		const auto nframes = static_cast<int> (_nframes);
 
 		if (params != verb.getParameters())
 			verb.setParameters (params);
-		
-		// verb processes in-place so copy the data.
-		audio.setSize (nchans, nframes, false, false, true);
 
-		for (int i = 0; i < nchans; ++i)
-			audio.copyFrom (i, 0, input [i], nframes);
-
-		verb.processStereo (audio.getWritePointer (0),
-							audio.getWritePointer (1),
-							nframes);
-
-		for (int i = 0; i < nchans; ++i)
-			memcpy (output [i], audio.getReadPointer (i),
-					sizeof (float) * (size_t) nframes);
+		verb.processStereo (input[0], input[1], output[0], output[1], nframes);
 	}
 
 private:
@@ -140,9 +125,8 @@ private:
 	Roboverb::Parameters params;
 	bool stereo = true;
 	double sampleRate;
-	String bundlePath;
+	std::string bundlePath;
 	int blockSize = 1024;
-	AudioBuffer<float> audio;
 	float* input [2];
 	float* output [2];
 };

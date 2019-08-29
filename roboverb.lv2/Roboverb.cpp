@@ -19,12 +19,3 @@
 */
 
 #include "Roboverb.h"
-
-const Identifier Tags::roomSize   = "roomSize";
-const Identifier Tags::damping    = "damping";
-const Identifier Tags::wetLevel   = "wetLevel";
-const Identifier Tags::dryLevel   = "dryLevel";
-const Identifier Tags::width      = "width";
-const Identifier Tags::freezeMode = "freezeMode";
-const Identifier Tags::enabledAllPasses = "enabledAllPasses";
-const Identifier Tags::enabledCombs     = "enabledCombs";

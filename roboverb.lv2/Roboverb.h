@@ -17,28 +17,17 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef ROBOVERB_H_INCLUDED
-#define ROBOVERB_H_INCLUDED
+#pragma once
 
-#include "JuceHeader.h"
-
-class Tags
-{
-public:
-    static const Identifier roomSize;
-    static const Identifier damping;
-    static const Identifier wetLevel;
-    static const Identifier dryLevel;
-    static const Identifier width;
-    static const Identifier freezeMode;
-    static const Identifier enabledCombs;
-    static const Identifier enabledAllPasses;
-};
+#include <memory>
+#include <cmath>
+#ifdef ROBOVERB_JUCE
+ #include "JuceHeader.h"
+#endif
 
 class Roboverb
 {
 public:
-
     enum ParameterIndex
     {
         RoomSize = 0,
@@ -52,14 +41,17 @@ public:
 
     Roboverb()
     {
-        enabledCombs.setRange(0, numCombs, false);
-        enabledCombs.setBit(3, true);
-        enabledCombs.setBit(4, true);
-        enabledCombs.setBit(5, true);
+        for (int i = 0; i < numCombs; ++i)
+            enabledCombs[i] = false;
+        enabledCombs[3] = true;
+        enabledCombs[4] = true;
+        enabledCombs[5] = true;
 
-        enabledAllPasses.setRange(0, numAllPasses, false);
-        enabledAllPasses.setBit(0, true);
-        enabledAllPasses.setBit(1, true);
+        for (int i = 0; i < numAllPasses; ++i)
+            enabledAllPasses[i] = false;        
+        enabledAllPasses[0] = true;
+        enabledAllPasses[1] = true;
+
         setParameters (Parameters());
         setSampleRate (44100.0);
     }
@@ -110,14 +102,17 @@ public:
 
     const Parameters& getParameters() const noexcept    { return parameters; }
 
+   #if ROBOVERB_JUCE
     void swapEnabledCombs (BigInteger& e)
     {
-        enabledCombs.swapWith (e);
+        for (int i = 0; i < numCombs; ++i)
+            enabledCombs[i] = e[i];
     }
 
     void swapEnabledAllPasses (BigInteger& e)
     {
-        enabledAllPasses.swapWith (e);
+        for (int i = 0; i < numAllPasses; ++i)
+            enabledAllPasses[i] = e[i];
     }
 
     void getEnablement (BigInteger& c, BigInteger& a) const
@@ -127,13 +122,14 @@ public:
         for (int i = 0; i < numAllPasses; ++i)
             a.setBit (i, enabledAllPasses[i]);
     }
+   #endif
 
     void setCombToggle (const int index, const bool toggled) {
-        enabledCombs.setBit (index, toggled);
+        enabledCombs[index] = toggled;
     }
 
     void setAllPassToggle (const int index, const bool toggled) {
-        enabledAllPasses.setBit (index, toggled);
+        enabledAllPasses[index] = toggled;
     }
 
     float toggledCombFloat (const int index) const {
@@ -161,8 +157,6 @@ public:
 
     void setSampleRate (const double sampleRate)
     {
-        jassert (sampleRate > 0);
-
         //static const short combTunings[] = { 1116, 1188, 1277, 1356, 1422, 1491, 1557, 1617 }; // (at 44100Hz)
         static const short combTunings[] = { 8092, 4096, 2048, 1024, 512, 256, 128, 64 }; // (at 44100Hz)
         static const short allPassTunings[] = { 556, 441, 341, 225 };
@@ -202,9 +196,11 @@ public:
         }
     }
 
-    void processStereo (float* const left, float* const right, const int numSamples) noexcept
+    void processStereo (float* const left, float* const right, 
+                        float* const out1, float* const out2,
+                        const int numSamples) noexcept
     {
-        jassert (left != nullptr && right != nullptr);
+        // jassert (left != nullptr && right != nullptr);
 
         for (int i = 0; i < numSamples; ++i)
         {
@@ -234,15 +230,15 @@ public:
             const float wet1 = wetGain1.getNextValue();
             const float wet2 = wetGain2.getNextValue();
 
-            left[i]  = outL * wet1 + outR * wet2 + left[i]  * dry;
-            right[i] = outR * wet1 + outL * wet2 + right[i] * dry;
+            out1[i] = outL * wet1 + outR * wet2 + left[i]  * dry;
+            out2[i] = outR * wet1 + outL * wet2 + right[i] * dry;
         }
     }
 
     /** Applies the reverb to a single mono channel of audio data. */
     void processMono (float* const samples, const int numSamples) noexcept
     {
-        jassert (samples != nullptr);
+        // jassert (samples != nullptr);
 
         for (int i = 0; i < numSamples; ++i)
         {
@@ -307,7 +303,7 @@ private:
             if (size != bufferSize)
             {
                 bufferIndex = 0;
-                buffer.malloc ((size_t) size);
+                buffer.reset (new float [size]);
                 bufferSize = size;
             }
 
@@ -317,28 +313,26 @@ private:
         void clear() noexcept
         {
             last = 0;
-            buffer.clear ((size_t) bufferSize);
+            memset (buffer.get(), 0, sizeof(float) * (size_t)bufferSize);
         }
 
         float process (const float input, const float damp, const float feedbackLevel) noexcept
         {
             const float output = buffer[bufferIndex];
             last = (output * (1.0f - damp)) + (last * damp);
-            JUCE_UNDENORMALISE (last);
+            // JUCE_UNDENORMALISE (last);
 
             float temp = input + (last * feedbackLevel);
-            JUCE_UNDENORMALISE (temp);
+            // JUCE_UNDENORMALISE (temp);
             buffer[bufferIndex] = temp;
             bufferIndex = (bufferIndex + 1) % bufferSize;
             return output;
         }
 
     private:
-        HeapBlock<float> buffer;
+        std::unique_ptr<float []> buffer;
         int bufferSize, bufferIndex;
         float last;
-
-        JUCE_DECLARE_NON_COPYABLE (CombFilter)
     };
 
     //==============================================================================
@@ -352,7 +346,7 @@ private:
             if (size != bufferSize)
             {
                 bufferIndex = 0;
-                buffer.malloc ((size_t) size);
+                buffer.reset (new float [size]);
                 bufferSize = size;
             }
 
@@ -361,37 +355,34 @@ private:
 
         void clear() noexcept
         {
-            buffer.clear ((size_t) bufferSize);
+            memset (buffer.get(), 0, sizeof(float) * (size_t)bufferSize);
         }
 
         float process (const float input) noexcept
         {
             const float bufferedValue = buffer [bufferIndex];
             float temp = input + (bufferedValue * 0.5f);
-            JUCE_UNDENORMALISE (temp);
+            // JUCE_UNDENORMALISE (temp);
             buffer [bufferIndex] = temp;
             bufferIndex = (bufferIndex + 1) % bufferSize;
             return bufferedValue - input;
         }
 
     private:
-        HeapBlock<float> buffer;
+        std::unique_ptr<float []> buffer;
         int bufferSize, bufferIndex;
-
-        JUCE_DECLARE_NON_COPYABLE (AllPassFilter)
     };
 
     class LinearSmoothedValue
     {
     public:
         LinearSmoothedValue() noexcept
-        : currentValue (0), target (0), step (0), countdown (0), stepsToTarget (0)
-        {
-        }
+            : currentValue (0), target (0), step (0), countdown (0), stepsToTarget (0)
+        {}
 
         void reset (double sampleRate, double fadeLengthSeconds) noexcept
         {
-            jassert (sampleRate > 0 && fadeLengthSeconds >= 0);
+            // jassert (sampleRate > 0 && fadeLengthSeconds >= 0);
             stepsToTarget = (int) std::floor (fadeLengthSeconds * sampleRate);
             currentValue = target;
             countdown = 0;
@@ -424,13 +415,12 @@ private:
     private:
         float currentValue, target, step;
         int countdown, stepsToTarget;
-
-        JUCE_DECLARE_NON_COPYABLE (LinearSmoothedValue)
     };
 
     //==============================================================================
     enum { numCombs = 8, numAllPasses = 4, numChannels = 2 };
-    BigInteger enabledCombs, enabledAllPasses;
+    bool enabledCombs [numCombs];
+    bool enabledAllPasses [numAllPasses];
 
     Parameters parameters;
     float gain;
@@ -439,9 +429,4 @@ private:
     AllPassFilter allPass [numChannels][numAllPasses];
 
     LinearSmoothedValue damping, feedback, dryGain, wetGain1, wetGain2;
-
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Roboverb)
 };
-
-
-#endif  // ROBOVERB_H_INCLUDED

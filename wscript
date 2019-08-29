@@ -72,7 +72,7 @@ def build (bld):
     bld.shlib (
         source          = bld.path.ant_glob ('roboverb.lv2/*.cpp'),
         includes        = [ 'roboverb.lv2', 'roboverb.lv2/compat' ],
-        use             = [ 'JUCE_AUDIO_BASICS', 'LVTK' ],
+        use             = [ 'LVTK' ],
         cxxflags        = [ '-Wno-deprecated-declarations' ],
         name            = 'roboverb',
         target          = 'roboverb.lv2/roboverb',

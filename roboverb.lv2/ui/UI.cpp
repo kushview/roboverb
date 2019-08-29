@@ -19,9 +19,15 @@
 
 #include <lvtk/ui.hpp>
 
-#include "Ports.h"
-#include "Roboverb.h"
+// So BigInteger can be used to formulate a default UI "state"
+#define ROBOVERB_JUCE 1 
+#include "JuceHeader.h"
+
 #include "PluginView.h"
+#include "Ports.h"    
+#include "Roboverb.h"
+#include "Tags.h"
+
 #include "../tools/jucer/JuceLibraryCode/BinaryData.cpp"
 
 #define ROBOVERB_JUCEUI_URI "https://kushview.net/plugins/roboverb/juceui"
