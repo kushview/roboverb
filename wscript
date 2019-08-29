@@ -28,6 +28,8 @@ def options (opt):
         dest='lv2_path', help="Specifiy a custom path to install the LV2 bundle")
     opt.add_option ('--lv2-user', default=False, action='store_true', \
         dest='lv2_user', help="Install to LV2 user path")
+    opt.add_option ('--no-juceui', default=True, action='store_false', \
+        dest='juceui', help="Install to LV2 user path")
 
 def configure (conf):
     conf.load ('compiler_c compiler_cxx juce')
@@ -62,18 +64,20 @@ def configure (conf):
         else:
             conf.env.BUNDLEDIR = conf.env.PREFIX + '/lib/lv2/roboverb.lv2'
 
+    conf.env.JUCEUI = conf.options.juceui and bool(conf.env.HAVE_JUCE_GUI_BASICS)
     juce.display_header ("Roboverb")
     juce.display_msg (conf, "LV2 Bundle", conf.env.BUNDLEDIR)
+    juce.display_msg (conf, "JUCEUI", conf.env.JUCEUI)
 
 def build (bld):
     env = bld.env.derive()
     env.cxxshlib_PATTERN = env.plugin_PATTERN
     
-    bld.shlib (
+    roboverb = bld.shlib (
         source          = bld.path.ant_glob ('roboverb.lv2/*.cpp'),
         includes        = [ 'roboverb.lv2', 'roboverb.lv2/compat' ],
         use             = [ 'LVTK' ],
-        cxxflags        = [ '-Wno-deprecated-declarations' ],
+        cxxflags        = [ '-Wno-deprecated-declarations', '-fvisibility=hidden' ],
         name            = 'roboverb',
         target          = 'roboverb.lv2/roboverb',
         env             = env,
@@ -82,28 +86,46 @@ def build (bld):
 
     env = bld.env.derive()
     env.cxxshlib_PATTERN = env.plugin_PATTERN
-    bld.shlib (
-        source          = bld.path.ant_glob ('roboverb.lv2/ui/*.cpp') + [ 'roboverb.lv2/Roboverb.cpp' ],
-        includes        = [ 'roboverb.lv2', 'roboverb.lv2/compat' ],
-        use             = [ 'JUCE_GUI_BASICS', 'LVTK' ],
-        cxxflags        = [ '-Wno-deprecated-declarations', '-DROBOVERB_UI', '-DROBOVERB_LV2' ],
-        name            = 'roboverb_ui',
-        target          = 'roboverb.lv2/roboverb_ui',
-        env             = env,
+    juceui = None
+    if bld.env.JUCEUI:
+        juceui = bld.shlib (
+            source          = bld.path.ant_glob ('roboverb.lv2/ui/*.cpp') + [ 'roboverb.lv2/Roboverb.cpp' ],
+            includes        = [ 'roboverb.lv2', 'roboverb.lv2/compat' ],
+            use             = [ 'JUCE_GUI_BASICS', 'LVTK' ],
+            cxxflags        = [ '-Wno-deprecated-declarations', '-fvisibility=hidden', 
+                                '-DROBOVERB_UI', '-DROBOVERB_LV2' ],
+            name            = 'juceui',
+            target          = 'roboverb.lv2/juceui',
+            env             = env,
+            install_path    = bld.env.BUNDLEDIR
+        )
+
+    manifesttl = bld (
+        features        = 'subst',
+        source          = 'roboverb.lv2/manifest.ttl.in',
+        target          = 'roboverb.lv2/manifest.ttl',
+        install_path    = bld.env.BUNDLEDIR,
+        LIB_EXT         = env.plugin_EXT,
+        INCLUDE_JUCEUI  = '',
+    )
+
+    roboverbttl = bld (
+        features        = 'subst',
+        source          = 'roboverb.lv2/roboverb.ttl.in',
+        target          = 'roboverb.lv2/roboverb.ttl',
         install_path    = bld.env.BUNDLEDIR
     )
 
-    bld (
-        features    = 'subst',
-        source      = 'roboverb.lv2/manifest.ttl.in',
-        target      = 'roboverb.lv2/manifest.ttl',
-        LIB_EXT     = env.plugin_EXT,
-        install_path    = bld.env.BUNDLEDIR
-    )
-
-    bld (
-        features    = 'subst',
-        source      = 'roboverb.lv2/roboverb.ttl',
-        target      = 'roboverb.lv2/roboverb.ttl',
-        install_path = bld.env.BUNDLEDIR
-    )
+    if bld.env.JUCEUI:
+        bld (
+            features        = 'subst',
+            source          = 'roboverb.lv2/juceui.ttl',
+            target          = 'roboverb.lv2/juceui.ttl',
+            install_path    = bld.env.BUNDLEDIR,
+            LIB_EXT         = env.plugin_EXT,
+            INCLUDE_JUCEUI  = '',
+        )
+        manifesttl.INCLUDE_JUCEUI = '''<https://kushview.net/plugins/roboverb/juceui>
+    a lvtk:JUCEUI ;
+    ui:binary <juceui%s> ;
+    rdfs:seeAlso <juceui.ttl> .''' % (env.plugin_EXT)

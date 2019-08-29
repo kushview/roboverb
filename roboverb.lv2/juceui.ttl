@@ -1,0 +1,3 @@
+@prefix lvtk: <http://lvtoolkit.org/ns/lvtk#> .
+<https://kushview.net/plugins/roboverb/juceui>
+    a lvtk:JUCEUI .

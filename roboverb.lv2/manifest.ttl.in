@@ -8,7 +8,4 @@
 	lv2:binary <roboverb@LIB_EXT@>  ;
 	rdfs:seeAlso <roboverb.ttl> .
 
-<https://kushview.net/plugins/roboverb/juceui>
-	a lvtk:JUCEUI ;
-	ui:binary <roboverb_ui@LIB_EXT@> ;
-	rdfs:seeAlso <roboverb.ttl> .
+@INCLUDE_JUCEUI@
