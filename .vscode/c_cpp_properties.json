@@ -5,11 +5,10 @@
             "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/usr/local/include/juce-5",
-                "/usr/local/include/kv-0",
-                "/usr/local/include/lilv-0",
-                "/usr/local/include/suil-0",
-                "/usr/local/include/lvtk-2"
+                "${workspaceFolder}/libs/lvtk",
+                "${workspaceFolder}/libs/lvtk/libs/pugl",
+                "${workspaceFolder}/libs/lvtk/libs/nuklear",
+                "/usr/local/include/juce-5"
             ],
             "defines": [
                 "ROBOVERB_UI=1"

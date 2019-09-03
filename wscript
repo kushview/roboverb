@@ -34,6 +34,8 @@ def options (opt):
 def configure (conf):
     conf.load ('compiler_c compiler_cxx juce')
     conf.check_cxx_version ('c++17', True)
+    conf.env.FRAMEWORK_COCOA   = 'Cocoa'
+    conf.env.FRAMEWORK_OPEN_GL = 'OpenGL'
 
     conf.check_cfg (package = 'juce_audio_basics-5' if not conf.options.debug else 'juce_audio_basics_debug-5', 
                     uselib_store='JUCE_AUDIO_BASICS', 
@@ -43,7 +45,7 @@ def configure (conf):
                     uselib_store='JUCE_GUI_BASICS', 
                     args=['juce_gui_basics-5 >= 5.4.5', '--libs', '--cflags'], mandatory=True)
     
-    conf.check_cfg (package = 'lvtk-2', uselib_store='LVTK', args=['--cflags'], mandatory=True)
+    conf.check_cfg (package = 'lv2', uselib_store='LV2', args=['--cflags'], mandatory=True)
 
     if len (conf.options.lv2_path) > 0:
         conf.env.BUNDLEDIR = os.path.join (conf.options.lv2_path, 'roboverb.lv2')
@@ -75,8 +77,8 @@ def build (bld):
     
     roboverb = bld.shlib (
         source          = bld.path.ant_glob ('roboverb.lv2/*.cpp'),
-        includes        = [ 'roboverb.lv2', 'roboverb.lv2/compat' ],
-        use             = [ 'LVTK' ],
+        includes        = [ 'roboverb.lv2', 'roboverb.lv2/compat', 'libs/lvtk' ],
+        use             = [ 'LV2' ],
         cxxflags        = [ '-Wno-deprecated-declarations', '-fvisibility=hidden' ],
         name            = 'roboverb',
         target          = 'roboverb.lv2/roboverb',
@@ -86,12 +88,40 @@ def build (bld):
 
     env = bld.env.derive()
     env.cxxshlib_PATTERN = env.plugin_PATTERN
+    nativeui = bld.shlib (
+            source  = [ 
+                'roboverb.lv2/nk/UI.cpp',
+                'libs/lvtk/libs/pugl/pugl/detail/implementation.c'
+            ],
+            includes        = [
+                'roboverb.lv2', 
+                'libs/lvtk', 
+                'libs/lvtk/libs/pugl',
+                'libs/lvtk/libs/nuklear'
+            ],
+            use = [ 'LV2' ],
+            cflags = [ '-Wno-deprecated-declarations', '-fvisibility=hidden' ],
+            cxxflags  = [ '-Wno-deprecated-declarations', '-fvisibility=hidden' ],
+            name = 'native',
+            target = 'roboverb.lv2/native',
+            env = env,
+            install_path = bld.env.BUNDLEDIR
+        )
+
+    if sys.platform == 'darwin':
+        nativeui.source.append ('libs/lvtk/libs/pugl/pugl/detail/mac.m')
+        nativeui.source.append ('libs/lvtk/libs/pugl/pugl/detail/mac_gl.m')
+        nativeui.use.append ('COCOA')
+        nativeui.use.append ('OPEN_GL')
+
+    env = bld.env.derive()
+    env.cxxshlib_PATTERN = env.plugin_PATTERN
     juceui = None
     if bld.env.JUCEUI:
         juceui = bld.shlib (
             source          = bld.path.ant_glob ('roboverb.lv2/ui/*.cpp') + [ 'roboverb.lv2/Roboverb.cpp' ],
-            includes        = [ 'roboverb.lv2', 'roboverb.lv2/compat' ],
-            use             = [ 'JUCE_GUI_BASICS', 'LVTK' ],
+            includes        = [ 'roboverb.lv2', 'roboverb.lv2/compat', 'libs/lvtk' ],
+            use             = [ 'JUCE_GUI_BASICS', 'LV2' ],
             cxxflags        = [ '-Wno-deprecated-declarations', '-fvisibility=hidden', 
                                 '-DROBOVERB_UI', '-DROBOVERB_LV2' ],
             name            = 'juceui',
