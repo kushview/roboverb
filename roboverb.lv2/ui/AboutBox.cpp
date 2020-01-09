@@ -7,7 +7,7 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.4.3
+  Created with Projucer version: 5.4.5
 
   ------------------------------------------------------------------------------
 
@@ -155,13 +155,13 @@ BEGIN_JUCER_METADATA
          virtualName="" explicitFocusOrder="0" pos="-155C -49C 312 32"
          textCol="ffe5e5e5" edTextCol="ff000000" edBkgCol="0" labelText="Roboverb"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
-         fontname="Default font" fontsize="2.4e1" kerning="0" bold="0"
+         fontname="Default font" fontsize="24.0" kerning="0.0" bold="0"
          italic="0" justification="36"/>
   <LABEL name="versionLabel" id="68d7814acd2571b3" memberName="versionLabel"
          virtualName="" explicitFocusOrder="0" pos="-101C -15C 192 24"
          textCol="ffe4e4e4" edTextCol="ff000000" edBkgCol="0" labelText="v1.0.2"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
-         fontname="Default font" fontsize="1.5e1" kerning="0" bold="0"
+         fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
          italic="0" justification="36"/>
   <HYPERLINKBUTTON name="linkButton" id="1f700d0405340eb4" memberName="linkButton"
                    virtualName="" explicitFocusOrder="0" pos="-76C 9C 150 26" tooltip="http://kushview.net"

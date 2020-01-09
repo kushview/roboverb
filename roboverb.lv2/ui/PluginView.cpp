@@ -7,7 +7,7 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.4.3
+  Created with Projucer version: 5.4.5
 
   ------------------------------------------------------------------------------
 
@@ -277,7 +277,7 @@ PluginView::PluginView ()
 
     width->setBounds (131, 111, 56, 56);
 
-    drawable1.reset (Drawable::createFromImageData (BinaryData::roboverb_bg_jpg, BinaryData::roboverb_bg_jpgSize));
+    drawable1 = Drawable::createFromImageData (BinaryData::roboverb_bg_jpg, BinaryData::roboverb_bg_jpgSize);
 
     //[UserPreSize]
     combButtons.add (comb1.get());
@@ -374,7 +374,7 @@ void PluginView::paint (Graphics& g)
         g.setColour (Colours::black);
         jassert (drawable1 != 0);
         if (drawable1 != 0)
-            drawable1->drawWithin (g, Rectangle<float> (x, y, width, height),
+            drawable1->drawWithin (g, Rectangle<int> (x, y, width, height).toFloat(),
                                    RectanglePlacement::stretchToFit, 1.000f);
     }
 

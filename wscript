@@ -31,12 +31,15 @@ def options (opt):
 
 def configure (conf):
     conf.load ('compiler_c compiler_cxx juce')
-    conf.check_cxx_version ('c++14', True)
+    conf.check_cxx_version ('c++17', True)
 
     conf.check_cfg (package = 'juce_audio_basics-5' if not conf.options.debug else 'juce_audio_basics_debug-5', 
-                    uselib_store='JUCE_AUDIO_BASICS', args=['--libs', '--cflags'], mandatory=True)
+                    uselib_store='JUCE_AUDIO_BASICS', 
+                    args=['juce_audio_basics-5 >= 5.4.5', '--libs', '--cflags'], 
+                    mandatory=True)
     conf.check_cfg (package = 'juce_gui_basics-5' if not conf.options.debug else 'juce_gui_basics_debug-5', 
-                    uselib_store='JUCE_GUI_BASICS', args=['--libs', '--cflags'], mandatory=True)
+                    uselib_store='JUCE_GUI_BASICS', 
+                    args=['juce_gui_basics-5 >= 5.4.5', '--libs', '--cflags'], mandatory=True)
     
     conf.check_cfg (package = 'lvtk-2', uselib_store='LVTK', args=['--cflags'], mandatory=True)
 
