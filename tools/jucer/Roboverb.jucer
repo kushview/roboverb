@@ -8,7 +8,7 @@
               pluginIsSynth="0" pluginWantsMidiIn="0" pluginProducesMidiOut="0"
               pluginSilenceInIsSilenceOut="0" pluginEditorRequiresKeys="0"
               pluginAUExportPrefix="RoboverbAU" pluginRTASCategory="" aaxIdentifier="net.kushview.roboverb"
-              pluginAAXCategory="2" jucerVersion="5.4.3" companyEmail="support@kushview.net"
+              pluginAAXCategory="2" jucerVersion="5.4.5" companyEmail="support@kushview.net"
               companyWebsite="https://kushview.net" companyName="Kushview"
               pluginAUSDKLocation="~/SDKs/CoreAudio" displaySplashScreen="0"
               reportAppUsage="0" splashScreenColour="Dark" buildAUv3="0" buildStandalone="0"
@@ -103,6 +103,25 @@
         <MODULEPATH id="juce_gui_extra" path="C:\SDKs\JUCE\modules"/>
       </MODULEPATHS>
     </VS2017>
+    <LINUX_MAKE targetFolder="Builds/LinuxMakefile">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" binaryPath="../../build/Debug"/>
+        <CONFIGURATION isDebug="0" name="Release" binaryPath="../../build/Debug"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_gui_extra"/>
+        <MODULEPATH id="juce_gui_basics"/>
+        <MODULEPATH id="juce_graphics"/>
+        <MODULEPATH id="juce_events"/>
+        <MODULEPATH id="juce_data_structures"/>
+        <MODULEPATH id="juce_cryptography"/>
+        <MODULEPATH id="juce_core"/>
+        <MODULEPATH id="juce_audio_processors"/>
+        <MODULEPATH id="juce_audio_plugin_client"/>
+        <MODULEPATH id="juce_audio_formats"/>
+        <MODULEPATH id="juce_audio_basics"/>
+      </MODULEPATHS>
+    </LINUX_MAKE>
   </EXPORTFORMATS>
   <MODULES>
     <MODULES id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
@@ -128,5 +147,6 @@
   <LIVE_SETTINGS>
     <OSX/>
     <WINDOWS/>
+    <LINUX/>
   </LIVE_SETTINGS>
 </JUCERPROJECT>
