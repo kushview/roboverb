@@ -73,3 +73,4 @@ tools/jucer/JuceLibraryCode/include_*
 tools/jucer/JuceLibraryCode/ReadMe.txt
 
 /.vscode/settings.json
+/dist/

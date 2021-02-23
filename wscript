@@ -71,21 +71,39 @@ def configure (conf):
     juce.display_msg (conf, "LV2 Bundle", conf.env.BUNDLEDIR)
     juce.display_msg (conf, "JUCEUI", conf.env.JUCEUI)
 
-def build (bld):
-    env = bld.env.derive()
-    env.cxxshlib_PATTERN = env.plugin_PATTERN
-    
-    roboverb = bld.shlib (
-        source          = bld.path.ant_glob ('roboverb.lv2/*.cpp'),
-        includes        = [ 'roboverb.lv2', 'roboverb.lv2/compat', 'libs/lvtk' ],
-        use             = [ 'LV2' ],
-        cxxflags        = [ '-Wno-deprecated-declarations', '-fvisibility=hidden' ],
-        name            = 'roboverb',
-        target          = 'roboverb.lv2/roboverb',
-        env             = env,
+def build_turtle (bld):
+    env = bld.env
+    manifesttl = bld (
+        features        = 'subst',
+        source          = 'roboverb.lv2/manifest.ttl.in',
+        target          = 'roboverb.lv2/manifest.ttl',
+        install_path    = bld.env.BUNDLEDIR,
+        LIB_EXT         = env.plugin_EXT,
+        INCLUDE_JUCEUI  = '',
+    )
+
+    roboverbttl = bld (
+        features        = 'subst',
+        source          = 'roboverb.lv2/roboverb.ttl.in',
+        target          = 'roboverb.lv2/roboverb.ttl',
         install_path    = bld.env.BUNDLEDIR
     )
 
+    if bld.env.JUCEUI:
+        bld (
+            features        = 'subst',
+            source          = 'roboverb.lv2/juceui.ttl',
+            target          = 'roboverb.lv2/juceui.ttl',
+            install_path    = bld.env.BUNDLEDIR,
+            LIB_EXT         = env.plugin_EXT,
+            INCLUDE_JUCEUI  = '',
+        )
+        manifesttl.INCLUDE_JUCEUI = '''<https://kushview.net/plugins/roboverb/juceui>
+    a lvtk:JUCEUI ;
+    ui:binary <juceui%s> ;
+    rdfs:seeAlso <juceui.ttl> .''' % (env.plugin_EXT)
+
+def build_ui (bld):
     env = bld.env.derive()
     env.cxxshlib_PATTERN = env.plugin_PATTERN
     nativeui = bld.shlib (
@@ -130,32 +148,22 @@ def build (bld):
             install_path    = bld.env.BUNDLEDIR
         )
 
-    manifesttl = bld (
-        features        = 'subst',
-        source          = 'roboverb.lv2/manifest.ttl.in',
-        target          = 'roboverb.lv2/manifest.ttl',
-        install_path    = bld.env.BUNDLEDIR,
-        LIB_EXT         = env.plugin_EXT,
-        INCLUDE_JUCEUI  = '',
-    )
+def build (bld):
+    build_turtle (bld)
 
-    roboverbttl = bld (
-        features        = 'subst',
-        source          = 'roboverb.lv2/roboverb.ttl.in',
-        target          = 'roboverb.lv2/roboverb.ttl',
+    env = bld.env.derive()
+    env.cxxshlib_PATTERN = env.plugin_PATTERN
+    
+    roboverb = bld.shlib (
+        source          = bld.path.ant_glob ('roboverb.lv2/*.cpp'),
+        includes        = [ 'roboverb.lv2', 'roboverb.lv2/compat', 'libs/lvtk' ],
+        use             = [ 'LV2' ],
+        cxxflags        = [ '-Wno-deprecated-declarations', '-fvisibility=hidden' ],
+        name            = 'roboverb',
+        target          = 'roboverb.lv2/roboverb',
+        env             = env,
         install_path    = bld.env.BUNDLEDIR
     )
 
-    if bld.env.JUCEUI:
-        bld (
-            features        = 'subst',
-            source          = 'roboverb.lv2/juceui.ttl',
-            target          = 'roboverb.lv2/juceui.ttl',
-            install_path    = bld.env.BUNDLEDIR,
-            LIB_EXT         = env.plugin_EXT,
-            INCLUDE_JUCEUI  = '',
-        )
-        manifesttl.INCLUDE_JUCEUI = '''<https://kushview.net/plugins/roboverb/juceui>
-    a lvtk:JUCEUI ;
-    ui:binary <juceui%s> ;
-    rdfs:seeAlso <juceui.ttl> .''' % (env.plugin_EXT)
+    # bld.add_group()
+    # build_ui(bld)
