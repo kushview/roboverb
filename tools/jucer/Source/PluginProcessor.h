@@ -20,6 +20,7 @@
 #ifndef PLUGINPROCESSOR_H_INCLUDED
 #define PLUGINPROCESSOR_H_INCLUDED
 
+#include "JuceHeader.h"
 #include "Roboverb.h"
 
 class RoboverbAudioProcessor  : public AudioProcessor,

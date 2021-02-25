@@ -37,7 +37,7 @@ public:
 private:
     LookAndFeel_V3 lookAndFeel;
     RoboverbAudioProcessor& processor;
-    ScopedPointer<PluginView> view;
+    std::unique_ptr<PluginView> view;
 
     friend class Timer;
     void timerCallback() override;

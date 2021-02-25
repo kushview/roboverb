@@ -26,7 +26,8 @@ RoboverbAudioProcessorEditor::RoboverbAudioProcessorEditor (RoboverbAudioProcess
 {
     setLookAndFeel (&lookAndFeel);
     setOpaque (true);
-    addAndMakeVisible (view = new PluginView());
+    view.reset (new PluginView());
+    addAndMakeVisible (view.get());
     view->stabilizeComponents (p.getState());
     setSize (view->getWidth(), view->getHeight());
     startTimer (40);

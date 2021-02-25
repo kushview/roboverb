@@ -20,6 +20,7 @@
 //[Headers] You can add your own extra header files here...
 #include "Roboverb.h"
 #include "SphereScope.h"
+#include "Tags.h"
 //[/Headers]
 
 #include "PluginView.h"
