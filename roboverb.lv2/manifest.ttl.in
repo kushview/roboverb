@@ -7,5 +7,3 @@
 	a lv2:Plugin ;
 	lv2:binary <roboverb@LIB_EXT@>  ;
 	rdfs:seeAlso <roboverb.ttl> .
-
-@INCLUDE_JUCEUI@

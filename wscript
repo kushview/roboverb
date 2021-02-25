@@ -34,22 +34,14 @@ def options (opt):
 def configure (conf):
     conf.load ('compiler_c compiler_cxx juce')
     conf.check_cxx_version ('c++17', True)
+
     conf.env.FRAMEWORK_COCOA   = 'Cocoa'
     conf.env.FRAMEWORK_OPEN_GL = 'OpenGL'
-
-    conf.check_cfg (package = 'juce_audio_basics-5' if not conf.options.debug else 'juce_audio_basics_debug-5', 
-                    uselib_store='JUCE_AUDIO_BASICS', 
-                    args=['juce_audio_basics-5 >= 5.4.5', '--libs', '--cflags'], 
-                    mandatory=True)
-    conf.check_cfg (package = 'juce_gui_basics-5' if not conf.options.debug else 'juce_gui_basics_debug-5', 
-                    uselib_store='JUCE_GUI_BASICS', 
-                    args=['juce_gui_basics-5 >= 5.4.5', '--libs', '--cflags'], mandatory=True)
     
     conf.check_cfg (package = 'lv2', uselib_store='LV2', args=['--cflags'], mandatory=True)
 
     if len (conf.options.lv2_path) > 0:
         conf.env.BUNDLEDIR = os.path.join (conf.options.lv2_path, 'roboverb.lv2')
-
     else:
         if juce.is_linux():
             if conf.options.lv2_user:
@@ -66,10 +58,8 @@ def configure (conf):
         else:
             conf.env.BUNDLEDIR = conf.env.PREFIX + '/lib/lv2/roboverb.lv2'
 
-    conf.env.JUCEUI = conf.options.juceui and bool(conf.env.HAVE_JUCE_GUI_BASICS)
     juce.display_header ("Roboverb")
     juce.display_msg (conf, "LV2 Bundle", conf.env.BUNDLEDIR)
-    juce.display_msg (conf, "JUCEUI", conf.env.JUCEUI)
 
 def build_turtle (bld):
     env = bld.env
@@ -78,8 +68,7 @@ def build_turtle (bld):
         source          = 'roboverb.lv2/manifest.ttl.in',
         target          = 'roboverb.lv2/manifest.ttl',
         install_path    = bld.env.BUNDLEDIR,
-        LIB_EXT         = env.plugin_EXT,
-        INCLUDE_JUCEUI  = '',
+        LIB_EXT         = env.plugin_EXT
     )
 
     roboverbttl = bld (
@@ -88,20 +77,6 @@ def build_turtle (bld):
         target          = 'roboverb.lv2/roboverb.ttl',
         install_path    = bld.env.BUNDLEDIR
     )
-
-    if bld.env.JUCEUI:
-        bld (
-            features        = 'subst',
-            source          = 'roboverb.lv2/juceui.ttl',
-            target          = 'roboverb.lv2/juceui.ttl',
-            install_path    = bld.env.BUNDLEDIR,
-            LIB_EXT         = env.plugin_EXT,
-            INCLUDE_JUCEUI  = '',
-        )
-        manifesttl.INCLUDE_JUCEUI = '''<https://kushview.net/plugins/roboverb/juceui>
-    a lvtk:JUCEUI ;
-    ui:binary <juceui%s> ;
-    rdfs:seeAlso <juceui.ttl> .''' % (env.plugin_EXT)
 
 def build_ui (bld):
     env = bld.env.derive()
@@ -131,22 +106,6 @@ def build_ui (bld):
         nativeui.source.append ('libs/lvtk/libs/pugl/pugl/detail/mac_gl.m')
         nativeui.use.append ('COCOA')
         nativeui.use.append ('OPEN_GL')
-
-    env = bld.env.derive()
-    env.cxxshlib_PATTERN = env.plugin_PATTERN
-    juceui = None
-    if bld.env.JUCEUI:
-        juceui = bld.shlib (
-            source          = bld.path.ant_glob ('roboverb.lv2/ui/*.cpp') + [ 'roboverb.lv2/Roboverb.cpp' ],
-            includes        = [ 'roboverb.lv2', 'roboverb.lv2/compat', 'libs/lvtk' ],
-            use             = [ 'JUCE_GUI_BASICS', 'LV2' ],
-            cxxflags        = [ '-Wno-deprecated-declarations', '-fvisibility=hidden', 
-                                '-DROBOVERB_UI', '-DROBOVERB_LV2' ],
-            name            = 'juceui',
-            target          = 'roboverb.lv2/juceui',
-            env             = env,
-            install_path    = bld.env.BUNDLEDIR
-        )
 
 def build (bld):
     build_turtle (bld)
