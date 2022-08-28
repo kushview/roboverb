@@ -29,7 +29,6 @@ class Module final : public lvtk::Plugin<Module>
 public:
 	Module (const lvtk::Args& args)
 		: Plugin (args),
-		  stereo (true), 
 		  sampleRate (args.sample_rate), 
 		  bundlePath (args.bundle)
 	{ }
@@ -111,7 +110,6 @@ public:
 
 	void run (uint32_t _nframes)
 	{
-		const int nchans = 2;
 		const auto nframes = static_cast<int> (_nframes);
 
 		if (params != verb.getParameters())
@@ -123,10 +121,8 @@ public:
 private:
 	Roboverb verb;
 	Roboverb::Parameters params;
-	bool stereo = true;
 	double sampleRate;
 	std::string bundlePath;
-	int blockSize = 1024;
 	float* input [2];
 	float* output [2];
 };
