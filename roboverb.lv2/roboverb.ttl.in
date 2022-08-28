@@ -1,24 +1,17 @@
 @prefix doap:  <http://usefulinc.com/ns/doap#> .
-@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
 @prefix lv2:   <http://lv2plug.in/ns/lv2core#> .
-@prefix units: <http://lv2plug.in/ns/extensions/units#> .
-@prefix atom:  <http://lv2plug.in/ns/ext/atom#> .
-@prefix patch: <http://lv2plug.in/ns/ext/patch#> .
-@prefix state: <http://lv2plug.in/ns/ext/state#> .
 @prefix ui:    <http://lv2plug.in/ns/extensions/ui#> .
-@prefix urid:  <http://lv2plug.in/ns/ext/urid#> .
-
-@prefix lvtk:  <http://lvtoolkit.org/ns/lvtk#> .
 
 <https://kushview.net/plugins/roboverb>
-	a lv2:Plugin ,
-		lv2:ReverbPlugin ;
+	a lv2:Plugin, lv2:ReverbPlugin ;
 	doap:name "Roboverb" ;
-	lv2:project <https://kushview.net/plugins> ;
+	doap:maintainer [ foaf:name "Kushview" ] ;
 	doap:license <http://opensource.org/licenses/gpl> ;
 	lv2:optionalFeature lv2:hardRTCapable ;
+
+	ui:ui <https://kushview.net/plugins/roboverb/ui> ;
+
 	lv2:port [
 		a lv2:AudioPort ,
 			lv2:InputPort ;

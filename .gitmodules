@@ -1,4 +1,0 @@
-[submodule "libs/lvtk"]
-	path = libs/lvtk
-	url = https://github.com/lvtk/lvtk.git
-	branch = feature/nk

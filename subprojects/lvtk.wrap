@@ -1,0 +1,6 @@
+[wrap-git]
+url = https://github.com/lvtk/lvtk
+revision = 19c0189d3dd922b18cc6ed159237f92196d81a8c
+
+[provide]
+dependency_names = lvtk-2

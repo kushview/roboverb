@@ -284,10 +284,10 @@ private:
 
         if (isFrozen (parameters.freezeMode))
             setDamping (0.0f, 1.0f);
-            else
-                setDamping (parameters.damping * dampScaleFactor,
-                            parameters.roomSize * roomScaleFactor + roomOffset);
-                }
+        else
+            setDamping (parameters.damping * dampScaleFactor,
+                        parameters.roomSize * roomScaleFactor + roomOffset);
+    }
 
     void setDamping (const float dampingToUse, const float roomSizeToUse) noexcept
     {
