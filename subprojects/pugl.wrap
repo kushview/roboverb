@@ -1,3 +1,2 @@
-[wrap-git]
-url = https://gitlab.com/lv2/pugl
-revision = 9de33a73aae71cf661b7e3efafe5df1819f70274
+[wrap-redirect]
+filename = lvtk/subprojects/pugl.wrap
