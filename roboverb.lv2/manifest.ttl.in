@@ -10,5 +10,6 @@
 <https://kushview.net/plugins/roboverb/ui>
     a ui:X11UI ;
     ui:binary <roboverb-ui.so> ;
-    lv2:optionalFeature ui:idleInterface, ui:noUserResize, ui:touch ;
+    lv2:optionalFeature ui:idleInterface ;
+    lv2:optionalFeature ui:noUserResize, ui:touch ;
     lv2:extensionData ui:idleInterface .

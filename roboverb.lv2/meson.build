@@ -17,12 +17,16 @@ plugin = shared_module ('roboverb',
     gnu_symbol_visibility : 'hidden'
 )
 
-ui = shared_module ('roboverb-ui', 'ui/UI.cpp',
+subdir ('ui')
+
+ui = shared_module ('roboverb-ui',
+    'UI.cpp',
     name_prefix : '',
-    dependencies : [ lvtk_dep, pugl_gl_dep ],
-    include_directories : [ '.' ],
+    dependencies : [ lvtk_dep, pugl_gl_dep, roboverb_ui_dep ],
+    include_directories : [ '.', 'ui', 'ui/nanovg' ],
     install : true,
     install_dir : plugin_install_dir,
+    cpp_args : [ '-DPUGL_DISABLE_DEPRECATED' ],
     gnu_symbol_visibility : 'hidden'
 )
 

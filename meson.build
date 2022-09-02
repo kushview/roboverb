@@ -16,7 +16,7 @@ pugl_gl_dep = dependency ('pugl-gl-0',
     required : true
 )
 
-lvtk_dep = dependency ('lvtk-2', 
+lvtk_dep = dependency ('lvtk-3', 
     fallback : [ 'lvtk', 'lvtk_dep' ],
     version : '>= 2.0.0',
     default_options : [],
