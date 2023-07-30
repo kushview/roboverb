@@ -26,6 +26,7 @@
 
 #include <lvtk/ext/idle.hpp>
 #include <lvtk/ext/parent.hpp>
+#include <lvtk/ext/resize.hpp>
 #include <lvtk/ext/urid.hpp>
 
 #include <lvtk/options.hpp>
@@ -51,7 +52,7 @@ protected:
     }
 };
 
-class RoboverbUI final : public UI<RoboverbUI, Parent, Idle, URID, Options> {
+class RoboverbUI final : public UI<RoboverbUI, Resize, Parent, Idle, URID, Options> {
 public:
     using Content = RoboverbContent;
 
@@ -62,6 +63,8 @@ public:
             if (opt.key == map_uri (LV2_UI__scaleFactor))
                 m_scale_factor = *(float*) opt.value;
         }
+
+        widget();
     }
 
     void cleanup() {
@@ -114,9 +117,8 @@ public:
             _main.elevate (*content, 0, (uintptr_t) parent.get());
             content->set_visible (true);
             if (auto view = content->find_view()) {
-                std::clog << "set view size\n";
                 view->set_size (content->width(), content->height());
-            
+                notify_size (content->width(), content->height());
             }
         }
 
