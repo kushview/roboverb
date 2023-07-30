@@ -25,12 +25,9 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**",
-                "/usr/local/include/juce-5",
-                "/usr/local/include/kv-0",
-                "/usr/local/include/lilv-0",
-                "/usr/local/include/suil-0",
-                "/usr/local/include/lvtk-2"
+                "${workspaceFolder}/roboverb.lv2/*",
+                "${workspaceFolder}/subprojects/lvtk/include/*",
+                "${default}"
             ],
             "defines": [
                 "ROBOVERB_UI=1"
@@ -38,7 +35,8 @@
             "compilerPath": "/usr/bin/clang",
             "cStandard": "c11",
             "cppStandard": "c++17",
-            "intelliSenseMode": "clang-x64"
+            "intelliSenseMode": "clang-x64",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
         }
     ]
 }
