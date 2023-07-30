@@ -23,10 +23,6 @@
 #include <cmath>
 #include <cstring>
 
-#ifdef ROBOVERB_JUCE
- #include "JuceHeader.h"
-#endif
-
 class Roboverb
 {
 public:

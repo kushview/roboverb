@@ -1,15 +1,34 @@
 fs = import ('fs')
 
-roboverb_sources = '''
-    Plugin.cpp
-    Roboverb.cpp
-'''.split()
+roboverb_sources = files ('''
+    plugin.cpp
+    roboverb.cpp
+'''.split())
 
-plugin_install_dir = 'lib' / 'lv2' / 'roboverb.lv2'
+roboverb_ui_type = 'X11UI'
+if host_machine.system() == 'windows'
+    roboverb_ui_type = 'WindowsUI'
+elif host_machine.system() == 'darwin'
+    roboverb_ui_type = 'CocoaUI'
+endif
 
-plugin = shared_module ('roboverb', 
-    [ 'Plugin.cpp',
-      'Roboverb.cpp' ],
+plugin_install_dir = fs.expanduser (get_option ('lv2dir'))
+if plugin_install_dir == ''
+    if target_machine.system() == 'darwin'
+        plugin_install_dir = '/Library/Audio/Plug-Ins/LV2'
+    elif target_machine.system() == 'haiku'
+        plugin_install_dir = '/boot/common/add-ons/lv2'
+    elif target_machine.system() == 'windows'
+        plugin_install_dir = 'C:/Program Files/Common Files/LV2'
+    else
+        plugin_install_dir = get_option('prefix') / 'lib' / 'lv2'
+    endif
+endif
+
+plugin_install_dir = plugin_install_dir / 'roboverb.lv2'
+
+plugin = shared_module ('roboverb',
+    roboverb_sources,
     name_prefix : '',
     dependencies : [ lvtk_dep ],
     install : true,
@@ -18,30 +37,35 @@ plugin = shared_module ('roboverb',
 )
 
 ui = shared_module ('roboverb-ui',
-    'UI.cpp',
+    'ui.cpp',
     name_prefix : '',
-    dependencies : [ lvtk_gl_dep ],
+    dependencies : [ lvtk_opengl_dep ],
     include_directories : [ '.' ],
     install : true,
     install_dir : plugin_install_dir,
-    cpp_args : [ '-DPUGL_DISABLE_DEPRECATED' ],
+    cpp_args : [ ],
     gnu_symbol_visibility : 'hidden'
 )
 
-configure_file (
+manifest_ttl = configure_file (
     input : 'manifest.ttl.in',
     output : 'manifest.ttl',
     configuration : {
-        'BINARY' : fs.name (plugin.full_path())
+        'BINARY' : fs.name (plugin.full_path()),
+        'UI_BINARY' : fs.name (ui.full_path()),
+        'UI_TYPE' : roboverb_ui_type
     },
     install : true,
     install_dir : plugin_install_dir
 )
 
-configure_file (
+roboverb_ttl = configure_file (
     input : 'roboverb.ttl.in',
     output : 'roboverb.ttl',
     copy : true,
     install : true,
     install_dir : plugin_install_dir
 )
+
+lv2_validate = find_program ('lv2_validate', required : false)
+test ('lv2_validate', lv2_validate, args : [ manifest_ttl, roboverb_ttl ])

@@ -1,18 +1,30 @@
 project ('roboverb', ['c', 'cpp'], 
     version : '2.0.0',
-    default_options : [ 'cpp_std=c++17' ])
+    default_options : [ 
+        'cpp_std=c++17', 
+        'default_library=static',
+        'b_ndebug=if-release',
+        'buildtype=release',
+        'c_std=c99',
+    ])
+
+lvtk_opts = [
+    'doc=disabled',
+    'test=disabled',
+    'default_library=static'
+]
 
 lvtk_dep = dependency ('lvtk-3', 
     fallback : [ 'lvtk', 'lvtk_dep' ],
-    version : '>= 2.0.0',
-    default_options : [],
+    version : '>= 3.0.0',
+    default_options : lvtk_opts,
     required : true
 )
 
-lvtk_gl_dep = dependency ('lvtk-gl-2', 
-    fallback : [ 'lvtk', 'lvtk_gl_dep' ],
-    version : '>= 2.0.0',
-    default_options : [],
+lvtk_opengl_dep = dependency ('lvtk-opengl-3', 
+    fallback : [ 'lvtk', 'lvtk_opengl_dep' ],
+    version : '>= 3.0.0',
+    default_options : lvtk_opts,
     required : true
 )
 

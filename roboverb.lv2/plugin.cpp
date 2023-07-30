@@ -19,8 +19,8 @@
 
 #include <lvtk/plugin.hpp>
 
-#include "Ports.h"
-#include "Roboverb.h"
+#include "ports.hpp"
+#include "roboverb.hpp"
 
 #define ROBOVERB_URI  "https://kushview.net/plugins/roboverb"
 

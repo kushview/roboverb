@@ -1,15 +1,17 @@
+@prefix doap:  <http://usefulinc.com/ns/doap#> .
 @prefix lv2:  <http://lv2plug.in/ns/lv2core#> .
 @prefix ui:   <http://lv2plug.in/ns/extensions/ui#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <https://kushview.net/plugins/roboverb>
 	a lv2:Plugin ;
+    doap:name "Roboverb" ;
 	lv2:binary <@BINARY@> ;
 	rdfs:seeAlso <roboverb.ttl> .
 
 <https://kushview.net/plugins/roboverb/ui>
-    a ui:X11UI ;
-    ui:binary <roboverb-ui.so> ;
+    a ui:@UI_TYPE@ ;
+    ui:binary <@UI_BINARY@> ;
     lv2:optionalFeature ui:idleInterface ;
     lv2:optionalFeature ui:noUserResize, ui:touch ;
     lv2:extensionData ui:idleInterface .

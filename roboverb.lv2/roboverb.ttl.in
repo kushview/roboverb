@@ -6,7 +6,6 @@
 <https://kushview.net/plugins/roboverb>
 	a lv2:Plugin, lv2:ReverbPlugin ;
 	doap:name "Roboverb" ;
-	doap:maintainer [ foaf:name "Kushview" ] ;
 	doap:license <http://opensource.org/licenses/gpl> ;
 	lv2:optionalFeature lv2:hardRTCapable ;
 
@@ -201,4 +200,4 @@
 		lv2:default 0.0 ;
 		lv2:minimum 0.0 ;
 		lv2:maximum 1.0 ;
-	]  .
+	] .
