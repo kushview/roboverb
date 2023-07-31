@@ -1,13 +1,30 @@
 # Roboverb
-Interstellar Reverb - AU/VST/VST3/LV2
+Robotic reverb at your fingertips...
 
-## Building AU/VST/VST3
-These formats can be built by normal means with Projucer.  Depending on your system, 
-you might have to change the module paths.
+![Screenshot](data/screenshot.png)
+This is the 2.0 branch, and is a work in progrss. See the [v1](tree/v1) for the 1.0.  Or the [currently released 1.0 version](https://kushview.net/roboverb) is available for download.
 
-## Building LV2
-Since the UI is an [lvtk:JUCEUI](https://github.com/lvtk/lvtk/blob/master/lvtk.lv2/manifest.ttl), you will also need to install [libjuce](https://github.com/kushview/libjuce)
+The **primary goal of 2.0** is to rewrite the UI using [LVTK](https://gitlab.com/lvtk/lvtk), add LV2 and CLAP support, and complete build with out Projucer.  2.0 will not introduce DSP changes causing audible difference.
 
+#### Status of Formats
+- [x] LV2 Plugin
+- [ ] LV2 UI
+- [ ] CLAP Plugin and GUI
+- [ ] AU/VST/VST3 Plugin and Gui
+- [ ] AAX Plugin and UI 
+
+#### Building
+Roboverb can be built with Meson.
+
+```bash
+meson setup build
+meson compile -C build
 ```
-./waf configure build install
+
+#### Building
+Roboverb can be built with Meson.
+
+```bash
+meson setup build
+meson compile -C build
 ```
