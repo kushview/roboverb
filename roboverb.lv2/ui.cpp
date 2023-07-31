@@ -39,7 +39,7 @@ using namespace lvtk;
 
 class RoboverbContent : public lvtk::Widget {
 public:
-    RoboverbContent()  {
+    RoboverbContent() {
         set_opaque (true);
         set_size (640, 360);
     }
@@ -49,6 +49,10 @@ protected:
     void paint (Graphics& g) override {
         g.set_color (0x545454ff);
         g.fill_rect (bounds().at (0));
+        g.set_color (0xffffffff);
+        g.draw_text ("Roboverb",
+                     bounds().at (0).as<float>(),
+                     lvtk::Align::CENTERED);
     }
 };
 
@@ -75,27 +79,18 @@ public:
         return 0;
     }
 
-    void port_event (uint32_t port, uint32_t size,
-                     uint32_t format, const void* buffer) {
-#if 0
+    void port_event (uint32_t port, uint32_t size, uint32_t format, const void* buffer) {
         if (format != 0 || size != sizeof (float))
             return;
-        
-        const float value = *((float*) buffer);
-        const bool boolValue = value > 0.f;
 
-        if (port >= RoboverbPorts::Comb_1 && port <= RoboverbPorts::Comb_8)
-        {
-           
-        }
-        else if (port >= RoboverbPorts::AllPass_1 && port <= RoboverbPorts::AllPass_4)
-        {
-           
-        }
-        else
-        {
-            switch (port)
-            {
+        const float value    = *((float*) buffer);
+        const bool boolValue = value > 0.f;
+        lvtk::ignore_unused (value, boolValue);
+        
+        if (port >= RoboverbPorts::Comb_1 && port <= RoboverbPorts::Comb_8) {
+        } else if (port >= RoboverbPorts::AllPass_1 && port <= RoboverbPorts::AllPass_4) {
+        } else {
+            switch (port) {
                 case RoboverbPorts::Wet:
                     break;
                 case RoboverbPorts::Dry:
@@ -108,7 +103,6 @@ public:
                     break;
             }
         }
-#endif
     }
 
     LV2UI_Widget widget() {
