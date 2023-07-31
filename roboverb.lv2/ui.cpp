@@ -23,6 +23,8 @@
 #include <lvtk/ui.hpp>
 #include <lvtk/ui/opengl.hpp>
 #include <lvtk/ui/widget.hpp>
+#include <lvtk/ui/button.hpp>
+#include <lvtk/ui/slider.hpp>
 
 #include <lvtk/ext/idle.hpp>
 #include <lvtk/ext/parent.hpp>
@@ -37,23 +39,100 @@
 
 using namespace lvtk;
 
+
+class RoboverbToggle : public lvtk::Button {
+public:
+    RoboverbToggle() = default;
+    ~RoboverbToggle() = default;
+
+protected:
+    void paint_button (Graphics& g, bool highlight, bool down) override {
+        g.set_color (0x000000ff);
+        auto b = bounds().at(0);
+        g.fill_rect (b);
+
+        g.set_color (toggled() ? 0xff000ff : 0x333333ff);
+        b = b.smaller (1);
+        g.fill_rect (b);
+    }
+};
+
 class RoboverbContent : public lvtk::Widget {
 public:
     RoboverbContent() {
         set_opaque (true);
+
+        for (int i = 0; i < 5; ++i) {
+            auto s = add (new lvtk::Slider());
+            s->set_range (0.0, 1.0);
+            s->set_type (Slider::VERTICAL_BAR);
+            sliders.push_back (s);
+        }
+
+        for (int i = 0; i < 12; ++i) {
+            // auto t = add (new RoboverbToggle());
+            // t->toggle (false);
+            // toggles.push_back (t);
+        }
+
+        show_all();
         set_size (640, 360);
     }
-    ~RoboverbContent() = default;
+
+    ~RoboverbContent()  {
+        for (auto t : toggles)
+            delete t;
+        toggles.clear();
+        for (auto s : sliders)
+            delete s;
+        sliders.clear();
+    }
+
+    void update_toggle (int index, bool value) {
+        
+        if (! (index >= 0 && index < (int) toggles.size()))
+            return;
+        // std::clog << "[roboverb] update_toggle(" << (int)value << ")\n";
+        toggles[index]->toggle (value);
+    }
+
+    template<typename Ft>
+    void update_slider (int index, Ft value) {
+        if (! (index >= 0 && index < (int) sliders.size()))
+            return;
+        auto dvalue = static_cast<double> (value);
+        sliders[index]->set_value (dvalue, lvtk::Notify::NONE);
+        // std::clog << "[roboverb] slider_min ("<< sliders[index]->range().min <<")\n";
+        // std::clog << "[roboverb] slider_max ("<< sliders[index]->range().max <<")\n";
+        // std::clog << "[roboverb] slider_value ("<< sliders[index]->value() <<")\n";
+    }
 
 protected:
+    void resized() override {
+        auto btn_size = height() / 3;
+        auto btn_hspace = btn_size * 4;
+        auto slider_hspace = width() - btn_hspace;
+
+        auto sb = bounds().at(0).slice_left (slider_hspace);
+        int w = slider_hspace / 5;
+        for (int i = 0; i < 5; ++i) {
+            auto sr = sb.slice_left (w);
+            sliders[i]->set_bounds (sr.smaller (1, 0));
+        }
+    }
+
     void paint (Graphics& g) override {
-        g.set_color (0x545454ff);
+        g.set_color (0x121212ff);
         g.fill_rect (bounds().at (0));
         g.set_color (0xffffffff);
         g.draw_text ("Roboverb",
                      bounds().at (0).as<float>(),
                      lvtk::Align::CENTERED);
     }
+
+private:
+    std::vector<lvtk::Slider*> sliders;
+    std::vector<RoboverbToggle*> toggles;
 };
 
 class RoboverbUI final : public UI<RoboverbUI, Resize, Parent, Idle, URID, Options> {
@@ -84,24 +163,14 @@ public:
             return;
 
         const float value    = *((float*) buffer);
-        const bool boolValue = value > 0.f;
-        lvtk::ignore_unused (value, boolValue);
-        
-        if (port >= RoboverbPorts::Comb_1 && port <= RoboverbPorts::Comb_8) {
-        } else if (port >= RoboverbPorts::AllPass_1 && port <= RoboverbPorts::AllPass_4) {
-        } else {
-            switch (port) {
-                case RoboverbPorts::Wet:
-                    break;
-                case RoboverbPorts::Dry:
-                    break;
-                case RoboverbPorts::RoomSize:
-                    break;
-                case RoboverbPorts::Damping:
-                    break;
-                case RoboverbPorts::Width:
-                    break;
-            }
+        const bool bvalue    = value != 0.f;
+
+        if (port >= RoboverbPorts::Comb_1 && port <= RoboverbPorts::AllPass_4) {
+            auto index = static_cast<int> (port - RoboverbPorts::Comb_1);
+            content->update_toggle (index, bvalue);
+        } else if (port >= RoboverbPorts::Wet && port <= RoboverbPorts::Width) {
+            auto index = static_cast<int> (port - RoboverbPorts::Wet);
+            content->update_slider (index, value);
         }
     }
 

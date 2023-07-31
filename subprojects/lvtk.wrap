@@ -1,7 +1,7 @@
 [wrap-git]
 url = https://gitlab.com/lvtk/lvtk.git/
 push-url=git@gitlab.com:lvtk/lvtk.git
-revision = 3be2db2e64e7489f9267cf2f2d6ea60dacb7e44e
+revision = f0593a5d0afd2549b3bc7ad4a45d96d5fb3ca869
 
 [provide]
 dependency_names = lvtk-3, lvtk-widgets-3
