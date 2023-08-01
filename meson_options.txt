@@ -1,2 +1,2 @@
 option ('lv2dir', type: 'string', value: '',
-    description: 'LV2 bundle installation directory')
+    description: 'LV2 bundle installation directory [default: LV2 System Path')
