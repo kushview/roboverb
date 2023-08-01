@@ -20,11 +20,3 @@ Roboverb can be built with Meson.
 meson setup build
 meson compile -C build
 ```
-
-#### Building
-Roboverb can be built with Meson.
-
-```bash
-meson setup build
-meson compile -C build
-```
