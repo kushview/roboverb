@@ -8,6 +8,9 @@ project ('roboverb', ['c', 'cpp'],
         'c_std=c99',
     ])
 
+add_global_arguments (['-DLVTK_STATIC=1', '-DPUGL_STATIC=1'], 
+    language : [ 'c', 'cpp' ])
+
 lvtk_opts = [
     'doc=disabled',
     'test=disabled',

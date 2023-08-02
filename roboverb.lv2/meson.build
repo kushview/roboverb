@@ -68,4 +68,6 @@ roboverb_ttl = configure_file (
 )
 
 lv2_validate = find_program ('lv2_validate', required : false)
-test ('lv2_validate', lv2_validate, args : [ manifest_ttl, roboverb_ttl ])
+if lv2_validate.found()
+    test ('lv2_validate', lv2_validate, args : [ manifest_ttl, roboverb_ttl ])
+endif
