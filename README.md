@@ -2,9 +2,14 @@
 Robotic reverb at your fingertips...
 
 ![Screenshot](data/screenshot.png)
-This is the 2.0 branch, and is a work in progrss. See the [v1](tree/v1) for the 1.0.  Or the [currently released 1.0 version](https://kushview.net/roboverb) is available for download.
+This is the 2.0 branch, and is a work in progrss. See the [v1](tree/v1) for the 
+1.0.  Or the [currently released 1.0 version](https://kushview.net/roboverb) is 
+available for download.
 
-The **primary goal of 2.0** is to rewrite the UI using [LVTK](https://gitlab.com/lvtk/lvtk), add LV2 and CLAP support, and complete build with out Projucer.  2.0 will not introduce DSP changes causing audible difference.
+The **primary goal of 2.0** is to rewrite/redesign the UI using
+[LVTK Widgets](https://gitlab.com/lvtk/lvtk), add LV2, add CLAP support, 
+discontinue usage of Projucer.  2.0 will not introduce DSP changes causing 
+audible difference.
 
 #### Status of Formats
 - [x] LV2 Plugin
