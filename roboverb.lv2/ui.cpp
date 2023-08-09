@@ -78,16 +78,47 @@ protected:
         auto b = bounds().at (0);
         g.fill_rect (b);
 
-        g.set_color (toggled() ? _color_on : _color_on.darker (1.3f));
+        g.set_color (toggled() ? _color_on : _color_off.with_alpha (0.8f));
         g.fill_rect (b.smaller (1));
 
-        g.set_color (0xffffffff);
+        g.set_color (text_color());
         g.draw_text (_text, bounds().at (0).as<float>(), lvtk::Align::CENTERED);
     }
 
 private:
-    lvtk::Color _color_on { 0xffffa400 };
-    lvtk::Color _color_off { 0xff225522 };
+    float _text_alpha { 0.72f };
+    lvtk::Color _color_on { 0xffffa400 },
+        _color_off { 0xff363333 },
+        _color_text_off { 0xffffffff },
+        _color_text_on { 0xff222222 };
+    std::string _text;
+
+    lvtk::Color text_color() const noexcept {
+        auto c = toggled() ? _color_text_on : _color_text_off;
+        return c.with_alpha (_text_alpha);
+    }
+};
+
+class ControlLabel : public lvtk::Widget {
+public:
+    ControlLabel (const std::string& text) {
+        set_name (text);
+        _text = name();
+    }
+    
+    void paint (lvtk::Graphics& g) override {
+        g.set_color (0xffffffff);
+        g.set_font (lvtk::Font (11.f));
+        g.draw_text (_text, bounds().at(0).as<float>(), _align);
+    }
+
+    void set_text (const std::string& text) {
+        _text = text;
+        repaint();
+    }
+
+private:
+    lvtk::Align _align { lvtk::Align::LEFT_MIDDLE };
     std::string _text;
 };
 
@@ -112,6 +143,17 @@ public:
             };
 
             sliders.push_back (s);
+
+            std::string text = "";
+            switch (i) {
+                case RoboverbPorts::Wet: text = "Wet level"; break;
+                case RoboverbPorts::Dry: text = "Dry level"; break;
+                case RoboverbPorts::RoomSize: text = "Room size"; break;
+                case RoboverbPorts::Damping: text = "Damping"; break;
+                case RoboverbPorts::Width: text = "Width"; break;
+            }
+
+            labels.push_back (add (new ControlLabel (text)));
         }
 
         for (int i = RoboverbPorts::Comb_1; i <= RoboverbPorts::AllPass_4; ++i) {
@@ -136,6 +178,8 @@ public:
             toggles.push_back (t);
         }
 
+        update_toggles();
+
         show_all();
         set_size (640 * 0.72, 360 * .72);
     }
@@ -149,10 +193,29 @@ public:
         sliders.clear();
     }
 
+    void update_toggles() {
+        if (toggles.size() < 12)
+            return;
+
+        for (int i = RoboverbPorts::Comb_1; i <= RoboverbPorts::AllPass_4; ++i) {
+            auto idx = i - RoboverbPorts::Comb_1;
+            auto t   = toggles.at (idx);
+            t->set_on_color (_toggle_colors[idx]);
+
+            if (_show_toggle_text) {
+                std::stringstream text;
+                if (i < RoboverbPorts::AllPass_1)
+                    text << "C" << (idx + 1);
+                else
+                    text << "A" << (i - RoboverbPorts::AllPass_1 + 1);
+                t->set_text (text.str());
+            }
+        }
+    }
+
     void update_toggle (int index, bool value) {
         if (! (index >= 0 && index < (int) toggles.size()))
             return;
-        // std::clog << "[roboverb] update_toggle(" << (int)value << ")\n";
         toggles[index]->toggle (value);
     }
 
@@ -174,33 +237,36 @@ protected:
         const auto slider_hspace = width() - btn_hspace;
 
         auto sb = bounds().at (0).slice_left (slider_hspace);
-        sb.slice_top (22);
-        int w = sb.width / 5;
+        sb.slice_top (33);
         int h = sb.height / 5;
         for (int i = 0; i < 5; ++i) {
-            // auto sr = sb.slice_left (w);
-            auto sr = sb.slice_top (h);
-            sliders[i]->set_bounds (sr.smaller (3, 2));
+            auto r = sb.slice_top (h);
+
+            auto sr = r.slice_top (r.height * 0.3333);
+            sr.slice_left (6);
+            labels[i]->set_bounds (sr);
+            r.slice_top (1);
+            sliders[i]->set_bounds (r.smaller (3, 2));
         }
 
         auto tb = bounds().at (0).slice_right (btn_hspace).smaller (2);
-        tb.slice_bottom (1);
         size_t tidx = 0;
+        int actual_size = tb.height / 3.f;
         for (int i = 0; i < 3; ++i) {
-            auto r = tb.slice_top (btn_size);
+            auto r = tb.slice_top (actual_size);
             for (int j = 0; j < 4; ++j) {
                 auto* t = toggles[tidx++];
-                t->set_bounds (r.slice_left (btn_size)
+                t->set_bounds (r.slice_left (actual_size)
                                    .smaller (1));
             }
         }
     }
 
     void paint (Graphics& g) override {
-        g.set_color (0xff111112);
+        g.set_color (0xff242222);
         g.fill_rect (bounds().at (0));
-        g.set_color (0xffffffff);
-        g.draw_text ("ROBOVERB",
+        g.set_color (0xccffffff);
+        g.draw_text ("  ROBOVERB",
                      bounds().at (0).smaller (3, 4).as<float>(),
                      lvtk::Align::TOP_LEFT);
     }
@@ -208,6 +274,8 @@ protected:
 private:
     std::vector<lvtk::Slider*> sliders;
     std::vector<RoboverbToggle*> toggles;
+    std::vector<ControlLabel*> labels;
+    bool _show_toggle_text { true };
 };
 
 class RoboverbUI final : public UI<RoboverbUI, Resize, Parent, Idle, URID, Options> {
