@@ -19,15 +19,13 @@
 
 #pragma once
 
-#include <memory>
 #include <cmath>
 #include <cstring>
+#include <memory>
 
-class Roboverb
-{
+class Roboverb {
 public:
-    enum ParameterIndex
-    {
+    enum ParameterIndex {
         RoomSize = 0,
         Damping,
         WetLevel,
@@ -37,8 +35,7 @@ public:
         numParameters
     };
 
-    Roboverb()
-    {
+    Roboverb() {
         for (int i = 0; i < numCombs; ++i)
             enabledCombs[i] = false;
         enabledCombs[3] = true;
@@ -46,7 +43,7 @@ public:
         enabledCombs[5] = true;
 
         for (int i = 0; i < numAllPasses; ++i)
-            enabledAllPasses[i] = false;        
+            enabledAllPasses[i] = false;
         enabledAllPasses[0] = true;
         enabledAllPasses[1] = true;
 
@@ -55,27 +52,24 @@ public:
     }
 
     /** Holds the parameters being used by a Reverb object. */
-    struct Parameters
-    {
+    struct Parameters {
         Parameters() noexcept
-            : roomSize   (0.5f),
-              damping    (0.5f),
-              wetLevel   (0.33f),
-              dryLevel   (0.4f),
-              width      (1.0f),
-              freezeMode (0)
-        { }
+            : roomSize (0.5f),
+              damping (0.5f),
+              wetLevel (0.33f),
+              dryLevel (0.4f),
+              width (1.0f),
+              freezeMode (0) {}
 
-        float roomSize;     /**< Room size, 0 to 1.0, where 1.0 is big, 0 is small. */
-        float damping;      /**< Damping, 0 to 1.0, where 0 is not damped, 1.0 is fully damped. */
-        float wetLevel;     /**< Wet level, 0 to 1.0 */
-        float dryLevel;     /**< Dry level, 0 to 1.0 */
-        float width;        /**< Reverb width, 0 to 1.0, where 1.0 is very wide. */
-        float freezeMode;   /**< Freeze mode - values < 0.5 are "normal" mode, values > 0.5
+        float roomSize;   /**< Room size, 0 to 1.0, where 1.0 is big, 0 is small. */
+        float damping;    /**< Damping, 0 to 1.0, where 0 is not damped, 1.0 is fully damped. */
+        float wetLevel;   /**< Wet level, 0 to 1.0 */
+        float dryLevel;   /**< Dry level, 0 to 1.0 */
+        float width;      /**< Reverb width, 0 to 1.0, where 1.0 is very wide. */
+        float freezeMode; /**< Freeze mode - values < 0.5 are "normal" mode, values > 0.5
                              put the reverb into a continuous feedback loop. */
 
-        Parameters& operator= (const Parameters& o)
-        {
+        Parameters& operator= (const Parameters& o) {
             roomSize   = o.roomSize;
             damping    = o.damping;
             wetLevel   = o.wetLevel;
@@ -85,42 +79,33 @@ public:
             return *this;
         }
 
-        bool operator== (const Parameters& o)
-        {
-            return (roomSize   == o.roomSize &&
-                    damping    == o.damping &&
-                    wetLevel   == o.wetLevel &&
-                    dryLevel   == o.dryLevel &&
-                    width      == o.width &&
-                    freezeMode == o.freezeMode);
+        bool operator== (const Parameters& o) {
+            return (roomSize == o.roomSize && damping == o.damping && wetLevel == o.wetLevel && dryLevel == o.dryLevel && width == o.width && freezeMode == o.freezeMode);
         }
 
         bool operator!= (const Parameters& o) { return ! operator== (o); }
     };
 
-    const Parameters& getParameters() const noexcept    { return parameters; }
+    const Parameters& getParameters() const noexcept { return parameters; }
 
-   #if ROBOVERB_JUCE
-    void swapEnabledCombs (BigInteger& e)
-    {
+#if ROBOVERB_JUCE
+    void swapEnabledCombs (BigInteger& e) {
         for (int i = 0; i < numCombs; ++i)
             enabledCombs[i] = e[i];
     }
 
-    void swapEnabledAllPasses (BigInteger& e)
-    {
+    void swapEnabledAllPasses (BigInteger& e) {
         for (int i = 0; i < numAllPasses; ++i)
             enabledAllPasses[i] = e[i];
     }
 
-    void getEnablement (BigInteger& c, BigInteger& a) const
-    {
+    void getEnablement (BigInteger& c, BigInteger& a) const {
         for (int i = 0; i < numCombs; ++i)
             c.setBit (i, enabledCombs[i]);
         for (int i = 0; i < numAllPasses; ++i)
             a.setBit (i, enabledAllPasses[i]);
     }
-   #endif
+#endif
 
     void setCombToggle (const int index, const bool toggled) {
         enabledCombs[index] = toggled;
@@ -138,8 +123,7 @@ public:
         return enabledAllPasses[index] ? 1.0f : 0.0f;
     }
 
-    void setParameters (const Parameters& newParams)
-    {
+    void setParameters (const Parameters& newParams) {
         const float wetScaleFactor = 6.0f;
         const float dryScaleFactor = 2.0f;
 
@@ -148,27 +132,24 @@ public:
         wetGain1.setValue (0.5f * wet * (1.0f + newParams.width));
         wetGain2.setValue (0.5f * wet * (1.0f - newParams.width));
 
-        gain = isFrozen (newParams.freezeMode) ? 0.0f : 0.015f;
+        gain       = isFrozen (newParams.freezeMode) ? 0.0f : 0.015f;
         parameters = newParams;
         updateDamping();
     }
 
-    void setSampleRate (const double sampleRate)
-    {
+    void setSampleRate (const double sampleRate) {
         //static const short combTunings[] = { 1116, 1188, 1277, 1356, 1422, 1491, 1557, 1617 }; // (at 44100Hz)
-        static const short combTunings[] = { 8092, 4096, 2048, 1024, 512, 256, 128, 64 }; // (at 44100Hz)
+        static const short combTunings[]    = { 8092, 4096, 2048, 1024, 512, 256, 128, 64 }; // (at 44100Hz)
         static const short allPassTunings[] = { 556, 441, 341, 225 };
-        const int stereoSpread = 23;
-        const int intSampleRate = (int) sampleRate;
+        const int stereoSpread              = 23;
+        const int intSampleRate             = (int) sampleRate;
 
-        for (int i = 0; i < numCombs; ++i)
-        {
+        for (int i = 0; i < numCombs; ++i) {
             comb[0][i].setSize ((intSampleRate * combTunings[i]) / 44100);
             comb[1][i].setSize ((intSampleRate * (combTunings[i] + stereoSpread)) / 44100);
         }
 
-        for (int i = 0; i < numAllPasses; ++i)
-        {
+        for (int i = 0; i < numAllPasses; ++i) {
             allPass[0][i].setSize ((intSampleRate * allPassTunings[i]) / 44100);
             allPass[1][i].setSize ((intSampleRate * (allPassTunings[i] + stereoSpread)) / 44100);
         }
@@ -176,16 +157,14 @@ public:
         const double smoothTime = 0.01;
         damping.reset (sampleRate, smoothTime);
         feedback.reset (sampleRate, smoothTime);
-        dryGain .reset (sampleRate, smoothTime);
+        dryGain.reset (sampleRate, smoothTime);
         wetGain1.reset (sampleRate, smoothTime);
         wetGain2.reset (sampleRate, smoothTime);
     }
 
     /** Clears the reverb's buffers. */
-    void reset()
-    {
-        for (int j = 0; j < numChannels; ++j)
-        {
+    void reset() {
+        for (int j = 0; j < numChannels; ++j) {
             for (int i = 0; i < numCombs; ++i)
                 comb[j][i].clear();
 
@@ -194,31 +173,29 @@ public:
         }
     }
 
-    void processStereo (float* const left, float* const right, 
+    void processStereo (float* const left, float* const right,
                         float* const out1, float* const out2,
-                        const int numSamples) noexcept
-    {
+                        const int numSamples) noexcept {
         // jassert (left != nullptr && right != nullptr);
 
-        for (int i = 0; i < numSamples; ++i)
-        {
+        for (int i = 0; i < numSamples; ++i) {
             const float input = (left[i] + right[i]) * gain;
             float outL = 0, outR = 0;
 
             const float damp    = damping.getNextValue();
             const float feedbck = feedback.getNextValue();
 
-            for (int j = 0; j < numCombs; ++j)  // accumulate the comb filters in parallel
+            for (int j = 0; j < numCombs; ++j) // accumulate the comb filters in parallel
             {
-                if (! enabledCombs [j])
+                if (! enabledCombs[j])
                     continue;
                 outL += comb[0][j].process (input, damp, feedbck);
                 outR += comb[1][j].process (input, damp, feedbck);
             }
 
-            for (int j = 0; j < numAllPasses; ++j)  // run the allpass filters in series
+            for (int j = 0; j < numAllPasses; ++j) // run the allpass filters in series
             {
-                if ( ! enabledAllPasses [j])
+                if (! enabledAllPasses[j])
                     continue;
                 outL = allPass[0][j].process (outL);
                 outR = allPass[1][j].process (outR);
@@ -228,36 +205,32 @@ public:
             const float wet1 = wetGain1.getNextValue();
             const float wet2 = wetGain2.getNextValue();
 
-            out1[i] = outL * wet1 + outR * wet2 + left[i]  * dry;
+            out1[i] = outL * wet1 + outR * wet2 + left[i] * dry;
             out2[i] = outR * wet1 + outL * wet2 + right[i] * dry;
         }
     }
 
     /** Applies the reverb to a single mono channel of audio data. */
-    void processMono (float* const samples, const int numSamples) noexcept
-    {
+    void processMono (float* const samples, const int numSamples) noexcept {
         // jassert (samples != nullptr);
 
-        for (int i = 0; i < numSamples; ++i)
-        {
+        for (int i = 0; i < numSamples; ++i) {
             const float input = samples[i] * gain;
-            float output = 0;
+            float output      = 0;
 
             const float damp    = damping.getNextValue();
             const float feedbck = feedback.getNextValue();
 
-            for (int j = 0; j < numCombs; ++j)
-            {
+            for (int j = 0; j < numCombs; ++j) {
                 // accumulate the comb filters in parallel
-                if (! enabledCombs [j])
+                if (! enabledCombs[j])
                     continue;
                 output += comb[0][j].process (input, damp, feedbck);
             }
 
-            for (int j = 0; j < numAllPasses; ++j)
-            {
+            for (int j = 0; j < numAllPasses; ++j) {
                 // run the allpass filters in series
-                if ( ! enabledAllPasses [j])
+                if (! enabledAllPasses[j])
                     continue;
                 output = allPass[0][j].process (output);
             }
@@ -270,12 +243,11 @@ public:
     }
 
 private:
-    static bool isFrozen (const float freezeMode) noexcept  { return freezeMode >= 0.5f; }
+    static bool isFrozen (const float freezeMode) noexcept { return freezeMode >= 0.5f; }
 
-    void updateDamping() noexcept
-    {
+    void updateDamping() noexcept {
         const float roomScaleFactor = 0.28f;
-        const float roomOffset = 0.7f;
+        const float roomOffset      = 0.7f;
         const float dampScaleFactor = 0.4f;
 
         if (isFrozen (parameters.freezeMode))
@@ -285,112 +257,96 @@ private:
                         parameters.roomSize * roomScaleFactor + roomOffset);
     }
 
-    void setDamping (const float dampingToUse, const float roomSizeToUse) noexcept
-    {
+    void setDamping (const float dampingToUse, const float roomSizeToUse) noexcept {
         damping.setValue (dampingToUse);
         feedback.setValue (roomSizeToUse);
     }
 
-    class CombFilter
-    {
+    class CombFilter {
     public:
-        CombFilter() noexcept   : bufferSize (0), bufferIndex (0), last (0)  {}
+        CombFilter() noexcept : bufferSize (0), bufferIndex (0), last (0) {}
 
-        void setSize (const int size)
-        {
-            if (size != bufferSize)
-            {
+        void setSize (const int size) {
+            if (size != bufferSize) {
                 bufferIndex = 0;
-                buffer.reset (new float [size]);
+                buffer.reset (new float[size]);
                 bufferSize = size;
             }
 
             clear();
         }
 
-        void clear() noexcept
-        {
+        void clear() noexcept {
             last = 0;
-            memset (buffer.get(), 0, sizeof(float) * (size_t)bufferSize);
+            memset (buffer.get(), 0, sizeof (float) * (size_t) bufferSize);
         }
 
-        float process (const float input, const float damp, const float feedbackLevel) noexcept
-        {
+        float process (const float input, const float damp, const float feedbackLevel) noexcept {
             const float output = buffer[bufferIndex];
-            last = (output * (1.0f - damp)) + (last * damp);
+            last               = (output * (1.0f - damp)) + (last * damp);
             // JUCE_UNDENORMALISE (last);
 
             float temp = input + (last * feedbackLevel);
             // JUCE_UNDENORMALISE (temp);
             buffer[bufferIndex] = temp;
-            bufferIndex = (bufferIndex + 1) % bufferSize;
+            bufferIndex         = (bufferIndex + 1) % bufferSize;
             return output;
         }
 
     private:
-        std::unique_ptr<float []> buffer;
+        std::unique_ptr<float[]> buffer;
         int bufferSize, bufferIndex;
         float last;
     };
 
     //==============================================================================
-    class AllPassFilter
-    {
+    class AllPassFilter {
     public:
-        AllPassFilter() noexcept  : bufferSize (0), bufferIndex (0) {}
+        AllPassFilter() noexcept : bufferSize (0), bufferIndex (0) {}
 
-        void setSize (const int size)
-        {
-            if (size != bufferSize)
-            {
+        void setSize (const int size) {
+            if (size != bufferSize) {
                 bufferIndex = 0;
-                buffer.reset (new float [size]);
+                buffer.reset (new float[size]);
                 bufferSize = size;
             }
 
             clear();
         }
 
-        void clear() noexcept
-        {
-            memset (buffer.get(), 0, sizeof(float) * (size_t)bufferSize);
+        void clear() noexcept {
+            memset (buffer.get(), 0, sizeof (float) * (size_t) bufferSize);
         }
 
-        float process (const float input) noexcept
-        {
-            const float bufferedValue = buffer [bufferIndex];
-            float temp = input + (bufferedValue * 0.5f);
+        float process (const float input) noexcept {
+            const float bufferedValue = buffer[bufferIndex];
+            float temp                = input + (bufferedValue * 0.5f);
             // JUCE_UNDENORMALISE (temp);
-            buffer [bufferIndex] = temp;
-            bufferIndex = (bufferIndex + 1) % bufferSize;
+            buffer[bufferIndex] = temp;
+            bufferIndex         = (bufferIndex + 1) % bufferSize;
             return bufferedValue - input;
         }
 
     private:
-        std::unique_ptr<float []> buffer;
+        std::unique_ptr<float[]> buffer;
         int bufferSize, bufferIndex;
     };
 
-    class LinearSmoothedValue
-    {
+    class LinearSmoothedValue {
     public:
         LinearSmoothedValue() noexcept
-            : currentValue (0), target (0), step (0), countdown (0), stepsToTarget (0)
-        {}
+            : currentValue (0), target (0), step (0), countdown (0), stepsToTarget (0) {}
 
-        void reset (double sampleRate, double fadeLengthSeconds) noexcept
-        {
+        void reset (double sampleRate, double fadeLengthSeconds) noexcept {
             // jassert (sampleRate > 0 && fadeLengthSeconds >= 0);
             stepsToTarget = (int) std::floor (fadeLengthSeconds * sampleRate);
-            currentValue = target;
-            countdown = 0;
+            currentValue  = target;
+            countdown     = 0;
         }
 
-        void setValue (float newValue) noexcept
-        {
-            if (target != newValue)
-            {
-                target = newValue;
+        void setValue (float newValue) noexcept {
+            if (target != newValue) {
+                target    = newValue;
                 countdown = stepsToTarget;
 
                 if (countdown <= 0)
@@ -400,8 +356,7 @@ private:
             }
         }
 
-        float getNextValue() noexcept
-        {
+        float getNextValue() noexcept {
             if (countdown <= 0)
                 return target;
 
@@ -416,15 +371,17 @@ private:
     };
 
     //==============================================================================
-    enum { numCombs = 8, numAllPasses = 4, numChannels = 2 };
-    bool enabledCombs [numCombs];
-    bool enabledAllPasses [numAllPasses];
+    enum { numCombs     = 8,
+           numAllPasses = 4,
+           numChannels  = 2 };
+    bool enabledCombs[numCombs];
+    bool enabledAllPasses[numAllPasses];
 
     Parameters parameters;
     float gain;
 
-    CombFilter comb [numChannels][numCombs];
-    AllPassFilter allPass [numChannels][numAllPasses];
+    CombFilter comb[numChannels][numCombs];
+    AllPassFilter allPass[numChannels][numAllPasses];
 
     LinearSmoothedValue damping, feedback, dryGain, wetGain1, wetGain2;
 };

@@ -39,21 +39,56 @@
 
 using namespace lvtk;
 
+/** Color table for the comb and all pass toggles.
+    ordered by rows and columns going top-down left-to-right.
+*/
+static const lvtk::Color _toggle_colors[] = {
+    0xffffa500,
+    0xffefa500,
+    0xffdfa500,
+    0xffcfa500,
+    0xffffa500,
+    0xffefa500,
+    0xffdfa500,
+    0xffcfa500,
+    0xffffa500,
+    0xffefa500,
+    0xffdfa500,
+    0xffcfa500
+};
+
 class RoboverbToggle : public lvtk::Button {
 public:
     RoboverbToggle()  = default;
     ~RoboverbToggle() = default;
 
+    void set_on_color (lvtk::Color color) {
+        _color_on = color;
+        repaint();
+    }
+
+    void set_text (const std::string& text) {
+        _text = text;
+        repaint();
+    }
+
 protected:
     void paint_button (Graphics& g, bool highlight, bool down) override {
-        g.set_color (0x000000ff);
+        g.set_color (0xff111111);
         auto b = bounds().at (0);
         g.fill_rect (b);
 
-        g.set_color (toggled() ? 0xff000ff : 0x333333ff);
-        b = b.smaller (1);
-        g.fill_rect (b);
+        g.set_color (toggled() ? _color_on : _color_on.darker (1.3f));
+        g.fill_rect (b.smaller (1));
+
+        g.set_color (0xffffffff);
+        g.draw_text (_text, bounds().at (0).as<float>(), lvtk::Align::CENTERED);
     }
+
+private:
+    lvtk::Color _color_on { 0xffffa400 };
+    lvtk::Color _color_off { 0xff225522 };
+    std::string _text;
 };
 
 class RoboverbContent : public lvtk::Widget {
@@ -66,7 +101,8 @@ public:
         for (int i = RoboverbPorts::Wet; i <= RoboverbPorts::Width; ++i) {
             auto s = add (new lvtk::Slider());
             s->set_range (0.0, 1.0);
-            s->set_type (Slider::VERTICAL_BAR);
+            s->set_type (Slider::HORIZONTAL_BAR);
+
             s->on_value_changed = [&, i, s]() {
                 if (on_control_changed) {
                     const auto port  = static_cast<uint32_t> (i);
@@ -74,12 +110,21 @@ public:
                     on_control_changed (port, value);
                 }
             };
+
             sliders.push_back (s);
         }
 
         for (int i = RoboverbPorts::Comb_1; i <= RoboverbPorts::AllPass_4; ++i) {
-            auto t = add (new RoboverbToggle());
+            auto idx = i - RoboverbPorts::Comb_1;
+            auto t   = add (new RoboverbToggle());
             t->toggle (false);
+            t->set_on_color (_toggle_colors[idx]);
+            std::stringstream text;
+            if (i < RoboverbPorts::AllPass_1)
+                text << "C" << (idx + 1);
+            else
+                text << "A" << (i - RoboverbPorts::AllPass_1 + 1);
+            t->set_text (text.str());
             t->on_clicked = [&, i, t]() {
                 t->toggle (! t->toggled());
                 if (on_control_changed) {
@@ -92,7 +137,7 @@ public:
         }
 
         show_all();
-        set_size (640, 360);
+        set_size (640 * 0.72, 360 * .72);
     }
 
     ~RoboverbContent() {
@@ -124,18 +169,22 @@ public:
 
 protected:
     void resized() override {
-        auto btn_size      = height() / 3;
-        auto btn_hspace    = btn_size * 4;
-        auto slider_hspace = width() - btn_hspace;
+        const auto btn_size      = height() / 3;
+        const auto btn_hspace    = btn_size * 4;
+        const auto slider_hspace = width() - btn_hspace;
 
         auto sb = bounds().at (0).slice_left (slider_hspace);
-        int w   = sb.width / 5;
+        sb.slice_top (22);
+        int w = sb.width / 5;
+        int h = sb.height / 5;
         for (int i = 0; i < 5; ++i) {
-            auto sr = sb.slice_left (w);
-            sliders[i]->set_bounds (sr.smaller (1, 0));
+            // auto sr = sb.slice_left (w);
+            auto sr = sb.slice_top (h);
+            sliders[i]->set_bounds (sr.smaller (3, 2));
         }
 
-        auto tb     = bounds().at (0).slice_right (btn_hspace).smaller (1);
+        auto tb = bounds().at (0).slice_right (btn_hspace).smaller (2);
+        tb.slice_bottom (1);
         size_t tidx = 0;
         for (int i = 0; i < 3; ++i) {
             auto r = tb.slice_top (btn_size);
@@ -148,12 +197,12 @@ protected:
     }
 
     void paint (Graphics& g) override {
-        g.set_color (0x121212ff);
+        g.set_color (0xff111112);
         g.fill_rect (bounds().at (0));
         g.set_color (0xffffffff);
-        g.draw_text ("Roboverb",
-                     bounds().at (0).as<float>(),
-                     lvtk::Align::CENTERED);
+        g.draw_text ("ROBOVERB",
+                     bounds().at (0).smaller (3, 4).as<float>(),
+                     lvtk::Align::TOP_LEFT);
     }
 
 private:
@@ -219,9 +268,7 @@ public:
             _main.elevate (*content, 0, (uintptr_t) parent.get());
             content->set_visible (true);
             content->on_control_changed = std::bind (
-                &RoboverbUI::send_control, this, 
-                std::placeholders::_1,
-                std::placeholders::_2);
+                &RoboverbUI::send_control, this, std::placeholders::_1, std::placeholders::_2);
             if (auto view = content->find_view()) {
                 view->set_size (content->width(), content->height());
                 notify_size (content->width(), content->height());
