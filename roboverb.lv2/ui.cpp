@@ -278,7 +278,7 @@ private:
     bool _show_toggle_text { true };
 };
 
-class RoboverbUI final : public UI<RoboverbUI, Resize, Parent, Idle, URID, Options> {
+class RoboverbUI final : public UI<RoboverbUI, Parent, Idle, URID, Options> {
 public:
     using Content = RoboverbContent;
 
@@ -339,7 +339,6 @@ public:
                 &RoboverbUI::send_control, this, std::placeholders::_1, std::placeholders::_2);
             if (auto view = content->find_view()) {
                 view->set_size (content->width(), content->height());
-                notify_size (content->width(), content->height());
             }
         }
 
