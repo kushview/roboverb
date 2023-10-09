@@ -181,7 +181,7 @@ public:
         update_toggles();
 
         show_all();
-        set_size (640 * 0.72, 360 * .72);
+        set_size (640 * 0.72, 360 * 0.72);
     }
 
     ~RoboverbContent() {

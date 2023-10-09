@@ -14,6 +14,7 @@ add_global_arguments (['-DLVTK_STATIC=1', '-DPUGL_STATIC=1'],
 lvtk_opts = [
     'doc=disabled',
     'test=disabled',
+    'demo=enabled',
     'default_library=static'
 ]
 
