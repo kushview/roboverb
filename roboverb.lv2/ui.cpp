@@ -337,9 +337,6 @@ public:
             content->set_visible (true);
             content->on_control_changed = std::bind (
                 &RoboverbUI::send_control, this, std::placeholders::_1, std::placeholders::_2);
-            if (auto view = content->find_view()) {
-                view->set_size (content->width(), content->height());
-            }
         }
 
         return (LV2UI_Widget) content->find_handle();
