@@ -11,7 +11,7 @@
 
 <https://kushview.net/plugins/roboverb/ui>
     a ui:@UI_TYPE@ ;
-    ui:binary <@UI_BINARY@> ;
+    lv2:binary <@UI_BINARY@> ;
     lv2:optionalFeature ui:idleInterface ;
     lv2:optionalFeature ui:noUserResize, ui:touch ;
     lv2:extensionData ui:idleInterface .
