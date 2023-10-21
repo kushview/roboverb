@@ -4,9 +4,17 @@
 @prefix ui:    <http://lv2plug.in/ns/extensions/ui#> .
 
 <https://kushview.net/plugins/roboverb>
-	a lv2:Plugin, lv2:ReverbPlugin ;
+	a lv2:Plugin, lv2:ReverbPlugin, doap:Project ;
 	doap:name "Roboverb" ;
+	doap:maintainer [
+		foaf:name "Kushview";
+		foaf:homepage <http://github.com/kushview>;
+	];
 	doap:license <http://opensource.org/licenses/gpl> ;
+	
+	lv2:minorVersion 0;
+	lv2:microVersion 0;
+
 	lv2:optionalFeature lv2:hardRTCapable ;
 
 	ui:ui <https://kushview.net/plugins/roboverb/ui> ;
