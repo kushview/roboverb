@@ -8,8 +8,10 @@ project ('roboverb', ['c', 'cpp'],
         'c_std=c99',
     ])
 
-add_global_arguments (['-DLVTK_STATIC=1', '-DPUGL_STATIC=1'], 
-    language : [ 'c', 'cpp' ])
+if not meson.is_subproject()
+    add_global_arguments (['-DLVTK_STATIC=1', '-DPUGL_STATIC=1'], 
+        language : [ 'c', 'cpp' ])
+endif
 
 lvtk_opts = [
     'doc=disabled',
