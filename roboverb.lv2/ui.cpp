@@ -34,6 +34,7 @@
 #include <lvtk/options.hpp>
 
 #include "ports.hpp"
+#include "res.hpp"
 
 #define ROBOVERB_UI_URI "https://kushview.net/plugins/roboverb/ui"
 
@@ -82,7 +83,7 @@ protected:
         g.fill_rect (b.smaller (1));
 
         g.set_color (text_color());
-        g.draw_text (_text, bounds().at (0).as<float>(), lvtk::Align::CENTERED);
+        g.draw_text (_text, bounds().at (0).as<float>(), lvtk::Justify::CENTERED);
     }
 
 private:
@@ -105,11 +106,11 @@ public:
         set_name (text);
         _text = name();
     }
-    
+
     void paint (lvtk::Graphics& g) override {
         g.set_color (0xffffffff);
         g.set_font (lvtk::Font (11.f));
-        g.draw_text (_text, bounds().at(0).as<float>(), _align);
+        g.draw_text (_text, bounds().at (0).as<float>(), _align);
     }
 
     void set_text (const std::string& text) {
@@ -118,21 +119,21 @@ public:
     }
 
 private:
-    lvtk::Align _align { lvtk::Align::LEFT_MIDDLE };
+    lvtk::Justify _align { lvtk::Justify::MID_LEFT };
     std::string _text;
 };
 
 class RoboverbContent : public lvtk::Widget {
 public:
     std::function<void (uint32_t, float)> on_control_changed;
-
+     
     RoboverbContent() {
         set_opaque (true);
-
+        bg_image = lvtk::Image::load ((uint8_t*)res::roboverb_bg_jpg, res::roboverb_bg_jpgSize);
         for (int i = RoboverbPorts::Wet; i <= RoboverbPorts::Width; ++i) {
             auto s = add (new lvtk::Slider());
             s->set_range (0.0, 1.0);
-            s->set_type (Slider::HORIZONTAL_BAR);
+            s->set_type (Slider::HORIZONTAL);
 
             s->on_value_changed = [&, i, s]() {
                 if (on_control_changed) {
@@ -146,11 +147,21 @@ public:
 
             std::string text = "";
             switch (i) {
-                case RoboverbPorts::Wet: text = "Wet level"; break;
-                case RoboverbPorts::Dry: text = "Dry level"; break;
-                case RoboverbPorts::RoomSize: text = "Room size"; break;
-                case RoboverbPorts::Damping: text = "Damping"; break;
-                case RoboverbPorts::Width: text = "Width"; break;
+                case RoboverbPorts::Wet:
+                    text = "Wet level";
+                    break;
+                case RoboverbPorts::Dry:
+                    text = "Dry level";
+                    break;
+                case RoboverbPorts::RoomSize:
+                    text = "Room size";
+                    break;
+                case RoboverbPorts::Damping:
+                    text = "Damping";
+                    break;
+                case RoboverbPorts::Width:
+                    text = "Width";
+                    break;
             }
 
             labels.push_back (add (new ControlLabel (text)));
@@ -232,12 +243,14 @@ public:
 
 protected:
     void resized() override {
-        const auto btn_size      = height() / 3;
+
+        const auto btn_size      = height() / 3 - 10;
         const auto btn_hspace    = btn_size * 4;
         const auto slider_hspace = width() - btn_hspace;
 
         auto sb = bounds().at (0).slice_left (slider_hspace);
-        sb.slice_top (33);
+        sb.slice_top (40);
+        sb.slice_bottom (20);
         int h = sb.height / 5;
         for (int i = 0; i < 5; ++i) {
             auto r = sb.slice_top (h);
@@ -249,8 +262,8 @@ protected:
             sliders[i]->set_bounds (r.smaller (3, 2));
         }
 
-        auto tb = bounds().at (0).slice_right (btn_hspace).smaller (2);
-        size_t tidx = 0;
+        auto tb         = bounds().at (0).slice_right (btn_hspace).smaller (2);
+        size_t tidx     = 0;
         int actual_size = tb.height / 3.f;
         for (int i = 0; i < 3; ++i) {
             auto r = tb.slice_top (actual_size);
@@ -263,12 +276,15 @@ protected:
     }
 
     void paint (Graphics& g) override {
-        g.set_color (0xff242222);
+        if (bg_image) {
+            g.draw_image (bg_image, bounds().at(0).as<double>(), Fitment::STRETCH);
+        }
+        g.set_color (Color (0, 0, 0, 200));
         g.fill_rect (bounds().at (0));
         g.set_color (0xccffffff);
         g.draw_text ("  ROBOVERB",
                      bounds().at (0).smaller (3, 4).as<float>(),
-                     lvtk::Align::TOP_LEFT);
+                     lvtk::Justify::TOP_LEFT);
     }
 
 private:
@@ -276,6 +292,7 @@ private:
     std::vector<RoboverbToggle*> toggles;
     std::vector<ControlLabel*> labels;
     bool _show_toggle_text { true };
+    Image bg_image;
 };
 
 class RoboverbUI final : public UI<RoboverbUI, Parent, Idle, URID, Options> {

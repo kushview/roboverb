@@ -37,7 +37,7 @@ plugin = shared_module ('roboverb',
 )
 
 ui = shared_module ('roboverb-ui',
-    'ui.cpp',
+    [ 'ui.cpp', 'res.cpp' ],
     name_prefix : '',
     dependencies : [ lvtk_opengl_dep ],
     include_directories : [ '.' ],
