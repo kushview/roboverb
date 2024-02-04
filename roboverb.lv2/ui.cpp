@@ -22,7 +22,7 @@
 
 #include <lvtk/ui.hpp>
 #include <lvtk/ui/button.hpp>
-#include <lvtk/ui/opengl.hpp>
+#include <lvtk/ui/cairo.hpp>
 #include <lvtk/ui/slider.hpp>
 #include <lvtk/ui/widget.hpp>
 
@@ -301,7 +301,7 @@ public:
 
     RoboverbUI (const UIArgs& args)
         : UI (args),
-          _main (lvtk::Mode::MODULE, std::make_unique<lvtk::OpenGL>()) {
+          _main (lvtk::Mode::MODULE, std::make_unique<lvtk::Cairo>()) {
         for (const auto& opt : OptionArray (options())) {
             if (opt.key == map_uri (LV2_UI__scaleFactor))
                 m_scale_factor = *(float*) opt.value;

@@ -27,8 +27,8 @@ lvtk_dep = dependency ('lvtk-3',
     required : true
 )
 
-lvtk_opengl_dep = dependency ('lvtk-opengl-3', 
-    fallback : [ 'lvtk', 'lvtk_opengl_dep' ],
+lvtk_cairo_dep = dependency ('lvtk-opengl-3', 
+    fallback : [ 'lvtk', 'lvtk_cairo_dep' ],
     version : '>= 3.0.0',
     default_options : lvtk_opts,
     required : true
