@@ -43,7 +43,7 @@ using namespace lvtk;
 /** Color table for the comb and all pass toggles.
     ordered by rows and columns going top-down left-to-right.
 */
-static const lvtk::Color _toggle_colors[] = {
+static const lui::Color _toggle_colors[] = {
     0xffffa500,
     0xffefa500,
     0xffdfa500,
@@ -58,12 +58,12 @@ static const lvtk::Color _toggle_colors[] = {
     0xffcfa500
 };
 
-class RoboverbToggle : public lvtk::Button {
+class RoboverbToggle : public lui::Button {
 public:
     RoboverbToggle()  = default;
     ~RoboverbToggle() = default;
 
-    void set_on_color (lvtk::Color color) {
+    void set_on_color (lui::Color color) {
         _color_on = color;
         repaint();
     }
@@ -74,7 +74,7 @@ public:
     }
 
 protected:
-    void paint_button (Graphics& g, bool highlight, bool down) override {
+    void paint_button (lui::Graphics& g, bool highlight, bool down) override {
         g.set_color (0xff111111);
         auto b = bounds().at (0);
         g.fill_rect (b);
@@ -83,33 +83,33 @@ protected:
         g.fill_rect (b.smaller (1));
 
         g.set_color (text_color());
-        g.draw_text (_text, bounds().at (0).as<float>(), lvtk::Justify::CENTERED);
+        g.draw_text (_text, bounds().at (0).as<float>(), lui::Justify::CENTERED);
     }
 
 private:
     float _text_alpha { 0.72f };
-    lvtk::Color _color_on { 0xffffa400 },
+    lui::Color _color_on { 0xffffa400 },
         _color_off { 0xff363333 },
         _color_text_off { 0xffffffff },
         _color_text_on { 0xff222222 };
     std::string _text;
 
-    lvtk::Color text_color() const noexcept {
+    lui::Color text_color() const noexcept {
         auto c = toggled() ? _color_text_on : _color_text_off;
         return c.with_alpha (_text_alpha);
     }
 };
 
-class ControlLabel : public lvtk::Widget {
+class ControlLabel : public lui::Widget {
 public:
     ControlLabel (const std::string& text) {
         set_name (text);
         _text = name();
     }
 
-    void paint (lvtk::Graphics& g) override {
+    void paint (lui::Graphics& g) override {
         g.set_color (0xffffffff);
-        g.set_font (lvtk::Font (11.f));
+        g.set_font (lui::Font (11.f));
         g.draw_text (_text, bounds().at (0).as<float>(), _align);
     }
 
@@ -119,21 +119,21 @@ public:
     }
 
 private:
-    lvtk::Justify _align { lvtk::Justify::MID_LEFT };
+    lui::Justify _align { lui::Justify::MID_LEFT };
     std::string _text;
 };
 
-class RoboverbContent : public lvtk::Widget {
+class RoboverbContent : public lui::Widget {
 public:
     std::function<void (uint32_t, float)> on_control_changed;
      
     RoboverbContent() {
         set_opaque (true);
-        bg_image = lvtk::Image::load ((uint8_t*)res::roboverb_bg_jpg, res::roboverb_bg_jpgSize);
+        bg_image = lui::Image::load ((uint8_t*)res::roboverb_bg_jpg, res::roboverb_bg_jpgSize);
         for (int i = RoboverbPorts::Wet; i <= RoboverbPorts::Width; ++i) {
-            auto s = add (new lvtk::Slider());
+            auto s = add (new lui::Slider());
             s->set_range (0.0, 1.0);
-            s->set_type (Slider::HORIZONTAL);
+            s->set_type (lui::Slider::HORIZONTAL);
 
             s->on_value_changed = [&, i, s]() {
                 if (on_control_changed) {
@@ -235,7 +235,7 @@ public:
         if (! (index >= 0 && index < (int) sliders.size()))
             return;
         auto dvalue = static_cast<double> (value);
-        sliders[index]->set_value (dvalue, lvtk::Notify::NONE);
+        sliders[index]->set_value (dvalue, lui::Notify::NONE);
         // std::clog << "[roboverb] slider_min ("<< sliders[index]->range().min <<")\n";
         // std::clog << "[roboverb] slider_max ("<< sliders[index]->range().max <<")\n";
         // std::clog << "[roboverb] slider_value ("<< sliders[index]->value() <<")\n";
@@ -275,24 +275,24 @@ protected:
         }
     }
 
-    void paint (Graphics& g) override {
+    void paint (lui::Graphics& g) override {
         if (bg_image) {
-            g.draw_image (bg_image, bounds().at(0).as<double>(), Fitment::STRETCH);
+            g.draw_image (bg_image, bounds().at(0).as<double>(), lui::Fitment::STRETCH);
         }
-        g.set_color (Color (0, 0, 0, 200));
+        g.set_color (lui::Color (0, 0, 0, 200));
         g.fill_rect (bounds().at (0));
         g.set_color (0xccffffff);
         g.draw_text ("  ROBOVERB",
                      bounds().at (0).smaller (3, 4).as<float>(),
-                     lvtk::Justify::TOP_LEFT);
+                     lui::Justify::TOP_LEFT);
     }
 
 private:
-    std::vector<lvtk::Slider*> sliders;
+    std::vector<lui::Slider*> sliders;
     std::vector<RoboverbToggle*> toggles;
     std::vector<ControlLabel*> labels;
     bool _show_toggle_text { true };
-    Image bg_image;
+    lui::Image bg_image;
 };
 
 class RoboverbUI final : public UI<RoboverbUI, Parent, Idle, URID, Options> {
@@ -301,7 +301,7 @@ public:
 
     RoboverbUI (const UIArgs& args)
         : UI (args),
-          _main (lvtk::Mode::MODULE, std::make_unique<lvtk::Cairo>()) {
+          _main (lui::Mode::MODULE, std::make_unique<lui::Cairo>()) {
         for (const auto& opt : OptionArray (options())) {
             if (opt.key == map_uri (LV2_UI__scaleFactor))
                 m_scale_factor = *(float*) opt.value;
@@ -361,7 +361,7 @@ public:
 
 private:
     float m_scale_factor { 1.f };
-    lvtk::Main _main;
+    lui::Main _main;
     std::unique_ptr<Content> content;
 };
 
