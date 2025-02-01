@@ -21,10 +21,10 @@
 #include <iostream>
 
 #include <lvtk/ui.hpp>
-#include <lvtk/ui/button.hpp>
-#include <lvtk/ui/cairo.hpp>
-#include <lvtk/ui/slider.hpp>
-#include <lvtk/ui/widget.hpp>
+#include <lui/button.hpp>
+#include <lui/cairo.hpp>
+#include <lui/slider.hpp>
+#include <lui/widget.hpp>
 
 #include <lvtk/ext/idle.hpp>
 #include <lvtk/ext/parent.hpp>
