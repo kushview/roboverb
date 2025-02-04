@@ -12,8 +12,11 @@ elif host_machine.system() == 'darwin'
     roboverb_ui_type = 'CocoaUI'
 endif
 
-plugin_install_dir = fs.expanduser (get_option ('lv2dir'))
-if plugin_install_dir == ''
+plugin_install_dir = get_option('lv2dir').strip()
+if plugin_install_dir != ''
+    plugin_install_dir = fs.expanduser (plugin_install_dir)
+endif
+if plugin_install_dir.strip() == ''
     if target_machine.system() == 'darwin'
         plugin_install_dir = '/Library/Audio/Plug-Ins/LV2'
     elif target_machine.system() == 'haiku'
@@ -73,3 +76,4 @@ if lv2_validate.found()
 endif
 
 summary ('Install', plugin_install_dir, section : 'LV2')
+summary ('lv2dir', get_option('lv2dir'), section : 'LV2')

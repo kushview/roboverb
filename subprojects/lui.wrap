@@ -1,0 +1,8 @@
+[wrap-git]
+url = https://github.com/lvtk/lui.git/
+push-url=git@github.com:lvtk/lui.git
+revision = main
+
+[provide]
+lui-0=lui_dep
+lui-cairo-0=lui_cairo_dep
