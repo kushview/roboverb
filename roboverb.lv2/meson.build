@@ -16,15 +16,16 @@ plugin_install_dir = get_option('lv2dir').strip()
 if plugin_install_dir != ''
     plugin_install_dir = fs.expanduser (plugin_install_dir)
 endif
-if plugin_install_dir.strip() == ''
+
+if plugin_install_dir == ''
     if target_machine.system() == 'darwin'
-        plugin_install_dir = '/Library/Audio/Plug-Ins/LV2'
+        plugin_install_dir = fs.expanduser ('~/Library/Audio/Plug-Ins/LV2')
     elif target_machine.system() == 'haiku'
         plugin_install_dir = '/boot/common/add-ons/lv2'
     elif target_machine.system() == 'windows'
-        plugin_install_dir = 'C:/Program Files/Common Files/LV2'
+        plugin_install_dir = fs.expanduser ('~/AppData/Roaming/LV2')
     else
-        plugin_install_dir = get_option('prefix') / 'lib' / 'lv2'
+        plugin_install_dir = fs.expanduser('~/.lv2')
     endif
 endif
 
