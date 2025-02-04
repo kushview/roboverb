@@ -20,11 +20,11 @@
 #include <algorithm>
 #include <iostream>
 
-#include <lvtk/ui.hpp>
 #include <lui/button.hpp>
 #include <lui/cairo.hpp>
 #include <lui/slider.hpp>
 #include <lui/widget.hpp>
+#include <lvtk/ui.hpp>
 
 #include <lvtk/ext/idle.hpp>
 #include <lvtk/ext/parent.hpp>
@@ -126,10 +126,10 @@ private:
 class RoboverbContent : public lui::Widget {
 public:
     std::function<void (uint32_t, float)> on_control_changed;
-     
+
     RoboverbContent() {
         set_opaque (true);
-        bg_image = lui::Image::load ((uint8_t*)res::roboverb_bg_jpg, res::roboverb_bg_jpgSize);
+        bg_image = lui::Image::load ((uint8_t*) res::roboverb_bg_jpg, res::roboverb_bg_jpgSize);
         for (int i = RoboverbPorts::Wet; i <= RoboverbPorts::Width; ++i) {
             auto s = add (new lui::Slider());
             s->set_range (0.0, 1.0);
@@ -243,12 +243,12 @@ public:
 
 protected:
     void resized() override {
-
         const auto btn_size      = height() / 3 - 10;
         const auto btn_hspace    = btn_size * 4;
         const auto slider_hspace = width() - btn_hspace;
 
-        auto sb = bounds().at (0).slice_left (slider_hspace);
+        auto r1 = bounds().at (0);
+        auto sb = r1.slice_left (slider_hspace);
         sb.slice_top (40);
         sb.slice_bottom (20);
         int h = sb.height / 5;
@@ -262,14 +262,15 @@ protected:
             sliders[i]->set_bounds (r.smaller (3, 2));
         }
 
-        auto tb         = bounds().at (0).slice_right (btn_hspace).smaller (2);
-        size_t tidx     = 0;
-        int actual_size = tb.height / 3.f;
+        auto tb           = r1.smaller (2); //bounds().at (0).slice_right (btn_hspace).smaller (2);
+        size_t tidx       = 0;
+        int actual_size   = tb.height / 3.f;
+        int actual_h_size = tb.width / 4.f;
         for (int i = 0; i < 3; ++i) {
             auto r = tb.slice_top (actual_size);
             for (int j = 0; j < 4; ++j) {
                 auto* t = toggles[tidx++];
-                t->set_bounds (r.slice_left (actual_size)
+                t->set_bounds (r.slice_left (actual_h_size)
                                    .smaller (1));
             }
         }
@@ -277,7 +278,7 @@ protected:
 
     void paint (lui::Graphics& g) override {
         if (bg_image) {
-            g.draw_image (bg_image, bounds().at(0).as<double>(), lui::Fitment::STRETCH);
+            g.draw_image (bg_image, bounds().at (0).as<double>(), lui::Fitment::STRETCH);
         }
         g.set_color (lui::Color (0, 0, 0, 200));
         g.fill_rect (bounds().at (0));
