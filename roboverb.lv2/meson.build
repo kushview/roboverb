@@ -40,10 +40,14 @@ plugin = shared_module ('roboverb',
     gnu_symbol_visibility : 'hidden'
 )
 
+roboverb_ui_sources = files('''
+    ui.cpp
+    res.cpp
+'''.split())
 ui = shared_module ('roboverb-ui',
-    [ 'ui.cpp', 'res.cpp' ],
+    roboverb_ui_sources,
     name_prefix : '',
-    dependencies : [ lvtk_dep, lvtk_cairo_dep ],
+    dependencies : [ lvtk_dep, lui_cairo_dep ],
     include_directories : [ '.' ],
     install : true,
     install_dir : plugin_install_dir,

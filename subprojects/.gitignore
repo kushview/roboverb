@@ -1,6 +1,6 @@
 *
 !lvtk.wrap
 !lui.wrap
-!clap.wrap
+!clap*.wrap
 !.gitignore
 !.ignore

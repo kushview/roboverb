@@ -22,7 +22,7 @@ lvtk_dep = dependency ('lvtk-3',
     required : true
 )
 
-lvtk_cairo_dep = dependency ('lui-cairo-0', 
+lui_cairo_dep = dependency ('lui-cairo-0', 
     fallback : [ 'lui', 'lui_cairo_dep' ],
     version : '>= 0.0.1',
     default_options : [
@@ -35,5 +35,7 @@ lvtk_cairo_dep = dependency ('lui-cairo-0',
 )
 
 clap_dep = dependency ('clap')
+clap_helpers_dep = dependency ('clap-helpers')
 
 subdir ('roboverb.lv2')
+subdir ('src')
