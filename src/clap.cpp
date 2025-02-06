@@ -8,7 +8,6 @@
 #include "./roboverb.hpp"
 #include "./ui.hpp"
 
-
 #if __APPLE__
 #    define ROBOVERB_WINDOW_API CLAP_WINDOW_API_COCOA
 #elif defined(__WIN32__)

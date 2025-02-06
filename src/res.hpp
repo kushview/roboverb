@@ -35,4 +35,4 @@ const char* getNamedResource (const char* resourceNameUTF8, int& dataSizeInBytes
 // If you provide the name of one of the binary resource variables above, this function will
 // return the corresponding original, non-mangled filename (or a null pointer if the name isn't found).
 const char* getNamedResourceOriginalFilename (const char* resourceNameUTF8);
-} // namespace BinaryData
+} // namespace res

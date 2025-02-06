@@ -42,7 +42,7 @@ plugin = shared_module ('roboverb',
 )
 
 roboverb_ui_sources = files('''
-    ui.cpp
+    lv2ui.cpp
     res.cpp
 '''.split())
 ui = shared_module ('roboverb-ui',
@@ -102,10 +102,10 @@ if clap_install_dir == ''
 endif
 
 clap_plugin = shared_module ('roboverb',
-    [ roboverb_sources, roboverb_ui_sources, 'clap.cpp' ],
+    [ roboverb_sources, 'res.cpp', 'clap.cpp' ],
     name_prefix : '',
     name_suffix : 'clap',
-    include_directories: [ '../roboverb.lv2' ],
+    include_directories: [ ],
     dependencies : [ lvtk_dep, clap_dep, clap_helpers_dep, lui_cairo_dep ],
     install : true,
     install_dir : clap_install_dir,

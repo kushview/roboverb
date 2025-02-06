@@ -49,4 +49,4 @@ struct Ports {
         AllPass_4 = 20,
     };
 };
-}
+} // namespace roboverb
