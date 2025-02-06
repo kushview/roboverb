@@ -102,12 +102,7 @@ public:
     RoboverbContent() {
         set_opaque (true);
         bg_image = lui::Image::load ((uint8_t*) res::roboverb_bg_jpg, res::roboverb_bg_jpgSize);
-        if (! bg_image) {
-            std::cerr << "[roboverb] background image failed to load\n";
-        } else {
-            std::cout << "width=" << bg_image.width() << "x" << bg_image.height() << std::endl;
-        }
-
+        
         for (int i = RoboverbPorts::Wet; i <= RoboverbPorts::Width; ++i) {
             auto s = add (new lui::Slider());
             s->set_range (0.0, 1.0);
@@ -261,11 +256,13 @@ protected:
     void paint (lui::Graphics& g) override {
         if (bg_image) {
             g.draw_image (bg_image, bounds().at (0).as<double>(), lui::Fitment::CENTERED);
+        } else {
+            g.set_color (lui::Color (255, 0, 0, 255));
+            g.fill_rect (bounds().at (0));
         }
-        g.set_color (lui::Color (0, 0, 0, 200));
-        g.fill_rect (bounds().at (0));
-        g.set_color (0xccffffff);
-        g.draw_text ("  ROBOVERB",
+        g.set_color (0xff000000);
+        g.set_font (16.0);
+        g.draw_text (" ROBOVERB",
                      bounds().at (0).smaller (3, 4).as<float>(),
                      lui::Justify::TOP_LEFT);
     }
