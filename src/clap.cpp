@@ -117,13 +117,13 @@ protected:
 
     bool activate (double sampleRate, uint32_t minFrameCount, uint32_t maxFrameCount) noexcept override {
         _verb.setSampleRate (sampleRate);
+        _doUpdate.store (1);
         return true;
     }
 
     void deactivate() noexcept override {}
-    bool startProcessing() noexcept override { 
-        _doUpdate.store (1);
-        return true; 
+    bool startProcessing() noexcept override {
+        return true;
     }
     void stopProcessing() noexcept override {}
 
@@ -237,7 +237,6 @@ protected:
 
         auto content = _gui.widget();
         if (_doUpdate.load() != 0 && content != nullptr) {
-            
             for (int p = Ports::Wet; p <= Ports::Width; ++p) {
                 int index = p - Ports::Wet;
                 double pv = 0.0;
@@ -247,11 +246,12 @@ protected:
 
             for (int i = 0; i < 12; ++i) {
                 double v = 0.0;
-                paramsValue ((clap_id)i + Ports::Comb_1, &v);
-                content->update_toggle (i, static_cast<float> (v));
+                paramsValue ((clap_id) i + Ports::Comb_1, &v);
+                content->update_toggle (i, 0.f != static_cast<float> (v));
             }
 
-            _doUpdate.store (0);
+            while (_doUpdate.load() != 0)
+                _doUpdate.store (0, std::memory_order_acquire);
         }
 
         _gui.idle();
@@ -290,6 +290,28 @@ protected:
             case Ports::Damping:
                 *value = _uiParams.damping;
                 break;
+
+            case Ports::Comb_1:
+            case Ports::Comb_2:
+            case Ports::Comb_3:
+            case Ports::Comb_4:
+            case Ports::Comb_5:
+            case Ports::Comb_6:
+            case Ports::Comb_7:
+            case Ports::Comb_8: {
+                auto index = static_cast<int> (paramId - Ports::Comb_1);
+                *value     = _verb.toggledCombFloat (index);
+                break;
+            }
+
+            case Ports::AllPass_1:
+            case Ports::AllPass_2:
+            case Ports::AllPass_3:
+            case Ports::AllPass_4: {
+                auto index = static_cast<int> (paramId - Ports::AllPass_1);
+                *value     = _verb.toggledAllPassFloat (index);
+                break;
+            }
 
             default:
                 res = false;
@@ -363,10 +385,12 @@ protected:
 
     bool guiSetScale (double scale) noexcept override { return true; }
     bool guiShow() noexcept override {
+        _doUpdate.store (1);
         _gui.show();
         return true;
     }
     bool guiHide() noexcept override {
+        _doUpdate.store (1);
         _gui.hide();
         return true;
     }

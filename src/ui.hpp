@@ -276,9 +276,9 @@ class GuiMain final {
     bool _elevated = false;
 
 public:
-    using ControlHandler = std::function<void(uint32_t port, float value)>;
+    using ControlHandler = std::function<void (uint32_t port, float value)>;
     RoboverbContent* widget() { return content.get(); }
-    
+
     bool create() {
         if (gui == nullptr)
             gui = std::make_unique<lui::Main> (lui::Mode::MODULE, std::make_unique<lui::Cairo>());
@@ -290,7 +290,7 @@ public:
     }
 
     void setControlHandler (ControlHandler handler) {
-        if (content!=nullptr)
+        if (content != nullptr)
             content->on_control_changed = handler;
     }
 
@@ -323,4 +323,4 @@ public:
     }
 };
 
-}
+} // namespace roboverb
