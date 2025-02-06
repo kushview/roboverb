@@ -32,17 +32,17 @@ static const lui::Color _toggle_colors[] = {
     0xffcfa500
 };
 
-class RoboverbToggle : public lui::Button {
+class Toggle : public lui::Button {
 public:
-    RoboverbToggle()  = default;
-    ~RoboverbToggle() = default;
+    Toggle()  = default;
+    ~Toggle() = default;
 
-    void set_on_color (lui::Color color) {
+    void setOnColor (lui::Color color) {
         _color_on = color;
         repaint();
     }
 
-    void set_text (const std::string& text) {
+    void setText (const std::string& text) {
         _text = text;
         repaint();
     }
@@ -97,11 +97,11 @@ private:
     std::string _text;
 };
 
-class RoboverbContent : public lui::Widget {
+class Content : public lui::Widget {
 public:
     std::function<void (uint32_t, float)> on_control_changed;
 
-    RoboverbContent() {
+    Content() {
         set_opaque (true);
         bg_image = lui::Image::load ((uint8_t*) res::roboverb_bg_jpg, res::roboverb_bg_jpgSize);
 
@@ -144,15 +144,15 @@ public:
 
         for (int i = Ports::Comb_1; i <= Ports::AllPass_4; ++i) {
             auto idx = i - Ports::Comb_1;
-            auto t   = add (new RoboverbToggle());
+            auto t   = add (new Toggle());
             t->toggle (false);
-            t->set_on_color (_toggle_colors[idx]);
+            t->setOnColor (_toggle_colors[idx]);
             std::stringstream text;
             if (i < Ports::AllPass_1)
                 text << "C" << (idx + 1);
             else
                 text << "A" << (i - Ports::AllPass_1 + 1);
-            t->set_text (text.str());
+            t->setText (text.str());
             t->on_clicked = [&, i, t]() {
                 t->toggle (! t->toggled());
                 if (on_control_changed) {
@@ -174,7 +174,7 @@ public:
             set_size (640 * 0.72, 360 * 0.72);
     }
 
-    ~RoboverbContent() {
+    ~Content() {
         for (auto t : toggles)
             delete t;
         toggles.clear();
@@ -190,7 +190,7 @@ public:
         for (int i = Ports::Comb_1; i <= Ports::AllPass_4; ++i) {
             auto idx = i - Ports::Comb_1;
             auto t   = toggles.at (idx);
-            t->set_on_color (_toggle_colors[idx]);
+            t->setOnColor (_toggle_colors[idx]);
 
             if (_show_toggle_text) {
                 std::stringstream text;
@@ -198,7 +198,7 @@ public:
                     text << "C" << (idx + 1);
                 else
                     text << "A" << (i - Ports::AllPass_1 + 1);
-                t->set_text (text.str());
+                t->setText (text.str());
             }
         }
     }
@@ -271,7 +271,7 @@ protected:
 
 private:
     std::vector<lui::Slider*> sliders;
-    std::vector<RoboverbToggle*> toggles;
+    std::vector<Toggle*> toggles;
     std::vector<ControlLabel*> labels;
     bool _show_toggle_text { true };
     lui::Image bg_image;
@@ -279,18 +279,18 @@ private:
 
 class GuiMain final {
     std::unique_ptr<lui::Main> gui;
-    std::unique_ptr<RoboverbContent> content;
+    std::unique_ptr<Content> content;
     bool _elevated = false;
 
 public:
     using ControlHandler = std::function<void (uint32_t port, float value)>;
-    RoboverbContent* widget() { return content.get(); }
+    Content* widget() { return content.get(); }
 
     bool create() {
         if (gui == nullptr)
             gui = std::make_unique<lui::Main> (lui::Mode::MODULE, std::make_unique<lui::Cairo>());
         if (content == nullptr) {
-            content = std::make_unique<RoboverbContent>();
+            content = std::make_unique<Content>();
         }
 
         return gui != nullptr && content != nullptr;

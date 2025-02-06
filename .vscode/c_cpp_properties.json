@@ -25,8 +25,11 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/roboverb.lv2/*",
+                "${workspaceFolder}/src/*",
+                "${workspaceFolder}/subprojects/lui/include/*",
                 "${workspaceFolder}/subprojects/lvtk/include/*",
+                "${workspaceFolder}/subprojects/clap/include/*",
+                "${workspaceFolder}/subprojects/clap-helpers/include/*",
                 "${default}"
             ],
             "defines": [

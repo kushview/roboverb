@@ -1,7 +1,7 @@
 /*
     This file is part of Roboverb
 
-    Copyright (C) 2015-2023  Kushview, LLC.  All rights reserved.
+    Copyright (C) 2015-2025  Kushview, LLC.  All rights reserved.
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -39,12 +39,11 @@ using namespace lvtk;
 
 class RoboverbUI final : public UI<RoboverbUI, Parent, Idle, URID, Options> {
 public:
-    using Content = roboverb::RoboverbContent;
-    using Ports = roboverb::Ports;
+    using Content = roboverb::Content;
+    using Ports   = roboverb::Ports;
 
     RoboverbUI (const UIArgs& args)
-        : UI (args),
-          _main (lui::Mode::MODULE, std::make_unique<lui::Cairo>()) {
+        : UI (args) {
         for (const auto& opt : OptionArray (options())) {
             if (opt.key == map_uri (LV2_UI__scaleFactor))
                 m_scale_factor = *(float*) opt.value;
@@ -54,11 +53,12 @@ public:
     }
 
     void cleanup() {
-        content.reset();
+        _gui.destroy();
+        _gui.setControlHandler (nullptr);
     }
 
     int idle() {
-        _main.loop (0);
+        _gui.idle();
         return 0;
     }
 
@@ -71,7 +71,8 @@ public:
     }
 
     void port_event (uint32_t port, uint32_t size, uint32_t format, const void* buffer) {
-        if (format != 0 || size != sizeof (float))
+        auto content = _gui.widget();
+        if (content == nullptr || format != 0 || size != sizeof (float))
             return;
 
         _block_sending = true;
@@ -91,21 +92,22 @@ public:
     }
 
     LV2UI_Widget widget() {
-        if (content == nullptr) {
-            content = std::make_unique<Content>();
-            _main.elevate (*content, 0, (uintptr_t) parent.get());
-            content->set_visible (true);
-            content->on_control_changed = std::bind (
-                &RoboverbUI::send_control, this, std::placeholders::_1, std::placeholders::_2);
+        if (_gui.widget() == nullptr) {
+            _gui.create();
+            clap_window_t window;
+            window.ptr = (void*) parent.get();
+            _gui.setParent (&window);
+            _gui.show();
+            _gui.setControlHandler (std::bind (
+                &RoboverbUI::send_control, this, std::placeholders::_1, std::placeholders::_2));
         }
 
-        return (LV2UI_Widget) content->find_handle();
+        return (LV2UI_Widget) _gui.nativeHandle();
     }
 
 private:
     float m_scale_factor { 1.f };
-    lui::Main _main;
-    std::unique_ptr<Content> content;
+    roboverb::GuiMain _gui;
 };
 
 static UIDescriptor<RoboverbUI> s_roboverb_ui (
