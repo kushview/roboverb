@@ -37,5 +37,4 @@ lui_cairo_dep = dependency ('lui-cairo-0',
 clap_dep = dependency ('clap')
 clap_helpers_dep = dependency ('clap-helpers')
 
-subdir ('roboverb.lv2')
 subdir ('src')

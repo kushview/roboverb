@@ -1,2 +1,4 @@
 option ('lv2dir', type: 'string', value: '',
     description: 'LV2 bundle installation directory [default: LV2 System Path]')
+option ('clapdir', type: 'string', value: '',
+    description: 'CLAP plugin installation directory [default: CLAP System Path]')
