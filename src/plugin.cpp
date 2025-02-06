@@ -24,6 +24,8 @@
 
 #define ROBOVERB_URI "https://kushview.net/plugins/roboverb"
 
+using roboverb::Ports;
+
 class Module final : public lvtk::Plugin<Module> {
 public:
     Module (const lvtk::Args& args)
@@ -35,16 +37,16 @@ public:
 
     void connect_port (uint32_t port, void* data) {
         switch (port) {
-            case RoboverbPorts::AudioIn_1:
+            case Ports::AudioIn_1:
                 input[0] = (float*) data;
                 break;
-            case RoboverbPorts::AudioIn_2:
+            case Ports::AudioIn_2:
                 input[1] = (float*) data;
                 break;
-            case RoboverbPorts::AudioOut_1:
+            case Ports::AudioOut_1:
                 output[0] = (float*) data;
                 break;
-            case RoboverbPorts::AudioOut_2:
+            case Ports::AudioOut_2:
                 output[1] = (float*) data;
                 break;
         }
@@ -54,40 +56,40 @@ public:
             return;
 
         switch (port) {
-            case RoboverbPorts::Wet:
+            case Ports::Wet:
                 params.wetLevel = *((float*) data);
                 break;
-            case RoboverbPorts::Dry:
+            case Ports::Dry:
                 params.dryLevel = *((float*) data);
                 break;
-            case RoboverbPorts::RoomSize:
+            case Ports::RoomSize:
                 params.roomSize = *((float*) data);
                 break;
-            case RoboverbPorts::Width:
+            case Ports::Width:
                 params.width = *((float*) data);
                 break;
-            case RoboverbPorts::Damping:
+            case Ports::Damping:
                 params.damping = *((float*) data);
                 break;
 
-            case RoboverbPorts::Comb_1:
-            case RoboverbPorts::Comb_2:
-            case RoboverbPorts::Comb_3:
-            case RoboverbPorts::Comb_4:
-            case RoboverbPorts::Comb_5:
-            case RoboverbPorts::Comb_6:
-            case RoboverbPorts::Comb_7:
-            case RoboverbPorts::Comb_8: {
+            case Ports::Comb_1:
+            case Ports::Comb_2:
+            case Ports::Comb_3:
+            case Ports::Comb_4:
+            case Ports::Comb_5:
+            case Ports::Comb_6:
+            case Ports::Comb_7:
+            case Ports::Comb_8: {
                 const auto value = *((float*) data);
-                verb.setCombToggle (port - RoboverbPorts::Comb_1, value > 0.f);
+                verb.setCombToggle (port - Ports::Comb_1, value > 0.f);
             } break;
 
-            case RoboverbPorts::AllPass_1:
-            case RoboverbPorts::AllPass_2:
-            case RoboverbPorts::AllPass_3:
-            case RoboverbPorts::AllPass_4: {
+            case Ports::AllPass_1:
+            case Ports::AllPass_2:
+            case Ports::AllPass_3:
+            case Ports::AllPass_4: {
                 const auto value = *((float*) data);
-                verb.setAllPassToggle (port - RoboverbPorts::AllPass_1, value > 0.f);
+                verb.setAllPassToggle (port - Ports::AllPass_1, value > 0.f);
             } break;
         }
     }
@@ -119,4 +121,4 @@ private:
     float* output[2];
 };
 
-static const lvtk::Descriptor<Module> roboverb (ROBOVERB_URI);
+static const lvtk::Descriptor<Module> sDescriptor (ROBOVERB_URI);

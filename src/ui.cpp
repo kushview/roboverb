@@ -39,7 +39,8 @@ using namespace lvtk;
 
 class RoboverbUI final : public UI<RoboverbUI, Parent, Idle, URID, Options> {
 public:
-    using Content = RoboverbContent;
+    using Content = roboverb::RoboverbContent;
+    using Ports = roboverb::Ports;
 
     RoboverbUI (const UIArgs& args)
         : UI (args),
@@ -78,11 +79,11 @@ public:
         const float value = *((float*) buffer);
         const bool bvalue = value != 0.f;
 
-        if (port >= RoboverbPorts::Comb_1 && port <= RoboverbPorts::AllPass_4) {
-            auto index = static_cast<int> (port - RoboverbPorts::Comb_1);
+        if (port >= Ports::Comb_1 && port <= Ports::AllPass_4) {
+            auto index = static_cast<int> (port - Ports::Comb_1);
             content->update_toggle (index, bvalue);
-        } else if (port >= RoboverbPorts::Wet && port <= RoboverbPorts::Width) {
-            auto index = static_cast<int> (port - RoboverbPorts::Wet);
+        } else if (port >= Ports::Wet && port <= Ports::Width) {
+            auto index = static_cast<int> (port - Ports::Wet);
             content->update_slider (index, value);
         }
 

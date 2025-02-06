@@ -19,7 +19,9 @@
 
 #pragma once
 
-struct RoboverbPorts {
+namespace roboverb {
+
+struct Ports {
     enum Index {
         AudioIn_1  = 0,
         AudioIn_2  = 1,
@@ -47,3 +49,4 @@ struct RoboverbPorts {
         AllPass_4 = 20,
     };
 };
+}

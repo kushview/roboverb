@@ -12,6 +12,8 @@
 #include "ports.hpp"
 #include "res.hpp"
 
+namespace roboverb {
+
 /** Color table for the comb and all pass toggles.
     ordered by rows and columns going top-down left-to-right.
 */
@@ -102,8 +104,8 @@ public:
     RoboverbContent() {
         set_opaque (true);
         bg_image = lui::Image::load ((uint8_t*) res::roboverb_bg_jpg, res::roboverb_bg_jpgSize);
-        
-        for (int i = RoboverbPorts::Wet; i <= RoboverbPorts::Width; ++i) {
+
+        for (int i = Ports::Wet; i <= Ports::Width; ++i) {
             auto s = add (new lui::Slider());
             s->set_range (0.0, 1.0);
             s->set_type (lui::Slider::HORIZONTAL);
@@ -120,19 +122,19 @@ public:
 
             std::string text = "";
             switch (i) {
-                case RoboverbPorts::Wet:
+                case Ports::Wet:
                     text = "Wet level";
                     break;
-                case RoboverbPorts::Dry:
+                case Ports::Dry:
                     text = "Dry level";
                     break;
-                case RoboverbPorts::RoomSize:
+                case Ports::RoomSize:
                     text = "Room size";
                     break;
-                case RoboverbPorts::Damping:
+                case Ports::Damping:
                     text = "Damping";
                     break;
-                case RoboverbPorts::Width:
+                case Ports::Width:
                     text = "Width";
                     break;
             }
@@ -140,16 +142,16 @@ public:
             labels.push_back (add (new ControlLabel (text)));
         }
 
-        for (int i = RoboverbPorts::Comb_1; i <= RoboverbPorts::AllPass_4; ++i) {
-            auto idx = i - RoboverbPorts::Comb_1;
+        for (int i = Ports::Comb_1; i <= Ports::AllPass_4; ++i) {
+            auto idx = i - Ports::Comb_1;
             auto t   = add (new RoboverbToggle());
             t->toggle (false);
             t->set_on_color (_toggle_colors[idx]);
             std::stringstream text;
-            if (i < RoboverbPorts::AllPass_1)
+            if (i < Ports::AllPass_1)
                 text << "C" << (idx + 1);
             else
-                text << "A" << (i - RoboverbPorts::AllPass_1 + 1);
+                text << "A" << (i - Ports::AllPass_1 + 1);
             t->set_text (text.str());
             t->on_clicked = [&, i, t]() {
                 t->toggle (! t->toggled());
@@ -185,17 +187,17 @@ public:
         if (toggles.size() < 12)
             return;
 
-        for (int i = RoboverbPorts::Comb_1; i <= RoboverbPorts::AllPass_4; ++i) {
-            auto idx = i - RoboverbPorts::Comb_1;
+        for (int i = Ports::Comb_1; i <= Ports::AllPass_4; ++i) {
+            auto idx = i - Ports::Comb_1;
             auto t   = toggles.at (idx);
             t->set_on_color (_toggle_colors[idx]);
 
             if (_show_toggle_text) {
                 std::stringstream text;
-                if (i < RoboverbPorts::AllPass_1)
+                if (i < Ports::AllPass_1)
                     text << "C" << (idx + 1);
                 else
-                    text << "A" << (i - RoboverbPorts::AllPass_1 + 1);
+                    text << "A" << (i - Ports::AllPass_1 + 1);
                 t->set_text (text.str());
             }
         }
@@ -274,8 +276,6 @@ private:
     bool _show_toggle_text { true };
     lui::Image bg_image;
 };
-
-namespace roboverb {
 
 class GuiMain final {
     std::unique_ptr<lui::Main> gui;
