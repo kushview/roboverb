@@ -1,7 +1,7 @@
 /*
     This file is part of Roboverb
 
-    Copyright (C) 2015-2023  Kushview, LLC.  All rights reserved.
+    Copyright (C) 2015-2025  Kushview, LLC.  All rights reserved.
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
