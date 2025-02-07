@@ -53,7 +53,11 @@ static const lui::Color _toggle_colors[] = {
 
 class Toggle : public lui::Button {
 public:
-    Toggle()  = default;
+    Toggle() {
+        bgImg = lui::Image::load ((const uint8_t*) res::toggle_switch_png, res::toggle_switch_pngSize);
+        set_size (preferedSize(), preferedSize());
+    }
+
     ~Toggle() = default;
 
     void setOnColor (lui::Color color) {
@@ -66,8 +70,21 @@ public:
         repaint();
     }
 
+    int preferedSize() const noexcept {
+        return bgImg.width();
+    }
+
 protected:
+    double imgScale = 0.5;
     void paint_button (lui::Graphics& g, bool highlight, bool down) override {
+#if 1
+        using Fit = lui::Fitment;
+        lui::Transform mat;
+        if (toggled())
+            g.draw_image (bgImg, mat.translated (0.0, -(bgImg.height() / 2)));
+        else
+            g.draw_image (bgImg, mat);
+#else
         g.set_color (0xff111111);
         auto b = bounds().at (0);
         g.fill_rect (b);
@@ -77,9 +94,11 @@ protected:
 
         g.set_color (text_color());
         g.draw_text (_text, bounds().at (0).as<float>(), lui::Justify::CENTERED);
+#endif
     }
 
 private:
+    lui::Image bgImg;
     float _text_alpha { 0.72f };
     lui::Color _color_on { 0xffffa400 },
         _color_off { 0xff363333 },

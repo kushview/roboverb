@@ -367,6 +367,42 @@ protected:
     virtual bool getParamInfoForParamId (clap_id paramId, clap_param_info* info) const noexcept;
 #endif
 
+    //-------------------//
+    // clap_plugin_state //
+    //-------------------//
+    bool implementsState() const noexcept override { return true; }
+    static constexpr size_t stateNumElements() noexcept { return Ports::numParams() + 1; }
+    static constexpr size_t stateDataSize() noexcept { return sizeof (double) * stateNumElements(); }
+
+    bool stateSave (const clap_ostream* stream) noexcept override {
+        const auto size = stateDataSize();
+        auto data       = std::make_unique<double[]> (stateNumElements());
+        for (auto ID = Ports::paramsBegin(); ID < Ports::paramsEnd(); ++ID) {
+            const auto index = clap_id (ID - Ports::paramsBegin());
+            paramsValue (ID, &data.get()[index]);
+        }
+        return (int64_t) size == stream->write (stream, (void*) data.get(), size);
+    }
+
+    bool stateLoad (const clap_istream* stream) noexcept override {
+        size_t dataSize = stateDataSize();
+        auto data       = std::make_unique<double[]> (stateNumElements());
+
+        if ((int64_t) dataSize == stream->read (stream, data.get(), dataSize)) {
+            {
+                std::lock_guard<std::mutex> sl (paramMutex);
+                for (auto ID = Ports::paramsBegin(); ID < Ports::paramsEnd(); ID++) {
+                    const auto index = clap_id (ID - Ports::paramsBegin());
+                    update (ID, data.get()[index]);
+                }
+                _uiParams = _rtParams;
+            }
+            _doUpdate.store (1);
+        }
+
+        return true;
+    }
+
     //-----------------//
     // clap_plugin_gui //
     //-----------------//

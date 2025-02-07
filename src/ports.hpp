@@ -48,5 +48,10 @@ struct Ports {
         AllPass_3 = 19,
         AllPass_4 = 20,
     };
+
+    inline static constexpr uint32_t paramsBegin() { return Wet; }
+    inline static constexpr uint32_t paramsEnd() { return 1 + AllPass_4; }
+    inline static constexpr uint32_t numParams() { return paramsEnd() - paramsBegin(); }
 };
+
 } // namespace roboverb
