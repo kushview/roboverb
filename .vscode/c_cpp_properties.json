@@ -26,10 +26,7 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/src/*",
-                "${workspaceFolder}/subprojects/lui/include/*",
-                "${workspaceFolder}/subprojects/lvtk/include/*",
-                "${workspaceFolder}/subprojects/clap/include/*",
-                "${workspaceFolder}/subprojects/clap-helpers/include/*",
+                "${workspaceFolder}/deps/JUCE/modules/*",
                 "${default}"
             ],
             "defines": [

@@ -23,6 +23,19 @@
 #include <cstring>
 #include <memory>
 
+#include <juce_core/juce_core.h>
+
+namespace Tags {
+static const juce::Identifier roomSize = "roomSize";
+static const juce::Identifier damping = "damping";
+static const juce::Identifier wetLevel = "wetLevel";
+static const juce::Identifier dryLevel = "dryLevel";
+static const juce::Identifier width = "width";
+static const juce::Identifier freezeMode = "freezeMode";
+static const juce::Identifier enabledCombs = "enabledCombs";
+static const juce::Identifier enabledAllPasses = "enabledAllPasses";
+}; // namespace Tags
+
 class Roboverb {
 public:
     enum ParameterIndex {
@@ -70,17 +83,24 @@ public:
                              put the reverb into a continuous feedback loop. */
 
         Parameters& operator= (const Parameters& o) {
-            roomSize   = o.roomSize;
-            damping    = o.damping;
-            wetLevel   = o.wetLevel;
-            dryLevel   = o.dryLevel;
-            width      = o.width;
+            roomSize = o.roomSize;
+            damping = o.damping;
+            wetLevel = o.wetLevel;
+            dryLevel = o.dryLevel;
+            width = o.width;
             freezeMode = o.freezeMode;
             return *this;
         }
 
         bool operator== (const Parameters& o) {
-            return (roomSize == o.roomSize && damping == o.damping && wetLevel == o.wetLevel && dryLevel == o.dryLevel && width == o.width && freezeMode == o.freezeMode);
+            // clang-format off
+            return (juce::exactlyEqual (roomSize, o.roomSize) && 
+                    juce::exactlyEqual (damping, o.damping) && 
+                    juce::exactlyEqual (wetLevel , o.wetLevel) && 
+                    juce::exactlyEqual (dryLevel , o.dryLevel) && 
+                    juce::exactlyEqual (width , o.width) && 
+                    juce::exactlyEqual (freezeMode , o.freezeMode));
+            // clang-format on
         }
 
         bool operator!= (const Parameters& o) { return ! operator== (o); }
@@ -132,17 +152,17 @@ public:
         wetGain1.setValue (0.5f * wet * (1.0f + newParams.width));
         wetGain2.setValue (0.5f * wet * (1.0f - newParams.width));
 
-        gain       = isFrozen (newParams.freezeMode) ? 0.0f : 0.015f;
+        gain = isFrozen (newParams.freezeMode) ? 0.0f : 0.015f;
         parameters = newParams;
         updateDamping();
     }
 
     void setSampleRate (const double sampleRate) {
         //static const short combTunings[] = { 1116, 1188, 1277, 1356, 1422, 1491, 1557, 1617 }; // (at 44100Hz)
-        static const short combTunings[]    = { 8092, 4096, 2048, 1024, 512, 256, 128, 64 }; // (at 44100Hz)
+        static const short combTunings[] = { 8092, 4096, 2048, 1024, 512, 256, 128, 64 }; // (at 44100Hz)
         static const short allPassTunings[] = { 556, 441, 341, 225 };
-        const int stereoSpread              = 23;
-        const int intSampleRate             = (int) sampleRate;
+        const int stereoSpread = 23;
+        const int intSampleRate = (int) sampleRate;
 
         for (int i = 0; i < numCombs; ++i) {
             comb[0][i].setSize ((intSampleRate * combTunings[i]) / 44100);
@@ -182,7 +202,7 @@ public:
             const float input = (left[i] + right[i]) * gain;
             float outL = 0, outR = 0;
 
-            const float damp    = damping.getNextValue();
+            const float damp = damping.getNextValue();
             const float feedbck = feedback.getNextValue();
 
             for (int j = 0; j < numCombs; ++j) // accumulate the comb filters in parallel
@@ -201,7 +221,7 @@ public:
                 outR = allPass[1][j].process (outR);
             }
 
-            const float dry  = dryGain.getNextValue();
+            const float dry = dryGain.getNextValue();
             const float wet1 = wetGain1.getNextValue();
             const float wet2 = wetGain2.getNextValue();
 
@@ -216,9 +236,9 @@ public:
 
         for (int i = 0; i < numSamples; ++i) {
             const float input = samples[i] * gain;
-            float output      = 0;
+            float output = 0;
 
-            const float damp    = damping.getNextValue();
+            const float damp = damping.getNextValue();
             const float feedbck = feedback.getNextValue();
 
             for (int j = 0; j < numCombs; ++j) {
@@ -235,7 +255,7 @@ public:
                 output = allPass[0][j].process (output);
             }
 
-            const float dry  = dryGain.getNextValue();
+            const float dry = dryGain.getNextValue();
             const float wet1 = wetGain1.getNextValue();
 
             samples[i] = output * wet1 + samples[i] * dry;
@@ -247,7 +267,7 @@ private:
 
     void updateDamping() noexcept {
         const float roomScaleFactor = 0.28f;
-        const float roomOffset      = 0.7f;
+        const float roomOffset = 0.7f;
         const float dampScaleFactor = 0.4f;
 
         if (isFrozen (parameters.freezeMode))
@@ -267,10 +287,10 @@ private:
         CombFilter() noexcept : bufferSize (0), bufferIndex (0), last (0) {}
 
         void setSize (const int size) {
-            if (size != bufferSize) {
+            if ((size_t) size != bufferSize) {
                 bufferIndex = 0;
-                buffer.reset (new float[size]);
-                bufferSize = size;
+                bufferSize = (size_t) size;
+                buffer.reset (new float[bufferSize]);
             }
 
             clear();
@@ -283,19 +303,20 @@ private:
 
         float process (const float input, const float damp, const float feedbackLevel) noexcept {
             const float output = buffer[bufferIndex];
-            last               = (output * (1.0f - damp)) + (last * damp);
-            // JUCE_UNDENORMALISE (last);
+            last = (output * (1.0f - damp)) + (last * damp);
+            JUCE_UNDENORMALISE (last);
 
             float temp = input + (last * feedbackLevel);
-            // JUCE_UNDENORMALISE (temp);
+            JUCE_UNDENORMALISE (temp);
             buffer[bufferIndex] = temp;
-            bufferIndex         = (bufferIndex + 1) % bufferSize;
+            bufferIndex = (bufferIndex + 1) % bufferSize;
             return output;
         }
 
     private:
         std::unique_ptr<float[]> buffer;
-        int bufferSize, bufferIndex;
+        std::size_t bufferSize { 0 };
+        std::size_t bufferIndex { 0 };
         float last;
     };
 
@@ -305,10 +326,10 @@ private:
         AllPassFilter() noexcept : bufferSize (0), bufferIndex (0) {}
 
         void setSize (const int size) {
-            if (size != bufferSize) {
+            if ((size_t) size != bufferSize) {
                 bufferIndex = 0;
-                buffer.reset (new float[size]);
-                bufferSize = size;
+                buffer.reset (new float[(size_t) size]);
+                bufferSize = (size_t) size;
             }
 
             clear();
@@ -320,16 +341,16 @@ private:
 
         float process (const float input) noexcept {
             const float bufferedValue = buffer[bufferIndex];
-            float temp                = input + (bufferedValue * 0.5f);
+            float temp = input + (bufferedValue * 0.5f);
             // JUCE_UNDENORMALISE (temp);
             buffer[bufferIndex] = temp;
-            bufferIndex         = (bufferIndex + 1) % bufferSize;
+            bufferIndex = (bufferIndex + 1) % bufferSize;
             return bufferedValue - input;
         }
 
     private:
         std::unique_ptr<float[]> buffer;
-        int bufferSize, bufferIndex;
+        std::size_t bufferSize, bufferIndex;
     };
 
     class LinearSmoothedValue {
@@ -340,13 +361,13 @@ private:
         void reset (double sampleRate, double fadeLengthSeconds) noexcept {
             // jassert (sampleRate > 0 && fadeLengthSeconds >= 0);
             stepsToTarget = (int) std::floor (fadeLengthSeconds * sampleRate);
-            currentValue  = target;
-            countdown     = 0;
+            currentValue = target;
+            countdown = 0;
         }
 
         void setValue (float newValue) noexcept {
-            if (target != newValue) {
-                target    = newValue;
+            if (! juce::exactlyEqual (target, newValue)) {
+                target = newValue;
                 countdown = stepsToTarget;
 
                 if (countdown <= 0)
@@ -371,9 +392,9 @@ private:
     };
 
     //==============================================================================
-    enum { numCombs     = 8,
+    enum { numCombs = 8,
            numAllPasses = 4,
-           numChannels  = 2 };
+           numChannels = 2 };
     bool enabledCombs[numCombs];
     bool enabledAllPasses[numAllPasses];
 

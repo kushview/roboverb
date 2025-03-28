@@ -1,7 +1,0 @@
-[wrap-git]
-url = https://github.com/lvtk/lvtk.git/
-push-url=git@github.com:lvtk/lvtk.git
-revision = main
-
-[provide]
-lvtk-3=lvtk_dep

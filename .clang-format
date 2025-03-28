@@ -2,14 +2,14 @@
 AccessModifierOffset: -4
 
 AlignAfterOpenBracket: Align
-AlignConsecutiveAssignments: true
+AlignConsecutiveAssignments: false
 AlignConsecutiveDeclarations: false
 AlignConsecutiveMacros: true
-AlignEscapedNewlines: Right
+AlignEscapedNewlines: Left
 # AlignOperands: Align    # v12
 AlignTrailingComments: true
 
-AllowAllParametersOfDeclarationOnNextLine: true
+AllowAllParametersOfDeclarationOnNextLine: false
 AllowShortBlocksOnASingleLine: Never
 AllowShortCaseLabelsOnASingleLine: false
 AllowShortFunctionsOnASingleLine: All
@@ -61,7 +61,7 @@ ExperimentalAutoDetectBinPacking: false
 IndentCaseLabels: true
 IndentWidth: 4
 IndentWrappedFunctionNames: true
-IndentPPDirectives: AfterHash
+IndentPPDirectives: BeforeHash
 
 KeepEmptyLinesAtTheStartOfBlocks: false
 
@@ -70,7 +70,7 @@ MaxEmptyLinesToKeep: 1
 NamespaceIndentation: None
 PointerAlignment: Left
 ReflowComments: false
-SortIncludes: true
+SortIncludes: false
 
 SpaceAfterCStyleCast: true
 SpaceAfterLogicalNot: true
@@ -88,7 +88,7 @@ Standard: "c++17"
 
 TabWidth: 4
 UseTab: Never
-ForEachMacros: [ BOOST_FOREACH ]
+ForEachMacros: [ EL_FEATURES_FOREACH, BOOST_FOREACH ]
 
 ---
 Language: ObjC
